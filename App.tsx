@@ -12,8 +12,8 @@ type EscuelaSection = 'intro' | 'aprendizaje' | 'acompanamiento' | 'equipo' | 'f
 // TO SWAP IMAGES: Upload your images to an 'assets' or 'images' folder in your project
 // and replace the URLs below with your local paths (e.g., "./assets/logo.png").
 const IMAGES = {
-  logo: "https://placehold.co/600x200/transparent/c1562e?text=Roure+Logo",
-  homeMain: "https://picsum.photos/seed/rourehome/900/900",
+  logo: "./images/logo_roure.png",
+  homeMain: "./images/home_main.png",
   sections: {
     historia: "https://picsum.photos/seed/history/800/1000",
     fundamentos: "https://picsum.photos/seed/foundations/800/1000",
@@ -31,9 +31,9 @@ const IMAGES = {
     '12-16': "https://picsum.photos/seed/12-16/800/400",
   } as Record<EscuelaSection, string>,
   people: [
-    "https://picsum.photos/seed/person0long/600/600", // Begoña
-    "https://picsum.photos/seed/person1long/600/600", // Paco
-    "https://picsum.photos/seed/person2long/600/600", // Clara
+    "./images/bego.webp", // Begoña
+    "./images/paco.webp", // Paco
+    "./images/clara.webp", // Clara
   ]
 };
 
@@ -750,7 +750,7 @@ const App: React.FC = () => {
 
                 {/* Center: Image */}
                 <div className="order-1 md:order-2 shrink-0 relative z-10">
-                    <div className="w-48 h-48 md:w-[24rem] md:h-[24rem] lg:w-[28rem] lg:h-[28rem] xl:w-[30rem] xl:h-[30rem] rounded-full overflow-hidden border-[6px] md:border-[8px] border-white shadow-xl shadow-stone-500/20 bg-white relative group">
+                    <div className="w-48 h-48 md:w-[24rem] md:h-[24rem] lg:w-[28rem] lg:h-[28rem] xl:w-[30rem] xl:h-[30rem] rounded-full overflow-hidden relative group">
                     <img 
                         src={IMAGES.homeMain} 
                         alt="Escuela Roure" 
