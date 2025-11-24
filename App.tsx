@@ -8,6 +8,35 @@ type Language = 'es' | 'ca';
 type View = 'home' | 'historia' | 'fundamentos' | 'escuela' | 'videos' | 'textos' | 'comunidad' | 'en_que_estamos';
 type EscuelaSection = 'intro' | 'aprendizaje' | 'acompanamiento' | 'equipo' | 'familias' | 'etapas' | '3-6' | '6-12' | '12-16';
 
+// --- IMAGE CONFIGURATION ---
+// TO SWAP IMAGES: Upload your images to an 'assets' or 'images' folder in your project
+// and replace the URLs below with your local paths (e.g., "./assets/logo.png").
+const IMAGES = {
+  logo: "https://placehold.co/600x200/transparent/c1562e?text=Roure+Logo",
+  homeMain: "https://picsum.photos/seed/rourehome/900/900",
+  sections: {
+    historia: "https://picsum.photos/seed/history/800/1000",
+    fundamentos: "https://picsum.photos/seed/foundations/800/1000",
+  },
+  videoPlaceholder: "https://picsum.photos/seed/video/600/400",
+  escuela: {
+    intro: "https://picsum.photos/seed/intro/800/400",
+    aprendizaje: "https://picsum.photos/seed/aprendizaje/800/400",
+    acompanamiento: "https://picsum.photos/seed/acompanamiento/800/400",
+    equipo: "https://picsum.photos/seed/equipo/800/400",
+    familias: "https://picsum.photos/seed/familias/800/400",
+    etapas: "https://picsum.photos/seed/etapas/800/400",
+    '3-6': "https://picsum.photos/seed/3-6/800/400",
+    '6-12': "https://picsum.photos/seed/6-12/800/400",
+    '12-16': "https://picsum.photos/seed/12-16/800/400",
+  } as Record<EscuelaSection, string>,
+  people: [
+    "https://picsum.photos/seed/person0long/600/600", // Begoña
+    "https://picsum.photos/seed/person1long/600/600", // Paco
+    "https://picsum.photos/seed/person2long/600/600", // Clara
+  ]
+};
+
 interface PersonProfile {
   name: string;
   paragraphs: string[];
@@ -358,9 +387,9 @@ const content = {
             "Què aprenen els nens i nenes?",
             "Quan es parla d'aprenentatge, sovint es limita aquest concepte a l'aprenentatge de coneixements. Fins i tot sol quedar encara més reduït en entendre que es refereix als coneixements intel·lectuals. L'aprenentatge, per contra, és una experiència il·limitada; no només perquè és impossible deixar d'aprendre mentre existeix vida, sino perquè els objectes de l'aprenentatge són infinits.",
             "Cada nen i nena ha d'aprendre a caminar, a parlar, a tolerar la frustración, a tenir en compte els altres, a entendre's, a conèixer el llenguatge de les emocions, a conèixer la seva cultura i la de los altres, a conèixer el seu cos i les seves capacitats, a elaborar pensaments propis, etc. És tot l'ésser el que aprèn i els aprenentatges no estan parcel·lats ni aislados uns de d'altres.",
-            "A El Roure tot ha estat al servei de l'aprenentatge a partir de les realitats individuals i grupals que s'anaven donant. Hem contemplat un currículum obert, dinàmic i flexible, materials, espais, activitats, metodologies, situacions i possibilitats en continu moviment.",
+            "A El Roure tot ha estat al servei de l'aprenentatge a partir de les realidades individuals i grupals que s'anaven donant. Hem contemplat un currículum obert, dinàmic i flexible, materials, espais, activitats, metodologies, situacions i possibilitats en continu moviment.",
             "Com aprenen els nens?",
-            "L'aprenentatge no és un procés lineal, progressiu i rítmic, tampoc està lligat contínuament a la consciència. Està més aviat lligat al benestar vital i, conseqüentment, a l'ambient, a la qualitat de la vivencia i la comunicació. Per aquest motiu, és possible observar tanto recorreguts amb caràcter constant i gradual, com sobtats i amb avenços sorprenents.",
+            "L'aprenentatge no és un procés lineal, progressiu i rítmic, tampoc està lligat contínuament a la consciència. Està més aviat lligat al benestar vital i, consecuentment, a l'ambient, a la qualitat de la vivencia i la comunicació. Per aquest motiu, és possible observar tanto recorreguts amb caràcter constant i gradual, com sobtats i amb avenços sorprenents.",
             "Creiem que és urgent desterrar la idea d'entrenament, del valor d'allò quantitatiu en l'aprenentatge. A la pràctica, fer amb sentit (llegir, escriure, parlar, moure's, relacionar-se, crear, etc.) significa que tot l'organisme està actiu, implicat en la vivència, i això és el que permet que l'aprenentatge sedimenti.",
             "Activitats autònoma i estructurada",
             "A El Roure, els nens i nenes s'han mogut constantment, de forma fluida i voluntària entre dues experiències d'aprenentatge i relació: l'activitat autònoma i l'activitat estructurada.",
@@ -596,7 +625,7 @@ const App: React.FC = () => {
         aria-label="Go to Home"
     >
         <img 
-        src="https://placehold.co/600x200/transparent/c1562e?text=Roure+Logo" 
+        src={IMAGES.logo} 
         alt="Roure Logo" 
         className="w-full h-auto object-contain" 
         />
@@ -723,7 +752,7 @@ const App: React.FC = () => {
                 <div className="order-1 md:order-2 shrink-0 relative z-10">
                     <div className="w-48 h-48 md:w-[24rem] md:h-[24rem] lg:w-[28rem] lg:h-[28rem] xl:w-[30rem] xl:h-[30rem] rounded-full overflow-hidden border-[6px] md:border-[8px] border-white shadow-xl shadow-stone-500/20 bg-white relative group">
                     <img 
-                        src="https://picsum.photos/seed/rourehome/900/900" 
+                        src={IMAGES.homeMain} 
                         alt="Escuela Roure" 
                         className="w-full h-full object-cover opacity-95 group-hover:opacity-100 transition-all duration-1000"
                     />
@@ -800,7 +829,7 @@ const App: React.FC = () => {
     </div>
   );
 
-  const StructuredTextView = ({ title, contentData, imgSeed }: { title: string, contentData: ContentSection[], imgSeed: string }) => (
+  const StructuredTextView = ({ title, contentData, imageSrc }: { title: string, contentData: ContentSection[], imageSrc: string }) => (
     <InternalPageLayout title={title}>
       <div className="flex flex-col md:flex-row gap-12 items-start">
         <div className="w-full md:w-1/2 font-serif text-lg leading-relaxed text-stone-700 space-y-8">
@@ -820,7 +849,7 @@ const App: React.FC = () => {
         <div className="w-full md:w-1/2">
            <div className="aspect-[4/5] bg-stone-200 rounded-lg overflow-hidden shadow-lg sticky top-32">
              <img 
-               src={`https://picsum.photos/seed/${imgSeed}/800/1000`} 
+               src={imageSrc} 
                alt={title} 
                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
              />
@@ -841,18 +870,23 @@ const App: React.FC = () => {
         <div className="flex flex-col md:flex-row gap-12">
           {/* Sidebar Menu */}
           <div className="w-full md:w-1/4 shrink-0">
-            <div className="sticky top-32 bg-white/50 p-6 rounded-lg border border-stone-200">
+            <div className="sticky top-32 pl-2">
               <ul className="space-y-3 font-serif">
-                {sections.map((s) => (
+                {sections.map((s) => {
+                  const isActive = escuelaSection === s;
+                  return (
                   <li key={s}>
                     <button 
                       onClick={() => setEscuelaSection(s)}
-                      className={`text-left w-full transition-colors ${escuelaSection === s ? `${brandColor} font-bold italic` : 'text-stone-600 hover:text-stone-900'}`}
+                      className={`text-base md:text-lg font-serif font-medium transition-colors duration-300 block relative group text-left
+                        ${isActive ? 'text-[#c1562e]' : 'text-stone-600 hover:text-[#c1562e]'}
+                      `}
                     >
                       {t.escuela.menu[s]}
+                      <span className={`absolute left-0 -bottom-1 h-[1px] bg-[#c1562e] transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
                     </button>
                   </li>
-                ))}
+                )})}
               </ul>
             </div>
           </div>
@@ -863,7 +897,7 @@ const App: React.FC = () => {
             
             <div className="font-serif text-lg leading-relaxed text-stone-700 space-y-6 max-w-prose">
                <img 
-                 src={`https://picsum.photos/seed/${escuelaSection}/800/400`} 
+                 src={IMAGES.escuela[escuelaSection]} 
                  className="w-full h-64 object-cover rounded-lg mb-6 shadow-md"
                  alt={t.escuela.menu[escuelaSection]} 
                />
@@ -924,7 +958,7 @@ const App: React.FC = () => {
                     ></iframe>
                 ) : (
                     <>
-                      <div className="absolute inset-0 opacity-60 bg-[url('https://picsum.photos/seed/video/600/400')] bg-cover bg-center"></div>
+                      <div className="absolute inset-0 opacity-60 bg-cover bg-center" style={{ backgroundImage: `url(${IMAGES.videoPlaceholder})` }}></div>
                       <Play className="text-white w-16 h-16 relative z-10 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all" fill="currentColor" />
                     </>
                 )}
@@ -1012,7 +1046,7 @@ const App: React.FC = () => {
                         <div className="w-56 h-56 md:w-72 md:h-72 rounded-xl overflow-hidden shadow-lg relative group">
                              <div className="absolute inset-0 bg-[#c1562e]/10 mix-blend-overlay group-hover:opacity-0 transition-opacity"></div>
                              <img 
-                                src={`https://picsum.photos/seed/person${index}long/600/600`} 
+                                src={IMAGES.people[index] || IMAGES.homeMain} 
                                 alt={person.name} 
                                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                             />
@@ -1104,8 +1138,8 @@ const App: React.FC = () => {
       
       {/* Render View Based on State */}
       {currentView === 'home' && <HomeView />}
-      {currentView === 'historia' && <StructuredTextView title={t.sections.historia} contentData={t.historiaContent} imgSeed="history" />}
-      {currentView === 'fundamentos' && <StructuredTextView title={t.sections.fundamentos} contentData={t.fundamentosContent} imgSeed="foundations" />}
+      {currentView === 'historia' && <StructuredTextView title={t.sections.historia} contentData={t.historiaContent} imageSrc={IMAGES.sections.historia} />}
+      {currentView === 'fundamentos' && <StructuredTextView title={t.sections.fundamentos} contentData={t.fundamentosContent} imageSrc={IMAGES.sections.fundamentos} />}
       {currentView === 'escuela' && <EscuelaView />}
       {currentView === 'videos' && <VideosView />}
       {currentView === 'textos' && <TextosView />}
@@ -1130,4 +1164,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-    
