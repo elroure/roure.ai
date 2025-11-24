@@ -721,11 +721,11 @@ const App: React.FC = () => {
                   <LogoImg />
                   
                   {/* Phrases to the sides of the logo using absolute positioning relative to the centered logo container */}
-                  <span className="hidden md:block absolute right-[100%] top-1/2 -translate-y-1/2 mr-6 font-serif text-[#c1562e] text-lg lg:text-xl italic tracking-wide whitespace-nowrap">
+                  <span className="hidden md:block absolute right-[100%] top-1/2 -translate-y-1/2 mr-10 font-serif text-[#c1562e] text-lg lg:text-xl italic tracking-wide whitespace-nowrap">
                     {t.header?.left}
                   </span>
 
-                  <span className="hidden md:block absolute left-[100%] top-1/2 -translate-y-1/2 ml-6 font-serif text-[#c1562e] text-lg lg:text-xl italic tracking-wide whitespace-nowrap">
+                  <span className="hidden md:block absolute left-[100%] top-1/2 -translate-y-1/2 ml-10 font-serif text-[#c1562e] text-lg lg:text-xl italic tracking-wide whitespace-nowrap">
                     {t.header?.right}
                   </span>
                 </div>
