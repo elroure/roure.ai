@@ -9,11 +9,23 @@ type View = 'home' | 'historia' | 'fundamentos' | 'escuela' | 'videos' | 'textos
 type EscuelaSection = 'intro' | 'aprendizaje' | 'acompanamiento' | 'equipo' | 'familias' | 'etapas' | '3-6' | '6-12' | '12-16';
 
 // --- IMAGE CONFIGURATION ---
-// TO SWAP IMAGES: Upload your images to an 'assets' or 'images' folder in your project
-// and replace the URLs below with your local paths (e.g., "./assets/logo.png").
+// Images placed in `./images/` will be picked up at build time by Vite.
+// Files placed there (for example: `images/logo_roure.png`, `images/home_main.png`,
+// `images/bego.webp`, `images/paco.webp`, `images/clara.webp`) will be mapped
+// to their hashed URLs automatically. If a file is missing, we fall back to the
+// remote placeholder URLs used previously.
+const _importedImages = (import.meta as any).globEager('./images/*');
+const _imagesMap: Record<string, string> = {};
+for (const p in _importedImages) {
+  const key = p.replace('./images/', '');
+  // modules export the resolved URL as default
+  const mod: any = _importedImages[p];
+  _imagesMap[key] = mod.default || mod;
+}
+
 const IMAGES = {
-  logo: "./images/logo_roure.png",
-  homeMain: "./images/home_main.png",
+  logo: _imagesMap['logo_roure.png'] || "https://placehold.co/600x200/transparent/c1562e?text=Roure+Logo",
+  homeMain: _imagesMap['home_main.png'] || "https://picsum.photos/seed/rourehome/900/900",
   sections: {
     historia: "https://picsum.photos/seed/history/800/1000",
     fundamentos: "https://picsum.photos/seed/foundations/800/1000",
@@ -31,9 +43,9 @@ const IMAGES = {
     '12-16': "https://picsum.photos/seed/12-16/800/400",
   } as Record<EscuelaSection, string>,
   people: [
-    "./images/bego.webp", // Begoña
-    "./images/paco.webp", // Paco
-    "./images/clara.webp", // Clara
+    _imagesMap['bego.webp'] || _imagesMap['bego.jpg'] || "https://picsum.photos/seed/person0long/600/600",
+    _imagesMap['paco.webp'] || _imagesMap['paco.jpg'] || "https://picsum.photos/seed/person1long/600/600",
+    _imagesMap['clara.webp'] || _imagesMap['clara.jpg'] || "https://picsum.photos/seed/person2long/600/600",
   ]
 };
 
