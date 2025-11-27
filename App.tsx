@@ -9,23 +9,12 @@ type View = 'home' | 'historia' | 'fundamentos' | 'escuela' | 'videos' | 'textos
 type EscuelaSection = 'intro' | 'aprendizaje' | 'acompanamiento' | 'equipo' | 'familias' | 'etapas' | '3-6' | '6-12' | '12-16';
 
 // --- IMAGE CONFIGURATION ---
-// Images placed in `./images/` will be picked up at build time by Vite.
-// Files placed there (for example: `images/logo_roure.png`, `images/home_main.png`,
-// `images/bego.webp`, `images/paco.webp`, `images/clara.webp`) will be mapped
-// to their hashed URLs automatically. If a file is missing, we fall back to the
-// remote placeholder URLs used previously.
-const _importedImages = (import.meta as any).globEager('./images/*');
-const _imagesMap: Record<string, string> = {};
-for (const p in _importedImages) {
-  const key = p.replace('./images/', '');
-  // modules export the resolved URL as default
-  const mod: any = _importedImages[p];
-  _imagesMap[key] = mod.default || mod;
-}
-
+// Use static public `/images/*` paths so images are available in both dev
+// and production without relying on bundler-specific runtime helpers.
+// Ensure you have copied the source images into `public/images/`.
 const IMAGES = {
-  logo: _imagesMap['logo_roure.png'] || "https://placehold.co/600x200/transparent/c1562e?text=Roure+Logo",
-  homeMain: _imagesMap['home_main.png'] || "https://picsum.photos/seed/rourehome/900/900",
+  logo: '/images/logo_roure.png',
+  homeMain: '/images/home_main.png',
   sections: {
     historia: "https://picsum.photos/seed/history/800/1000",
     fundamentos: "https://picsum.photos/seed/foundations/800/1000",
@@ -43,9 +32,9 @@ const IMAGES = {
     '12-16': "https://picsum.photos/seed/12-16/800/400",
   } as Record<EscuelaSection, string>,
   people: [
-    _imagesMap['bego.webp'] || _imagesMap['bego.jpg'] || "https://picsum.photos/seed/person0long/600/600",
-    _imagesMap['paco.webp'] || _imagesMap['paco.jpg'] || "https://picsum.photos/seed/person1long/600/600",
-    _imagesMap['clara.webp'] || _imagesMap['clara.jpg'] || "https://picsum.photos/seed/person2long/600/600",
+    '/images/bego.webp',
+    '/images/paco.webp',
+    '/images/clara.webp',
   ]
 };
 
@@ -62,10 +51,8 @@ interface ContentSection {
 interface Article {
     title: string;
     topic: string;
-    date: string;
-}
-
-interface VideoItem {
+    file?: string; // optional path to a PDF file under `public/pdfs/` or an external URL
+}interface VideoItem {
   title: string;
   description: string;
   link?: string;
@@ -81,7 +68,7 @@ const content = {
       fundamentos: 'Fundamentos',
       escuela: 'Escuela',
       videos: 'Videos',
-      textos: 'Textos',
+      textos: 'Artículos',
       comunidad: 'Comunidad Roure',
       en_que_estamos: '¿En qué estamos?',
       back: 'Volver',
@@ -191,7 +178,7 @@ const content = {
       historia: 'Nuestra Historia',
       fundamentos: 'Fundamentos Pedagógicos',
       videos: 'Galería de Videos',
-      textos: 'Textos y Artículos',
+      textos: 'Artículos Publicados',
       comunidad: 'Comunidad Roure',
       en_que_estamos: '¿En qué estamos?'
     },
@@ -308,35 +295,35 @@ const content = {
       }
     ] as VideoItem[],
     articles: [
-        { title: "Amigos y amigas por carta", topic: "Escritura", date: "" },
-        { title: "Celebrando el milagro de la vida", topic: "Aprendizaje", date: "" },
-        { title: "Cines, bebés y sensibilidad", topic: "Aprendizaje", date: "" },
-        { title: "Cosas que pasan", topic: "Eventualidades", date: "" },
-        { title: "Cris se va (2007)", topic: "Eventualidades", date: "" },
-        { title: "Cristóbal trajo el Seitai a El Roure", topic: "Aprendizaje", date: "" },
-        { title: "Despedida", topic: "Eventualidades", date: "" },
-        { title: "Despiértate papá y mamá", topic: "Aprendizaje", date: "" },
-        { title: "Divídete y sufrirás", topic: "Aprendizaje", date: "" },
-        { title: "Dues experiències de restauració", topic: "Eventualidades", date: "" },
-        { title: "El consumismo que enturbia el alma", topic: "Aprendizaje", date: "" },
-        { title: "El Roure Boletín 13 (Móvil)", topic: "Eventualidades", date: "" },
-        { title: "El Roure Boletín 13 (PC)", topic: "Eventualidades", date: "" },
-        { title: "En busca de una feminidad y masculinidad naturales", topic: "Género", date: "" },
-        { title: "Escritor Roures", topic: "Escritura", date: "" },
-        { title: "Escrito a mano", topic: "Escritura", date: "" },
-        { title: "¿Estamos o no haciendo matemáticas?", topic: "Matemáticas", date: "" },
-        { title: "Feminidad y masculinidad", topic: "Género", date: "" },
-        { title: "Habitar el espacio y el tiempo en la escuela alternativa", topic: "Aprendizaje", date: "" },
-        { title: "Hora de marcharme de El Roure", topic: "Eventualidades", date: "" },
-        { title: "In Memoriam", topic: "Eventualidades", date: "" },
-        { title: "La mirada amorosa", topic: "Aprendizaje", date: "" },
-        { title: "La muerte de cada día", topic: "Eventualidades", date: "" },
-        { title: "Límites y limitaciones", topic: "Límites", date: "" },
-        { title: "Que la vida sea el eje de la educación", topic: "Aprendizaje", date: "" },
-        { title: "Que ser valiente no salga tan caro", topic: "Aprendizaje", date: "" },
-        { title: "Taller d'Andromines", topic: "Eventualidades", date: "" },
-        { title: "Un bañador con bolsillos", topic: "Eventualidades", date: "" },
-        { title: "Una pedagogía de la relación", topic: "Aprendizaje", date: "" },
+        { title: "Amigos y amigas por carta", topic: "Escritura", file: "/pdfs/AMIGOS-Y-AMIGAS-POR-CARTA.pdf" },
+        { title: "Celebrando el milagro de la vida", topic: "Aprendizaje", file: "/pdfs/CELEBRANDO-EL-MILAGRO-DE-LA-VIDA.pdf" },
+        { title: "Cines, bebés y sensibilidad", topic: "Aprendizaje", file: "/pdfs/CINES-BEBES-Y-SENSIBILIDAD.pdf" },
+        { title: "Cosas que pasan", topic: "Eventualidades", file: "/pdfs/COSAS-QUE-PASAN.pdf" },
+        { title: "Cris se va (2007)", topic: "Eventualidades", file: "/pdfs/CRIS-SE-VA-2007.pdf" },
+        { title: "Cristóbal trajo el Seitai a El Roure", topic: "Aprendizaje", file: "/pdfs/CRISTOBAL-TRAJO-EL-SEITAI-A-EL-ROURE.pdf" },
+        { title: "Despedida", topic: "Eventualidades", file: "/pdfs/DESPEDIDA.pdf" },
+        { title: "Despiértate papá y mamá", topic: "Aprendizaje", file: "/pdfs/DESPIERTATE-PAPA-Y-MAMA.pdf" },
+        { title: "Divídete y sufrirás", topic: "Aprendizaje", file: "/pdfs/DIVIDETE-Y-SUFIRAS.pdf" },
+        { title: "Dues experiències de restauració", topic: "Eventualidades", file: "/pdfs/DUES-EXPERIENCIES-DE-RESTAURACIO.pdf" },
+        { title: "El consumismo que enturbia el alma", topic: "Aprendizaje", file: "/pdfs/EL-CONSUMISMO-QUE-ENTURBIA-EL-ALMA.pdf" },
+        { title: "El Roure Boletín 13 (Móvil)", topic: "Eventualidades", file: "/pdfs/EL-ROURE-BOLETIN-13_MOVIL.pdf" },
+        { title: "El Roure Boletín 13 (PC)", topic: "Eventualidades", file: "/pdfs/EL-ROURE-BOLETIN-13_PC.pdf" },
+        { title: "En busca de una feminidad y masculinidad naturales", topic: "Género", file: "/pdfs/EN-BUSCA-DE-UNA-FEMINIDAD-Y-MASCULINIDAD-NATURALES.pdf" },
+        { title: "Escritor Roures", topic: "Escritura", file: "/pdfs/ESCRITORROURES.pdf" },
+        { title: "Escrito a mano", topic: "Escritura", file: "/pdfs/ESCRITO-A-MANO.pdf" },
+        { title: "¿Estamos o no haciendo matemáticas?", topic: "Matemáticas", file: "/pdfs/ESTAMOS-O-NO-HACIENDO-MATEMATICAS.pdf" },
+        { title: "Feminidad y masculinidad", topic: "Género", file: "/pdfs/FEMINIDAD-Y-MASCULINIDAD.pdf" },
+        { title: "Habitar el espacio y el tiempo en la escuela alternativa", topic: "Aprendizaje", file: "/pdfs/Habitar-el-espacio-y-el-tiempo-en-la-escuela-alternativa.pdf" },
+        { title: "Hora de marcharme de El Roure", topic: "Eventualidades", file: "/pdfs/HORA-DE-MARCHARME-DE-EL-ROURE.pdf" },
+        { title: "In Memoriam", topic: "Eventualidades", file: "/pdfs/IN-MEMORIAM.pdf" },
+        { title: "La mirada amorosa", topic: "Aprendizaje", file: "/pdfs/LA-MIRADA-AMOROSA.pdf" },
+        { title: "La muerte de cada día", topic: "Eventualidades", file: "/pdfs/LA-MUERTE-DE-CADA-DIA.pdf" },
+        { title: "Límites y limitaciones", topic: "Límites", file: "/pdfs/LIMITES-Y-LIMITACIONES.pdf" },
+        { title: "Que la vida sea el eje de la educación", topic: "Aprendizaje", file: "/pdfs/QUE-LA-VIDA-SEA-EL-EJE-DE-LA-EDUCACION.pdf" },
+        { title: "Que ser valiente no salga tan caro", topic: "Aprendizaje", file: "/pdfs/QUE-SER-VALIENTE-NO-SALGA-TAN-CARO.pdf" },
+        { title: "Taller d'Andromines", topic: "Eventualidades", file: "/pdfs/TALLER-D-ANDROMINES.pdf" },
+        { title: "Un bañador con bolsillos", topic: "Eventualidades", file: "/pdfs/UN-BAÑADOR-CON-BOLSILLOS.pdf" },
+        { title: "Una pedagogía de la relación", topic: "Aprendizaje", file: "/pdfs/UNA-PEDAGOGIA-DE-LA-RELACIO.pdf" },
     ]
   },
   ca: {
@@ -345,7 +332,7 @@ const content = {
       fundamentos: 'Fonaments',
       escuela: 'Escola',
       videos: 'Vídeos',
-      textos: 'Textos',
+      textos: 'Artícles',
       comunidad: 'Comunitat Roure',
       en_que_estamos: 'En què estem?',
       back: 'Tornar',
@@ -449,7 +436,7 @@ const content = {
       historia: 'La Nostra Història',
       fundamentos: 'Fonaments Pedagògics',
       videos: 'Galeria de Vídeos',
-      textos: 'Textos i Articles',
+      textos: 'Artícles Publicats',
       comunidad: 'Comunitat Roure',
       en_que_estamos: 'En què estem ara?'
     },
@@ -566,35 +553,35 @@ const content = {
       }
     ] as VideoItem[],
     articles: [
-        { title: "Amigos y amigas por carta", topic: "Escriptura", date: "" },
-        { title: "Celebrando el milagro de la vida", topic: "Aprenentatge", date: "" },
-        { title: "Cines, bebés y sensibilidad", topic: "Aprenentatge", date: "" },
-        { title: "Cosas que pasan", topic: "Eventualitats", date: "" },
-        { title: "Cris se va (2007)", topic: "Eventualitats", date: "" },
-        { title: "Cristóbal trajo el Seitai a El Roure", topic: "Aprenentatge", date: "" },
-        { title: "Despedida", topic: "Eventualitats", date: "" },
-        { title: "Despiértate papá y mamá", topic: "Aprenentatge", date: "" },
-        { title: "Divídete y sufrirás", topic: "Aprenentatge", date: "" },
-        { title: "Dues experiències de restauració", topic: "Eventualitats", date: "" },
-        { title: "El consumismo que enturbia el alma", topic: "Aprenentatge", date: "" },
-        { title: "El Roure Boletín 13 (Móvil)", topic: "Eventualitats", date: "" },
-        { title: "El Roure Boletín 13 (PC)", topic: "Eventualitats", date: "" },
-        { title: "En busca de una feminidad y masculinidad naturales", topic: "Gènere", date: "" },
-        { title: "Escritor Roures", topic: "Escriptura", date: "" },
-        { title: "Escrito a mano", topic: "Escriptura", date: "" },
-        { title: "¿Estamos o no haciendo matemáticas?", topic: "Matemàtiques", date: "" },
-        { title: "Feminidad y masculinidad", topic: "Gènere", date: "" },
-        { title: "Habitar el espacio y el tiempo en la escuela alternativa", topic: "Aprenentatge", date: "" },
-        { title: "Hora de marcharme de El Roure", topic: "Eventualitats", date: "" },
-        { title: "In Memoriam", topic: "Eventualitats", date: "" },
-        { title: "La mirada amorosa", topic: "Aprenentatge", date: "" },
-        { title: "La muerte de cada día", topic: "Eventualitats", date: "" },
-        { title: "Límites y limitaciones", topic: "Límits", date: "" },
-        { title: "Que la vida sea el eje de la educación", topic: "Aprenentatge", date: "" },
-        { title: "Que ser valiente no salga tan caro", topic: "Aprenentatge", date: "" },
-        { title: "Taller d'Andromines", topic: "Eventualitats", date: "" },
-        { title: "Un bañador con bolsillos", topic: "Eventualitats", date: "" },
-        { title: "Una pedagogía de la relación", topic: "Aprenentatge", date: "" },
+        { title: "Amigos y amigas por carta", topic: "Escriptura", file: "/pdfs/AMIGOS-Y-AMIGAS-POR-CARTA.pdf" },
+        { title: "Celebrando el milagro de la vida", topic: "Aprenentatge", file: "/pdfs/CELEBRANDO-EL-MILAGRO-DE-LA-VIDA.pdf" },
+        { title: "Cines, bebés y sensibilidad", topic: "Aprenentatge", file: "/pdfs/CINES-BEBES-Y-SENSIBILIDAD.pdf" },
+        { title: "Cosas que pasan", topic: "Eventualitats", file: "/pdfs/COSAS-QUE-PASAN.pdf" },
+        { title: "Cris se va (2007)", topic: "Eventualitats", file: "/pdfs/CRIS-SE-VA-2007.pdf" },
+        { title: "Cristóbal trajo el Seitai a El Roure", topic: "Aprenentatge", file: "/pdfs/CRISTOBAL-TRAJO-EL-SEITAI-A-EL-ROURE.pdf" },
+        { title: "Despedida", topic: "Eventualitats", file: "/pdfs/DESPEDIDA.pdf" },
+        { title: "Despiértate papá y mamá", topic: "Aprenentatge", file: "/pdfs/DESPIERTATE-PAPA-Y-MAMA.pdf" },
+        { title: "Divídete y sufrirás", topic: "Aprenentatge", file: "/pdfs/DIVIDETE-Y-SUFIRAS.pdf" },
+        { title: "Dues experiències de restauració", topic: "Eventualitats", file: "/pdfs/DUES-EXPERIENCIES-DE-RESTAURACIO.pdf" },
+        { title: "El consumismo que enturbia el alma", topic: "Aprenentatge", file: "/pdfs/EL-CONSUMISMO-QUE-ENTURBIA-EL-ALMA.pdf" },
+        { title: "El Roure Boletín 13 (Móvil)", topic: "Eventualitats", file: "/pdfs/EL-ROURE-BOLETIN-13_MOVIL.pdf" },
+        { title: "El Roure Boletín 13 (PC)", topic: "Eventualitats", file: "/pdfs/EL-ROURE-BOLETIN-13_PC.pdf" },
+        { title: "En busca de una feminidad y masculinidad naturales", topic: "Gènere", file: "/pdfs/EN-BUSCA-DE-UNA-FEMINIDAD-Y-MASCULINIDAD-NATURALES.pdf" },
+        { title: "Escritor Roures", topic: "Escriptura", file: "/pdfs/ESCRITORROURES.pdf" },
+        { title: "Escrito a mano", topic: "Escriptura", file: "/pdfs/ESCRITO-A-MANO.pdf" },
+        { title: "¿Estamos o no haciendo matemáticas?", topic: "Matemàtiques", file: "/pdfs/ESTAMOS-O-NO-HACIENDO-MATEMATICAS.pdf" },
+        { title: "Feminidad y masculinidad", topic: "Gènere", file: "/pdfs/FEMINIDAD-Y-MASCULINIDAD.pdf" },
+        { title: "Habitar el espacio y el tiempo en la escuela alternativa", topic: "Aprenentatge", file: "/pdfs/Habitar-el-espacio-y-el-tiempo-en-la-escuela-alternativa.pdf" },
+        { title: "Hora de marcharme de El Roure", topic: "Eventualitats", file: "/pdfs/HORA-DE-MARCHARME-DE-EL-ROURE.pdf" },
+        { title: "In Memoriam", topic: "Eventualitats", file: "/pdfs/IN-MEMORIAM.pdf" },
+        { title: "La mirada amorosa", topic: "Aprenentatge", file: "/pdfs/LA-MIRADA-AMOROSA.pdf" },
+        { title: "La muerte de cada día", topic: "Eventualitats", file: "/pdfs/LA-MUERTE-DE-CADA-DIA.pdf" },
+        { title: "Límites y limitaciones", topic: "Límits", file: "/pdfs/LIMITES-Y-LIMITACIONES.pdf" },
+        { title: "Que la vida sea el eje de la educación", topic: "Aprenentatge", file: "/pdfs/QUE-LA-VIDA-SEA-EL-EJE-DE-LA-EDUCACION.pdf" },
+        { title: "Que ser valiente no salga tan caro", topic: "Aprenentatge", file: "/pdfs/QUE-SER-VALIENTE-NO-SALGA-TAN-CARO.pdf" },
+        { title: "Taller d'Andromines", topic: "Eventualitats", file: "/pdfs/TALLER-D-ANDROMINES.pdf" },
+        { title: "Un bañador con bolsillos", topic: "Eventualitats", file: "/pdfs/UN-BAÑADOR-CON-BOLSILLOS.pdf" },
+        { title: "Una pedagogía de la relación", topic: "Aprenentatge", file: "/pdfs/UNA-PEDAGOGIA-DE-LA-RELACIO.pdf" },
     ]
   }
 };
@@ -998,7 +985,7 @@ const App: React.FC = () => {
         : allArticles;
 
     return (
-      <InternalPageLayout title={t.nav.textos}>
+      <InternalPageLayout title={t.sections.textos}>
         {/* Filter Tags */}
         <div className="flex flex-wrap gap-3 mb-10">
             <button 
@@ -1037,10 +1024,24 @@ const App: React.FC = () => {
               <h3 className="text-xl font-serif font-bold text-stone-800 mb-2 group-hover:text-[#c1562e] transition-colors leading-tight">
                   {article.title}
               </h3>
-              <div className="flex items-center gap-2 mt-4 text-sm text-stone-500">
-                  <FileText size={16} />
-                  <span>PDF {article.date ? `• ${article.date}` : ''} • {language === 'es' ? 'Descargar' : 'Descarregar'}</span>
-              </div>
+                      <div className="flex items-center gap-2 mt-4 text-sm text-stone-500">
+                        <FileText size={16} />
+                        {article.file ? (
+                          <a
+                            href={article.file}
+                            download
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:underline"
+                          >
+                            PDF • {language === 'es' ? 'Descargar' : 'Descarregar'}
+                          </a>
+                        ) : (
+                          <span className="opacity-70">
+                            PDF • {language === 'es' ? 'Próximamente' : 'Proximament'}
+                          </span>
+                        )}
+                      </div>
             </div>
           ))}
         </div>

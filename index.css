@@ -1,0 +1,16 @@
+/* index.css - minimal global stylesheet so /index.css resolves correctly.
+   Add project-specific overrides here if needed. */
+
+:root {
+  --brand: #c1562e;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body { margin: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+/* Small helper in case some pages relied on this file */
+.selection-highlight {
+  background: var(--brand);
+  color: white;
+}
