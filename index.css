@@ -7,7 +7,15 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 html, body, #root { height: 100%; }
-body { margin: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { 
+  margin: 0; 
+  -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url('/images/main_bg.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
 
 /* Small helper in case some pages relied on this file */
 .selection-highlight {
