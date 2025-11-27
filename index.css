@@ -11,7 +11,8 @@ body {
   margin: 0; 
   -webkit-font-smoothing: antialiased; 
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('/images/main_bg.jpg');
+  /* use existing image already in /public/images */
+  background-image: url('/images/home_main.png');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
