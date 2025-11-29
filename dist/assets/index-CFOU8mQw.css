@@ -1,1 +1,0 @@
-:root{--brand: #c1562e}*,*:before,*:after{box-sizing:border-box}html,body,#root{height:100%}body{margin:0;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background-image:url(/images/home_main.png);background-attachment:fixed;background-size:cover;background-position:center}.selection-highlight{background:var(--brand);color:#fff}
