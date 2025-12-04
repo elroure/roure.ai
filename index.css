@@ -11,8 +11,10 @@ body {
   margin: 0; 
   -webkit-font-smoothing: antialiased; 
   -moz-osx-font-smoothing: grayscale;
-  /* use existing image already in /public/images (cache-busted) */
-  background-image: url('/images/home_main.png?v=2');
+  /* Solid fallback color while the image downloads */
+  background-color: #f7f5e6;
+  /* Primary site background image (change the filename in /public/images to test) */
+  background-image: url('/images/main_bg.webp');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -22,4 +24,42 @@ body {
 .selection-highlight {
   background: var(--brand);
   color: white;
+}
+
+/* Looping ink appearance/disappearance for phrase */
+@keyframes phraseLoop {
+  0% { opacity: 0; filter: blur(8px); }
+  20% { opacity: 1; filter: blur(0px); }
+  80% { opacity: 1; filter: blur(0px); }
+  100% { opacity: 0; filter: blur(8px); }
+}
+
+.phrase-container { display: inline-block; position: relative; }
+.wind-phrase { display: inline-block; will-change: opacity, filter; animation: phraseLoop 30s ease-in-out infinite; color: var(--brand); }
+
+@media (prefers-reduced-motion: reduce) {
+  .wind-phrase { animation: none; opacity: 1; filter: none; }
+}
+
+/* Entry animations (staggered, one-by-one) */
+@keyframes entryFadeIn {
+  from { opacity: 0; filter: blur(8px); }
+  to   { opacity: 1; filter: blur(0px); }
+}
+
+/* initial-entrance is added to the Home wrapper only on first page load */
+.initial-entrance .entry-image { opacity: 0; animation: entryFadeIn 2700ms cubic-bezier(.2,.9,.3,1) forwards; animation-delay: 0ms; }
+.initial-entrance .entry-phrase { opacity: 0; animation: entryFadeIn 2700ms cubic-bezier(.2,.9,.3,1) forwards; animation-delay: 1500ms; }
+.initial-entrance .entry-left { opacity: 0; animation: entryFadeIn 2700ms cubic-bezier(.2,.9,.3,1) forwards; animation-delay: 1500ms; }
+.initial-entrance .entry-menu { opacity: 0; animation: entryFadeIn 2700ms cubic-bezier(.2,.9,.3,1) forwards; animation-delay: 3000ms; }
+.initial-entrance .entry-logo { opacity: 0; animation: entryFadeIn 2700ms cubic-bezier(.2,.9,.3,1) forwards; animation-delay: 4500ms; }
+.initial-entrance .entry-footer { opacity: 0; animation: entryFadeIn 2700ms cubic-bezier(.2,.9,.3,1) forwards; animation-delay: 6000ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .initial-entrance .entry-image,
+  .initial-entrance .entry-phrase,
+  .initial-entrance .entry-left,
+  .initial-entrance .entry-menu,
+  .initial-entrance .entry-logo,
+  .initial-entrance .entry-footer { animation: none; opacity: 1; transform: none; }
 }

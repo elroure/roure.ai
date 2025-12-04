@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ArrowUp, ChevronLeft, FileText, Play, Tag, Mic } from 'lucide-react';
 
 // --- Types & Content ---
@@ -528,7 +528,6 @@ const content = {
         { title: "Divídete y sufrirás", topic: "Aprenentatge", file: "/pdfs/DIVIDETE-Y-SUFIRAS.pdf" },
         { title: "Dues experiències de restauració", topic: "Eventualitats", file: "/pdfs/DUES-EXPERIENCIES-DE-RESTAURACIO.pdf" },
         { title: "El consumismo que enturbia el alma", topic: "Aprenentatge", file: "/pdfs/EL-CONSUMISMO-QUE-ENTURBIA-EL-ALMA.pdf" },
-        i see
         { title: "En busca de una feminidad y masculinidad naturales", topic: "Gènere", file: "/pdfs/EN-BUSCA-DE-UNA-FEMINIDAD-Y-MASCULINIDAD-NATURALES.pdf" },
         { title: "Escritor Roures", topic: "Escriptura", file: "/pdfs/ESCRITORROURES.pdf" },
         { title: "Escrito a mano", topic: "Escriptura", file: "/pdfs/ESCRITO-A-MANO.pdf" },
@@ -564,6 +563,10 @@ const App: React.FC = () => {
   const [language, setLanguage] = useState<Language>('es');
   const [escuelaSection, setEscuelaSection] = useState<EscuelaSection>('intro');
   const [showScrollTop, setShowScrollTop] = useState(false);
+  // State to control when entrance animation is visible
+  const [showEntrance, setShowEntrance] = useState(false);
+  // Ref to track if entrance animation has been triggered once
+  const initialEntranceDone = useRef(false);
   
   // State for Menu Interaction
   const [menuHasInteracted, setMenuHasInteracted] = useState(false);
@@ -581,6 +584,14 @@ const App: React.FC = () => {
     document.body.style.backgroundAttachment = "fixed";
     document.body.style.backgroundRepeat = "no-repeat";
   }, []);
+
+  // Trigger entrance animation only on first mount of Home view
+  useEffect(() => {
+    if (currentView === 'home' && !initialEntranceDone.current) {
+      initialEntranceDone.current = true;
+      setShowEntrance(true);
+    }
+  }, [currentView]);
 
   // Scroll detection
   useEffect(() => {
@@ -626,7 +637,7 @@ const App: React.FC = () => {
 
   // Footer Component
   const Footer = ({ compact = false }: { compact?: boolean }) => (
-    <div className={`w-full flex justify-center ${compact ? 'pb-6 pt-2' : 'pb-8 pt-12'}`}>
+    <div className={`w-full flex justify-center ${compact ? 'pb-6 pt-2' : 'pb-8 pt-12'} entry-footer`}>
       <div className="flex flex-col items-center w-max max-w-full">
         
         {/* Email */}
@@ -718,16 +729,18 @@ const App: React.FC = () => {
 
     return (
       // Changed h-screen to min-h-screen and overflow-hidden only on md+ to allow scrolling on mobile
-      <div className="w-full min-h-screen md:h-screen flex flex-col relative overflow-x-hidden md:overflow-hidden bg-[#f7f5e6]">
+      <div className={`w-full min-h-screen md:h-screen flex flex-col relative overflow-x-hidden md:overflow-hidden ${showEntrance ? 'initial-entrance' : ''}`}>
         {/* Logo Header Area - Centered at top */}
         <div className="pt-6 md:pt-8 w-full flex flex-col justify-center items-center z-20 px-4">
              <div className="relative flex flex-col items-center justify-center">
-                <div className="w-48 md:w-64 lg:w-80 shrink-0 relative flex items-center justify-center">
+                <div className="w-48 md:w-64 lg:w-80 shrink-0 relative flex items-center justify-center entry-logo">
                   <LogoImg />
                 </div>
-                {/* Phrase below logo */}
-                <span className="font-serif text-[#c1562e] text-lg md:text-xl lg:text-2xl italic tracking-wide whitespace-nowrap mt-3 md:mt-4">
-                  {t.header?.right}
+                {/* Phrase below logo: layered wind animation */}
+                <span className="phrase-container font-serif text-lg md:text-xl lg:text-2xl italic tracking-wide whitespace-nowrap mt-3 md:mt-4 entry-phrase" aria-hidden={false}>
+                  <span className="wind-phrase primary">{t.header?.right}</span>
+                  <span className="wind-phrase layer layer-1" aria-hidden="true">{t.header?.right}</span>
+                  <span className="wind-phrase layer layer-2" aria-hidden="true">{t.header?.right}</span>
                 </span>
              </div>
         </div>
@@ -737,7 +750,7 @@ const App: React.FC = () => {
             <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-[90rem] gap-8 md:gap-12 lg:gap-16">
             
                 {/* Left: Text */}
-                <div className="w-full md:w-1/3 order-2 md:order-1 px-4 md:px-0 text-center md:text-right flex flex-col items-center md:items-end">
+                <div className="w-full md:w-1/3 order-2 md:order-1 px-4 md:px-0 text-center md:text-right flex flex-col items-center md:items-end entry-left">
                     <div className="max-w-lg space-y-3 font-serif text-stone-700 text-sm md:text-lg leading-relaxed">
                     <p>{t.home.text1}</p>
                     <p>{t.home.text2}</p>
@@ -749,7 +762,7 @@ const App: React.FC = () => {
                 </div>
 
                 {/* Center: Image */}
-                <div className="order-1 md:order-2 shrink-0 relative z-10">
+                <div className="order-1 md:order-2 shrink-0 relative z-10 entry-image">
                     <div className="w-56 h-56 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[28rem] xl:h-[28rem] rounded-full overflow-hidden relative group">
                     <img 
                         src={IMAGES.homeMain} 
@@ -760,7 +773,7 @@ const App: React.FC = () => {
                 </div>
 
                 {/* Right: Menu */}
-                <div className="w-full md:w-1/3 order-3 px-4 md:px-0 text-center md:text-left flex flex-col items-center md:items-start pb-8 md:pb-0">
+                <div className="w-full md:w-1/3 order-3 px-4 md:px-0 text-center md:text-left flex flex-col items-center md:items-start pb-8 md:pb-0 entry-menu">
                     <nav 
                         onMouseEnter={() => setMenuHasInteracted(true)}
                         onMouseLeave={() => setHoveredMenuKey(null)}
@@ -1149,7 +1162,7 @@ const App: React.FC = () => {
   // --- Main Render ---
 
   return (
-    <div className="min-h-screen w-full bg-[#f7f5e6] text-stone-800 font-sans overflow-x-hidden selection:bg-[#c1562e] selection:text-white">
+    <div className="min-h-screen w-full text-stone-800 font-sans overflow-x-hidden selection:bg-[#c1562e] selection:text-white">
       
       {/* Render View Based on State */}
       {currentView === 'home' && <HomeView />}
