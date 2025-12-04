@@ -216,7 +216,7 @@ const content = {
             paragraphs: [
                 "He sido cofundadora, coordinadora y acompañante de La Casita y El Roure. Soy madre, maestra, formadora, orientadora y articulista; me he formado en diferentes disciplines corporales, artísticas, psicológicas y educativas, en Comunicación consciente (CNV) i en facilitación de grupos.",
                 "En este momento me dedico al acompañamiento a madres, padres y profesionales, a partir de las diferentes situaciones y dificultats cotidianas que comporta la relación con niñas, niños y adolescentes. Por otro lado, facilito formaciones adaptadas a las necesidades de colectivos educativos interesados en el enfoque de la educación viva y la comunicación consciente.",
-                "Puedes contactar conmigo al 645 611 824 o a begogm62@gmail.com"
+                "Puedes contactar conmigo al 645 611 824 o a begonagm@protonmail.com"
             ]
         },
         {
@@ -455,7 +455,7 @@ const content = {
             paragraphs: [
                 "He estat co-fundadora, coordinadora i acompanyant de La Casita i El Roure. Sóc mare, mestra, formadora, orientadora i articulista; m'he format en diferents disciplines corporals, artísticas, psicològiques i educatives, en Comunicació conscient (CNV) i en facilitació de grups.",
                 "En aquest moment em dedico a l'acompanyament a mares, pares i professionals, a partir de les diferents situacions i dificultats quotidianes que comporta la relació amb nenes, nens i adolescents. D'altra banda, facilito formacions adaptadas a les necessitats de col·lectius educatius interessats en l'enfocament de l'educació viva i la comunicació conscient. Estic participant en un projecte de llibre juntament amb les persones fundadores d'Ojo de Agua (Alacant), A la Vida (Madrid) i Donyets (València).",
-                "Pots contactar amb mi al 645 611 824 o a begogm62@gmail.com"
+                "Pots contactar amb mi al 645 611 824 o a begonagm@protonmail.com"
             ]
         },
         {
@@ -563,10 +563,6 @@ const App: React.FC = () => {
   const [language, setLanguage] = useState<Language>('es');
   const [escuelaSection, setEscuelaSection] = useState<EscuelaSection>('intro');
   const [showScrollTop, setShowScrollTop] = useState(false);
-  // State to control when entrance animation is visible
-  const [showEntrance, setShowEntrance] = useState(false);
-  // Ref to track if entrance animation has been triggered once
-  const initialEntranceDone = useRef(false);
   
   // State for Menu Interaction
   const [menuHasInteracted, setMenuHasInteracted] = useState(false);
@@ -584,14 +580,6 @@ const App: React.FC = () => {
     document.body.style.backgroundAttachment = "fixed";
     document.body.style.backgroundRepeat = "no-repeat";
   }, []);
-
-  // Trigger entrance animation only on first mount of Home view
-  useEffect(() => {
-    if (currentView === 'home' && !initialEntranceDone.current) {
-      initialEntranceDone.current = true;
-      setShowEntrance(true);
-    }
-  }, [currentView]);
 
   // Scroll detection
   useEffect(() => {
@@ -637,7 +625,7 @@ const App: React.FC = () => {
 
   // Footer Component
   const Footer = ({ compact = false }: { compact?: boolean }) => (
-    <div className={`w-full flex justify-center ${compact ? 'pb-6 pt-2' : 'pb-8 pt-12'} entry-footer`}>
+    <div className={`w-full flex justify-center ${compact ? 'pb-6 pt-2' : 'pb-8 pt-12'}`}>
       <div className="flex flex-col items-center w-max max-w-full">
         
         {/* Email */}
@@ -729,16 +717,16 @@ const App: React.FC = () => {
 
     return (
       // Changed h-screen to min-h-screen and overflow-hidden only on md+ to allow scrolling on mobile
-      <div className={`w-full min-h-screen md:h-screen flex flex-col relative overflow-x-hidden md:overflow-hidden ${showEntrance ? 'initial-entrance' : ''}`}>
+      <div className="w-full min-h-screen md:h-screen flex flex-col relative overflow-x-hidden md:overflow-hidden">
         {/* Logo Header Area - Centered at top */}
         <div className="pt-6 md:pt-8 w-full flex flex-col justify-center items-center z-20 px-4">
              <div className="relative flex flex-col items-center justify-center">
-                <div className="w-48 md:w-64 lg:w-80 shrink-0 relative flex items-center justify-center entry-logo">
+                <div className="w-48 md:w-64 lg:w-80 shrink-0 relative flex items-center justify-center">
                   <LogoImg />
                 </div>
-                {/* Phrase below logo: ink fade loop animation */}
-                <span className="phrase-container font-serif text-lg md:text-xl lg:text-2xl italic tracking-wide whitespace-nowrap mt-3 md:mt-4 entry-phrase">
-                  <span className="wind-phrase">{t.header?.right}</span>
+                {/* Phrase below logo */}
+                <span className="font-serif text-lg md:text-xl lg:text-2xl italic tracking-wide whitespace-nowrap mt-3 md:mt-4 text-[#c1562e]">
+                  {t.header?.right}
                 </span>
              </div>
         </div>
@@ -748,7 +736,7 @@ const App: React.FC = () => {
             <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-[90rem] gap-8 md:gap-12 lg:gap-16">
             
                 {/* Left: Text */}
-                <div className="w-full md:w-1/3 order-2 md:order-1 px-4 md:px-0 text-center md:text-right flex flex-col items-center md:items-end entry-left">
+                <div className="w-full md:w-1/3 order-2 md:order-1 px-4 md:px-0 text-center md:text-right flex flex-col items-center md:items-end">
                     <div className="max-w-lg space-y-3 font-serif text-stone-700 text-sm md:text-lg leading-relaxed">
                     <p>{t.home.text1}</p>
                     <p>{t.home.text2}</p>
@@ -760,7 +748,7 @@ const App: React.FC = () => {
                 </div>
 
                 {/* Center: Image */}
-                <div className="order-1 md:order-2 shrink-0 relative z-10 entry-image">
+                <div className="order-1 md:order-2 shrink-0 relative z-10">
                     <div className="w-56 h-56 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[28rem] xl:h-[28rem] rounded-full overflow-hidden relative group">
                     <img 
                         src={IMAGES.homeMain} 
@@ -771,7 +759,7 @@ const App: React.FC = () => {
                 </div>
 
                 {/* Right: Menu */}
-                <div className="w-full md:w-1/3 order-3 px-4 md:px-0 text-center md:text-left flex flex-col items-center md:items-start pb-8 md:pb-0 entry-menu">
+                <div className="w-full md:w-1/3 order-3 px-4 md:px-0 text-center md:text-left flex flex-col items-center md:items-start pb-8 md:pb-0">
                     <nav 
                         onMouseEnter={() => setMenuHasInteracted(true)}
                         onMouseLeave={() => setHoveredMenuKey(null)}

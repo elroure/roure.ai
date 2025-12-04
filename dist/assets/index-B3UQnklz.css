@@ -1,0 +1,1 @@
+:root{--brand: #c1562e}*,*:before,*:after{box-sizing:border-box}html,body,#root{height:100%}body{margin:0;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background-color:#f7f5e6;background-image:url(/images/main_bg.webp);background-attachment:fixed;background-size:cover;background-position:center}.selection-highlight{background:var(--brand);color:#fff}
