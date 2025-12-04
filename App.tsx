@@ -68,7 +68,7 @@ const content = {
       historia: 'Historia',
       fundamentos: 'Fundamentos',
       escuela: 'Escuela',
-      videos: 'Videos',
+      videos: 'Audiovisuales',
       textos: 'Artículos',
       comunidad: 'Comunidad Roure',
       en_que_estamos: '¿En qué estamos?',
@@ -178,7 +178,7 @@ const content = {
     sections: {
       historia: 'Nuestra Historia',
       fundamentos: 'Fundamentos Pedagógicos',
-      videos: 'Galería de Videos y Audios',
+      videos: 'Audiovisuales',
       textos: 'Artículos Publicados',
       comunidad: 'Comunidad Roure',
       en_que_estamos: '¿En qué estamos?'
@@ -289,8 +289,7 @@ const content = {
         { title: "Divídete y sufrirás", topic: "Aprendizaje", file: "/pdfs/DIVIDETE-Y-SUFIRAS.pdf" },
         { title: "Dues experiències de restauració", topic: "Eventualidades", file: "/pdfs/DUES-EXPERIENCIES-DE-RESTAURACIO.pdf" },
         { title: "El consumismo que enturbia el alma", topic: "Aprendizaje", file: "/pdfs/EL-CONSUMISMO-QUE-ENTURBIA-EL-ALMA.pdf" },
-        { title: "El Roure Boletín 13 (Móvil)", topic: "Eventualidades", file: "/pdfs/EL-ROURE-BOLETIN-13_MOVIL.pdf" },
-        { title: "El Roure Boletín 13 (PC)", topic: "Eventualidades", file: "/pdfs/EL-ROURE-BOLETIN-13_PC.pdf" },
+        { title: "El Roure Boletín 13", topic: "Eventualidades", file: "/pdfs/EL-ROURE-BOLETIN-13_MOVIL.pdf" },
         { title: "En busca de una feminidad y masculinidad naturales", topic: "Género", file: "/pdfs/EN-BUSCA-DE-UNA-FEMINIDAD-Y-MASCULINIDAD-NATURALES.pdf" },
         { title: "Escritor Roures", topic: "Escritura", file: "/pdfs/ESCRITORROURES.pdf" },
         { title: "Escrito a mano", topic: "Escritura", file: "/pdfs/ESCRITO-A-MANO.pdf" },
@@ -314,7 +313,7 @@ const content = {
       historia: 'Història',
       fundamentos: 'Fonaments',
       escuela: 'Escola',
-      videos: 'Vídeos',
+      videos: 'Audiovisuals',
       textos: 'Artícles',
       comunidad: 'Comunitat Roure',
       en_que_estamos: 'En què estem?',
@@ -418,7 +417,7 @@ const content = {
     sections: {
       historia: 'La Nostra Història',
       fundamentos: 'Fonaments Pedagògics',
-      videos: 'Galeria de Vídeos',
+      videos: 'Audiovisuals',
       textos: 'Artícles Publicats',
       comunidad: 'Comunitat Roure',
       en_que_estamos: 'En què estem ara?'
@@ -529,8 +528,7 @@ const content = {
         { title: "Divídete y sufrirás", topic: "Aprenentatge", file: "/pdfs/DIVIDETE-Y-SUFIRAS.pdf" },
         { title: "Dues experiències de restauració", topic: "Eventualitats", file: "/pdfs/DUES-EXPERIENCIES-DE-RESTAURACIO.pdf" },
         { title: "El consumismo que enturbia el alma", topic: "Aprenentatge", file: "/pdfs/EL-CONSUMISMO-QUE-ENTURBIA-EL-ALMA.pdf" },
-        { title: "El Roure Boletín 13 (Móvil)", topic: "Eventualitats", file: "/pdfs/EL-ROURE-BOLETIN-13_MOVIL.pdf" },
-        { title: "El Roure Boletín 13 (PC)", topic: "Eventualitats", file: "/pdfs/EL-ROURE-BOLETIN-13_PC.pdf" },
+        { title: "El Roure Boletín 13", topic: "Eventualitats", file: "/pdfs/EL-ROURE-BOLETIN-13_MOVIL.pdf" },
         { title: "En busca de una feminidad y masculinidad naturales", topic: "Gènere", file: "/pdfs/EN-BUSCA-DE-UNA-FEMINIDAD-Y-MASCULINIDAD-NATURALES.pdf" },
         { title: "Escritor Roures", topic: "Escriptura", file: "/pdfs/ESCRITORROURES.pdf" },
         { title: "Escrito a mano", topic: "Escriptura", file: "/pdfs/ESCRITO-A-MANO.pdf" },
@@ -554,7 +552,15 @@ const content = {
 // --- Components ---
 
 const App: React.FC = () => {
-  const [currentView, setCurrentView] = useState<View>('home');
+  const ALLOWED_VIEWS: View[] = ['home','historia','fundamentos','escuela','videos','textos','comunidad','en_que_estamos'];
+  const [currentView, setCurrentView] = useState<View>(() => {
+    try {
+      const h = window.location.hash.replace('#','');
+      return (h && ALLOWED_VIEWS.includes(h as View)) ? (h as View) : 'home';
+    } catch (e) {
+      return 'home';
+    }
+  });
   const [language, setLanguage] = useState<Language>('es');
   const [escuelaSection, setEscuelaSection] = useState<EscuelaSection>('intro');
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -577,6 +583,19 @@ const App: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Hash-based navigation: update state when the hash changes
+  useEffect(() => {
+    const onHash = () => {
+      const h = window.location.hash.replace('#', '');
+      if (h && ALLOWED_VIEWS.includes(h as View)) {
+        setCurrentView(h as View);
+        window.scrollTo(0,0);
+      }
+    };
+    window.addEventListener('hashchange', onHash);
+    return () => window.removeEventListener('hashchange', onHash);
+  }, []);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -584,7 +603,7 @@ const App: React.FC = () => {
   // Common Logo for header - Clickable
   const LogoImg = ({ className }: { className?: string }) => (
     <button 
-        onClick={() => setCurrentView('home')}
+        onClick={() => navigateTo('home')}
         className={`block hover:opacity-80 transition-opacity focus:outline-none ${className}`}
         aria-label="Go to Home"
     >
@@ -657,10 +676,23 @@ const App: React.FC = () => {
   };
 
   // Navigation Helper
-  const handleNav = (view: View) => {
-    window.scrollTo(0,0);
+  // Lightweight navigation helper that updates the hash (creates history entries)
+  const navigateTo = (view: View) => {
+    if (!ALLOWED_VIEWS.includes(view)) return;
+    if (view === currentView) return;
+    // update hash (this also allows back/forward navigation)
+    try {
+      window.location.hash = view;
+    } catch (e) {
+      // fallback
+      setCurrentView(view);
+    }
+    // immediate UI update
     setCurrentView(view);
+    window.scrollTo(0,0);
   };
+
+  const handleNav = (view: View) => navigateTo(view);
 
   // --- Views ---
 
@@ -762,7 +794,7 @@ const App: React.FC = () => {
       <div className="fixed top-0 left-0 w-full bg-[#f7f5e6]/90 backdrop-blur-sm z-40 py-4 px-6 border-b border-stone-200/50">
          <div className="max-w-6xl mx-auto flex justify-between items-center">
             <button 
-              onClick={() => setCurrentView('home')}
+              onClick={() => navigateTo('home')}
               className={`flex items-center gap-2 font-serif text-lg ${brandColor} hover:opacity-80 transition-opacity`}
             >
               <ChevronLeft size={20} />
@@ -981,9 +1013,10 @@ const App: React.FC = () => {
                  <Tag size={16} className="text-stone-400 mt-1" />
                  <span className="text-xs font-bold text-[#c1562e] bg-[#c1562e]/10 px-2 py-1 rounded">{article.topic}</span>
               </div>
-              <h3 className="text-xl font-serif font-bold text-stone-800 mb-2 group-hover:text-[#c1562e] transition-colors leading-tight">
+                <h3 className="text-xl font-serif font-bold text-stone-800 mb-2 group-hover:text-[#c1562e] transition-colors leading-tight">
                   {article.title}
-              </h3>
+                </h3>
+                <p className="text-sm text-stone-500 mb-2 font-serif italic">{language === 'es' ? 'Equipo El Roure' : 'Equip El Roure'}</p>
                       <div className="flex items-center gap-2 mt-4 text-sm text-stone-500">
                         <FileText size={16} />
                         {article.file ? (
