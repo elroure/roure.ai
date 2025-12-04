@@ -736,11 +736,9 @@ const App: React.FC = () => {
                 <div className="w-48 md:w-64 lg:w-80 shrink-0 relative flex items-center justify-center entry-logo">
                   <LogoImg />
                 </div>
-                {/* Phrase below logo: layered wind animation */}
-                <span className="phrase-container font-serif text-lg md:text-xl lg:text-2xl italic tracking-wide whitespace-nowrap mt-3 md:mt-4 entry-phrase" aria-hidden={false}>
-                  <span className="wind-phrase primary">{t.header?.right}</span>
-                  <span className="wind-phrase layer layer-1" aria-hidden="true">{t.header?.right}</span>
-                  <span className="wind-phrase layer layer-2" aria-hidden="true">{t.header?.right}</span>
+                {/* Phrase below logo: ink fade loop animation */}
+                <span className="phrase-container font-serif text-lg md:text-xl lg:text-2xl italic tracking-wide whitespace-nowrap mt-3 md:mt-4 entry-phrase">
+                  <span className="wind-phrase">{t.header?.right}</span>
                 </span>
              </div>
         </div>
