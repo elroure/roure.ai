@@ -185,17 +185,35 @@ const content = {
     },
     historiaContent: [
         {
+            paragraphs: ["La escuela El Roure nació en 2001 en una finca rústica del municipio de Mediona (Barcelona). La fundamos Begoña González y Cristóbal Gutiérrez, como un paso más en la evolución de la experiencia en La Casita, que fundamos en 1996, en Barcelona."]
+        },
+        {
+            title: "Naturaleza - Ubicación de la escuela",
             paragraphs: [
-                "La escuela El Roure nació en 2001 en una finca rústica del municipio de Mediona (Barcelona). La fundamos Begoña González y Cristóbal Gutiérrez, como un paso más en la evolución de la experiencia en La Casita, que fundamos en 1996, en Barcelona.",
                 "La llamamos escuela viva El Roure. Sus raíces son la experiencia de crianza, el Seitai y la Sistémica y algunas inspiraciones de pedagogías innovadoras del s. XX (Montessori, Freinet, Neill, Malaguzzi, etc.). La línea pedagógica se fue concretando y desarrollando a través de la práctica cotidiana con los niños y niñas, con las madres y padres, en la relación de equipo. A partir de muchas preguntas, la observación y la reflexión, algunos criterios se fueron clarificando y confirmando.",
-                "El apoyo, la confianza y la implicación de las primeras familias y miembros del equipo fueron decisivos.",
+                "El apoyo, la confianza y la implicación de las primeras familias y miembros del equipo fueron decisivos."
+            ]
+        },
+        {
+            title: "Comunidad - Crecimiento conjunto",
+            paragraphs: [
                 "La semilla de El Roure encontró las condiciones más favorables para germinar y crecer. Una persona cercana hizo de mecenas ofreciéndose a comprar la preciosa finca que elegimos para ubicar el proyecto. Empezamos con 6 criaturas que venían desde Barcelona y se quedaban a dormir en la masía tres días a la semana. Poco a poco el grupo fue creciendo y las familias participantes realizaron todo un cambio de vida trasladándose a la zona.",
                 "Fue una época de trabajo exhaustivo, tanto en la reforma y adecuación del espacio y en la preparación de materiales educativos como en la reflexión y evolución de la metodología, la organización y la explicación de la línea educativa que estábamos creando.",
-                "Como todo comienzo, se vivió en un ambiente de ilusión y de implicación muy intenso entre el equipo, familias, amigos y profesionales que colaboraban de forma desinteresada. Compartimos sudor entre cemento, escombros y pintura, horas de cocina, tertulias pedagógicas, sueños, incertidumbres y mucha confianza.",
+                "Como todo comienzo, se vivió en un ambiente de ilusión y de implicación muy intenso entre el equipo, familias, amigos y profesionales que colaboraban de forma desinteresada. Compartimos sudor entre cemento, escombros y pintura, horas de cocina, tertulias pedagógicas, sueños, incertidumbres y mucha confianza."
+            ]
+        },
+        {
+            title: "Educación innovadora",
+            paragraphs: [
                 "En 2009 pasamos de asociación a cooperativa de trabajo sin ánimo de lucro: Experiencia educativa El Roure SCCL.",
                 "En aquel momento también ampliamos nuestra presencia en el panorama educativo, compartiendo con más frecuencia nuestra experiencia a través de charlas, artículos en publicaciones educativas, colaboraciones en formaciones, y además empezamos a ofrecer nuestras propias formacions y acompañamientos a familias y profesionales.",
-                "La escuela creció hasta llegar a acoger 90 niñas, niños y adolescentes. Siempre tuvimos vocación de escuela pequeña, para poder hacer el trabajo con la profundidad que queríamos y esta dimensión se convirtió en el límite.",
-                "En 2017, después de un enorme esfuerzo económico y organizativo por parte de toda la comunidad (que incluyó un micromecenazgo impulsado por las familias), conseguimos la autorización como escuela de primaria, por parte del Departament d'Educació de la Generalitat de Catalunya.",
+                "La escuela creció hasta llegar a acoger 90 niñas, niños y adolescentes. Siempre tuvimos vocación de escuela pequeña, para poder hacer el trabajo con la profundidad que queríamos y esta dimensión se convirtió en el límite."
+            ]
+        },
+        {
+            title: "Ambiente educativo cálido",
+            paragraphs: [
+                "En 2017, después de un enorme esfuerzo económico y organizativo por parte de toda la comunidad (que incluyó un micromecenazgo impulsado por las familias), conseguimos la autorización como escuela de primaria, por parte del Departament d’Educació de la Generalitat de Catalunya.",
                 "Después del confinamiento por el coronavirus de 2020, la escuela fue decreciendo. El mundo era otro al de los inicios; las familias tendían más a la escolarización pública gratuita y cercana a su vivienda, las escuelas públicas habían ido poco a poco abriéndose hacia la creación de ambientes con materiales manipulatius, etc.",
                 "A raíz de serias dificultades en la finca, la disminución del número de familias y la falta de relevo en la coordinación de la escuela, decidimos el cierre."
             ]
@@ -425,18 +443,36 @@ const content = {
     },
     historiaContent: [
         {
+            paragraphs: ["L'escola El Roure va néixer el 2001 en una finca rústica del municipi de Mediona (Barcelona). La vam fundar Begoña González i Cristóbal Gutiérrez, com un pas més en l'evolució de l'experiència a La Casita, que vam fundar el 1996, a Barcelona."]
+        },
+        {
+            title: "Natura - Ubicació de l'escola",
             paragraphs: [
-                "L'escola El Roure va néixer el 2001 en una finca rústica del municipi de Mediona (Barcelona). La vam fundar Begoña González i Cristóbal Gutiérrez, com un pas més en l'evolució de l'experiència a La Casita, que vam fundar el 1996, a Barcelona.",
                 "L'anomenem escola viva El Roure. Les seves arrels són l'experiència de criança, el Seitai i la Sistèmica i algunes inspiracions de pedagogies innovadores del s. XX (Montessori, Freinet, Neill, Malaguzzi, etc.). La línia pedagògica es va anar concretant i desenvolupant a través de la pràctica quotidiana amb els nens i nenes, amb les mares i pares, en la relació d'equip. A partir de moltes preguntes, l'observació i la reflexió, alguns criteris es van anar clarificant i confirmant. El procés de descobriment i aprenentatge ha seguit fins al final.",
-                "El suport, la confiança i la implicació de les primeres famílies i membres de l'equip van ser decisius.",
+                "El suport, la confiança i la implicació de les primeres famílies i membres de l'equip van ser decisius."
+            ]
+        },
+        {
+            title: "Comunitat - Creixement conjunt",
+            paragraphs: [
                 "La llavor d'El Roure va trobar les condicions més favorables per germinar i créixer. Una persona propera va fer de mecenas oferint-se a comprar la preciosa finca que vam triar per ubicar el projecte. Vam començar amb 6 criatures que venien des de Barcelona i es quedaven a dormir a la masia tres días a la setmana. A poc a poc el grup va anar creixent i les famílies participants van realitzar tot un canvi de vida traslladant-se a la zona. Aquestes primeres famílies es van entregar en cos i ànima a la reforma de les edificacions i van implicar familiars i amics.",
                 "Va ser una època de treball exhaust, tant en la reforma i adequació de l'espai i en la preparació de materials educatius com en la reflexió i evolució de la metodologia, l'organització i l'explicació de la línia educativa que estàvem creant.",
-                "Com tot començament, es va viure en un ambient d'il·lusió i d'implicació molt intens entre l'equip, famílies, amics i professionals que col·laboraven de forma desinteressada. Vam compartir suor entre ciment, runa i pintura, hores de cuina, tertulias pedagògiques en sobretaules de grup, somnis, incerteses i molta confiança. Van ser temps de mancances econòmiques i dificultats constants, en les que no existien les vacances…y nos empujaba una força immensa.",
+                "Com tot començament, es va viure en un ambient d'il·lusió i d'implicació molt intens entre l'equip, famílies, amics i professionals que col·laboraven de forma desinteressada. Vam compartir suor entre ciment, runa i pintura, hores de cuina, tertulias pedagògiques en sobretaules de grup, somnis, incerteses i molta confiança. Van ser temps de mancances econòmiques i dificultats constants, en les que no existien les vacances…y nos empujaba una força immensa."
+            ]
+        },
+        {
+            title: "Educació innovadora",
+            paragraphs: [
                 "El 2009 vam passar d'associació a cooperativa de treball sense ànim de lucre: Experiència educativa El Roure SCCL.",
                 "En aquell moment també vam ampliar la nostra presència en el panorama educatiu, compartint amb més freqüència la nostra experiència a través de xerrades, articles en publicacions educatives, col·laboracions en formacions, i a més vam començar a oferir les nostres pròpies formacions i acompanyaments a famílies i professionals.",
-                "L'escola va créixer fins a arribar a acollir 90 nenes, nens i adolescents. Sempre vam tenir vocació d'escola petita, per poder fer la feina amb la profunditat que volíem i aquesta dimensió es va convertir en el límit.",
-                "El 2017, després d'un enorme esforç econòmic i organitzatiu per part de tota la comunitat (que va incloure un micromecenatge impulsat per les famílies), vam aconseguir l'autorització com a escola de primària, per part del Departament d'Educació de la Generalitat de Catalunya.",
-                "Després del confinament pel coronavirus del 2020, l'escola va anar decreixent. El món era un altre al dels inicis; les famílies tendien més a l'escolarització pública gratuïta i propera al seu habitatge, les escoles públiques havien anat de mica en mica obrint-se cap a la creació d'ambients amb materials manipulatius i l'anomenada \"lliure circulació\", etc.",
+                "L'escola va créixer fins a arribar a acollir 90 nenes, nens i adolescents. Sempre vam tenir vocació d'escola petita, per poder fer la feina amb la profunditat que volíem i aquesta dimensió es va convertir en el límit."
+            ]
+        },
+        {
+            title: "Ambient educatiu càlid",
+            paragraphs: [
+                "El 2017, després d'un enorme esforç econòmic i organitzatiu per part de tota la comunitat (que va incloure un micromecenatge impulsat per les famílies), vam aconseguir l'autorització com a escola de primària, per part del Departament d’Educació de la Generalitat de Catalunya.",
+                "Després del confinament pel coronavirus del 2020, l'escola va anar decreixent. El món era un altre al dels inicis; les famílies tendien més a l'escolarització pública gratuïta i propera al seu habitatge, les escoles públiques havien anat de mica en mica obrint-se cap a la creació d'ambients amb materials manipulatius i l'anomenada “lliure circulació”, etc.",
                 "Arran de serioses dificultats a la finca, la disminució del nombre de famílies i la manca de relleu en la coordinació de l'escola, la manca de relleu en la coordinació de l'escola, vam decidir el tancament."
             ]
         }
