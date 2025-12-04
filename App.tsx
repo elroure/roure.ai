@@ -528,7 +528,7 @@ const content = {
         { title: "Divídete y sufrirás", topic: "Aprenentatge", file: "/pdfs/DIVIDETE-Y-SUFIRAS.pdf" },
         { title: "Dues experiències de restauració", topic: "Eventualitats", file: "/pdfs/DUES-EXPERIENCIES-DE-RESTAURACIO.pdf" },
         { title: "El consumismo que enturbia el alma", topic: "Aprenentatge", file: "/pdfs/EL-CONSUMISMO-QUE-ENTURBIA-EL-ALMA.pdf" },
-        { title: "El Roure Boletín 13", topic: "Eventualitats", file: "/pdfs/EL-ROURE-BOLETIN-13_MOVIL.pdf" },
+        i see
         { title: "En busca de una feminidad y masculinidad naturales", topic: "Gènere", file: "/pdfs/EN-BUSCA-DE-UNA-FEMINIDAD-Y-MASCULINIDAD-NATURALES.pdf" },
         { title: "Escritor Roures", topic: "Escriptura", file: "/pdfs/ESCRITORROURES.pdf" },
         { title: "Escrito a mano", topic: "Escriptura", file: "/pdfs/ESCRITO-A-MANO.pdf" },
@@ -572,6 +572,15 @@ const App: React.FC = () => {
   const brandColor = "text-[#c1562e]";
   const hoverBrandColor = "hover:text-[#c1562e]";
   const t = content[language];
+
+  // Load background image after component mounts
+  useEffect(() => {
+    document.body.style.backgroundImage = "url('/images/main_bg.webp')";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center";
+    document.body.style.backgroundAttachment = "fixed";
+    document.body.style.backgroundRepeat = "no-repeat";
+  }, []);
 
   // Scroll detection
   useEffect(() => {
