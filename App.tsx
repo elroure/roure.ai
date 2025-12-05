@@ -203,10 +203,35 @@ const content = {
     ],
     fundamentosContent: [
         {
+            title: "La autorregulación espontánea. El contacto con la naturaleza propia.",
             paragraphs: [
-                "La educación viva se basa en el respeto profundo a los procesos de vida de cada ser humano. Entendemos que el aprendizaje es un proceso intrínseco y natural que no necesita ser forzado, sino acompañado.",
-                "Nuestros fundamentos se nutren de diversas fuentes pedagógicas y psicológicas, integrando una mirada sistémica que contempla al niño o niña no como un ser aislado, sino como parte de un sistema familiar y social complejo.",
-                "Creemos en la autorregulación, en el juego espontáneo como motor de desarrollo y en la importancia de un entorno preparado que ofrezca seguridad, vínculo y riqueza de estímulos sin sobreestimular."
+                "El organismo humano, como cualquier otro organismo vivo, dispone de una gran capacidad esencial para la vida: satisfacer sus necesidades fundamentales. La principal necesidad es desarrollar el propio potencial.",
+                "Existe un diálogo entre la necesidad propia y el entorno, de modo que sea posible optar por lo más adecuado para mantener la vitalidad y hacer crecer el potencial interno.",
+                "Esa vitalidad es un movimiento entre la tensión y la distensión; de manera autónoma e involuntaria, el organismo se contrae y después busca la relajación. Así se autorregula, tanto a nivel psíquico como físico.",
+                "El organismo forma una auténtica unidad con diferentes dimensiones: la físico-energética, emocional, mental y trascendente.",
+                "Existe un impulso vital íntimo e involuntario que regula la vida en nuestro organismo; este impulso ajusta instintivamente nuestras necesidades internas con la realidad externa que vamos viviendo. Para que este diálogo surja de una manera fluida, es necesario que nuestro organismo esté sensible y flexible, tanto a nivel físico como psíquico.",
+                "Cada uno de nosotros es único; tiene sus propias capacidades y dificultades, necesidades y prioridades, tiene una mirada, una forma de relacionarse, una manera de aprender, un ritmo vital particular. Todos tenemos capacidad intelectual, emocional y física, pero en cada cual, unas predominan sobre las otras. Es esta peculiar combinación de capacidades y sus matices lo que nos define como personas únicas; constituyen nuestra naturaleza peculiar.",
+                "Hay un impulso vital involuntario que indica a cada niña y niño qué necesita en cada momento y cómo moverse hacia ello. Es el que nos muestra si tenemos necesidad de llorar o de reír, de estar solos o acompañados, de comer o ayunar, de estar activos o pasivos, de compartir o defender lo nuestro, de emprender nuevos aprendizajes o consolidar otros, de interesarnos por nuevas amistades o buscar la compañía de los conocidos, etc. Es un impulso que incluye todo aquello físico y psíquico, y se expresa en múltiples lenguajes. Es el indicador de un mecanismo de autorregulación que nos permite mantener y cuidar nuestra vitalidad. En la medida que se da esa autorregulación y la satisfacción de las necesidades íntimas, la criatura se mantiene con capacidad para abordar con apertura y flexibilidad las situaciones que se presentan; la resolución de conflictos, la liberación de las tensiones acumuladas o la exploración de nuevos aprendizajes."
+            ]
+        },
+        {
+            title: "El acompañamiento respetuoso; el marco necesario para el crecimiento.",
+            paragraphs: [
+                "Los niños, niñas y adolescentes necesitan un marco de confianza, referencia y seguridad emocional de los adultos para poder ser felices y hacer crecer su potencial vital.",
+                "La relación entre los adultos y las niñas, niños o adolescentes, requiere presencia y disponibilidad. También un especial cuidado de la comunicación: saber escuchar y saber expresar nuestra sana autoridad como adultos.",
+                "El adulto es el encargado de cuidar el ambiente que rodea a cada criatura para que pueda desarrollar su potencial interno. El lugar del adulto representa un espacio de escucha y acogida, de confianza y fiabilidad, en el que la criatura puede madurar aprendiendo a dialogar entre su necesidad interna y la circunstancia externa.",
+                "Es una relación enmarcada en un orden sistémico, en la que el adulto tiene una perspectiva mayor y por tanto la responsabilidad de las decisiones que escapan a la visión y capacidad de la criatura. Se trata de una sana autoridad, que surge de un estado de presencia y de conexión con la sabiduría innata del adulto cuidador. La criatura a su vez, necesita dedicarse con toda amplitud, autonomía e intensidad a su exploración de sí mismo y del mundo y para ello necesita adultos maduros y sólidos en los que confiar, a los que seguir.",
+                "Es el amor bien entendido, en toda su dimensión de aceptación incondicional y de límite natural, lo que facilita traspasar la dificultad. En esta relación entre el adulto y la criatura, la verdadera clave es la auténtica comunicación; no es una comunicación entre iguales, sino entre el que cuida y el que es cuidado. En la medida que se da esa relación, se genera el vínculo afectivo y la sana autoridad adulta, que proporciona seguridad y la confianza para que la criatura siga su guía cuando es necesario.",
+                "Ese ambiente amoroso, necesario para que las criaturas crezcan, tiene dos vertientes: la libertad para moverse según su impulso vital y sus intereses, y los límites naturales, que le proporcionan la seguridad necesaria para hacerlo. El límite natural es una indicación que muestra y señala hasta dónde se puede llegar cuando la criatura no tiene capacidad para verlo o hacerlo. El límite va mostrando lo que es necesario tener en cuenta dentro y fuera de sí misma; así contribuye a integrar la consciencia de sí, de los demás y del mundo que le rodea."
+            ]
+        },
+        {
+            title: "Cuidar el deseo innato de aprender.",
+            paragraphs: [
+                "Como seres humanos disponemos de una inmensa capacidad innata de aprendizaje autónomo que se activa a través de la curiosidad y el diálogo permanente entre el deseo interno y el entorno, y que es posible mantener a lo largo de toda la vida. Cada cual tiene una manera y un ritmo de aprendizaje que nos es propio, en comunicación permanente con nuestra naturaleza y nuestro momento vital. Es fundamental respetar y cuidar este impulso interno en un ambiente rico en situaciones y experiencias de aprendizaje.",
+                "Tenemos la capacidad de desarrollar lo que ya somos como potencial y de autorregular el intercambio con el entorno, es decir, de discernir el contenido, el momento y la medida de un determinado aprendizaje. Esta capacidad se manifiesta desde el nacimiento y de forma innata, como una gran curiosidad y ganas de aprender, que permite que los niños conquisten aprendizajes de gran complejidad de una manera autónoma. Es una cuestión de supervivencia, porque es la que surge del mismo hecho de crecer y de la necesidad de acoplamiento al entorno. Por eso es fundamental un ambiente rico y próximo, que cubra las necesidades de la criatura con posibilidades de vivencias diversas y rodeadas de un afecto incondicional.",
+                "Apoyamos las ganas de autonomía que se manifiestan desde las primeras edades y que consideramos la vía natural, valiosa y eficaz que tienen las niñas y los niños para desarrollar sus capacidades. Este hecho implica dejar un espacio para que las criaturas encuentren sus propias soluciones en las situaciones que se les presentan, ya sea un conflicto en las relaciones, una caída, una dificultad en la experimentación, etc. También implica reconocer el valor del fracaso o de la frustración.",
+                "En todo caso, nuestro papel como adultos no es el de evitar o solucionar problemas, sino el de acompañar las dificultades que puedan surgir porque las resuelvan con sus propios recursos; de este modo serán aprovechadas para avanzar. Nuestro papel no pasa por dar respuestas cerradas y directas a sus preguntas, sino por servir de eco y de interlocutores para que surja y se construya una respuesta propia."
             ]
         }
     ],
@@ -214,9 +239,9 @@ const content = {
         {
             name: "Begoña González",
             paragraphs: [
-                "He sido cofundadora, coordinadora y acompañante de La Casita y El Roure. Soy madre, maestra, formadora, orientadora y articulista; me he formado en diferentes disciplines corporales, artísticas, psicológicas y educativas, en Comunicación consciente (CNV) i en facilitación de grupos.",
-                "En este momento me dedico al acompañamiento a madres, padres y profesionales, a partir de las diferentes situaciones y dificultats cotidianas que comporta la relación con niñas, niños y adolescentes. Por otro lado, facilito formaciones adaptadas a las necesidades de colectivos educativos interesados en el enfoque de la educación viva y la comunicación consciente.",
-                "Puedes contactar conmigo al 645 611 824 o a begonagm@protonmail.com"
+                "He sido co-fundadora, coordinadora y acompañante del espacio educativo La Casita y de la escuela viva El Roure. Soy madre, maestra, formadora, orientadora y articulista, me he formado en diferentes disciplinas corporales, espirituales, artísticas, psicológicas y educativas, en Comunicación consciente (CNV) y en facilitación de grupos.",
+                "En este momento me dedico al acompañamiento a madres, padres y profesionales, a partir de las diferentes situaciones y dificultades cotidianas que comporta la relación con niñas, niños y adolescentes. Por otro lado, facilito formaciones adaptadas a las necesidades de colectivos educativos interesados en el enfoque de la educación viva y la comunicación consciente.",
+                "Puedes contactar conmigo al 645 611 824 o a begona.gomi@gmail.com"
             ]
         },
         {
@@ -238,7 +263,9 @@ const content = {
         }
     ],
     comunidadText: [
-        "Para pedir tu contraseña necesitas contactar por email (experienciaroure@proton.me) identificándote."
+        "Hemos creado este espacio para las personas que habéis formado parte de la Comunidad de la escuela.",
+        "Aquí podéis descargar fotos de una selección que hemos hecho de los 24 años de escuela (en las que aparecen personas que lo han autorizado).",
+        "Para descargar las fotos os facilitaremos una contraseña que podéis pedir en el correo: LINK_ACCEDER"
     ],
     videosList: [
       {
@@ -442,10 +469,35 @@ const content = {
     ],
     fundamentosContent: [
         {
+            title: "L'autoregulació espontània. El contacte amb la naturalesa pròpia.",
             paragraphs: [
-                "L'educació viva es basa en el respecte profund als processos de vida de cada ésser humà. Entenem que l'aprenentatge és un procés intrínsec i natural que no necessita ser forçat, sinó acompanyat.",
-                "Els nostres fonaments es nodreixen de diverses fonts pedagògiques i psicològiques, integrant una mirada sistèmica que contempla el nen o nena no com un ésser aïllat, sinó com a part d'un sistema familiar i social complex.",
-                "Creiem en l'autoregulació, en el joc espontani com a motor de desenvolupament i en la importància d'un entorn preparat que ofereixi seguretat, vincle i riquesa d'estímuls sense sobreestimular."
+                "L'organisme humà, com qualsevol altre organisme viu, disposa d'una gran capacitat essencial per a la vida: satisfer les seves necessitats fonamentals. La principal necessitat és desenvolupar el propi potencial.",
+                "Existeix un diàleg entre la necessitat pròpia i l'entorn, de manera que sigui possible optar pel més adequat per a mantenir la vitalitat i fer créixer el potencial intern.",
+                "Aquesta vitalitat és un moviment entre la tensió i la distensió; de manera autònoma i involuntària, l'organisme es contreu i després busca la relaxació. Així s'autoregula, tant a nivell psíquic com físic.",
+                "L'organisme forma una autèntica unitat amb diferents dimensions: la físic-energètica, emocional, mental i transcendent.",
+                "Existeix un impuls vital íntim i involuntari que regula la vida en el nostre organisme; aquest impuls ajusta instintivament les nostres necessitats internes amb la realitat externa que anem vivint. Perquè aquest diàleg sorgeixi d'una manera fluida, és necessari que el nostre organisme estigui sensible i flexible, tant a nivell físic com psíquic.",
+                "Cadascun de nosaltres és únic; té les seves pròpies capacitats i dificultats, necessitats i prioritats, té una mirada, una manera de relacionar-se, una manera d'aprendre, un ritme vital particular. Tots tenim capacitat intel·lectual, emocional i física, però en cadascú, unes predominen sobre les altres. És aquesta peculiar combinació de capacitats i els seus matisos el que ens defineix com a persones úniques; constitueixen la nostra naturalesa peculiar.",
+                "Hi ha un impuls vital involuntari que indica a cada nena i nen què necessita a cada moment i com moure's cap a això. És el que ens mostra si tenim necessitat de plorar o de riure, d'estar sols o acompanyats, de menjar o dejunar, d'estar actius o passius, de compartir o defensar el nostre, d'emprendre nous aprenentatges o consolidar uns altres, d'interessar-nos per noves amistats o buscar la companyia dels coneguts, etc. És un impuls que inclou tot allò físic i psíquic, i s'expressa en múltiples llenguatges. És l'indicador d'un mecanisme d'autoregulació que ens permet mantenir i cuidar la nostra vitalitat. En la mesura que es dona aquesta autoregulació i la satisfacció de les necessitats íntimes, la criatura es manté amb capacitat per a abordar amb obertura i flexibilitat les situacions que es presenten; la resolució de conflictes, l'alliberament de les tensions acumulades o l'exploració de nous aprenentatges."
+            ]
+        },
+        {
+            title: "L'acompanyament respectuós; el marc necessari per al creixement.",
+            paragraphs: [
+                "Els nens, nenes i adolescents necessiten un marc de confiança, referència i seguretat emocional dels adults per a poder ser feliços i fer créixer el seu potencial vital.",
+                "La relació entre els adults i les nenes, nens o adolescents, requereix presència i disponibilitat. També una especial cura de la comunicació: saber escoltar i saber expressar la nostra sana autoritat com a adults.",
+                "L'adult és l'encarregat de cuidar l'ambient que envolta a cada criatura perquè pugui desenvolupar el seu potencial intern. El lloc de l'adult representa un espai d'escolta i acolliment, de confiança i fiabilitat, en el qual la criatura pot madurar aprenent a dialogar entre la seva necessitat interna i la circumstància externa.",
+                "És una relació emmarcada en un ordre sistèmic, en la qual l'adult té una perspectiva major i per tant la responsabilitat de les decisions que escapen a la visió i capacitat de la criatura. Es tracta d'una sana autoritat, que sorgeix d'un estat de presència i de connexió amb la saviesa innata de l'adult cuidador. La criatura al seu torn, necessita dedicar-se amb tota amplitud, autonomia i intensitat a la seva exploració de si mateix i del món i per a això necessita adults madurs i sòlids en els quals confiar, als quals seguir.",
+                "És l'amor ben entès, en tota la seva dimensió d'acceptació incondicional i de límit natural, la qual cosa facilita traspassar la dificultat. En aquesta relació entre l'adult i la criatura, la veritable clau és l'autèntica comunicació; no és una comunicació entre iguals, sinó entre el que cuida i el que és cuidat. En la mesura que es dona aquesta relació, es genera el vincle afectiu i la sana autoritat adulta, que proporciona seguretat i la confiança perquè la criatura segueixi el seu guia quan és necessari.",
+                "Aquest ambient amorós, necessari perquè les criatures creixin, té dos vessants: la llibertat per a moure's segons el seu impuls vital i els seus interessos, i els límits naturals, que li proporcionen la seguretat necessària per a fer-ho. El límit natural és una indicació que mostra i assenyala fins a on es pot arribar quan la criatura no té capacitat per a veure'l o fer-ho. El límit va mostrant el que és necessari tenir en compte dins i fora de si mateixa; així contribueix a integrar la consciència de si, dels altres i del món que li envolta."
+            ]
+        },
+        {
+            title: "Cuidar el desig innat d'aprendre.",
+            paragraphs: [
+                "Com a éssers humans disposem d'una immensa capacitat innata d'aprenentatge autònom que s'activa a través de la curiositat i el diàleg permanent entre el desig intern i l'entorn, i que és possible mantenir al llarg de tota la vida. Cadascú té una manera i un ritme d'aprenentatge que ens és propi, en comunicació permanent amb la nostra naturalesa i el nostre moment vital. És fonamental respectar i cuidar aquest impuls intern en un ambient ric en situacions i experiències d'aprenentatge.",
+                "Tenim la capacitat de desenvolupar el que ja som com a potencial i d'autoregular l'intercanvi amb l'entorn, és a dir, de discernir el contingut, el moment i la mesura d'un determinat aprenentatge. Aquesta capacitat es manifesta des del naixement i de manera innata, com una gran curiositat i ganes d'aprendre, que permet que els nens conquistin aprenentatges de gran complexitat d'una manera autònoma. És una qüestió de supervivència, perquè és la que sorgeix del mateix fet de créixer i de la necessitat d'acoblament a l'entorn. Per això és fonamental un ambient ric i pròxim, que cobreixi les necessitats de la criatura amb possibilitats de vivències diverses i envoltades d'un afecte incondicional.",
+                "Donem suport a les ganes d'autonomia que es manifesten des de les primeres edats i que considerem la via natural, valuosa i eficaç que tenen les nenes i els nens per a desenvolupar les seves capacitats. Aquest fet implica deixar un espai perquè les criatures trobin les seves pròpies solucions en les situacions que se'ls presenten, ja sigui un conflicte en les relacions, una caiguda, una dificultat en l'experimentació, etc. També implica reconèixer el valor del fracàs o de la frustració.",
+                "En tot cas, el nostre paper com a adults no és el d'evitar o solucionar problemes, sinó el d'acompanyar les dificultats que puguin sorgir perquè les resolguin amb els seus propis recursos; d'aquesta manera seran aprofitades per a avançar. El nostre paper no passa per donar respostes tancades i directes a les seves preguntes, sinó per servir de ressò i d'interlocutors perquè sorgeixi i es construeixi una resposta pròpia."
             ]
         }
     ],
@@ -453,9 +505,9 @@ const content = {
         {
             name: "Begoña González",
             paragraphs: [
-                "He estat co-fundadora, coordinadora i acompanyant de La Casita i El Roure. Sóc mare, mestra, formadora, orientadora i articulista; m'he format en diferents disciplines corporals, artísticas, psicològiques i educatives, en Comunicació conscient (CNV) i en facilitació de grups.",
-                "En aquest moment em dedico a l'acompanyament a mares, pares i professionals, a partir de les diferents situacions i dificultats quotidianes que comporta la relació amb nenes, nens i adolescents. D'altra banda, facilito formacions adaptadas a les necessitats de col·lectius educatius interessats en l'enfocament de l'educació viva i la comunicació conscient. Estic participant en un projecte de llibre juntament amb les persones fundadores d'Ojo de Agua (Alacant), A la Vida (Madrid) i Donyets (València).",
-                "Pots contactar amb mi al 645 611 824 o a begonagm@protonmail.com"
+                "He estat co-fundadora, coordinadora i acompanyant de l'espai educatiu La Casita i de l'escola viva El Roure. Sóc mare, mestra, formadora, orientadora i articulista, m'he format en diferents disciplines corporals, espirituals, artístiques, psicològiques i educatives, en Comunicació conscient (CNV) i en facilitació de grups.",
+                "En aquest moment em dedico a l'acompanyament a mares, pares i professionals, a partir de les diferents situacions i dificultats quotidianes que comporta la relació amb nenes, nens i adolescents. D'altra banda, facilito formacions adaptades a les necessitats de col·lectius educatius interessats en l'enfocament de l'educació viva i la comunicació conscient.",
+                "Pots contactar amb mi al 645 611 824 o a begona.gomi@gmail.com"
             ]
         },
         {
@@ -470,14 +522,16 @@ const content = {
         {
             name: "Clara Jiménez Rodríguez",
             paragraphs: [
-                "He estat vinculada professionalment a l'Escola Viva El Roble des del 2011 fins al seu tancament com a acompanyant, coordinadora i directora. La meva formació bàsica és Educació Social i la meva formació complementària és Intervenció Sistèmica amb infància i família, Pedagogía Sistèmica i Postgrau en Pràctica Psicomotriu Aucouturier, entre d'altres de caire més relacionat amb el moviment lliure i la permacultura.",
+                "He estat vinculada professionalment a l'Escola Viva El Roure des del 2011 fins al seu tancament com a acompanyant, coordinadora i directora. La meva formació bàsica és Educació Social i la meva formació complementària és Intervenció Sistèmica amb infància i família, Pedagogía Sistèmica i Postgrau en Pràctica Psicomotriu Aucouturier, entre d'altres de caire més relacionat amb el moviment lliure i la permacultura.",
                 "Actualment, em dedico a acabar la formació de Teràpia en Integració Psico-corporal. Al mateix temps, acompanyo famílies que tenen ganes d'indagar i generar un creixement personal-familiar i/o troben dificultats en la seva dinàmica relacional.",
                 "Em pots contactar a: clarajiro@gmail.com o al 670 204 009"
             ]
         }
     ],
     comunidadText: [
-        "Per demanar la teva contrasenya has de contactar per correu electrònic (experienciaroure@proton.me) identificant-te."
+        "Hem creat aquest espai per a les persones que heu format part de la Comunitat de l'escola.",
+        "Aquí podeu descarregar fotos d'una selecció que hem fet dels 24 anys d'escola (en les quals apareixen persones que ho han autoritzat).",
+        "Per descarregar les fotos us facilitarem una contrasenya que podeu demanar al correu: LINK_ACCEDIR"
     ],
     videosList: [
       {
@@ -625,19 +679,19 @@ const App: React.FC = () => {
 
   // Footer Component
   const Footer = ({ compact = false }: { compact?: boolean }) => (
-    <div className={`w-full flex justify-center ${compact ? 'pb-6 xl:pb-8 2xl:pb-10 pt-2 xl:pt-3 2xl:pt-4' : 'pb-8 xl:pb-12 2xl:pb-16 pt-12 xl:pt-16 2xl:pt-20'}`}>
+    <div className={`w-full flex justify-center ${compact ? 'pb-6 pt-2' : 'pb-8 pt-12'}`}>
       <div className="flex flex-col items-center w-max max-w-full">
         
         {/* Email */}
         <a 
           href="mailto:experienciaroure@proton.me" 
-          className={`font-serif ${compact ? 'text-base xl:text-lg 2xl:text-xl' : 'text-lg xl:text-xl 2xl:text-2xl'} text-stone-600 ${hoverBrandColor} transition-colors block text-center w-full mb-2 xl:mb-3 2xl:mb-4`}
+          className={`font-serif ${compact ? 'text-base' : 'text-lg'} text-stone-600 ${hoverBrandColor} transition-colors block text-center w-full mb-2`}
         >
           experienciaroure@proton.me
         </a>
 
         {/* Language Switcher */}
-        <div className={`flex items-center justify-between w-full gap-6 xl:gap-8 2xl:gap-10 text-sm xl:text-base 2xl:text-lg font-bold uppercase tracking-widest text-stone-400 ${compact ? 'mt-0' : 'mt-1 xl:mt-2 2xl:mt-3'}`}>
+        <div className={`flex items-center justify-between w-full gap-6 text-sm font-bold uppercase tracking-widest text-stone-400 ${compact ? 'mt-0' : 'mt-1'}`}>
           <button 
             onClick={() => setLanguage('es')}
             className={`${language === 'es' ? 'text-stone-800 border-b-2 border-[#c1562e]' : 'text-stone-400 hover:text-stone-600'} transition-colors pb-0.5`}
@@ -654,9 +708,9 @@ const App: React.FC = () => {
         </div>
 
         {/* Credits */}
-        <div className="flex items-center justify-between w-full text-[11px] xl:text-xs 2xl:text-sm tracking-widest text-stone-400 pt-2 xl:pt-3 2xl:pt-4">
+        <div className="flex items-center justify-between w-full text-[11px] tracking-widest text-stone-400 pt-2">
           <span>{t.home.footer}</span>
-          <a href="https://rcrear.com" target="_blank" rel="noopener noreferrer" className={`hover:text-stone-600 transition-colors font-semibold`}>rcrear.com</a>
+          <a href="https://rcrear.com" className={`hover:text-stone-600 transition-colors font-semibold`}>rcrear.com</a>
         </div>
       </div>
     </div>
@@ -719,25 +773,25 @@ const App: React.FC = () => {
       // Changed h-screen to min-h-screen and overflow-hidden only on md+ to allow scrolling on mobile
       <div className="w-full min-h-screen md:h-screen flex flex-col relative overflow-x-hidden md:overflow-hidden">
         {/* Logo Header Area - Centered at top */}
-        <div className="pt-6 md:pt-8 xl:pt-12 2xl:pt-16 w-full flex flex-col justify-center items-center z-20 px-4 -translate-x-2">
+        <div style={{ paddingTop: 'var(--padding-top)', paddingLeft: 'var(--padding-x)', paddingRight: 'var(--padding-x)' }} className="w-full flex flex-col justify-center items-center z-20 -translate-x-2">
              <div className="relative flex flex-col items-center justify-center">
                 <div style={{ width: 'var(--logo-width)' }} className="shrink-0 relative flex items-center justify-center">
                   <LogoImg />
                 </div>
                 {/* Phrase below logo */}
-                <span style={{ fontSize: 'var(--phrase-text-size)' }} className="font-serif italic tracking-wide whitespace-nowrap mt-3 md:mt-4 xl:mt-6 2xl:mt-7 text-[#c1562e]">
+                <span style={{ fontSize: 'var(--phrase-text-size)', marginTop: 'var(--phrase-margin)' }} className="font-serif italic tracking-wide whitespace-nowrap text-[#c1562e]">
                   {t.header?.right}
                 </span>
              </div>
         </div>
 
         {/* Main Content - Flex Centered */}
-        <div style={{ paddingLeft: 'var(--padding-x)', paddingRight: 'var(--padding-x)' }} className="flex-1 flex items-center justify-center w-full mt-8 md:mt-6 xl:mt-6 mb-0 py-8 md:py-0">
-            <div style={{ gap: 'var(--gap-base)' }} className="flex flex-col md:flex-row items-center justify-between w-full max-w-[90rem] 2xl:max-w-[100rem]">
+        <div style={{ paddingLeft: 'var(--padding-x)', paddingRight: 'var(--padding-x)', paddingTop: 'var(--padding-y)', paddingBottom: 'var(--padding-y)' }} className="flex-1 flex items-center justify-center w-full">
+            <div style={{ gap: 'var(--gap-base)' }} className="flex flex-col md:flex-row items-center justify-between w-full">
             
                 {/* Left: Text */}
-                <div className="w-full md:w-1/3 order-2 md:order-1 px-4 md:px-0 text-center md:text-right flex flex-col items-center md:items-end">
-                    <div className="max-w-lg xl:max-w-lg 2xl:max-w-xl space-y-3 xl:space-y-3 2xl:space-y-4 font-serif text-stone-700 leading-relaxed" style={{ fontSize: 'var(--body-text-size)' }}>
+                <div className="w-full md:w-1/3 order-2 md:order-1 px-4 md:px-0 text-center md:text-right flex flex-col items-center md:items-end" style={{ paddingLeft: 'var(--left-text-margin)' }}>
+                    <div style={{ fontSize: 'var(--body-text-size)', gap: 'var(--menu-spacing)' }} className="max-w-lg font-serif text-stone-700 leading-relaxed flex flex-col">
                     <p>{t.home.text1}</p>
                     <p>{t.home.text2}</p>
                     <p className={`${brandColor} font-bold`}>
@@ -764,7 +818,7 @@ const App: React.FC = () => {
                         onMouseEnter={() => setMenuHasInteracted(true)}
                         onMouseLeave={() => setHoveredMenuKey(null)}
                     >
-                    <ul className="space-y-2 md:space-y-3 lg:space-y-4 xl:space-y-5 2xl:space-y-6">
+                    <ul style={{ gap: 'var(--menu-spacing)' }} className="flex flex-col">
                         {menuItems.map((item) => {
                         // Logic: Highlight if hovered OR (if not interacted yet AND key is historia)
                         const isHighlighted = hoveredMenuKey === item.key || (!menuHasInteracted && hoveredMenuKey === null && item.key === 'historia');
@@ -816,7 +870,7 @@ const App: React.FC = () => {
          </div>
       </div>
 
-      <h1 style={{ fontSize: 'var(--title-text-size)' }} className="font-serif font-bold text-stone-800 mb-12 xl:mb-14 2xl:mb-16 mt-8 xl:mt-10 2xl:mt-12 border-b border-stone-300 pb-6 xl:pb-7 2xl:pb-8">
+      <h1 style={{ fontSize: 'var(--menu-text-size)' }} className="font-serif font-bold text-stone-800 mb-12 xl:mb-14 2xl:mb-16 mt-8 xl:mt-10 2xl:mt-12 border-b border-stone-300 pb-6 xl:pb-7 2xl:pb-8">
         {title}
       </h1>
       <div className="animate-fade-in flex-1">
@@ -832,7 +886,7 @@ const App: React.FC = () => {
   const StructuredTextView = ({ title, contentData, imageSrc }: { title: string, contentData: ContentSection[], imageSrc: string }) => (
     <InternalPageLayout title={title}>
       <div style={{ gap: 'var(--gap-base)' }} className="flex flex-col md:flex-row items-start">
-        <div style={{ fontSize: 'var(--body-text-size)' }} className="w-full md:w-1/2 font-serif leading-relaxed text-stone-700 space-y-8 xl:space-y-9 2xl:space-y-10">
+        <div style={{ fontSize: 'var(--internal-body-text)' }} className="w-full md:w-1/2 font-serif leading-relaxed text-stone-700 space-y-8 xl:space-y-9 2xl:space-y-10">
           {contentData.map((section, sIdx) => (
               <div key={sIdx} className="space-y-4 xl:space-y-5 2xl:space-y-6">
                   {section.title && (
@@ -847,7 +901,7 @@ const App: React.FC = () => {
           ))}
         </div>
         <div className="w-full md:w-1/2">
-           <div className="aspect-[4/5] bg-stone-200 rounded-lg overflow-hidden shadow-lg sticky top-32 xl:top-36 2xl:top-40">
+           <div style={{ width: 'var(--main-image-size)', height: 'calc(var(--main-image-size) * 1.25)' }} className="bg-stone-200 rounded-lg overflow-hidden shadow-lg sticky top-32 xl:top-36 2xl:top-40 mx-auto">
              <img 
                src={imageSrc} 
                alt={title} 
@@ -878,7 +932,8 @@ const App: React.FC = () => {
                   <li key={s}>
                     <button 
                       onClick={() => setEscuelaSection(s)}
-                      className={`text-base md:text-lg xl:text-lg 2xl:text-xl font-serif font-medium transition-colors duration-300 block relative group text-left
+                      style={{ fontSize: 'var(--internal-body-text)' }}
+                      className={`font-serif font-medium transition-colors duration-300 block relative group text-left
                         ${isActive ? 'text-[#c1562e]' : 'text-stone-600 hover:text-[#c1562e]'}
                       `}
                     >
@@ -893,12 +948,13 @@ const App: React.FC = () => {
 
           {/* Main Content Area */}
           <div className="w-full md:w-3/4 min-h-[500px]">
-            <h2 className="text-3xl xl:text-3xl 2xl:text-4xl font-serif mb-8 xl:mb-10 2xl:mb-12 text-stone-800">{t.escuela.titles[escuelaSection]}</h2>
+            <h2 style={{ fontSize: 'var(--menu-text-size)' }} className="font-serif mb-8 xl:mb-10 2xl:mb-12 text-stone-800">{t.escuela.titles[escuelaSection]}</h2>
             
-            <div className="font-serif text-base md:text-lg xl:text-lg 2xl:text-xl leading-relaxed text-stone-700 space-y-6 xl:space-y-7 2xl:space-y-8 max-w-prose xl:max-w-full">
+            <div style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif leading-relaxed text-stone-700 space-y-6 xl:space-y-7 2xl:space-y-8 max-w-prose xl:max-w-full">
                <img 
                  src={IMAGES.escuela[escuelaSection]} 
-                 className="w-full h-64 xl:h-72 2xl:h-80 object-cover rounded-lg mb-6 xl:mb-7 2xl:mb-8 shadow-md"
+                 style={{ width: 'var(--main-image-size)', height: 'calc(var(--main-image-size) * 0.7)' }}
+                 className="object-cover rounded-lg mb-6 xl:mb-7 2xl:mb-8 shadow-md mx-auto"
                  alt={t.escuela.menu[escuelaSection]} 
                />
                
@@ -964,8 +1020,8 @@ const App: React.FC = () => {
                 )}
               </div>
               <div>
-                <h3 className="font-serif font-bold text-xl xl:text-xl 2xl:text-2xl text-stone-800 mt-2 xl:mt-2 2xl:mt-3 group-hover:text-[#c1562e] transition-colors">{video.title}</h3>
-                <p className="font-serif text-stone-600 text-sm md:text-base xl:text-base 2xl:text-lg mt-1 xl:mt-1 2xl:mt-2 leading-relaxed">{video.description}</p>
+                <h3 style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif font-bold text-stone-800 mt-2 xl:mt-2 2xl:mt-3 group-hover:text-[#c1562e] transition-colors">{video.title}</h3>
+                <p style={{ fontSize: 'calc(var(--internal-body-text) * 0.9)' }} className="font-serif text-stone-600 mt-1 xl:mt-1 2xl:mt-2 leading-relaxed">{video.description}</p>
               </div>
             </div>
           ))}
@@ -986,7 +1042,7 @@ const App: React.FC = () => {
         : allArticles;
 
     return (
-      <InternalPageLayout title={t.sections.textos}>
+      <InternalPageLayout title={t.nav.textos}>
         {/* Filter Tags */}
         <div className="flex flex-wrap gap-3 xl:gap-3 2xl:gap-4 mb-10 xl:mb-12 2xl:mb-14">
             <button 
@@ -1003,7 +1059,8 @@ const App: React.FC = () => {
                 <button 
                     key={topic}
                     onClick={() => setActiveTopic(topic)}
-                    className={`px-4 xl:px-6 2xl:px-8 py-2 xl:py-3 2xl:py-4 rounded-full text-sm md:text-base xl:text-lg 2xl:text-xl font-serif font-medium border transition-all
+                    style={{ fontSize: 'var(--internal-body-text)', padding: 'calc(var(--internal-body-text) * 0.5) calc(var(--internal-body-text) * 1.2)' }}
+                    className={`rounded-full font-serif font-medium border transition-all
                         ${activeTopic === topic
                             ? 'bg-[#c1562e] text-white border-[#c1562e]' 
                             : 'bg-white text-stone-600 border-stone-300 hover:border-[#c1562e] hover:text-[#c1562e]'}
@@ -1022,10 +1079,10 @@ const App: React.FC = () => {
                  <Tag size={16} className="text-stone-400 mt-1 xl:w-4 xl:h-4 2xl:w-5 2xl:h-5" />
                  <span className="text-xs md:text-sm xl:text-sm 2xl:text-base font-bold text-[#c1562e] bg-[#c1562e]/10 px-2 xl:px-2.5 2xl:px-3 py-1 xl:py-1 2xl:py-1.5 rounded">{article.topic}</span>
               </div>
-                <h3 className="text-xl xl:text-xl 2xl:text-2xl font-serif font-bold text-stone-800 mb-2 xl:mb-2 2xl:mb-3 group-hover:text-[#c1562e] transition-colors leading-tight">
+                <h3 style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif font-bold text-stone-800 mb-2 xl:mb-2 2xl:mb-3 group-hover:text-[#c1562e] transition-colors leading-tight">
                   {article.title}
                 </h3>
-                <p className="text-sm md:text-base xl:text-base 2xl:text-lg text-stone-500 mb-2 xl:mb-2 2xl:mb-3 font-serif italic">{language === 'es' ? 'Equipo El Roure' : 'Equip El Roure'}</p>
+                <p style={{ fontSize: 'calc(var(--internal-body-text) * 0.85)' }} className="text-stone-500 mb-2 xl:mb-2 2xl:mb-3 font-serif italic">{language === 'es' ? 'Equipo El Roure' : 'Equip El Roure'}</p>
                       <div className="flex items-center gap-2 mt-4 xl:mt-4 2xl:mt-5 text-sm md:text-base xl:text-base 2xl:text-lg text-stone-500">
                         <FileText size={16} />
                         {article.file ? (
@@ -1069,10 +1126,10 @@ const App: React.FC = () => {
                     </div>
                     
                     <div className="w-full md:w-2/3">
-                        <h3 className="text-3xl xl:text-4xl 2xl:text-5xl font-serif font-bold text-stone-800 mb-6 xl:mb-8 2xl:mb-10 border-l-4 xl:border-l-6 2xl:border-l-8 border-[#c1562e] pl-4 xl:pl-6 2xl:pl-8">
+                        <h3 style={{ fontSize: 'var(--menu-text-size)' }} className="font-serif font-bold text-stone-800 mb-6 xl:mb-8 2xl:mb-10 border-l-4 xl:border-l-6 2xl:border-l-8 border-[#c1562e] pl-4 xl:pl-6 2xl:pl-8">
                             {person.name}
                         </h3>
-                        <div className="font-serif text-base md:text-lg xl:text-xl 2xl:text-2xl text-stone-700 leading-relaxed space-y-4 xl:space-y-6 2xl:space-y-8">
+                        <div style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif text-stone-700 leading-relaxed space-y-4 xl:space-y-6 2xl:space-y-8">
                             {person.paragraphs.map((p, pIdx) => (
                                 <p key={pIdx}>
                                     {/* Apply linkify logic to each paragraph */}
@@ -1104,23 +1161,44 @@ const App: React.FC = () => {
     return (
       <InternalPageLayout title={t.nav.comunidad}>
          <div className="flex flex-col items-center max-w-2xl xl:max-w-3xl 2xl:max-w-4xl mx-auto">
-            <div className="text-center space-y-4 xl:space-y-6 2xl:space-y-8 font-serif text-base md:text-lg xl:text-xl 2xl:text-2xl leading-relaxed text-stone-700 mb-10 xl:mb-14 2xl:mb-20">
-                {t.comunidadText.map((p, idx) => (
-                    <p key={idx}>
-                        <LinkifyText text={p} />
-                    </p>
-                ))}
+            <div style={{ fontSize: 'var(--internal-body-text)' }} className="text-center space-y-4 xl:space-y-6 2xl:space-y-8 font-serif leading-relaxed text-stone-700 mb-10 xl:mb-14 2xl:mb-20">
+                {t.comunidadText.map((p, idx) => {
+                    // Handle inline link within text
+                    if (p.includes('LINK_ACCEDER') || p.includes('LINK_ACCEDIR')) {
+                        const parts = p.split(/LINK_ACCEDER|LINK_ACCEDIR/);
+                        return (
+                            <p key={idx}>
+                                {parts[0]}
+                                <a 
+                                    href="https://docs.google.com/spreadsheets/d/1rpDdtjJwXMMhVI3UcWvfjP5AHJEpSOAwU-LmI6xy3SI/edit?usp=sharing"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-[#c1562e] hover:underline font-medium"
+                                >
+                                    Clica aquí
+                                </a>
+                                {parts[1] || ''}
+                            </p>
+                        );
+                    }
+                    return (
+                        <p key={idx}>
+                            <LinkifyText text={p} />
+                        </p>
+                    );
+                })}
             </div>
             
-            <div className="w-full max-w-md xl:max-w-lg 2xl:max-w-xl bg-white p-8 xl:p-10 2xl:p-12 rounded-xl shadow-lg border border-stone-200">
-                <label className="block font-serif font-bold text-base md:text-lg xl:text-xl 2xl:text-2xl text-stone-700 mb-2 xl:mb-3 2xl:mb-4">
-                    {language === 'es' ? 'Contraseña:' : 'Contrasenya:'}
+            <div className="w-full max-w-md xl:max-w-lg 2xl:max-w-xl">
+                <label style={{ fontSize: 'var(--internal-body-text)' }} className="block font-serif text-stone-700 mb-4 xl:mb-5 2xl:mb-6 text-center">
+                    experienciaroure@proton.me
                 </label>
                 <div className="flex flex-col gap-4 xl:gap-5 2xl:gap-6">
                     <input 
                         type="password" 
-                        className="w-full px-4 xl:px-6 2xl:px-8 py-3 xl:py-4 2xl:py-5 text-base xl:text-lg 2xl:text-xl rounded-lg border border-stone-300 focus:border-[#c1562e] focus:ring-2 focus:ring-[#c1562e]/20 outline-none transition-all"
-                        placeholder={language === 'es' ? 'Contraseña' : 'Contrasenya'}
+                        style={{ fontSize: 'var(--internal-body-text)' }}
+                        className="w-full bg-transparent border-b-2 border-stone-800 focus:border-[#c1562e] outline-none transition-all py-2 text-center font-serif text-stone-800 placeholder:text-stone-400"
+                        placeholder={language === 'es' ? 'Escribe aquí' : 'Escriu aquí'}
                         value={password}
                         onChange={(e) => {
                             setPassword(e.target.value);
@@ -1129,16 +1207,10 @@ const App: React.FC = () => {
                         onKeyDown={(e) => e.key === 'Enter' && handleLogin()}
                     />
                     {error && (
-                        <span className="text-red-500 text-sm md:text-base xl:text-lg 2xl:text-xl font-medium animate-pulse">
+                        <span style={{ fontSize: 'calc(var(--internal-body-text) * 0.9)' }} className="text-[#c1562e] font-serif text-center">
                             {language === 'es' ? 'Contraseña incorrecta' : 'Contrasenya incorrecta'}
                         </span>
                     )}
-                    <button 
-                        onClick={handleLogin}
-                        className="w-full bg-[#c1562e] hover:bg-[#a04625] text-white font-bold text-base xl:text-lg 2xl:text-xl py-3 xl:py-4 2xl:py-5 rounded-lg transition-colors shadow-md hover:shadow-lg transform active:scale-[0.98]"
-                    >
-                        {language === 'es' ? 'Entrar' : 'Entrar'}
-                    </button>
                 </div>
             </div>
          </div>
@@ -1153,8 +1225,8 @@ const App: React.FC = () => {
       
       {/* Render View Based on State */}
       {currentView === 'home' && <HomeView />}
-      {currentView === 'historia' && <StructuredTextView title={t.sections.historia} contentData={t.historiaContent} imageSrc={IMAGES.sections.historia} />}
-      {currentView === 'fundamentos' && <StructuredTextView title={t.sections.fundamentos} contentData={t.fundamentosContent} imageSrc={IMAGES.sections.fundamentos} />}
+      {currentView === 'historia' && <StructuredTextView title={t.nav.historia} contentData={t.historiaContent} imageSrc={IMAGES.sections.historia} />}
+      {currentView === 'fundamentos' && <StructuredTextView title={t.nav.fundamentos} contentData={t.fundamentosContent} imageSrc={IMAGES.sections.fundamentos} />}
       {currentView === 'escuela' && <EscuelaView />}
       {currentView === 'videos' && <VideosView />}
       {currentView === 'textos' && <TextosView />}
@@ -1165,12 +1237,13 @@ const App: React.FC = () => {
       {currentView !== 'home' && (
         <button
             onClick={scrollToTop}
-            className={`fixed bottom-8 xl:bottom-12 2xl:bottom-16 right-8 xl:right-12 2xl:right-16 z-50 bg-[#c1562e] text-white px-4 xl:px-6 2xl:px-8 py-3 xl:py-4 2xl:py-5 rounded-full shadow-lg flex items-center gap-2 xl:gap-3 2xl:gap-4 transition-all duration-500 ${
+            style={{ fontSize: 'calc(var(--footer-text-size) * 0.9)', padding: 'calc(var(--scroll-button-size) * 0.3) calc(var(--scroll-button-size) * 0.5)' }}
+            className={`fixed bottom-8 xl:bottom-12 2xl:bottom-16 right-8 xl:right-12 2xl:right-16 z-50 bg-[#c1562e] text-white rounded-full shadow-lg flex items-center gap-2 transition-all duration-500 ${
             showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
             }`}
         >
-            <span className="font-serif font-medium text-sm xl:text-base 2xl:text-lg uppercase tracking-wider">{t.nav.top}</span>
-            <ArrowUp size={18} className="xl:w-5 xl:h-5 2xl:w-6 2xl:h-6" />
+            <span className="font-serif font-medium uppercase tracking-wider">{t.nav.top}</span>
+            <ArrowUp style={{ width: 'var(--scroll-button-size)', height: 'var(--scroll-button-size)' }} />
         </button>
       )}
 

@@ -4,35 +4,58 @@
 :root {
   --brand: #c1562e;
   
-  /* Fluid scaling based on viewport width (1440px MacBook M1 as reference) */
-  /* Scales continuously from 768px (tablet) to 2560px (4K) */
+  /* Fluid scaling - optimized to fit comfortably on 1440px MacBook M1 with margins */
   
-  /* Logo width: 384px at 1440px, scales to 448px at 2560px */
-  --logo-width: clamp(12rem, 8rem + 18vw, 28rem);
+  /* Logo width: 324px at 1440px (180px * 1.8) */
+  --logo-width: clamp(14.4rem, 5.4rem + 18vw, 25.2rem);
   
-  /* Main circular image: 448px at 1440px, scales to 512px at 2560px */
-  --main-image-size: clamp(14rem, 10rem + 20vw, 32rem);
+  /* Main circular image: 468px at 1440px (260px * 1.8) */
+  --main-image-size: clamp(21.6rem, 9rem + 21.6vw, 32.4rem);
   
-  /* Menu item text size: 48px at 1440px, scales to 60px at 2560px */
-  --menu-text-size: clamp(1.125rem, 0.625rem + 1.3vw, 1.875rem);
+  /* Menu item text: 18px at 1440px */
+  --menu-text-size: clamp(0.875rem, 0.4rem + 0.9vw, 1.375rem);
   
-  /* Body paragraph text: 16px at 1440px, scales to 18px at 2560px */
-  --body-text-size: clamp(0.875rem, 0.8rem + 0.2vw, 1rem);
+  /* Body paragraph text: 13px at 1440px */
+  --body-text-size: clamp(0.75rem, 0.55rem + 0.25vw, 0.875rem);
   
-  /* Phrase below logo: 32px at 1440px, scales to 48px at 2560px */
-  --phrase-text-size: clamp(1rem, 0.5rem + 1vw, 1.5rem);
+  /* Phrase below logo: 28.8px at 1440px (16px * 1.8) */
+  --phrase-text-size: clamp(1.35rem, 0.63rem + 1.08vw, 2.025rem);
   
-  /* Page title: 80px at 1440px, scales to 96px at 2560px */
-  --title-text-size: clamp(2.5rem, 1.5rem + 2.5vw, 3.5rem);
+  /* Page title: 40px at 1440px */
+  --title-text-size: clamp(1.75rem, 0.9rem + 1.5vw, 3rem);
   
-  /* Horizontal padding: 48px at 1440px, scales to 64px at 2560px */
-  --padding-x: clamp(1.5rem, 1rem + 1.5vw, 4rem);
+  /* Horizontal padding: 36px at 1440px */
+  --padding-x: clamp(1rem, 0.3rem + 1.5vw, 3rem);
   
-  /* Vertical padding: 32px at 1440px, scales to 48px at 2560px */
-  --padding-y: clamp(2rem, 1rem + 1.8vw, 3rem);
+  /* Left text extra margin */
+  --left-text-margin: clamp(2rem, 1rem + 2vw, 4rem);
   
-  /* Gap between sections: 32px at 1440px, scales to 48px at 2560px */
-  --gap-base: clamp(2rem, 1rem + 2vw, 3rem);
+  /* Vertical padding: 16px at 1440px */
+  --padding-y: clamp(0.75rem, 0.2rem + 0.8vw, 1.5rem);
+  
+  /* Top padding for header: 24px at 1440px */
+  --padding-top: clamp(1rem, 0.3rem + 1vw, 2rem);
+  
+  /* Gap between sections: 24px at 1440px */
+  --gap-base: clamp(1rem, 0.3rem + 1.2vw, 2rem);
+  
+  /* Menu spacing: 8px at 1440px */
+  --menu-spacing: clamp(0.375rem, 0.15rem + 0.35vw, 0.75rem);
+  
+  /* Margin below phrase: 12px at 1440px */
+  --phrase-margin: clamp(0.5rem, 0.2rem + 0.5vw, 1rem);
+  
+  /* Footer text size: readable but not too big */
+  --footer-text-size: clamp(0.8rem, 0.6rem + 0.3vw, 1rem);
+  
+  /* Footer bottom margin */
+  --footer-bottom-margin: clamp(1.5rem, 0.5rem + 1.5vw, 3rem);
+  
+  /* Internal page body text: consistent readable size */
+  --internal-body-text: clamp(0.9rem, 0.7rem + 0.3vw, 1.1rem);
+  
+  /* Scroll to top button size */
+  --scroll-button-size: clamp(2rem, 1.5rem + 0.8vw, 3rem);
 }
 
 html {
