@@ -3,10 +3,42 @@
 
 :root {
   --brand: #c1562e;
+  
+  /* Fluid scaling based on viewport width (1440px MacBook M1 as reference) */
+  /* Scales continuously from 768px (tablet) to 2560px (4K) */
+  
+  /* Logo width: 384px at 1440px, scales to 448px at 2560px */
+  --logo-width: clamp(12rem, 8rem + 18vw, 28rem);
+  
+  /* Main circular image: 448px at 1440px, scales to 512px at 2560px */
+  --main-image-size: clamp(14rem, 10rem + 20vw, 32rem);
+  
+  /* Menu item text size: 48px at 1440px, scales to 60px at 2560px */
+  --menu-text-size: clamp(1.125rem, 0.625rem + 1.3vw, 1.875rem);
+  
+  /* Body paragraph text: 16px at 1440px, scales to 18px at 2560px */
+  --body-text-size: clamp(0.875rem, 0.8rem + 0.2vw, 1rem);
+  
+  /* Phrase below logo: 32px at 1440px, scales to 48px at 2560px */
+  --phrase-text-size: clamp(1rem, 0.5rem + 1vw, 1.5rem);
+  
+  /* Page title: 80px at 1440px, scales to 96px at 2560px */
+  --title-text-size: clamp(2.5rem, 1.5rem + 2.5vw, 3.5rem);
+  
+  /* Horizontal padding: 48px at 1440px, scales to 64px at 2560px */
+  --padding-x: clamp(1.5rem, 1rem + 1.5vw, 4rem);
+  
+  /* Vertical padding: 32px at 1440px, scales to 48px at 2560px */
+  --padding-y: clamp(2rem, 1rem + 1.8vw, 3rem);
+  
+  /* Gap between sections: 32px at 1440px, scales to 48px at 2560px */
+  --gap-base: clamp(2rem, 1rem + 2vw, 3rem);
 }
 
-*, *::before, *::after { box-sizing: border-box; }
-html, body, #root { height: 100%; }
+html {
+  font-size: clamp(14px, 0.875rem + 0.3vw, 18px);
+}
+
 body { 
   margin: 0; 
   -webkit-font-smoothing: antialiased; 

@@ -625,19 +625,19 @@ const App: React.FC = () => {
 
   // Footer Component
   const Footer = ({ compact = false }: { compact?: boolean }) => (
-    <div className={`w-full flex justify-center ${compact ? 'pb-6 pt-2' : 'pb-8 pt-12'}`}>
+    <div className={`w-full flex justify-center ${compact ? 'pb-6 xl:pb-8 2xl:pb-10 pt-2 xl:pt-3 2xl:pt-4' : 'pb-8 xl:pb-12 2xl:pb-16 pt-12 xl:pt-16 2xl:pt-20'}`}>
       <div className="flex flex-col items-center w-max max-w-full">
         
         {/* Email */}
         <a 
           href="mailto:experienciaroure@proton.me" 
-          className={`font-serif ${compact ? 'text-base' : 'text-lg'} text-stone-600 ${hoverBrandColor} transition-colors block text-center w-full mb-2`}
+          className={`font-serif ${compact ? 'text-base xl:text-lg 2xl:text-xl' : 'text-lg xl:text-xl 2xl:text-2xl'} text-stone-600 ${hoverBrandColor} transition-colors block text-center w-full mb-2 xl:mb-3 2xl:mb-4`}
         >
           experienciaroure@proton.me
         </a>
 
         {/* Language Switcher */}
-        <div className={`flex items-center justify-between w-full gap-6 text-sm font-bold uppercase tracking-widest text-stone-400 ${compact ? 'mt-0' : 'mt-1'}`}>
+        <div className={`flex items-center justify-between w-full gap-6 xl:gap-8 2xl:gap-10 text-sm xl:text-base 2xl:text-lg font-bold uppercase tracking-widest text-stone-400 ${compact ? 'mt-0' : 'mt-1 xl:mt-2 2xl:mt-3'}`}>
           <button 
             onClick={() => setLanguage('es')}
             className={`${language === 'es' ? 'text-stone-800 border-b-2 border-[#c1562e]' : 'text-stone-400 hover:text-stone-600'} transition-colors pb-0.5`}
@@ -654,9 +654,9 @@ const App: React.FC = () => {
         </div>
 
         {/* Credits */}
-        <div className="flex items-center justify-between w-full text-[11px] tracking-widest text-stone-400 pt-2">
+        <div className="flex items-center justify-between w-full text-[11px] xl:text-xs 2xl:text-sm tracking-widest text-stone-400 pt-2 xl:pt-3 2xl:pt-4">
           <span>{t.home.footer}</span>
-          <a href="https://rcrear.com" className={`hover:text-stone-600 transition-colors font-semibold`}>rcrear.com</a>
+          <a href="https://rcrear.com" target="_blank" rel="noopener noreferrer" className={`hover:text-stone-600 transition-colors font-semibold`}>rcrear.com</a>
         </div>
       </div>
     </div>
@@ -719,25 +719,25 @@ const App: React.FC = () => {
       // Changed h-screen to min-h-screen and overflow-hidden only on md+ to allow scrolling on mobile
       <div className="w-full min-h-screen md:h-screen flex flex-col relative overflow-x-hidden md:overflow-hidden">
         {/* Logo Header Area - Centered at top */}
-        <div className="pt-6 md:pt-8 w-full flex flex-col justify-center items-center z-20 px-4">
+        <div className="pt-6 md:pt-8 xl:pt-12 2xl:pt-16 w-full flex flex-col justify-center items-center z-20 px-4 -translate-x-2">
              <div className="relative flex flex-col items-center justify-center">
-                <div className="w-48 md:w-64 lg:w-80 shrink-0 relative flex items-center justify-center">
+                <div style={{ width: 'var(--logo-width)' }} className="shrink-0 relative flex items-center justify-center">
                   <LogoImg />
                 </div>
                 {/* Phrase below logo */}
-                <span className="font-serif text-lg md:text-xl lg:text-2xl italic tracking-wide whitespace-nowrap mt-3 md:mt-4 text-[#c1562e]">
+                <span style={{ fontSize: 'var(--phrase-text-size)' }} className="font-serif italic tracking-wide whitespace-nowrap mt-3 md:mt-4 xl:mt-6 2xl:mt-7 text-[#c1562e]">
                   {t.header?.right}
                 </span>
              </div>
         </div>
 
         {/* Main Content - Flex Centered */}
-        <div className="flex-1 flex items-center justify-center w-full px-6 md:px-12 mt-8 md:mt-6 mb-0 py-8 md:py-0">
-            <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-[90rem] gap-8 md:gap-12 lg:gap-16">
+        <div style={{ paddingLeft: 'var(--padding-x)', paddingRight: 'var(--padding-x)' }} className="flex-1 flex items-center justify-center w-full mt-8 md:mt-6 xl:mt-6 mb-0 py-8 md:py-0">
+            <div style={{ gap: 'var(--gap-base)' }} className="flex flex-col md:flex-row items-center justify-between w-full max-w-[90rem] 2xl:max-w-[100rem]">
             
                 {/* Left: Text */}
                 <div className="w-full md:w-1/3 order-2 md:order-1 px-4 md:px-0 text-center md:text-right flex flex-col items-center md:items-end">
-                    <div className="max-w-lg space-y-3 font-serif text-stone-700 text-sm md:text-lg leading-relaxed">
+                    <div className="max-w-lg xl:max-w-lg 2xl:max-w-xl space-y-3 xl:space-y-3 2xl:space-y-4 font-serif text-stone-700 leading-relaxed" style={{ fontSize: 'var(--body-text-size)' }}>
                     <p>{t.home.text1}</p>
                     <p>{t.home.text2}</p>
                     <p className={`${brandColor} font-bold`}>
@@ -749,7 +749,7 @@ const App: React.FC = () => {
 
                 {/* Center: Image */}
                 <div className="order-1 md:order-2 shrink-0 relative z-10">
-                    <div className="w-56 h-56 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[28rem] xl:h-[28rem] rounded-full overflow-hidden relative group">
+                    <div style={{ width: 'var(--main-image-size)', height: 'var(--main-image-size)' }} className="rounded-full overflow-hidden relative group">
                     <img 
                         src={IMAGES.homeMain} 
                         alt="Escuela Roure" 
@@ -764,7 +764,7 @@ const App: React.FC = () => {
                         onMouseEnter={() => setMenuHasInteracted(true)}
                         onMouseLeave={() => setHoveredMenuKey(null)}
                     >
-                    <ul className="space-y-2 md:space-y-3 lg:space-y-4">
+                    <ul className="space-y-2 md:space-y-3 lg:space-y-4 xl:space-y-5 2xl:space-y-6">
                         {menuItems.map((item) => {
                         // Logic: Highlight if hovered OR (if not interacted yet AND key is historia)
                         const isHighlighted = hoveredMenuKey === item.key || (!menuHasInteracted && hoveredMenuKey === null && item.key === 'historia');
@@ -774,7 +774,8 @@ const App: React.FC = () => {
                             <button 
                                 onClick={() => handleNav(item.key as View)}
                                 onMouseEnter={() => setHoveredMenuKey(item.key)}
-                                className={`text-lg md:text-xl lg:text-2xl font-serif font-medium transition-colors duration-300 block relative group text-left
+                                style={{ fontSize: 'var(--menu-text-size)' }}
+                                className={`font-serif font-medium transition-colors duration-300 block relative group text-left
                                 ${isHighlighted ? 'text-[#c1562e]' : 'text-stone-600'}
                                 `}
                             >
@@ -797,32 +798,32 @@ const App: React.FC = () => {
   };
 
   const InternalPageLayout = ({ title, children }: { title: string, children?: React.ReactNode }) => (
-    <div className="w-full min-h-screen flex flex-col pt-32 pb-20 px-6 md:px-12 max-w-6xl mx-auto">
+    <div style={{ paddingLeft: 'var(--padding-x)', paddingRight: 'var(--padding-x)' }} className="w-full min-h-screen flex flex-col pt-32 xl:pt-36 2xl:pt-40 pb-20 xl:pb-24 2xl:pb-28 max-w-6xl xl:max-w-7xl 2xl:max-w-6xl mx-auto">
       {/* Sticky Header Area for Internal Pages */}
-      <div className="fixed top-0 left-0 w-full bg-[#f7f5e6]/90 backdrop-blur-sm z-40 py-4 px-6 border-b border-stone-200/50">
-         <div className="max-w-6xl mx-auto flex justify-between items-center">
+      <div style={{ paddingLeft: 'var(--padding-x)', paddingRight: 'var(--padding-x)' }} className="fixed top-0 left-0 w-full bg-[#f7f5e6]/90 backdrop-blur-sm z-40 py-4 xl:py-5 2xl:py-6 border-b border-stone-200/50">
+         <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-6xl mx-auto flex justify-between items-center">
             <button 
               onClick={() => navigateTo('home')}
-              className={`flex items-center gap-2 font-serif text-lg ${brandColor} hover:opacity-80 transition-opacity`}
+              className={`flex items-center gap-2 font-serif text-base md:text-lg xl:text-lg 2xl:text-xl ${brandColor} hover:opacity-80 transition-opacity`}
             >
-              <ChevronLeft size={20} />
+              <ChevronLeft size={20} className="xl:w-5 xl:h-5 2xl:w-6 2xl:h-6" />
               {t.nav.back}
             </button>
-            <div className="w-24 opacity-80">
+            <div className="w-24 xl:w-28 2xl:w-32 opacity-80">
                <LogoImg />
             </div>
-            <div className="w-20"></div> {/* Spacer for balance */}
+            <div className="w-20 xl:w-24 2xl:w-28"></div> {/* Spacer for balance */}
          </div>
       </div>
 
-      <h1 className="text-4xl md:text-5xl font-serif font-bold text-stone-800 mb-12 mt-8 border-b border-stone-300 pb-6">
+      <h1 style={{ fontSize: 'var(--title-text-size)' }} className="font-serif font-bold text-stone-800 mb-12 xl:mb-14 2xl:mb-16 mt-8 xl:mt-10 2xl:mt-12 border-b border-stone-300 pb-6 xl:pb-7 2xl:pb-8">
         {title}
       </h1>
       <div className="animate-fade-in flex-1">
         {children}
       </div>
       
-      <div className="mt-20 pt-10 border-t border-stone-200/50">
+      <div className="mt-20 xl:mt-24 2xl:mt-28 pt-10 xl:pt-12 2xl:pt-14 border-t border-stone-200/50">
         <Footer compact={false} />
       </div>
     </div>
@@ -830,12 +831,12 @@ const App: React.FC = () => {
 
   const StructuredTextView = ({ title, contentData, imageSrc }: { title: string, contentData: ContentSection[], imageSrc: string }) => (
     <InternalPageLayout title={title}>
-      <div className="flex flex-col md:flex-row gap-12 items-start">
-        <div className="w-full md:w-1/2 font-serif text-lg leading-relaxed text-stone-700 space-y-8">
+      <div style={{ gap: 'var(--gap-base)' }} className="flex flex-col md:flex-row items-start">
+        <div style={{ fontSize: 'var(--body-text-size)' }} className="w-full md:w-1/2 font-serif leading-relaxed text-stone-700 space-y-8 xl:space-y-9 2xl:space-y-10">
           {contentData.map((section, sIdx) => (
-              <div key={sIdx} className="space-y-4">
+              <div key={sIdx} className="space-y-4 xl:space-y-5 2xl:space-y-6">
                   {section.title && (
-                      <h3 className="text-2xl font-bold text-stone-800 mb-2 text-[#c1562e]">{section.title}</h3>
+                      <h3 className="text-2xl xl:text-2xl 2xl:text-3xl font-bold text-stone-800 mb-2 xl:mb-2 2xl:mb-3 text-[#c1562e]">{section.title}</h3>
                   )}
                   {section.paragraphs.map((p, pIdx) => (
                       <p key={pIdx} className={pIdx === 0 ? "font-bold" : ""}>
@@ -846,7 +847,7 @@ const App: React.FC = () => {
           ))}
         </div>
         <div className="w-full md:w-1/2">
-           <div className="aspect-[4/5] bg-stone-200 rounded-lg overflow-hidden shadow-lg sticky top-32">
+           <div className="aspect-[4/5] bg-stone-200 rounded-lg overflow-hidden shadow-lg sticky top-32 xl:top-36 2xl:top-40">
              <img 
                src={imageSrc} 
                alt={title} 
@@ -866,18 +867,18 @@ const App: React.FC = () => {
 
     return (
       <InternalPageLayout title={t.nav.escuela}>
-        <div className="flex flex-col md:flex-row gap-12">
+        <div className="flex flex-col md:flex-row gap-12 xl:gap-13 2xl:gap-16">
           {/* Sidebar Menu */}
           <div className="w-full md:w-1/4 shrink-0">
-            <div className="sticky top-32 pl-2">
-              <ul className="space-y-3 font-serif">
+            <div className="sticky top-32 xl:top-36 2xl:top-40 pl-2">
+              <ul className="space-y-3 xl:space-y-3 2xl:space-y-4 font-serif">
                 {sections.map((s) => {
                   const isActive = escuelaSection === s;
                   return (
                   <li key={s}>
                     <button 
                       onClick={() => setEscuelaSection(s)}
-                      className={`text-base md:text-lg font-serif font-medium transition-colors duration-300 block relative group text-left
+                      className={`text-base md:text-lg xl:text-lg 2xl:text-xl font-serif font-medium transition-colors duration-300 block relative group text-left
                         ${isActive ? 'text-[#c1562e]' : 'text-stone-600 hover:text-[#c1562e]'}
                       `}
                     >
@@ -892,12 +893,12 @@ const App: React.FC = () => {
 
           {/* Main Content Area */}
           <div className="w-full md:w-3/4 min-h-[500px]">
-            <h2 className="text-3xl font-serif mb-8 text-stone-800">{t.escuela.titles[escuelaSection]}</h2>
+            <h2 className="text-3xl xl:text-3xl 2xl:text-4xl font-serif mb-8 xl:mb-10 2xl:mb-12 text-stone-800">{t.escuela.titles[escuelaSection]}</h2>
             
-            <div className="font-serif text-lg leading-relaxed text-stone-700 space-y-6 max-w-prose">
+            <div className="font-serif text-base md:text-lg xl:text-lg 2xl:text-xl leading-relaxed text-stone-700 space-y-6 xl:space-y-7 2xl:space-y-8 max-w-prose xl:max-w-full">
                <img 
                  src={IMAGES.escuela[escuelaSection]} 
-                 className="w-full h-64 object-cover rounded-lg mb-6 shadow-md"
+                 className="w-full h-64 xl:h-72 2xl:h-80 object-cover rounded-lg mb-6 xl:mb-7 2xl:mb-8 shadow-md"
                  alt={t.escuela.menu[escuelaSection]} 
                />
                
@@ -920,9 +921,9 @@ const App: React.FC = () => {
 
     return (
       <InternalPageLayout title={t.nav.videos}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 xl:gap-14 2xl:gap-16">
           {videos.map((video, i) => (
-            <div key={i} className="flex flex-col gap-3 group cursor-pointer" onClick={() => { if(video.link && video.link !== '#' && !video.embedId) window.open(video.link, '_blank') }}>
+            <div key={i} className="flex flex-col gap-3 xl:gap-3 2xl:gap-4 group cursor-pointer" onClick={() => { if(video.link && video.link !== '#' && !video.embedId) window.open(video.link, '_blank') }}>
               <div className="aspect-video bg-black rounded-lg overflow-hidden relative flex items-center justify-center shadow-lg">
                 {video.type === 'vimeo' && video.embedId ? (
                     <iframe 
@@ -963,8 +964,8 @@ const App: React.FC = () => {
                 )}
               </div>
               <div>
-                <h3 className="font-serif font-bold text-xl text-stone-800 mt-2 group-hover:text-[#c1562e] transition-colors">{video.title}</h3>
-                <p className="font-serif text-stone-600 text-sm mt-1 leading-relaxed">{video.description}</p>
+                <h3 className="font-serif font-bold text-xl xl:text-xl 2xl:text-2xl text-stone-800 mt-2 xl:mt-2 2xl:mt-3 group-hover:text-[#c1562e] transition-colors">{video.title}</h3>
+                <p className="font-serif text-stone-600 text-sm md:text-base xl:text-base 2xl:text-lg mt-1 xl:mt-1 2xl:mt-2 leading-relaxed">{video.description}</p>
               </div>
             </div>
           ))}
@@ -987,10 +988,10 @@ const App: React.FC = () => {
     return (
       <InternalPageLayout title={t.sections.textos}>
         {/* Filter Tags */}
-        <div className="flex flex-wrap gap-3 mb-10">
+        <div className="flex flex-wrap gap-3 xl:gap-3 2xl:gap-4 mb-10 xl:mb-12 2xl:mb-14">
             <button 
                 onClick={() => setActiveTopic(null)}
-                className={`px-4 py-2 rounded-full text-sm font-serif font-medium border transition-all
+                className={`px-4 xl:px-5 2xl:px-6 py-2 xl:py-2 2xl:py-3 rounded-full text-sm md:text-base xl:text-base 2xl:text-lg font-serif font-medium border transition-all
                     ${activeTopic === null 
                         ? 'bg-[#c1562e] text-white border-[#c1562e]' 
                         : 'bg-white text-stone-600 border-stone-300 hover:border-[#c1562e] hover:text-[#c1562e]'}
@@ -1002,7 +1003,7 @@ const App: React.FC = () => {
                 <button 
                     key={topic}
                     onClick={() => setActiveTopic(topic)}
-                    className={`px-4 py-2 rounded-full text-sm font-serif font-medium border transition-all
+                    className={`px-4 xl:px-6 2xl:px-8 py-2 xl:py-3 2xl:py-4 rounded-full text-sm md:text-base xl:text-lg 2xl:text-xl font-serif font-medium border transition-all
                         ${activeTopic === topic
                             ? 'bg-[#c1562e] text-white border-[#c1562e]' 
                             : 'bg-white text-stone-600 border-stone-300 hover:border-[#c1562e] hover:text-[#c1562e]'}
@@ -1014,18 +1015,18 @@ const App: React.FC = () => {
         </div>
 
         {/* Grid of Articles */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-7 2xl:gap-8">
           {filteredArticles.map((article, idx) => (
-            <div key={idx} className="bg-white p-6 rounded-xl border border-stone-200 shadow-sm hover:shadow-md transition-all group cursor-pointer">
-              <div className="flex items-start justify-between mb-4">
-                 <Tag size={16} className="text-stone-400 mt-1" />
-                 <span className="text-xs font-bold text-[#c1562e] bg-[#c1562e]/10 px-2 py-1 rounded">{article.topic}</span>
+            <div key={idx} className="bg-white p-6 xl:p-7 2xl:p-8 rounded-xl border border-stone-200 shadow-sm hover:shadow-md transition-all group cursor-pointer">
+              <div className="flex items-start justify-between mb-4 xl:mb-4 2xl:mb-5">
+                 <Tag size={16} className="text-stone-400 mt-1 xl:w-4 xl:h-4 2xl:w-5 2xl:h-5" />
+                 <span className="text-xs md:text-sm xl:text-sm 2xl:text-base font-bold text-[#c1562e] bg-[#c1562e]/10 px-2 xl:px-2.5 2xl:px-3 py-1 xl:py-1 2xl:py-1.5 rounded">{article.topic}</span>
               </div>
-                <h3 className="text-xl font-serif font-bold text-stone-800 mb-2 group-hover:text-[#c1562e] transition-colors leading-tight">
+                <h3 className="text-xl xl:text-xl 2xl:text-2xl font-serif font-bold text-stone-800 mb-2 xl:mb-2 2xl:mb-3 group-hover:text-[#c1562e] transition-colors leading-tight">
                   {article.title}
                 </h3>
-                <p className="text-sm text-stone-500 mb-2 font-serif italic">{language === 'es' ? 'Equipo El Roure' : 'Equip El Roure'}</p>
-                      <div className="flex items-center gap-2 mt-4 text-sm text-stone-500">
+                <p className="text-sm md:text-base xl:text-base 2xl:text-lg text-stone-500 mb-2 xl:mb-2 2xl:mb-3 font-serif italic">{language === 'es' ? 'Equipo El Roure' : 'Equip El Roure'}</p>
+                      <div className="flex items-center gap-2 mt-4 xl:mt-4 2xl:mt-5 text-sm md:text-base xl:text-base 2xl:text-lg text-stone-500">
                         <FileText size={16} />
                         {article.file ? (
                           <a
@@ -1052,12 +1053,12 @@ const App: React.FC = () => {
 
   const EnQueEstamosView = () => (
       <InternalPageLayout title={t.nav.en_que_estamos}>
-          <div className="flex flex-col gap-16 md:gap-24">
+          <div className="flex flex-col gap-16 md:gap-24 xl:gap-32 2xl:gap-40">
             {t.people.map((person, index) => (
-                <div key={index} className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+                <div key={index} className="flex flex-col md:flex-row gap-8 md:gap-12 xl:gap-16 2xl:gap-20 items-start">
                     {/* Image Left/Right Alternating could be nice, but let's stick to Left for consistency or standard readable layout */}
                     <div className="w-full md:w-1/3 shrink-0 flex justify-center md:justify-start">
-                        <div className="w-56 h-56 md:w-72 md:h-72 rounded-xl overflow-hidden shadow-lg relative group">
+                        <div className="w-56 h-56 md:w-72 md:h-72 xl:w-80 xl:h-80 2xl:w-96 2xl:h-96 rounded-xl overflow-hidden shadow-lg relative group">
                              <div className="absolute inset-0 bg-[#c1562e]/10 mix-blend-overlay group-hover:opacity-0 transition-opacity"></div>
                              <img 
                                 src={IMAGES.people[index] || IMAGES.homeMain} 
@@ -1068,10 +1069,10 @@ const App: React.FC = () => {
                     </div>
                     
                     <div className="w-full md:w-2/3">
-                        <h3 className="text-3xl font-serif font-bold text-stone-800 mb-6 border-l-4 border-[#c1562e] pl-4">
+                        <h3 className="text-3xl xl:text-4xl 2xl:text-5xl font-serif font-bold text-stone-800 mb-6 xl:mb-8 2xl:mb-10 border-l-4 xl:border-l-6 2xl:border-l-8 border-[#c1562e] pl-4 xl:pl-6 2xl:pl-8">
                             {person.name}
                         </h3>
-                        <div className="font-serif text-lg text-stone-700 leading-relaxed space-y-4">
+                        <div className="font-serif text-base md:text-lg xl:text-xl 2xl:text-2xl text-stone-700 leading-relaxed space-y-4 xl:space-y-6 2xl:space-y-8">
                             {person.paragraphs.map((p, pIdx) => (
                                 <p key={pIdx}>
                                     {/* Apply linkify logic to each paragraph */}
@@ -1102,8 +1103,8 @@ const App: React.FC = () => {
 
     return (
       <InternalPageLayout title={t.nav.comunidad}>
-         <div className="flex flex-col items-center max-w-2xl mx-auto">
-            <div className="text-center space-y-4 font-serif text-lg leading-relaxed text-stone-700 mb-10">
+         <div className="flex flex-col items-center max-w-2xl xl:max-w-3xl 2xl:max-w-4xl mx-auto">
+            <div className="text-center space-y-4 xl:space-y-6 2xl:space-y-8 font-serif text-base md:text-lg xl:text-xl 2xl:text-2xl leading-relaxed text-stone-700 mb-10 xl:mb-14 2xl:mb-20">
                 {t.comunidadText.map((p, idx) => (
                     <p key={idx}>
                         <LinkifyText text={p} />
@@ -1111,14 +1112,14 @@ const App: React.FC = () => {
                 ))}
             </div>
             
-            <div className="w-full max-w-md bg-white p-8 rounded-xl shadow-lg border border-stone-200">
-                <label className="block font-serif font-bold text-stone-700 mb-2">
+            <div className="w-full max-w-md xl:max-w-lg 2xl:max-w-xl bg-white p-8 xl:p-10 2xl:p-12 rounded-xl shadow-lg border border-stone-200">
+                <label className="block font-serif font-bold text-base md:text-lg xl:text-xl 2xl:text-2xl text-stone-700 mb-2 xl:mb-3 2xl:mb-4">
                     {language === 'es' ? 'Contraseña:' : 'Contrasenya:'}
                 </label>
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-4 xl:gap-5 2xl:gap-6">
                     <input 
                         type="password" 
-                        className="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-[#c1562e] focus:ring-2 focus:ring-[#c1562e]/20 outline-none transition-all"
+                        className="w-full px-4 xl:px-6 2xl:px-8 py-3 xl:py-4 2xl:py-5 text-base xl:text-lg 2xl:text-xl rounded-lg border border-stone-300 focus:border-[#c1562e] focus:ring-2 focus:ring-[#c1562e]/20 outline-none transition-all"
                         placeholder={language === 'es' ? 'Contraseña' : 'Contrasenya'}
                         value={password}
                         onChange={(e) => {
@@ -1128,13 +1129,13 @@ const App: React.FC = () => {
                         onKeyDown={(e) => e.key === 'Enter' && handleLogin()}
                     />
                     {error && (
-                        <span className="text-red-500 text-sm font-medium animate-pulse">
+                        <span className="text-red-500 text-sm md:text-base xl:text-lg 2xl:text-xl font-medium animate-pulse">
                             {language === 'es' ? 'Contraseña incorrecta' : 'Contrasenya incorrecta'}
                         </span>
                     )}
                     <button 
                         onClick={handleLogin}
-                        className="w-full bg-[#c1562e] hover:bg-[#a04625] text-white font-bold py-3 rounded-lg transition-colors shadow-md hover:shadow-lg transform active:scale-[0.98]"
+                        className="w-full bg-[#c1562e] hover:bg-[#a04625] text-white font-bold text-base xl:text-lg 2xl:text-xl py-3 xl:py-4 2xl:py-5 rounded-lg transition-colors shadow-md hover:shadow-lg transform active:scale-[0.98]"
                     >
                         {language === 'es' ? 'Entrar' : 'Entrar'}
                     </button>
@@ -1164,12 +1165,12 @@ const App: React.FC = () => {
       {currentView !== 'home' && (
         <button
             onClick={scrollToTop}
-            className={`fixed bottom-8 right-8 z-50 bg-[#c1562e] text-white px-4 py-3 rounded-full shadow-lg flex items-center gap-2 transition-all duration-500 ${
+            className={`fixed bottom-8 xl:bottom-12 2xl:bottom-16 right-8 xl:right-12 2xl:right-16 z-50 bg-[#c1562e] text-white px-4 xl:px-6 2xl:px-8 py-3 xl:py-4 2xl:py-5 rounded-full shadow-lg flex items-center gap-2 xl:gap-3 2xl:gap-4 transition-all duration-500 ${
             showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
             }`}
         >
-            <span className="font-serif font-medium text-sm uppercase tracking-wider">{t.nav.top}</span>
-            <ArrowUp size={18} />
+            <span className="font-serif font-medium text-sm xl:text-base 2xl:text-lg uppercase tracking-wider">{t.nav.top}</span>
+            <ArrowUp size={18} className="xl:w-5 xl:h-5 2xl:w-6 2xl:h-6" />
         </button>
       )}
 
