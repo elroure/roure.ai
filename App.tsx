@@ -264,8 +264,10 @@ const content = {
     ],
     comunidadText: [
         "Hemos creado este espacio para las personas que habéis formado parte de la Comunidad de la escuela.",
-        "Aquí podéis descargar fotos de una selección que hemos hecho de los 24 años de escuela (en las que aparecen personas que lo han autorizado).",
-        "Para descargar las fotos os facilitaremos una contraseña que podéis pedir en el correo: LINK_ACCEDER"
+        "SUBTITLE:Fotos y Contactos",
+        "Aquí podréis encontrar una herramienta para que las personas de la comunidad histórica de El Roure podáis encontraros y poneros en contacto, dejando vuestro datos voluntariamente, y una selección de fotos que hemos hecho de los 24 años de escuela (en las que aparecen personas que lo han autorizado).",
+        "Para acceder os facilitaremos una contraseña que podéis pedir en el correo.",
+        "experienciaroure@proton.me"
     ],
     videosList: [
       {
@@ -530,8 +532,10 @@ const content = {
     ],
     comunidadText: [
         "Hem creat aquest espai per a les persones que heu format part de la Comunitat de l'escola.",
-        "Aquí podeu descarregar fotos d'una selecció que hem fet dels 24 anys d'escola (en les quals apareixen persones que ho han autoritzat).",
-        "Per descarregar les fotos us facilitarem una contrasenya que podeu demanar al correu: LINK_ACCEDIR"
+        "SUBTITLE:Fotos i Contactes",
+        "Aquí podreu trobar una eina perquè les persones de la comunitat històrica d'El Roure us pugueu trobar i posar-vos en contacte, deixant les vostres dades voluntàriament, i una selecció de fotos que hem fet dels 24 anys d'escola (en les quals apareixen persones que ho han autoritzat).",
+        "Per accedir us facilitarem una contrasenya que podeu demanar al correu.",
+        "experienciaroure@proton.me"
     ],
     videosList: [
       {
@@ -680,21 +684,22 @@ const App: React.FC = () => {
   // Footer Component
   const Footer = ({ compact = false }: { compact?: boolean }) => (
     <div className={`w-full flex justify-center ${compact ? 'pb-6 pt-2' : 'pb-8 pt-12'}`}>
-      <div className="flex flex-col items-center w-max max-w-full">
+      <div className="flex flex-col items-center">
         
         {/* Email */}
         <a 
           href="mailto:experienciaroure@proton.me" 
-          className={`font-serif ${compact ? 'text-base' : 'text-lg'} text-stone-600 ${hoverBrandColor} transition-colors block text-center w-full mb-2`}
+          className={`font-serif ${compact ? 'text-base' : 'text-lg'} text-stone-600 ${hoverBrandColor} transition-colors block text-center mb-2`}
         >
           experienciaroure@proton.me
         </a>
 
         {/* Language Switcher */}
-        <div className={`flex items-center justify-between w-full gap-6 text-sm font-bold uppercase tracking-widest text-stone-400 ${compact ? 'mt-0' : 'mt-1'}`}>
+        <div className={`flex items-center justify-between text-sm font-bold uppercase text-stone-400 ${compact ? 'mt-0' : 'mt-1'}`} style={{ width: '100%', maxWidth: '100%', letterSpacing: '0.4em' }}>
           <button 
             onClick={() => setLanguage('es')}
             className={`${language === 'es' ? 'text-stone-800 border-b-2 border-[#c1562e]' : 'text-stone-400 hover:text-stone-600'} transition-colors pb-0.5`}
+            style={{ marginRight: '-0.4em' }}
           >
             castellano
           </button>
@@ -702,13 +707,14 @@ const App: React.FC = () => {
           <button 
             onClick={() => setLanguage('ca')}
             className={`${language === 'ca' ? 'text-stone-800 border-b-2 border-[#c1562e]' : 'text-stone-400 hover:text-stone-600'} transition-colors pb-0.5`}
+            style={{ marginLeft: '-0.4em' }}
           >
             català
           </button>
         </div>
 
         {/* Credits */}
-        <div className="flex items-center justify-between w-full text-[11px] tracking-widest text-stone-400 pt-2">
+        <div className="flex items-center justify-between text-[11px] text-stone-400 mt-2" style={{ width: '100%', maxWidth: '100%', letterSpacing: '0.4em' }}>
           <span>{t.home.footer}</span>
           <a href="https://rcrear.com" className={`hover:text-stone-600 transition-colors font-semibold`}>rcrear.com</a>
         </div>
@@ -846,7 +852,9 @@ const App: React.FC = () => {
         </div>
 
         {/* Footer inside Home for perfect spacing */}
-        <Footer compact={true} />
+        <div className="mt-1 mb-2" style={{ transform: 'scale(0.75)', transformOrigin: 'center top' }}>
+          <Footer compact={false} />
+        </div>
       </div>
     );
   };
@@ -870,7 +878,7 @@ const App: React.FC = () => {
          </div>
       </div>
 
-      <h1 style={{ fontSize: 'var(--menu-text-size)' }} className="font-serif font-bold text-stone-800 mb-12 xl:mb-14 2xl:mb-16 mt-8 xl:mt-10 2xl:mt-12 border-b border-stone-300 pb-6 xl:pb-7 2xl:pb-8">
+      <h1 className="font-serif font-bold text-stone-800 mb-12 xl:mb-14 2xl:mb-16 mt-8 xl:mt-10 2xl:mt-12 border-b border-stone-300 pb-6 xl:pb-7 2xl:pb-8 text-2xl xl:text-2xl 2xl:text-3xl">
         {title}
       </h1>
       <div className="animate-fade-in flex-1">
@@ -1150,8 +1158,7 @@ const App: React.FC = () => {
 
     const handleLogin = () => {
       if (password === 'R196r3-') {
-        // Placeholder link to Google Drive (Replace with actual link later)
-        window.open('https://drive.google.com', '_blank'); 
+        window.open('https://drive.google.com/drive/folders/1BfLzFsw4C6WDcIL9gOO-3TDDavWQpsv1?usp=share_link', '_blank'); 
         setError(false);
       } else {
         setError(true);
@@ -1163,6 +1170,15 @@ const App: React.FC = () => {
          <div className="flex flex-col items-center max-w-2xl xl:max-w-3xl 2xl:max-w-4xl mx-auto">
             <div style={{ fontSize: 'var(--internal-body-text)' }} className="text-center space-y-4 xl:space-y-6 2xl:space-y-8 font-serif leading-relaxed text-stone-700 mb-10 xl:mb-14 2xl:mb-20">
                 {t.comunidadText.map((p, idx) => {
+                    // Handle subtitle
+                    if (p.startsWith('SUBTITLE:')) {
+                        const subtitle = p.replace('SUBTITLE:', '');
+                        return (
+                            <h3 key={idx} className="text-2xl xl:text-2xl 2xl:text-3xl font-bold text-stone-800 mb-2 xl:mb-2 2xl:mb-3 text-[#c1562e]">
+                                {subtitle}
+                            </h3>
+                        );
+                    }
                     // Handle inline link within text
                     if (p.includes('LINK_ACCEDER') || p.includes('LINK_ACCEDIR')) {
                         const parts = p.split(/LINK_ACCEDER|LINK_ACCEDIR/);
@@ -1190,9 +1206,6 @@ const App: React.FC = () => {
             </div>
             
             <div className="w-full max-w-md xl:max-w-lg 2xl:max-w-xl">
-                <label style={{ fontSize: 'var(--internal-body-text)' }} className="block font-serif text-stone-700 mb-4 xl:mb-5 2xl:mb-6 text-center">
-                    experienciaroure@proton.me
-                </label>
                 <div className="flex flex-col gap-4 xl:gap-5 2xl:gap-6">
                     <input 
                         type="password" 
