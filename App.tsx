@@ -13,8 +13,8 @@ type EscuelaSection = 'intro' | 'aprendizaje' | 'acompanamiento' | 'equipo' | 'f
 // and production without relying on bundler-specific runtime helpers.
 // Ensure you have copied the source images into `public/images/`.
 const IMAGES = {
-  logo: '/images/logo_roure.png',
-  logo_ca: '/images/logo_roure_ca.png',
+  logo: '/images/logo_roure.png', // Spanish/Castellano
+  logo_ca: '/images/logo_roure_ca.png', // Catalan
   homeMain: '/images/home_main.png',
   sections: {
     historia: "https://picsum.photos/seed/history/800/1000",
@@ -695,7 +695,7 @@ const App: React.FC = () => {
         </a>
 
         {/* Language Switcher */}
-        <div className={`flex items-center justify-between text-sm font-bold uppercase text-stone-400 ${compact ? 'mt-0' : 'mt-1'}`} style={{ width: '100%', maxWidth: '100%', letterSpacing: '0.4em' }}>
+        <div className={`flex items-center justify-between text-sm font-bold uppercase text-stone-400 font-serif ${compact ? 'mt-0' : 'mt-1'}`} style={{ width: '100%', maxWidth: '100%', letterSpacing: '0.4em' }}>
           <button 
             onClick={() => setLanguage('es')}
             className={`${language === 'es' ? 'text-stone-800 border-b-2 border-[#c1562e]' : 'text-stone-400 hover:text-stone-600'} transition-colors pb-0.5`}
@@ -714,7 +714,7 @@ const App: React.FC = () => {
         </div>
 
         {/* Credits */}
-        <div className="flex items-center justify-between text-[11px] text-stone-400 mt-2" style={{ width: '100%', maxWidth: '100%', letterSpacing: '0.4em' }}>
+        <div className={`flex items-center justify-between ${compact ? 'text-base' : 'text-lg'} text-stone-400 mt-2 font-serif`} style={{ width: '100%', maxWidth: '100%' }}>
           <span>{t.home.footer}</span>
           <a href="https://rcrear.com" className={`hover:text-stone-600 transition-colors font-semibold`}>rcrear.com</a>
         </div>
