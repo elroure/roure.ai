@@ -20,6 +20,25 @@ const IMAGES = {
     historia: "https://picsum.photos/seed/history/800/1000",
     fundamentos: "https://picsum.photos/seed/foundations/800/1000",
   },
+  historiaPhotos: [
+    '/images/begona_cristobal.webp',
+    '/images/el_viejo_roble_talado.webp',
+    '/images/el_viejo_roble.webp',
+    '/images/escuela_el_roure.webp',
+    '/images/evento_especial.webp',
+    '/images/familias_el_roure.webp',
+    '/images/heura_adolescents_escola_el_roure.webp',
+    '/images/hormigon.webp',
+    '/images/inauguracion.webp',
+    '/images/los_4_descansando.webp',
+    '/images/maquina_del_tiempo.webp',
+    '/images/ninos_estanteria.webp',
+    '/images/ordenando_nueva _sala.webp',
+    '/images/paso_de_manos.webp',
+    '/images/pintando.webp',
+    '/images/reunion_escuela_el_roure.webp',
+    '/images/subiendo_viga.webp',
+  ],
   videoPlaceholder: "https://picsum.photos/seed/video/600/400",
   escuela: {
     intro: "https://picsum.photos/seed/intro/800/400",
@@ -891,6 +910,111 @@ const App: React.FC = () => {
     </div>
   );
 
+  // Image Carousel Component
+  const ImageCarousel = ({ images, autoPlayInterval = 2000 }: { images: string[], autoPlayInterval?: number }) => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [isPlaying, setIsPlaying] = useState(true);
+
+    useEffect(() => {
+      if (!isPlaying) return;
+      const interval = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % images.length);
+      }, autoPlayInterval);
+      return () => clearInterval(interval);
+    }, [isPlaying, images.length, autoPlayInterval]);
+
+    const goToPrevious = () => {
+      setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+      // Don't resume playing when using arrows
+    };
+
+    const goToNext = () => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+      // Don't resume playing when using arrows
+    };
+
+    return (
+      <div className="relative bg-stone-200 rounded-lg overflow-hidden shadow-lg group">
+        <img 
+          src={images[currentIndex]} 
+          alt={`Slide ${currentIndex + 1}`} 
+          className="w-full h-full object-cover"
+        />
+        
+        {/* Navigation Arrows */}
+        <button
+          onClick={goToPrevious}
+          className="absolute left-2 top-1/2 -translate-y-1/2 bg-stone-800/50 hover:bg-stone-800/80 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+        >
+          <ChevronLeft size={20} />
+        </button>
+        <button
+          onClick={goToNext}
+          className="absolute right-2 top-1/2 -translate-y-1/2 bg-stone-800/50 hover:bg-stone-800/80 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+        >
+          <ChevronLeft size={20} className="rotate-180" />
+        </button>
+
+        {/* Play/Pause Button */}
+        <button
+          onClick={() => setIsPlaying(!isPlaying)}
+          className="absolute bottom-2 right-2 bg-stone-800/50 hover:bg-stone-800/80 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+        >
+          {isPlaying ? (
+            <div className="w-4 h-4 flex gap-1">
+              <div className="w-1.5 h-4 bg-white"></div>
+              <div className="w-1.5 h-4 bg-white"></div>
+            </div>
+          ) : (
+            <Play size={16} fill="white" />
+          )}
+        </button>
+
+        {/* Image Counter */}
+        <div className="absolute bottom-2 left-2 bg-stone-800/50 text-white text-xs px-2 py-1 rounded">
+          {currentIndex + 1} / {images.length}
+        </div>
+      </div>
+    );
+  };
+
+  const HistoriaView = ({ title, contentData }: { title: string, contentData: ContentSection[] }) => {
+    // Split the 17 images into two carousels: 9 + 8
+    const carousel1Images = IMAGES.historiaPhotos.slice(0, 9);
+    const carousel2Images = IMAGES.historiaPhotos.slice(9, 17);
+
+    return (
+      <InternalPageLayout title={title}>
+        <div style={{ gap: 'var(--gap-base)' }} className="flex flex-col md:flex-row items-start">
+          <div style={{ fontSize: 'var(--internal-body-text)' }} className="w-full md:w-1/2 font-serif leading-relaxed text-stone-700 space-y-8 xl:space-y-9 2xl:space-y-10 mb-12 md:mb-0">
+            {contentData.map((section, sIdx) => (
+                <div key={sIdx} className="space-y-4 xl:space-y-5 2xl:space-y-6">
+                    {section.title && (
+                        <h3 className="text-2xl xl:text-2xl 2xl:text-3xl font-bold text-stone-800 mb-2 xl:mb-2 2xl:mb-3 text-[#c1562e]">{section.title}</h3>
+                    )}
+                    {section.paragraphs.map((p, pIdx) => (
+                        <p key={pIdx} className={pIdx === 0 ? "font-bold" : ""}>
+                            {p}
+                        </p>
+                    ))}
+                </div>
+            ))}
+          </div>
+          <div className="w-full md:w-1/2 flex flex-col">
+             {/* First Carousel */}
+             <div style={{ width: 'var(--main-image-size)', height: 'calc(var(--main-image-size) * 1.33)' }} className="mx-auto flex-shrink-0 md:sticky md:top-32 xl:top-36 2xl:top-40">
+               <ImageCarousel images={carousel1Images} autoPlayInterval={3000} />
+             </div>
+             {/* Second Carousel - positioned much lower */}
+             <div style={{ width: 'var(--main-image-size)', height: 'calc(var(--main-image-size) * 1.33)' }} className="mx-auto flex-shrink-0 mt-8 md:mt-[350px] xl:mt-[420px] 2xl:mt-[490px]">
+               <ImageCarousel images={carousel2Images} autoPlayInterval={3000} />
+             </div>
+          </div>
+        </div>
+      </InternalPageLayout>
+    );
+  };
+
   const StructuredTextView = ({ title, contentData, imageSrc }: { title: string, contentData: ContentSection[], imageSrc: string }) => (
     <InternalPageLayout title={title}>
       <div style={{ gap: 'var(--gap-base)' }} className="flex flex-col md:flex-row items-start">
@@ -1238,7 +1362,7 @@ const App: React.FC = () => {
       
       {/* Render View Based on State */}
       {currentView === 'home' && <HomeView />}
-      {currentView === 'historia' && <StructuredTextView title={t.nav.historia} contentData={t.historiaContent} imageSrc={IMAGES.sections.historia} />}
+      {currentView === 'historia' && <HistoriaView title={t.nav.historia} contentData={t.historiaContent} />}
       {currentView === 'fundamentos' && <StructuredTextView title={t.nav.fundamentos} contentData={t.fundamentosContent} imageSrc={IMAGES.sections.fundamentos} />}
       {currentView === 'escuela' && <EscuelaView />}
       {currentView === 'videos' && <VideosView />}
