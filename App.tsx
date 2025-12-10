@@ -15,7 +15,7 @@ type EscuelaSection = 'intro' | 'aprendizaje' | 'acompanamiento' | 'equipo' | 'f
 const IMAGES = {
   logo: '/images/logo_roure.png', // Spanish/Castellano
   logo_ca: '/images/logo_roure_ca.png', // Catalan
-  homeMain: '/images/home_main.png',
+  homeMain: '/images/home_main.png?v=2',
   sections: {
     historia: "https://picsum.photos/seed/history/800/1000",
     fundamentos: "https://picsum.photos/seed/foundations/800/1000",
@@ -25,15 +25,15 @@ const IMAGES = {
     '/images/el_viejo_roble_talado.webp',
     '/images/el_viejo_roble.webp',
     '/images/escuela_el_roure.webp',
-    '/images/evento_especial.webp',
+    '/images/inauguracion_edificio_ginesta_2.webp',
     '/images/familias_el_roure.webp',
     '/images/heura_adolescents_escola_el_roure.webp',
     '/images/hormigon.webp',
-    '/images/inauguracion.webp',
+    '/images/inauguracion_edificio_ginesta.webp',
     '/images/los_4_descansando.webp',
     '/images/maquina_del_tiempo.webp',
     '/images/ninos_estanteria.webp',
-    '/images/ordenando_nueva _sala.webp',
+    '/images/ordenando_nueva_sala.webp',
     '/images/paso_de_manos.webp',
     '/images/pintando.webp',
     '/images/reunion_escuela_el_roure.webp',

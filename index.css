@@ -15,8 +15,8 @@
   /* Menu item text: 18px at 1440px */
   --menu-text-size: clamp(0.875rem, 0.4rem + 0.9vw, 1.375rem);
   
-  /* Body paragraph text: 13px at 1440px */
-  --body-text-size: clamp(0.75rem, 0.55rem + 0.25vw, 0.875rem);
+  /* Body paragraph text: 15px at 1440px */
+  --body-text-size: clamp(0.875rem, 0.65rem + 0.35vw, 1.05rem);
   
   /* Phrase below logo: 28.8px at 1440px (16px * 1.8) */
   --phrase-text-size: clamp(1.35rem, 0.63rem + 1.08vw, 2.025rem);
