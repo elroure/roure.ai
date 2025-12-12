@@ -15,29 +15,48 @@ type EscuelaSection = 'intro' | 'aprendizaje' | 'acompanamiento' | 'equipo' | 'f
 const IMAGES = {
   logo: '/images/logo_roure.png', // Spanish/Castellano
   logo_ca: '/images/logo_roure_ca.png', // Catalan
-  homeMain: '/images/home_main.png?v=2',
+  homeMain: '/images/wood_sprout_oak2.png',
   sections: {
     historia: "https://picsum.photos/seed/history/800/1000",
     fundamentos: "https://picsum.photos/seed/foundations/800/1000",
   },
-  historiaPhotos: [
-    '/images/1_el_viejo_roble.webp',
-    '/images/2_begona_cristobal.webp',
-    '/images/2.2_subiendo_viga.webp',
-    '/images/2.3_pintando.webp',
-    '/images/2.4_los_4_descansando.webp',
-    '/images/3_escuela_el_roure.webp',
-    '/images/4_maquina_del_tiempo.webp',
-    '/images/5_familias_el_roure.webp',
-    '/images/5.2_hormigon.webp',
-    '/images/5.3_ninos_estanteria.webp',
-    '/images/5.4_ordenando_nueva_sala.webp',
-    '/images/6_inauguracion_edificio_ginesta.webp',
-    '/images/7_inauguracion_edificio_ginesta_2.webp',
-    '/images/8_paso_de_manos.webp',
-    '/images/9_heura_adolescents_escola_el_roure.webp',
-    '/images/10_reunion_escuela_el_roure.webp',
-    '/images/11_el_viejo_roble_talado.webp',
+  historiaPhotos_es: [
+    { src: '/images/1_el_viejo_roble.webp', caption: 'El viejo roble' },
+    { src: '/images/2_begona_cristobal.webp', caption: 'Begoña y Cristóbal' },
+    { src: '/images/2.2_subiendo_viga.webp', caption: 'Subiendo una viga' },
+    { src: '/images/2.3_pintando.webp', caption: 'Pintando' },
+    { src: '/images/2.4_los_4_descansando.webp', caption: 'Fundadores, familiar y voluntariado, descansando' },
+    { src: '/images/3_escuela_el_roure.webp', caption: 'Escuela El Roure, edificio Cirerers (3-6 años)' },
+    { src: '/images/4_maquina_del_tiempo.webp', caption: 'Máquina del tiempo' },
+    { src: '/images/5_familias_el_roure.webp', caption: 'Familias El Roure' },
+    { src: '/images/5.2_hormigon.webp', caption: 'Hormigoneando' },
+    { src: '/images/5.3_ninos_estanteria.webp', caption: 'Transportando material al nuevo edificio' },
+    { src: '/images/5.4_ordenando_nueva_sala.webp', caption: 'Ordenando en la nueva sala' },
+    { src: '/images/6_inauguracion_edificio_ginesta.webp', caption: 'Inauguración edificio Ginesta (6-12 años)' },
+    { src: '/images/7_inauguracion_edificio_ginesta_2.webp', caption: 'Inauguración edificio Ginesta 2' },
+    { src: '/images/8_paso_de_manos.webp', caption: 'Paso de manos' },
+    { src: '/images/9_heura_adolescents_escola_el_roure.webp', caption: 'Edificio Heura, (12-16 años)' },
+    { src: '/images/10_reunion_escuela_el_roure.webp', caption: 'Reunión bajo el nuevo Roble' },
+    { src: '/images/11_el_viejo_roble_talado.webp', caption: 'El Viejo Roble, talado' },
+  ],
+  historiaPhotos_ca: [
+    { src: '/images/1_el_viejo_roble.webp', caption: 'El vell roure' },
+    { src: '/images/2_begona_cristobal.webp', caption: 'Begoña i Cristóbal' },
+    { src: '/images/2.2_subiendo_viga.webp', caption: 'Pujant una biga' },
+    { src: '/images/2.3_pintando.webp', caption: 'Pintant' },
+    { src: '/images/2.4_los_4_descansando.webp', caption: 'Fundadors, familiar i voluntariat, descansant' },
+    { src: '/images/3_escuela_el_roure.webp', caption: 'Escola El Roure, edifici Cirerers (3-6 anys)' },
+    { src: '/images/4_maquina_del_tiempo.webp', caption: 'Màquina del temps' },
+    { src: '/images/5_familias_el_roure.webp', caption: 'Famílies El Roure' },
+    { src: '/images/5.2_hormigon.webp', caption: 'Formigonant' },
+    { src: '/images/5.3_ninos_estanteria.webp', caption: 'Transportant material al nou edifici' },
+    { src: '/images/5.4_ordenando_nueva_sala.webp', caption: 'Ordenant a la nova sala' },
+    { src: '/images/6_inauguracion_edificio_ginesta.webp', caption: 'Inauguració edifici Ginesta (6-12 anys)' },
+    { src: '/images/7_inauguracion_edificio_ginesta_2.webp', caption: 'Inauguració edifici Ginesta 2' },
+    { src: '/images/8_paso_de_manos.webp', caption: 'Pas de mans' },
+    { src: '/images/9_heura_adolescents_escola_el_roure.webp', caption: 'Edifici Heura, (12-16 anys)' },
+    { src: '/images/10_reunion_escuela_el_roure.webp', caption: 'Reunió sota el nou Roure' },
+    { src: '/images/11_el_viejo_roble_talado.webp', caption: 'El Vell Roure, tallat' },
   ],
   videoPlaceholder: "https://picsum.photos/seed/video/600/400",
   escuela: {
@@ -70,8 +89,11 @@ interface ContentSection {
 
 interface Article {
     title: string;
-    topic: string;
+    author: string;
+    tags: string[]; // Array of tags for each article
     file?: string; // optional path to a PDF file under `public/pdfs/` or an external URL
+    link?: string; // external link
+    additionalInfo?: string; // additional info like magazine name and number
 }interface VideoItem {
   title: string;
   description: string;
@@ -205,18 +227,22 @@ const content = {
     historiaContent: [
         {
             paragraphs: [
-                "La escuela El Roure nació en 2001 en una finca rústica del municipio de Mediona (Barcelona). La fundamos Begoña González y Cristóbal Gutiérrez, como un paso más en la evolución de la experiencia en La Casita, que fundamos en 1996, en Barcelona.",
-                "La llamamos escuela viva El Roure. Sus raíces son la experiencia de crianza, el Seitai y la Sistémica y algunas inspiraciones de pedagogías innovadoras del s. XX (Montessori, Freinet, Neill, Malaguzzi, etc.). La línea pedagógica se fue concretando y desarrollando a través de la práctica cotidiana con los niños y niñas, con las madres y padres, en la relación de equipo. A partir de muchas preguntas, la observación y la reflexión, algunos criterios se fueron clarificando y confirmando.",
-                "El apoyo, la confianza y la implicación de las primeras familias y miembros del equipo fueron decisivos.",
-                "La semilla de El Roure encontró las condiciones más favorables para germinar y crecer. Una persona cercana hizo de mecenas ofreciéndose a comprar la preciosa finca que elegimos para ubicar el proyecto. Empezamos con 6 criaturas que venían desde Barcelona y se quedaban a dormir en la masía tres días a la semana. Poco a poco el grupo fue creciendo y las familias participantes realizaron todo un cambio de vida trasladándose a la zona.",
-                "Fue una época de trabajo exhaustivo, tanto en la reforma y adecuación del espacio y en la preparación de materiales educativos como en la reflexión y evolución de la metodología, la organización y la explicación de la línea educativa que estábamos creando.",
-                "Como todo comienzo, se vivió en un ambiente de ilusión y de implicación muy intenso entre el equipo, familias, amigos y profesionales que colaboraban de forma desinteresada. Compartimos sudor entre cemento, escombros y pintura, horas de cocina, tertulias pedagógicas, sueños, incertidumbres y mucha confianza.",
-                "En 2009 pasamos de asociación a cooperativa de trabajo sin ánimo de lucro: Experiencia educativa El Roure SCCL.",
-                "En aquel momento también ampliamos nuestra presencia en el panorama educativo, compartiendo con más frecuencia nuestra experiencia a través de charlas, artículos en publicaciones educativas, colaboraciones en formaciones, y además empezamos a ofrecer nuestras propias formacions y acompañamientos a familias y profesionales.",
-                "La escuela creció hasta llegar a acoger 90 niñas, niños y adolescentes. Siempre tuvimos vocación de escuela pequeña, para poder hacer el trabajo con la profundidad que queríamos y esta dimensión se convirtió en el límite.",
-                "En 2017, después de un enorme esfuerzo económico y organizativo por parte de toda la comunidad (que incluyó un micromecenazgo impulsado por las familias), conseguimos la autorización como escuela de primaria, por parte del Departament d'Educació de la Generalitat de Catalunya.",
-                "Después del confinamiento por el coronavirus de 2020, la escuela fue decreciendo. El mundo era otro al de los inicios; las familias tendían más a la escolarización pública gratuita y cercana a su vivienda, las escuelas públicas habían ido poco a poco abriéndose hacia la creación de ambientes con materiales manipulatius, etc.",
-                "A raíz de serias dificultades en la finca, la disminución del número de familias y la falta de relevo en la coordinación de la escuela, decidimos el cierre."
+                "La escuela El Roure nació en 2001 en una finca rústica del municipio de Mediona (Barcelona). La fundaron Begoña González y Cristóbal Gutiérrez, como un paso más en la evolución de la experiencia en La Casita (2 a 6 años), que crearon en 1996, en Barcelona.",
+                "La llamamos escuela viva El Roure. Sus raíces son la experiencia de crianza, el Seitai y la Sistémica y algunas inspiraciones de pedagogías innovadoras del s. XX (Montessori, Freinet, Neill, Malaguzzi, etc.). La línea pedagógica se fue concretando y desarrollando a través de la práctica cotidiana con los niños y niñas, con las madres y padres, en la relación de equipo. A partir de muchas preguntas, la observación y la reflexión, algunos criterios se fueron clarificando y confirmando. El proceso de descubrimiento y aprendizaje ha seguido hasta el final.",
+                "El apoyo, la confianza y la implicación de las primeras familias y miembros del equipo fueron decisivos. La semilla de El Roure encontró las condiciones más favorables para germinar y crecer. Una persona cercana hizo de mecenas ofreciéndose a comprar la preciosa finca que elegimos para ubicar el proyecto. Empezamos con 6 criaturas que venían desde Barcelona y se quedaban a dormir en la masía tres días a la semana. Poco a poco el grupo fue creciendo y las familias participantes realizaron todo un cambio de vida trasladándose a la zona. Estas primeras familias se entregaron en cuerpo y alma a la reforma de las edificaciones e implicaron a familiares y amigos.",
+                "Fue una época de trabajo exhausto, tanto en la reforma y adecuación del espacio y en la preparación de materiales educativos como en la reflexión y evolución de la metodología, la organización y la explicación de la línea educativa que estábamos creando.",
+                "Como todo comienzo, se vivió en un ambiente de ilusión y de implicación muy intenso entre el equipo, familias, amigos y profesionales que colaboraban de forma desinteresada. Compartimos sudor entre cemento, escombros y pintura, horas de cocina, tertulias pedagógicas en sobremesas de grupo, sueños, incertidumbres y mucha confianza. Fueron tiempos de carencias económicas y dificultades constantes, en las que no existían las vacaciones…y nos empujaba una fuerza inmensa.",
+                "Desde el 2001 al 2009 realizamos la gestión de la escuela a través de la asociación AFER (Asociación de Familias para una Educación Responsable), creada con las primeras familias de La Casita en 1996. En el 2009 pasamos de asociación a cooperativa de trabajo sin ánimo de lucro: Experiència educativa El Roure SCCL., que ha gestionado el proyecto hasta el 2025, año en el que se cierra. Como cooperativa hemos pertenecido a la Federació de Cooperatives de Treball de Catalunya y a EscolesCoop (Federació de Cooperatives d'Ensenyament de Catalunya).",
+                "Tuvimos la fortuna de que, desde el primer momento, el Ayuntamiento de Mediona nos dió la bienvenida y se mostró colaborador. Se ha mantenido una muy buena relación con los dos alcaldes y equipos que han gobernado el municipio durante estos 24 años.",
+                "La etapa de Infantil fue autorizada por la Generalitat como \"esplai\" (centro de ocio) de funcionamiento diario.",
+                "La autorización de la etapa de Primaria fue mucho más complicada. La normativa de espacios educativos de la Generalitat, está pensada para grandes escuelas y para la separación en aulas de los grupos-clase (según el curso que corresponde a cada edad). Nos requerían seis aulas de primaria, además de espacios comunes diversos. La normativa también requería un titulado en magisterio por grupo-clase (que por la dimensión de la escuela era en nuestro caso de entre 3 y 7 criaturas de la misma edad), además de las especialidades necesarias.",
+                "En nuestro caso, los grupos estaban definidos por la etapa evolutiva (3-6, 7-11 y 12-16 años), priorizando la riqueza de la convivencia de esta pluralidad de edades. Los espacios estaban preparados según las actividades y materiales que acogían y los niños, niñas y adolescentes se movían libremente por los espacios.",
+                "En 2017, tras un enorme esfuerzo económico y organizativo por parte de toda la comunidad (que incluyó un micromecenazgo impulsado por las familias), se pudo potabilizar el agua del pozo que suministraba la finca y reformar los edificios de forma que se cumpliera la normativa. Así conseguimos la autorización como escuela de primaria por parte del Departament d'Educació de la Generalitat de Catalunya.",
+                "La etapa de Secundaria, nació en el curso 2014/15, a petición de un grupo de familias de la escuela que querían continuar más allá de los 12 años. Esta etapa no pudo ser autorizada por las condiciones que la Generalitat requería a nivel de espacios y titulaciones del profesorado. Ante la imposibilidad de autorizar la etapa de Secundaria y las dificultades generadas por la normativa especial en las escuelas a raíz del Covid-19, decidimos cerrar el grupo de adolescentes.",
+                "La escuela creció hasta llegar a acoger a 90 niñas, niños y adolescentes. Siempre tuvimos vocación de escuela pequeña, lo que nos permitía hacer el trabajo con la profundidad que pretendíamos. Esa dimensión se convirtió en el límite máximo que queríamos asumir.",
+                "Desde el 2001 fuimos participando en algunos eventos educativos, presentando la experiencia de La Casita y el incipiente proyecto de El Roure. Gradualmente ampliamos nuestra presencia en el panorama educativo, compartiendo con más frecuencia nuestra experiencia a través de charlas, artículos en publicaciones educativas, colaboraciones en formaciones, y además, a partir del 2009, comenzamos a ofrecer nuestras propias formaciones y acompañamientos a familias y profesionales.",
+                "Después del confinamiento por el coronavirus del 2020, la escuela fue decreciendo. El mundo era otro al de los inicios; las familias tendían más a la escolarización pública gratuita y cercana a su vivienda, algunas escuelas públicas habían ido paulatinamente abriéndose hacia la creación de ambientes con materiales manipulativos, la llamada \"libre circulación\", la integración de la pedagogía sistémica y un cuidado mayor del aspecto emocional.",
+                "A raíz de serias dificultades en la finca, la disminución del número de familias y la falta de relevo en la coordinación de la escuela, decidimos el cierre definitivo."
             ]
         }
     ],
@@ -284,8 +310,9 @@ const content = {
     comunidadText: [
         "Hemos creado este espacio para las personas que habéis formado parte de la Comunidad de la escuela.",
         "SUBTITLE:Fotos y Contactos",
-        "Aquí podréis encontrar una herramienta para que las personas de la comunidad histórica de El Roure podáis encontraros y poneros en contacto, dejando vuestro datos voluntariamente, y una selección de fotos que hemos hecho de los 24 años de escuela (en las que aparecen personas que lo han autorizado).",
-        "Para acceder os facilitaremos una contraseña que podéis pedir en el correo.",
+        "Aquí podréis encontrar una selección de fotos que hemos hecho de los 24 años de escuela (en las que aparecen personas que lo han autorizado).",
+        "Además, miembros de la comunidad han creado un documento donde las personas que queráis manteneros en contacto o bien organizar algún encuentro, podéis dejar vuestro datos y acceder a los de los demás.",
+        "Para acceder os facilitaremos una contraseña que podéis pedir en el correo:",
         "experienciaroure@proton.me"
     ],
     videosList: [
@@ -326,34 +353,58 @@ const content = {
       }
     ] as VideoItem[],
     articles: [
-        { title: "Amigos y amigas por carta", topic: "Escritura", file: "/pdfs/AMIGOS-Y-AMIGAS-POR-CARTA.pdf" },
-        { title: "Celebrando el milagro de la vida", topic: "Aprendizaje", file: "/pdfs/CELEBRANDO-EL-MILAGRO-DE-LA-VIDA.pdf" },
-        { title: "Cines, bebés y sensibilidad", topic: "Aprendizaje", file: "/pdfs/CINES-BEBES-Y-SENSIBILIDAD.pdf" },
-        { title: "Cosas que pasan", topic: "Eventualidades", file: "/pdfs/COSAS-QUE-PASAN.pdf" },
-        { title: "Cris se va (2007)", topic: "Eventualidades", file: "/pdfs/CRIS-SE-VA-2007.pdf" },
-        { title: "Cristóbal trajo el Seitai a El Roure", topic: "Aprendizaje", file: "/pdfs/CRISTOBAL-TRAJO-EL-SEITAI-A-EL-ROURE.pdf" },
-        { title: "Despedida", topic: "Eventualidades", file: "/pdfs/DESPEDIDA.pdf" },
-        { title: "Despiértate papá y mamá", topic: "Aprendizaje", file: "/pdfs/DESPIERTATE-PAPA-Y-MAMA.pdf" },
-        { title: "Divídete y sufrirás", topic: "Aprendizaje", file: "/pdfs/DIVIDETE-Y-SUFIRAS.pdf" },
-        { title: "Dues experiències de restauració", topic: "Eventualidades", file: "/pdfs/DUES-EXPERIENCIES-DE-RESTAURACIO.pdf" },
-        { title: "El consumismo que enturbia el alma", topic: "Aprendizaje", file: "/pdfs/EL-CONSUMISMO-QUE-ENTURBIA-EL-ALMA.pdf" },
-        { title: "El Roure Boletín 13", topic: "Eventualidades", file: "/pdfs/EL-ROURE-BOLETIN-13_MOVIL.pdf" },
-        { title: "En busca de una feminidad y masculinidad naturales", topic: "Género", file: "/pdfs/EN-BUSCA-DE-UNA-FEMINIDAD-Y-MASCULINIDAD-NATURALES.pdf" },
-        { title: "Escritor Roures", topic: "Escritura", file: "/pdfs/ESCRITORROURES.pdf" },
-        { title: "Escrito a mano", topic: "Escritura", file: "/pdfs/ESCRITO-A-MANO.pdf" },
-        { title: "¿Estamos o no haciendo matemáticas?", topic: "Matemáticas", file: "/pdfs/ESTAMOS-O-NO-HACIENDO-MATEMATICAS.pdf" },
-        { title: "Feminidad y masculinidad", topic: "Género", file: "/pdfs/FEMINIDAD-Y-MASCULINIDAD.pdf" },
-        { title: "Habitar el espacio y el tiempo en la escuela alternativa", topic: "Aprendizaje", file: "/pdfs/Habitar-el-espacio-y-el-tiempo-en-la-escuela-alternativa.pdf" },
-        { title: "Hora de marcharme de El Roure", topic: "Eventualidades", file: "/pdfs/HORA-DE-MARCHARME-DE-EL-ROURE.pdf" },
-        { title: "In Memoriam", topic: "Eventualidades", file: "/pdfs/IN-MEMORIAM.pdf" },
-        { title: "La mirada amorosa", topic: "Aprendizaje", file: "/pdfs/LA-MIRADA-AMOROSA.pdf" },
-        { title: "La muerte de cada día", topic: "Eventualidades", file: "/pdfs/LA-MUERTE-DE-CADA-DIA.pdf" },
-        { title: "Límites y limitaciones", topic: "Límites", file: "/pdfs/LIMITES-Y-LIMITACIONES.pdf" },
-        { title: "Que la vida sea el eje de la educación", topic: "Aprendizaje", file: "/pdfs/QUE-LA-VIDA-SEA-EL-EJE-DE-LA-EDUCACION.pdf" },
-        { title: "Que ser valiente no salga tan caro", topic: "Aprendizaje", file: "/pdfs/QUE-SER-VALIENTE-NO-SALGA-TAN-CARO.pdf" },
-        { title: "Taller d'Andromines", topic: "Eventualidades", file: "/pdfs/TALLER-D-ANDROMINES.pdf" },
-        { title: "Un bañador con bolsillos", topic: "Eventualidades", file: "/pdfs/UN-BAÑADOR-CON-BOLSILLOS.pdf" },
-        { title: "Una pedagogía de la relación", topic: "Aprendizaje", file: "/pdfs/UNA-PEDAGOGIA-DE-LA-RELACIO.pdf" },
+        // Revista Roure (con PDF)
+        { title: "ESCRIPTORROURES", author: "Paco Robles", tags: ["Escritura", "Revista Roure"], file: "/pdfs/ESCRITORROURES.pdf" },
+        { title: "Amigos y amigas por carta", author: "Mercè de la Cruz", tags: ["Escritura", "Revista Roure"], file: "/pdfs/AMIGOS-Y-AMIGAS-POR-CARTA.pdf" },
+        { title: "Celebrando el milagro de la vida", author: "Mercè de la Cruz", tags: ["Aprendizaje"], file: "/pdfs/CELEBRANDO-EL-MILAGRO-DE-LA-VIDA.pdf" },
+        { title: "Cris se va (2007)", author: "Begoña González", tags: ["Sistémica", "Revista Roure"], file: "/pdfs/CRIS-SE-VA-2007.pdf" },
+        { title: "Cristóbal trajo el Seitai a El Roure", author: "Begoña González", tags: ["Fundamentos", "Revista Roure"], file: "/pdfs/CRISTOBAL-TRAJO-EL-SEITAI-A-EL-ROURE.pdf" },
+        { title: "Divídete y sufrirás", author: "Cristóbal Gutiérrez", tags: ["Fundamentos", "Revista Roure"], file: "/pdfs/DIVIDETE-Y-SUFIRAS.pdf" },
+        { title: "Dues experiències de restauració", author: "Paco Robles", tags: ["Actividad", "Revista Roure"], file: "/pdfs/DUES-EXPERIENCIES-DE-RESTAURACIO.pdf" },
+        { title: "El consumismo que enturbia el alma", author: "Cristóbal Gutiérrez", tags: ["Familia", "Revista Roure"], file: "/pdfs/EL-CONSUMISMO-QUE-ENTURBIA-EL-ALMA.pdf" },
+        { title: "El Roure Boletín 13", author: "Varios", tags: ["Boletín Roure"], file: "/pdfs/EL-ROURE-BOLETIN-13_MOVIL.pdf" },
+        { title: "En busca de una feminidad y masculinidad naturales", author: "Begoña González", tags: ["Género", "Revista Roure"], file: "/pdfs/EN-BUSCA-DE-UNA-FEMINIDAD-Y-MASCULINIDAD-NATURALES.pdf" },
+        { title: "¿Estamos o no haciendo matemáticas?", author: "Lara Jiménez", tags: ["Matemáticas", "Revista Roure"], file: "/pdfs/ESTAMOS-O-NO-HACIENDO-MATEMATICAS.pdf" },
+        { title: "Hora de marcharme de El Roure", author: "Cristóbal Gutiérrez", tags: ["Sistémica", "Revista Roure"], file: "/pdfs/HORA-DE-MARCHARME-DE-EL-ROURE.pdf" },
+        { title: "In Memoriam", author: "Cristóbal Gutiérrez", tags: ["Sistémica", "Revista Roure"], file: "/pdfs/IN-MEMORIAM.pdf" },
+        { title: "La mirada amorosa", author: "Cristóbal Gutiérrez", tags: ["Familia", "Revista Roure"], file: "/pdfs/LA-MIRADA-AMOROSA.pdf" },
+        { title: "Límites y limitaciones", author: "Begoña González", tags: ["Límites", "Revista Roure"], file: "/pdfs/LIMITES-Y-LIMITACIONES.pdf" },
+        { title: "Que la vida sea el eje de la educación", author: "Ulrike Kaesse y Begoña González", tags: ["Fundamentos", "Revista Roure"], file: "/pdfs/QUE-LA-VIDA-SEA-EL-EJE-DE-LA-EDUCACION.pdf" },
+        { title: "Que ser valiente no salga tan caro", author: "Cristóbal Gutiérrez", tags: ["Fundamentos", "Revista Roure"], file: "/pdfs/QUE-SER-VALIENTE-NO-SALGA-TAN-CARO.pdf" },
+        { title: "Taller d'Andromines", author: "Montse Bertran", tags: ["Actividad", "Revista Roure"], file: "/pdfs/TALLER-D-ANDROMINES.pdf" },
+        
+        // Revistas con enlace
+        { title: "El flux de l'apendre", author: "Begoña González", tags: ["Aprendizaje"], link: "https://www.iquiosc.cat/publicacions/viure-en-familia/97", additionalInfo: "Viure en familia Nº 97 (Gener 2023)" },
+        { title: "El auge de la escuela libre", author: "Claudina Navarro y Manuel Núñez", tags: ["Fundamentos"], link: "https://dialnet.unirioja.es/ejemplar/186802", additionalInfo: "Integral, Nº 340 (2008)" },
+        { title: "El Roure, una escuela para cuidar el alma infantil", author: "Begoña González", tags: ["Fundamentos"], link: "https://dialnet.unirioja.es/servlet/articulo?codigo=1037096", additionalInfo: "Cuadernos de pedagogía, Nº 341, pp. 30-34 (2004)" },
+        { title: "Escuela El Roure; materializar una ilusión", author: "Begoña González", tags: ["Fundamentos"], link: "https://dialnet.unirioja.es/servlet/articulo?codigo=684601", additionalInfo: "Cooperación educativa - Kikirikí, Nº 70 pp.21-26 (2003)" },
+        { title: "El Roure, escuela viva", author: "Begoña González", tags: ["Fundamentos"], link: "https://dialnet.unirioja.es/servlet/articulo?codigo=768515", additionalInfo: "Cooperación educativa - Kikirikí, Nº 71-72, pp. 92-99 (2003)" },
+        { title: "Diario de La Casita: África", author: "Begoña González", tags: ["La Casita"], link: "https://dialnet.unirioja.es/ejemplar/40146", additionalInfo: "Cooperación educativa - Kikirikí, Nº 62-63, pp.104-105 (2001-02)" },
+        { title: "La Casita, un proyecto alternativo en la primera infancia", author: "Cuadernos de pedagogía", tags: ["La Casita", "Fundamentos"], link: "https://dialnet.unirioja.es/ejemplar/4051", additionalInfo: "Cuadernos de pedagogía. Nº 283, pp. 28-36 (1999)" },
+        { title: "Habitar el espacio y el tiempo en la escuela alternativa: recorridos y relatos Universitat de Barcelona", author: "José Contreras y Begoña González", tags: ["Fundamentos"], link: "https://www.academia.edu/40107171/Habitar_el_espacio_y_el_tiempo_en_la_escuela_alternativa_recorridos_y_relatos_Universitat_de_Barcelona" },
+        { title: "Qué sentido tiene la navidad en la escuela", author: "Begoña González", tags: ["Cultura"], link: "https://viureenfamilia.wordpress.com/2019/12/12/quin-sentit-te-el-nadal-a-lescola/", additionalInfo: "Revista Viure en familia. Nº 76 12 Desembre 2019" },
+        { title: "Hacia el encuentro", author: "Begoña González", tags: ["Grupo"], link: "https://diarieducacio.cat/cap-a-la-trobada/?hilite=trobada", additionalInfo: "El diari de l'educació. Juny 27, 2022" },
+        { title: "Cuidar la vida que somos", author: "Begoña González", tags: ["Fundamentos"], link: "https://www.grao.com/revistas/renaturalizar-los-espacios-y-los-tiempos-educativos-42841", additionalInfo: "Renaturalizar los espacios y los tiempos educativos. Revista Dosier - Número: 7 (gener 22)" },
+        { title: "Acompanyament i solituds necessàries", author: "Begoña González", tags: ["Acompañamiento"], link: "https://revistaaula.com/", additionalInfo: "Revista Aula de Innovación Educativa (2021)" },
+        { title: "El canvi de mirada", author: "Begoña González", tags: ["Fundamentos"], link: "https://revistaaula.com/", additionalInfo: "Revista Aula de Innovación Educativa (2020)" },
+        { title: "Acompanyar el moviment intern i la relació", author: "Begoña González", tags: ["Acompañamiento"], link: "https://revistaaula.com/", additionalInfo: "Revista Aula de Innovación Educativa (2019)" },
+        
+        // Revistas sin enlace
+        { title: "El Roure, un espacio para crecer", author: "Begoña González", tags: ["Fundamentos"], additionalInfo: "Senderi, butlletí nº 24 (Gener 2006) - www.senderi.org (sin enlace)" },
+        { title: "Escola El Roure. Un model de comunitat d'aprenentatge per a cuidar la vida", author: "Begoña González", tags: ["Fundamentos"], additionalInfo: "Fòrum. Revista d'organització i gestió educativa. L'educació alternativa, Nº 45 (2018) (sin enlace)" },
+        { title: "El Roure, escola viva", author: "Begoña González", tags: ["Fundamentos"], additionalInfo: "Viure en familia, Nº 50 (2013) (sin enlace)" },
+        { title: "El Roure, escuela viva", author: "Begoña González", tags: ["Fundamentos"], additionalInfo: "Crecer en familia, Nº 25 (2013) (sin enlace)" },
+        { title: "La casita: nens i nenes creixent lliures", author: "Begoña González", tags: ["La Casita", "Fundamentos"], additionalInfo: "Viure en família Nº 1, pp.42-43 (2000) (sin enlace)" },
+        
+        // Revista La Casita (con PDF)
+        { title: "Cosas que pasan", author: "Begoña González", tags: ["Actividad", "Revista La Casita"], file: "/pdfs/COSAS-QUE-PASAN.pdf" },
+        { title: "Despedida", author: "Begoña González y Cristóbal Gutiérrez", tags: ["Sistémica", "Revista La Casita"], file: "/pdfs/DESPEDIDA.pdf" },
+        { title: "Despiértate papá y mamá", author: "Cristóbal Gutiérrez", tags: ["Familia", "Revista La Casita"], file: "/pdfs/DESPIERTATE-PAPA-Y-MAMA.pdf" },
+        { title: "La muerte de cada día", author: "Cristóbal Gutiérrez", tags: ["Duelo", "Fundamentos", "Revista La Casita"], file: "/pdfs/LA-MUERTE-DE-CADA-DIA.pdf" },
+        
+        // Otros con PDF
+        { title: "Cines, bebés y sensibilidad", author: "Cristóbal Gutiérrez", tags: ["Familia"], file: "/pdfs/CINES-BEBES-Y-SENSIBILIDAD.pdf" },
+        { title: "Habitar el espacio y el tiempo en la escuela alternativa", author: "José Contreras Domingo y Begoña González", tags: ["Aprendizaje"], file: "/pdfs/Habitar-el-espacio-y-el-tiempo-en-la-escuela-alternativa.pdf" },
     ]
   },
   ca: {
@@ -473,18 +524,20 @@ const content = {
     historiaContent: [
         {
             paragraphs: [
-                "L'escola El Roure va néixer el 2001 en una finca rústica del municipi de Mediona (Barcelona). La vam fundar Begoña González i Cristóbal Gutiérrez, com un pas més en l'evolució de l'experiència a La Casita, que vam fundar el 1996, a Barcelona.",
-                "L'anomenem escola viva El Roure. Les seves arrels són l'experiència de criança, el Seitai i la Sistèmica i algunes inspiracions de pedagogies innovadores del s. XX (Montessori, Freinet, Neill, Malaguzzi, etc.). La línia pedagògica es va anar concretant i desenvolupant a través de la pràctica quotidiana amb els nens i nenes, amb les mares i pares, en la relació d'equip. A partir de moltes preguntes, l'observació i la reflexió, alguns criteris es van anar clarificant i confirmant. El procés de descobriment i aprenentatge ha seguit fins al final.",
-                "El suport, la confiança i la implicació de les primeres famílies i membres de l'equip van ser decisius.",
-                "La llavor d'El Roure va trobar les condicions més favorables per germinar i créixer. Una persona propera va fer de mecenas oferint-se a comprar la preciosa finca que vam triar per ubicar el projecte. Vam començar amb 6 criatures que venien des de Barcelona i es quedaven a dormir a la masia tres días a la setmana. A poc a poc el grup va anar creixent i les famílies participants van realitzar tot un canvi de vida traslladant-se a la zona. Aquestes primeres famílies es van entregar en cos i ànima a la reforma de les edificacions i van implicar familiars i amics.",
+                "L'escola El Roure va néixer en 2001 en una finca rústica del municipi de Mediona (Barcelona). La van fundar Begoña González i Cristóbal Gutiérrez, com un pas més en l'evolució de l'experiència en La Caseta (2 a 6 anys), que van crear en 1996, a Barcelona.",
+                "La vam anomenar escola viva El Roure. Les seves arrels són l'experiència de criança, el Seitai i la Sistèmica i algunes inspiracions de pedagogies innovadores del s. XX (Montessori, Freinet, Neill, Malaguzzi, etc.). La línia pedagògica es va anar concretant i desenvolupant a través de la pràctica quotidiana amb els nens i nenes, amb les mares i pares, en la relació d'equip. A partir de moltes preguntes, l'observació i la reflexió, alguns criteris es van anar aclarint i confirmant. El procés de descobriment i aprenentatge ha seguit fins al final. El suport, la confiança i la implicació de les primeres famílies i membres de l'equip van ser decisius. La llavor del Roure va trobar les condicions més favorables per a germinar i créixer. Una persona pròxima va fer de mecenes oferint-se a comprar la preciosa finca que triem per a situar el projecte. Comencem amb 6 criatures que venien des de Barcelona i es quedaven a dormir en la masia tres dies a la setmana. A poc a poc el grup va anar creixent i les famílies participants van realitzar tot un canvi de vida traslladant-se a la zona. Aquestes primeres famílies es van lliurar en cos i ànima a la reforma de les edificacions i van implicar familiars i amics.",
                 "Va ser una època de treball exhaust, tant en la reforma i adequació de l'espai i en la preparació de materials educatius com en la reflexió i evolució de la metodologia, l'organització i l'explicació de la línia educativa que estàvem creant.",
-                "Com tot començament, es va viure en un ambient d'il·lusió i d'implicació molt intens entre l'equip, famílies, amics i professionals que col·laboraven de forma desinteressada. Vam compartir suor entre ciment, runa i pintura, hores de cuina, tertulias pedagògiques en sobretaules de grup, somnis, incerteses i molta confiança. Van ser temps de mancances econòmiques i dificultats constants, en les que no existien les vacances…y nos empujaba una força immensa.",
-                "El 2009 vam passar d'associació a cooperativa de treball sense ànim de lucre: Experiència educativa El Roure SCCL.",
-                "En aquell moment també vam ampliar la nostra presència en el panorama educatiu, compartint amb més freqüència la nostra experiència a través de xerrades, articles en publicacions educatives, col·laboracions en formacions, i a més vam començar a oferir les nostres pròpies formacions i acompanyaments a famílies i professionals.",
-                "L'escola va créixer fins a arribar a acollir 90 nenes, nens i adolescents. Sempre vam tenir vocació d'escola petita, per poder fer la feina amb la profunditat que volíem i aquesta dimensió es va convertir en el límit.",
-                "El 2017, després d'un enorme esforç econòmic i organitzatiu per part de tota la comunitat (que va incloure un micromecenatge impulsat per les famílies), vam aconseguir l'autorització com a escola de primària, per part del Departament d'Educació de la Generalitat de Catalunya.",
-                "Després del confinament pel coronavirus del 2020, l'escola va anar decreixent. El món era un altre al dels inicis; les famílies tendien més a l'escolarització pública gratuïta i propera al seu habitatge, les escoles públiques havien anat de mica en mica obrint-se cap a la creació d'ambients amb materials manipulatius i l'anomenada \"lliure circulació\", etc.",
-                "Arran de serioses dificultats a la finca, la disminució del nombre de famílies i la manca de relleu en la coordinació de l'escola, la manca de relleu en la coordinació de l'escola, vam decidir el tancament."
+                "Com tot començament, es va viure en un ambient d'il·lusió i d'implicació molt intens entre l'equip, famílies, amics i professionals que col·laboraven de manera desinteressada. Compartim suor entre ciment, enderrocs i pintura, hores de cuina, tertúlies pedagògiques en sobretaules de grup, somnis, incerteses i molta confiança. Van ser temps de mancances econòmiques i dificultats constants, en les quals no existien les vacances… I ens empenyia una força immensa.",
+                "Des del 2001 al 2009 gestionem l'escola a través de l'associació AFER (Associació de Famílies per a una Educació Responsable), creada amb les primeres famílies de La Caseta en 1996. En el 2009 passem d'associació a cooperativa de treball sense ànim de lucre: Experiència educativa El Roure SCCL., que ha gestionat el projecte fins al 2025, any en què es tanca. Com a cooperativa hem pertangut a la Federació de Cooperatives de Treball de Catalunya i a EscolesCoop (Federació de Cooperatives d'Ensenyament de Catalunya).",
+                "Vam tenir la fortuna que, des del primer moment, l'Ajuntament de Mediona ens va donar la benvinguda i es va mostrar col·laborador. S'ha mantingut una molt bona relació amb els dos alcaldes i equips que han governat el municipi durant aquests 24 anys.",
+                "L'etapa d'Infantil va ser autoritzada per la Generalitat com \"esplai\" (centre d'oci) de funcionament diari.",
+                "L'autorització de l'etapa de Primària va ser molt més complicada. La normativa d'espais educatius de la Generalitat, està pensada per a grans escoles i per a la separació en aules dels grups-classe (segons el curs que correspon a cada edat). Ens requerien sis aules de primària, a més d'espais comuns diversos. La normativa també requeria un titulat en magisteri per grup-classe (que per la dimensió de l'escola era en el nostre cas d'entre 3 i 7 criatures de la mateixa edat), a més de les especialitats necessàries.",
+                "En el nostre cas, els grups estaven definits per l'etapa evolutiva (3-6, 7-11 i 12-16 anys), prioritzant la riquesa de la convivència d'aquesta pluralitat d'edats. Els espais estaven preparats segons les activitats i materials que acollien i els nens, nenes i adolescents es movien lliurement pels espais. En 2017, després d'un enorme esforç econòmic i organitzatiu per part de tota la comunitat (que va incloure un micromecenatge impulsat per les famílies), es va poder potabilitzar l'aigua del pou que subministrava la finca i reformar els edificis de manera que es complís la normativa. Així aconseguim l'autorització com a escola de primària per part del Departament d'Educació de la Generalitat de Catalunya.",
+                "L'etapa de Secundària, va néixer en el curs 2014/15, a petició d'un grup de famílies de l'escola que volien continuar més enllà dels 12 anys. Aquesta etapa no va poder ser autoritzada per les condicions que la Generalitat requeria pel que fa a espais i titulacions del professorat. Davant la impossibilitat d'autoritzar l'etapa de Secundària i les dificultats generades per la normativa especial a les escoles arran del COVID-19, decidim tancar el grup d'adolescents.",
+                "L'escola va créixer fins a arribar a acollir a 90 nenes, nens i adolescents. Sempre vam tenir vocació d'escola petita, la qual cosa ens permetia fer el treball amb la profunditat que preteníem. Aquesta dimensió es va convertir en el límit màxim que volíem assumir.",
+                "Des del 2001 vam anar participant en alguns esdeveniments educatius, presentant l'experiència de La Caseta i l'incipient projecte del Roure. Gradualment, ampliem la nostra presència en el panorama educatiu, compartint amb més freqüència la nostra experiència a través de xerrades, articles en publicacions educatives, col·laboracions en formacions, i a més, a partir del 2009, comencem a oferir les nostres pròpies formacions i acompanyaments a famílies i professionals.",
+                "Després del confinament pel coronavirus del 2020, l'escola va anar decreixent. El món era un altre al dels inicis; les famílies tendien més a l'escolarització pública gratuïta i pròxima al seu habitatge, algunes escoles públiques havien anat gradualment obrint-se cap a la creació d'ambients amb materials manipulatius, l'anomenada \"lliure circulació\", la integració de la pedagogia sistèmica i una cura major de l'aspecte emocional.",
+                "Arran de serioses dificultats en la finca, la disminució del nombre de famílies i la falta de relleu en la coordinació de l'escola, decidim el tancament definitiu."
             ]
         }
     ],
@@ -552,8 +605,9 @@ const content = {
     comunidadText: [
         "Hem creat aquest espai per a les persones que heu format part de la Comunitat de l'escola.",
         "SUBTITLE:Fotos i Contactes",
-        "Aquí podreu trobar una eina perquè les persones de la comunitat històrica d'El Roure us pugueu trobar i posar-vos en contacte, deixant les vostres dades voluntàriament, i una selecció de fotos que hem fet dels 24 anys d'escola (en les quals apareixen persones que ho han autoritzat).",
-        "Per accedir us facilitarem una contrasenya que podeu demanar al correu.",
+        "Aquí podreu trobar una selecció de fotos que hem fet dels 24 anys d'escola (en les quals apareixen persones que ho han autoritzat).",
+        "A més, membres de la comunitat han creat un document on les persones que vulgueu mantenir-vos en contacte o bé organitzar alguna trobada, podeu deixar les vostres dades i accedir a les dels altres.",
+        "Per accedir us facilitarem una contrasenya que podeu demanar al correu:",
         "experienciaroure@proton.me"
     ],
     videosList: [
@@ -594,33 +648,58 @@ const content = {
       }
     ] as VideoItem[],
     articles: [
-        { title: "Amigos y amigas por carta", topic: "Escriptura", file: "/pdfs/AMIGOS-Y-AMIGAS-POR-CARTA.pdf" },
-        { title: "Celebrando el milagro de la vida", topic: "Aprenentatge", file: "/pdfs/CELEBRANDO-EL-MILAGRO-DE-LA-VIDA.pdf" },
-        { title: "Cines, bebés y sensibilidad", topic: "Aprenentatge", file: "/pdfs/CINES-BEBES-Y-SENSIBILIDAD.pdf" },
-        { title: "Cosas que pasan", topic: "Eventualitats", file: "/pdfs/COSAS-QUE-PASAN.pdf" },
-        { title: "Cris se va (2007)", topic: "Eventualitats", file: "/pdfs/CRIS-SE-VA-2007.pdf" },
-        { title: "Cristóbal trajo el Seitai a El Roure", topic: "Aprenentatge", file: "/pdfs/CRISTOBAL-TRAJO-EL-SEITAI-A-EL-ROURE.pdf" },
-        { title: "Despedida", topic: "Eventualitats", file: "/pdfs/DESPEDIDA.pdf" },
-        { title: "Despiértate papá y mamá", topic: "Aprenentatge", file: "/pdfs/DESPIERTATE-PAPA-Y-MAMA.pdf" },
-        { title: "Divídete y sufrirás", topic: "Aprenentatge", file: "/pdfs/DIVIDETE-Y-SUFIRAS.pdf" },
-        { title: "Dues experiències de restauració", topic: "Eventualitats", file: "/pdfs/DUES-EXPERIENCIES-DE-RESTAURACIO.pdf" },
-        { title: "El consumismo que enturbia el alma", topic: "Aprenentatge", file: "/pdfs/EL-CONSUMISMO-QUE-ENTURBIA-EL-ALMA.pdf" },
-        { title: "En busca de una feminidad y masculinidad naturales", topic: "Gènere", file: "/pdfs/EN-BUSCA-DE-UNA-FEMINIDAD-Y-MASCULINIDAD-NATURALES.pdf" },
-        { title: "Escritor Roures", topic: "Escriptura", file: "/pdfs/ESCRITORROURES.pdf" },
-        { title: "Escrito a mano", topic: "Escriptura", file: "/pdfs/ESCRITO-A-MANO.pdf" },
-        { title: "¿Estamos o no haciendo matemáticas?", topic: "Matemàtiques", file: "/pdfs/ESTAMOS-O-NO-HACIENDO-MATEMATICAS.pdf" },
-        { title: "Feminidad y masculinidad", topic: "Gènere", file: "/pdfs/FEMINIDAD-Y-MASCULINIDAD.pdf" },
-        { title: "Habitar el espacio y el tiempo en la escuela alternativa", topic: "Aprenentatge", file: "/pdfs/Habitar-el-espacio-y-el-tiempo-en-la-escuela-alternativa.pdf" },
-        { title: "Hora de marcharme de El Roure", topic: "Eventualitats", file: "/pdfs/HORA-DE-MARCHARME-DE-EL-ROURE.pdf" },
-        { title: "In Memoriam", topic: "Eventualitats", file: "/pdfs/IN-MEMORIAM.pdf" },
-        { title: "La mirada amorosa", topic: "Aprenentatge", file: "/pdfs/LA-MIRADA-AMOROSA.pdf" },
-        { title: "La muerte de cada día", topic: "Eventualitats", file: "/pdfs/LA-MUERTE-DE-CADA-DIA.pdf" },
-        { title: "Límites y limitaciones", topic: "Límits", file: "/pdfs/LIMITES-Y-LIMITACIONES.pdf" },
-        { title: "Que la vida sea el eje de la educación", topic: "Aprenentatge", file: "/pdfs/QUE-LA-VIDA-SEA-EL-EJE-DE-LA-EDUCACION.pdf" },
-        { title: "Que ser valiente no salga tan caro", topic: "Aprenentatge", file: "/pdfs/QUE-SER-VALIENTE-NO-SALGA-TAN-CARO.pdf" },
-        { title: "Taller d'Andromines", topic: "Eventualitats", file: "/pdfs/TALLER-D-ANDROMINES.pdf" },
-        { title: "Un bañador con bolsillos", topic: "Eventualitats", file: "/pdfs/UN-BAÑADOR-CON-BOLSILLOS.pdf" },
-        { title: "Una pedagogía de la relación", topic: "Aprenentatge", file: "/pdfs/UNA-PEDAGOGIA-DE-LA-RELACIO.pdf" },
+        // Revista Roure (amb PDF)
+        { title: "ESCRIPTORROURES", author: "Paco Robles", tags: ["Escriptura", "Revista Roure"], file: "/pdfs/ESCRITORROURES.pdf" },
+        { title: "Amigos y amigas por carta", author: "Mercè de la Cruz", tags: ["Escriptura", "Revista Roure"], file: "/pdfs/AMIGOS-Y-AMIGAS-POR-CARTA.pdf" },
+        { title: "Celebrando el milagro de la vida", author: "Mercè de la Cruz", tags: ["Aprenentatge"], file: "/pdfs/CELEBRANDO-EL-MILAGRO-DE-LA-VIDA.pdf" },
+        { title: "Cris se va (2007)", author: "Begoña González", tags: ["Sistèmica", "Revista Roure"], file: "/pdfs/CRIS-SE-VA-2007.pdf" },
+        { title: "Cristóbal trajo el Seitai a El Roure", author: "Begoña González", tags: ["Fonaments", "Revista Roure"], file: "/pdfs/CRISTOBAL-TRAJO-EL-SEITAI-A-EL-ROURE.pdf" },
+        { title: "Divídete y sufrirás", author: "Cristóbal Gutiérrez", tags: ["Fonaments", "Revista Roure"], file: "/pdfs/DIVIDETE-Y-SUFIRAS.pdf" },
+        { title: "Dues experiències de restauració", author: "Paco Robles", tags: ["Activitat", "Revista Roure"], file: "/pdfs/DUES-EXPERIENCIES-DE-RESTAURACIO.pdf" },
+        { title: "El consumismo que enturbia el alma", author: "Cristóbal Gutiérrez", tags: ["Família", "Revista Roure"], file: "/pdfs/EL-CONSUMISMO-QUE-ENTURBIA-EL-ALMA.pdf" },
+        { title: "El Roure Boletín 13", author: "Varios", tags: ["Butlletí Roure"], file: "/pdfs/EL-ROURE-BOLETIN-13_MOVIL.pdf" },
+        { title: "En busca de una feminidad y masculinidad naturales", author: "Begoña González", tags: ["Gènere", "Revista Roure"], file: "/pdfs/EN-BUSCA-DE-UNA-FEMINIDAD-Y-MASCULINIDAD-NATURALES.pdf" },
+        { title: "¿Estamos o no haciendo matemáticas?", author: "Lara Jiménez", tags: ["Matemàtiques", "Revista Roure"], file: "/pdfs/ESTAMOS-O-NO-HACIENDO-MATEMATICAS.pdf" },
+        { title: "Hora de marcharme de El Roure", author: "Cristóbal Gutiérrez", tags: ["Sistèmica", "Revista Roure"], file: "/pdfs/HORA-DE-MARCHARME-DE-EL-ROURE.pdf" },
+        { title: "In Memoriam", author: "Cristóbal Gutiérrez", tags: ["Sistèmica", "Revista Roure"], file: "/pdfs/IN-MEMORIAM.pdf" },
+        { title: "La mirada amorosa", author: "Cristóbal Gutiérrez", tags: ["Família", "Revista Roure"], file: "/pdfs/LA-MIRADA-AMOROSA.pdf" },
+        { title: "Límites y limitaciones", author: "Begoña González", tags: ["Límits", "Revista Roure"], file: "/pdfs/LIMITES-Y-LIMITACIONES.pdf" },
+        { title: "Que la vida sea el eje de la educación", author: "Ulrike Kaesse y Begoña González", tags: ["Fonaments", "Revista Roure"], file: "/pdfs/QUE-LA-VIDA-SEA-EL-EJE-DE-LA-EDUCACION.pdf" },
+        { title: "Que ser valiente no salga tan caro", author: "Cristóbal Gutiérrez", tags: ["Fonaments", "Revista Roure"], file: "/pdfs/QUE-SER-VALIENTE-NO-SALGA-TAN-CARO.pdf" },
+        { title: "Taller d'Andromines", author: "Montse Bertran", tags: ["Activitat", "Revista Roure"], file: "/pdfs/TALLER-D-ANDROMINES.pdf" },
+        
+        // Revistes amb enllaç
+        { title: "El flux de l'apendre", author: "Begoña González", tags: ["Aprenentatge"], link: "https://www.iquiosc.cat/publicacions/viure-en-familia/97", additionalInfo: "Viure en familia Nº 97 (Gener 2023)" },
+        { title: "El auge de la escuela libre", author: "Claudina Navarro y Manuel Núñez", tags: ["Fonaments"], link: "https://dialnet.unirioja.es/ejemplar/186802", additionalInfo: "Integral, Nº 340 (2008)" },
+        { title: "El Roure, una escuela para cuidar el alma infantil", author: "Begoña González", tags: ["Fonaments"], link: "https://dialnet.unirioja.es/servlet/articulo?codigo=1037096", additionalInfo: "Cuadernos de pedagogía, Nº 341, pp. 30-34 (2004)" },
+        { title: "Escuela El Roure; materializar una ilusión", author: "Begoña González", tags: ["Fonaments"], link: "https://dialnet.unirioja.es/servlet/articulo?codigo=684601", additionalInfo: "Cooperación educativa - Kikirikí, Nº 70 pp. 21-26 (2003)" },
+        { title: "El Roure, escuela viva", author: "Begoña González", tags: ["Fonaments"], link: "https://dialnet.unirioja.es/servlet/articulo?codigo=768515", additionalInfo: "Cooperación educativa - Kikirikí, Nº 71-72, pp. 92-99 (2003)" },
+        { title: "Diario de La Casita: África", author: "Begoña González", tags: ["La Casita"], link: "https://dialnet.unirioja.es/ejemplar/40146", additionalInfo: "Cooperación educativa - Kikirikí, Nº 62-63, pp. 104-105 (2001-02)" },
+        { title: "La Casita, un proyecto alternativo en la primera infancia", author: "Cuadernos de pedagogía", tags: ["La Casita", "Fonaments"], link: "https://dialnet.unirioja.es/ejemplar/4051", additionalInfo: "Cuadernos de pedagogía. Nº 283, pp. 28-36 (1999)" },
+        { title: "Habitar el espacio y el tiempo en la escuela alternativa: recorridos y relatos Universitat de Barcelona", author: "José Contreras y Begoña González", tags: ["Fonaments"], link: "https://www.academia.edu/40107171/Habitar_el_espacio_y_el_tiempo_en_la_escuela_alternativa_recorridos_y_relatos_Universitat_de_Barcelona" },
+        { title: "Qué sentido tiene la navidad en la escuela", author: "Begoña González", tags: ["Cultura"], link: "https://viureenfamilia.wordpress.com/2019/12/12/quin-sentit-te-el-nadal-a-lescola/", additionalInfo: "Revista Viure en familia. Nº 76 12 Desembre 2019" },
+        { title: "Hacia el encuentro", author: "Begoña González", tags: ["Grup"], link: "https://diarieducacio.cat/cap-a-la-trobada/?hilite=trobada", additionalInfo: "El diari de l'educació. Juny 27, 2022" },
+        { title: "Cuidar la vida que somos", author: "Begoña González", tags: ["Fonaments"], link: "https://www.grao.com/revistas/renaturalizar-los-espacios-y-los-tiempos-educativos-42841", additionalInfo: "Renaturalizar los espacios y los tiempos educativos. Revista Dosier - Número: 7 (gener 22)" },
+        { title: "Acompanyament i solituds necessàries", author: "Begoña González", tags: ["Acompanyament"], link: "https://revistaaula.com/", additionalInfo: "Revista Aula de Innovación Educativa (2021)" },
+        { title: "El canvi de mirada", author: "Begoña González", tags: ["Fonaments"], link: "https://revistaaula.com/", additionalInfo: "Revista Aula de Innovación Educativa (2020)" },
+        { title: "Acompanyar el moviment intern i la relació", author: "Begoña González", tags: ["Acompanyament"], link: "https://revistaaula.com/", additionalInfo: "Revista Aula de Innovación Educativa (2019)" },
+        
+        // Revistes sense enllaç
+        { title: "El Roure, un espacio para crecer", author: "Begoña González", tags: ["Fonaments"], additionalInfo: "Senderi, butlletí nº 24 (Gener 2006) - www.senderi.org (sense enllaç)" },
+        { title: "Escola El Roure. Un model de comunitat d'aprenentatge per a cuidar la vida", author: "Begoña González", tags: ["Fonaments"], additionalInfo: "Fòrum. Revista d'organització i gestió educativa. L'educació alternativa, Nº 45 (2018) (sense enllaç)" },
+        { title: "El Roure, escola viva", author: "Begoña González", tags: ["Fonaments"], additionalInfo: "Viure en familia, Nº 50 (2013) (sense enllaç)" },
+        { title: "El Roure, escuela viva", author: "Begoña González", tags: ["Fonaments"], additionalInfo: "Crecer en familia, Nº 25 (2013) (sense enllaç)" },
+        { title: "La casita: nens i nenes creixent lliures", author: "Begoña González", tags: ["La Casita", "Fonaments"], additionalInfo: "Viure en família Nº 1, pp. 42-43 (2000) (sense enllaç)" },
+        
+        // Revista La Casita (amb PDF)
+        { title: "Cosas que pasan", author: "Begoña González", tags: ["Activitat", "Revista La Casita"], file: "/pdfs/COSAS-QUE-PASAN.pdf" },
+        { title: "Despedida", author: "Begoña González y Cristóbal Gutiérrez", tags: ["Sistèmica", "Revista La Casita"], file: "/pdfs/DESPEDIDA.pdf" },
+        { title: "Despiértate papá y mamá", author: "Cristóbal Gutiérrez", tags: ["Família", "Revista La Casita"], file: "/pdfs/DESPIERTATE-PAPA-Y-MAMA.pdf" },
+        { title: "La muerte de cada día", author: "Cristóbal Gutiérrez", tags: ["Dol", "Fonaments", "Revista La Casita"], file: "/pdfs/LA-MUERTE-DE-CADA-DIA.pdf" },
+        
+        // Altres amb PDF
+        { title: "Cines, bebés y sensibilidad", author: "Cristóbal Gutiérrez", tags: ["Família"], file: "/pdfs/CINES-BEBES-Y-SENSIBILIDAD.pdf" },
+        { title: "Habitar el espacio y el tiempo en la escuela alternativa", author: "José Contreras Domingo y Begoña González", tags: ["Aprenentatge"], file: "/pdfs/Habitar-el-espacio-y-el-tiempo-en-la-escuela-alternativa.pdf" },
     ]
   }
 };
@@ -828,17 +907,17 @@ const App: React.FC = () => {
 
                 {/* Center: Image */}
                 <div className="order-1 md:order-2 shrink-0 relative z-10">
-                    <div style={{ width: 'var(--main-image-size)', height: 'var(--main-image-size)' }} className="rounded-full overflow-hidden relative group">
+                    <div style={{ width: 'var(--main-image-size)', height: 'var(--main-image-size)' }} className="rounded-3xl overflow-hidden relative group">
                     <img 
                         src={IMAGES.homeMain} 
                         alt="Escuela Roure" 
-                        className="w-full h-full object-cover opacity-95 group-hover:opacity-100 transition-all duration-1000"
+                        className="w-full h-full object-contain transition-all duration-1000"
                     />
                     </div>
                 </div>
 
                 {/* Right: Menu */}
-                <div className="w-full md:w-1/3 order-3 px-4 md:px-0 text-center md:text-left flex flex-col items-center md:items-start pb-8 md:pb-0">
+                <div className="w-full md:w-1/3 order-3 px-4 md:px-0 text-center md:text-left flex flex-col items-center md:items-start pt-6 pb-8 md:pt-0 md:pb-0">
                     <nav 
                         onMouseEnter={() => setMenuHasInteracted(true)}
                         onMouseLeave={() => setHoveredMenuKey(null)}
@@ -911,7 +990,7 @@ const App: React.FC = () => {
   );
 
   // Image Carousel Component
-  const ImageCarousel = ({ images, autoPlayInterval = 2000 }: { images: string[], autoPlayInterval?: number }) => {
+  const ImageCarousel = ({ images, autoPlayInterval = 2000 }: { images: Array<{src: string, caption: string}>, autoPlayInterval?: number }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(true);
 
@@ -933,32 +1012,38 @@ const App: React.FC = () => {
       // Don't resume playing when using arrows
     };
 
+    const currentImage = images[currentIndex];
+
     return (
-      <div className="relative bg-stone-200 rounded-lg overflow-hidden shadow-lg group">
+      <div className="relative bg-stone-200 rounded-lg overflow-hidden shadow-lg group aspect-[4/3]">
         <img 
-          src={images[currentIndex]} 
-          alt={`Slide ${currentIndex + 1}`} 
-          className="w-full h-full object-cover"
+          key={currentIndex}
+          src={currentImage.src} 
+          alt={currentImage.caption} 
+          className="w-full h-full object-contain"
         />
         
         {/* Navigation Arrows */}
         <button
           onClick={goToPrevious}
-          className="absolute left-2 top-1/2 -translate-y-1/2 bg-stone-800/50 hover:bg-stone-800/80 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+          className="absolute left-2 top-1/2 -translate-y-1/2 bg-stone-800/50 hover:bg-stone-800/80 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-10"
         >
           <ChevronLeft size={20} />
         </button>
         <button
           onClick={goToNext}
-          className="absolute right-2 top-1/2 -translate-y-1/2 bg-stone-800/50 hover:bg-stone-800/80 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+          className="absolute right-2 top-1/2 -translate-y-1/2 bg-stone-800/50 hover:bg-stone-800/80 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-10"
         >
           <ChevronLeft size={20} className="rotate-180" />
         </button>
 
+        {/* Caption */}
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-stone-900/80 via-stone-900/60 to-transparent pt-8 pb-3 px-4">
+
         {/* Play/Pause Button */}
         <button
           onClick={() => setIsPlaying(!isPlaying)}
-          className="absolute bottom-2 right-2 bg-stone-800/50 hover:bg-stone-800/80 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+          className="absolute bottom-2 right-2 bg-stone-800/50 hover:bg-stone-800/80 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-10"
         >
           {isPlaying ? (
             <div className="w-4 h-4 flex gap-1">
@@ -971,22 +1056,74 @@ const App: React.FC = () => {
         </button>
 
         {/* Image Counter */}
-        <div className="absolute bottom-2 left-2 bg-stone-800/50 text-white text-xs px-2 py-1 rounded">
+        <div className="absolute bottom-2 left-2 bg-stone-800/50 text-white text-xs px-2 py-1 rounded z-10">
           {currentIndex + 1} / {images.length}
+        </div>
+          <p key={currentIndex} className="text-white text-sm font-serif italic text-center drop-shadow-lg">
+            {currentImage.caption}
+          </p>
         </div>
       </div>
     );
   };
 
   const HistoriaView = ({ title, contentData }: { title: string, contentData: ContentSection[] }) => {
+    // Select the correct photo array based on language
+    const historiaPhotos = language === 'es' ? IMAGES.historiaPhotos_es : IMAGES.historiaPhotos_ca;
+    
     // Split the 17 images into two carousels: 9 + 8
-    const carousel1Images = IMAGES.historiaPhotos.slice(0, 9);
-    const carousel2Images = IMAGES.historiaPhotos.slice(9, 17);
+    const carousel1Images = historiaPhotos.slice(0, 9);
+    const carousel2Images = historiaPhotos.slice(9, 17);
+
+    // Split paragraphs into thirds for mobile
+    const allParagraphs = contentData[0]?.paragraphs || [];
+    const thirdSize = Math.ceil(allParagraphs.length / 3);
+    const firstThird = allParagraphs.slice(0, thirdSize);
+    const secondThird = allParagraphs.slice(thirdSize, thirdSize * 2);
+    const thirdThird = allParagraphs.slice(thirdSize * 2);
+
+    // Collaborator logos organized by category
+    const otrosLogos = [
+      '/images/logos/otros_SerGi.png',
+      '/images/logos/otros_departament.jpg',
+      '/images/logos/otros_economia_social.png',
+    ];
+
+    const educacionLogos = [
+      '/images/logos/educacion_alaire.jpg',
+      '/images/logos/educacion_alavida.png',
+      '/images/logos/educacion_caiev.png',
+      '/images/logos/educacion_creixementribu.jpg',
+      '/images/logos/educacion_hazizhazi.jpg',
+      '/images/logos/educacion_jacintverdaguer.png',
+      '/images/logos/educacion_semillavioleta.png',
+      '/images/logos/educacion_submarilila.jpg',
+      '/images/logos/educacion_xell.jpg',
+      '/images/logos/eucacion_congresindians.png',
+    ];
+
+    const universidadLogos = [
+      '/images/logos/universidad_andalucia.jpg',
+      '/images/logos/universidad_baeza.svg',
+      '/images/logos/universidad_reyjuancarlos.jpg',
+      '/images/logos/universitat_girona.png',
+      '/images/logos/universitat_manresa.png',
+      '/images/logos/universitat_ub.jpg',
+      '/images/logos/universitat_valencia.jpg',
+    ];
+
+    const revistaLogos = [
+      '/images/logos/revista_elviure.jpg',
+      '/images/logos/revista_integral2.jpg',
+      '/images/logos/revista_cuadernosdepedagogia.jpg',
+    ];
 
     return (
       <InternalPageLayout title={title}>
         <div style={{ gap: 'var(--gap-base)' }} className="flex flex-col md:flex-row items-start">
-          <div style={{ fontSize: 'var(--internal-body-text)' }} className="w-full md:w-1/2 font-serif leading-relaxed text-stone-700 space-y-8 xl:space-y-9 2xl:space-y-10 mb-12 md:mb-0">
+          
+          {/* Desktop: Single column text */}
+          <div style={{ fontSize: 'var(--internal-body-text)' }} className="hidden md:block w-full md:w-1/2 font-serif leading-relaxed text-stone-700 space-y-8 xl:space-y-9 2xl:space-y-10">
             {contentData.map((section, sIdx) => (
                 <div key={sIdx} className="space-y-4 xl:space-y-5 2xl:space-y-6">
                     {section.title && (
@@ -1000,15 +1137,183 @@ const App: React.FC = () => {
                 </div>
             ))}
           </div>
+
+          {/* Mobile: Text with carousels intercalated */}
+          <div style={{ fontSize: 'var(--internal-body-text)' }} className="block md:hidden w-full font-serif leading-relaxed text-stone-700">
+            {/* First third */}
+            <div className="space-y-4 mb-8">
+              {firstThird.map((p, pIdx) => (
+                <p key={pIdx} className={pIdx === 0 ? "font-bold" : ""}>
+                  {p}
+                </p>
+              ))}
+            </div>
+
+            {/* First Carousel */}
+            <div className="w-full mb-8">
+              <ImageCarousel images={carousel1Images} autoPlayInterval={3000} />
+            </div>
+
+            {/* Second third */}
+            <div className="space-y-4 mb-8">
+              {secondThird.map((p, pIdx) => (
+                <p key={pIdx}>
+                  {p}
+                </p>
+              ))}
+            </div>
+
+            {/* Second Carousel */}
+            <div className="w-full mb-8">
+              <ImageCarousel images={carousel2Images} autoPlayInterval={3000} />
+            </div>
+
+            {/* Third third */}
+            <div className="space-y-4">
+              {thirdThird.map((p, pIdx) => (
+                <p key={pIdx}>
+                  {p}
+                </p>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop: Right column with carousels and logos */}
           <div className="w-full md:w-1/2 flex flex-col">
              {/* First Carousel */}
-             <div style={{ width: 'var(--main-image-size)', height: 'calc(var(--main-image-size) * 1.33)' }} className="mx-auto flex-shrink-0 md:sticky md:top-32 xl:top-36 2xl:top-40">
+             <div style={{ width: 'var(--main-image-size)', height: 'calc(var(--main-image-size) * 1.33)' }} className="hidden md:block mx-auto flex-shrink-0 md:sticky md:top-32 xl:top-36 2xl:top-40">
                <ImageCarousel images={carousel1Images} autoPlayInterval={3000} />
              </div>
              {/* Second Carousel - positioned much lower */}
-             <div style={{ width: 'var(--main-image-size)', height: 'calc(var(--main-image-size) * 1.33)' }} className="mx-auto flex-shrink-0 mt-8 md:mt-[350px] xl:mt-[420px] 2xl:mt-[490px]">
+             <div style={{ width: 'var(--main-image-size)', height: 'calc(var(--main-image-size) * 1.33)' }} className="hidden md:block mx-auto flex-shrink-0 mt-8 md:mt-[120px] xl:mt-[140px] 2xl:mt-[160px]">
                <ImageCarousel images={carousel2Images} autoPlayInterval={3000} />
              </div>
+
+             {/* Collaborators logos section - Desktop */}
+             <div style={{ width: 'var(--main-image-size)' }} className="hidden md:block mt-6 xl:mt-8 2xl:mt-10 mx-auto">
+               <h3 className="text-xl xl:text-xl 2xl:text-2xl font-bold text-stone-800 mb-6 xl:mb-7 2xl:mb-8 text-[#c1562e] font-serif text-center">
+                 {language === 'es' ? 'Hemos colaborado con:' : 'Hem col·laborat amb:'}
+               </h3>
+               
+               {/* Other entities - First */}
+               <div className="mb-6">
+                 <h4 className="text-sm font-serif text-stone-600 mb-3 text-center">
+                   {language === 'es' ? 'Otras entidades' : 'Altres entitats'}
+                 </h4>
+                 <div className="grid grid-cols-3 gap-3">
+                   {otrosLogos.map((logo, i) => (
+                     <div key={`otros-${i}`} className="aspect-square bg-white rounded-lg flex items-center justify-center border border-stone-200 p-2">
+                       <img src={logo} alt="Logo" className="w-full h-full object-contain" />
+                     </div>
+                   ))}
+                 </div>
+               </div>
+
+               {/* Education - Second */}
+               <div className="mb-6">
+                 <h4 className="text-sm font-serif text-stone-600 mb-3 text-center">
+                   {language === 'es' ? 'Educación' : 'Educació'}
+                 </h4>
+                 <div className="grid grid-cols-3 gap-3">
+                   {educacionLogos.map((logo, i) => (
+                     <div key={`educacion-${i}`} className="aspect-square bg-white rounded-lg flex items-center justify-center border border-stone-200 p-2">
+                       <img src={logo} alt="Logo" className="w-full h-full object-contain" />
+                     </div>
+                   ))}
+                 </div>
+               </div>
+
+               {/* Universities - Third */}
+               <div className="mb-6">
+                 <h4 className="text-sm font-serif text-stone-600 mb-3 text-center">
+                   {language === 'es' ? 'Universidades' : 'Universitats'}
+                 </h4>
+                 <div className="grid grid-cols-3 gap-3">
+                   {universidadLogos.map((logo, i) => (
+                     <div key={`universidad-${i}`} className="aspect-square bg-white rounded-lg flex items-center justify-center border border-stone-200 p-2">
+                       <img src={logo} alt="Logo" className="w-full h-full object-contain" />
+                     </div>
+                   ))}
+                 </div>
+               </div>
+
+               {/* Magazines - Fourth */}
+               <div className="mb-6">
+                 <h4 className="text-sm font-serif text-stone-600 mb-3 text-center">
+                   {language === 'es' ? 'Revistas' : 'Revistes'}
+                 </h4>
+                 <div className="grid grid-cols-3 gap-3">
+                   {revistaLogos.map((logo, i) => (
+                     <div key={`revista-${i}`} className="aspect-square bg-white rounded-lg flex items-center justify-center border border-stone-200 p-2">
+                       <img src={logo} alt="Logo" className="w-full h-full object-contain" />
+                     </div>
+                   ))}
+                 </div>
+               </div>
+             </div>
+          </div>
+        </div>
+
+        {/* Collaborators logos section - Mobile (after text) */}
+        <div className="block md:hidden mt-16">
+          <h3 className="text-xl font-bold text-stone-800 mb-6 text-[#c1562e] font-serif text-center">
+            {language === 'es' ? 'Hemos colaborado con:' : 'Hem col·laborat amb:'}
+          </h3>
+          
+          {/* Other entities - First */}
+          <div className="mb-6">
+            <h4 className="text-sm font-serif text-stone-600 mb-3 text-center">
+              {language === 'es' ? 'Otras entidades' : 'Altres entitats'}
+            </h4>
+            <div className="grid grid-cols-3 gap-3">
+              {otrosLogos.map((logo, i) => (
+                <div key={`otros-m-${i}`} className="aspect-square bg-white rounded-lg flex items-center justify-center border border-stone-200 p-2">
+                  <img src={logo} alt="Logo" className="w-full h-full object-contain" />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Education - Second */}
+          <div className="mb-6">
+            <h4 className="text-sm font-serif text-stone-600 mb-3 text-center">
+              {language === 'es' ? 'Educación' : 'Educació'}
+            </h4>
+            <div className="grid grid-cols-3 gap-3">
+              {educacionLogos.map((logo, i) => (
+                <div key={`educacion-m-${i}`} className="aspect-square bg-white rounded-lg flex items-center justify-center border border-stone-200 p-2">
+                  <img src={logo} alt="Logo" className="w-full h-full object-contain" />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Universities - Third */}
+          <div className="mb-6">
+            <h4 className="text-sm font-serif text-stone-600 mb-3 text-center">
+              {language === 'es' ? 'Universidades' : 'Universitats'}
+            </h4>
+            <div className="grid grid-cols-3 gap-3">
+              {universidadLogos.map((logo, i) => (
+                <div key={`universidad-m-${i}`} className="aspect-square bg-white rounded-lg flex items-center justify-center border border-stone-200 p-2">
+                  <img src={logo} alt="Logo" className="w-full h-full object-contain" />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Magazines - Fourth */}
+          <div className="mb-6">
+            <h4 className="text-sm font-serif text-stone-600 mb-3 text-center">
+              {language === 'es' ? 'Revistas' : 'Revistes'}
+            </h4>
+            <div className="grid grid-cols-3 gap-3">
+              {revistaLogos.map((logo, i) => (
+                <div key={`revista-m-${i}`} className="aspect-square bg-white rounded-lg flex items-center justify-center border border-stone-200 p-2">
+                  <img src={logo} alt="Logo" className="w-full h-full object-contain" />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </InternalPageLayout>
@@ -1166,11 +1471,13 @@ const App: React.FC = () => {
     // All articles data structure
     const allArticles: Article[] = t.articles;
 
-    const topics = Array.from(new Set(allArticles.map(a => a.topic)));
+    // Get all unique tags from all articles
+    const topics = Array.from(new Set(allArticles.flatMap(a => a.tags)));
     const [activeTopic, setActiveTopic] = useState<string | null>(null);
 
+    // Filter articles that contain the active topic in their tags
     const filteredArticles = activeTopic 
-        ? allArticles.filter(a => a.topic === activeTopic)
+        ? allArticles.filter(a => a.tags.includes(activeTopic))
         : allArticles;
 
     return (
@@ -1179,7 +1486,8 @@ const App: React.FC = () => {
         <div className="flex flex-wrap gap-3 xl:gap-3 2xl:gap-4 mb-10 xl:mb-12 2xl:mb-14">
             <button 
                 onClick={() => setActiveTopic(null)}
-                className={`px-4 xl:px-5 2xl:px-6 py-2 xl:py-2 2xl:py-3 rounded-full text-sm md:text-base xl:text-base 2xl:text-lg font-serif font-medium border transition-all
+                style={{ fontSize: 'var(--internal-body-text)', padding: 'calc(var(--internal-body-text) * 0.5) calc(var(--internal-body-text) * 1.2)' }}
+                className={`rounded-full font-serif font-medium border transition-all
                     ${activeTopic === null 
                         ? 'bg-[#c1562e] text-white border-[#c1562e]' 
                         : 'bg-white text-stone-600 border-stone-300 hover:border-[#c1562e] hover:text-[#c1562e]'}
@@ -1205,36 +1513,74 @@ const App: React.FC = () => {
 
         {/* Grid of Articles */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-7 2xl:gap-8">
-          {filteredArticles.map((article, idx) => (
-            <div key={idx} className="bg-white p-6 xl:p-7 2xl:p-8 rounded-xl border border-stone-200 shadow-sm hover:shadow-md transition-all group cursor-pointer">
-              <div className="flex items-start justify-between mb-4 xl:mb-4 2xl:mb-5">
-                 <Tag size={16} className="text-stone-400 mt-1 xl:w-4 xl:h-4 2xl:w-5 2xl:h-5" />
-                 <span className="text-xs md:text-sm xl:text-sm 2xl:text-base font-bold text-[#c1562e] bg-[#c1562e]/10 px-2 xl:px-2.5 2xl:px-3 py-1 xl:py-1 2xl:py-1.5 rounded">{article.topic}</span>
-              </div>
+          {filteredArticles.map((article, idx) => {
+            const hasLink = !!article.link;
+            const hasPdf = !!article.file;
+            const hasAdditionalInfo = !!article.additionalInfo;
+            
+            const CardContent = () => (
+              <>
+                <div className="flex items-start justify-between mb-4 xl:mb-4 2xl:mb-5">
+                  <div className="flex flex-wrap gap-1.5 justify-start w-full">
+                    {article.tags.map((tag, i) => (
+                      <span key={i} className="text-xs md:text-sm xl:text-sm 2xl:text-base font-bold text-[#c1562e] bg-[#c1562e]/10 px-2 xl:px-2.5 2xl:px-3 py-1 xl:py-1 2xl:py-1.5 rounded whitespace-nowrap">{tag}</span>
+                    ))}
+                  </div>
+                </div>
                 <h3 style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif font-bold text-stone-800 mb-2 xl:mb-2 2xl:mb-3 group-hover:text-[#c1562e] transition-colors leading-tight">
                   {article.title}
                 </h3>
-                <p style={{ fontSize: 'calc(var(--internal-body-text) * 0.85)' }} className="text-stone-500 mb-2 xl:mb-2 2xl:mb-3 font-serif italic">{language === 'es' ? 'Equipo El Roure' : 'Equip El Roure'}</p>
-                      <div className="flex items-center gap-2 mt-4 xl:mt-4 2xl:mt-5 text-sm md:text-base xl:text-base 2xl:text-lg text-stone-500">
-                        <FileText size={16} />
-                        {article.file ? (
-                          <a
-                            href={article.file}
-                            download
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:underline"
-                          >
-                            PDF • {language === 'es' ? 'Descargar' : 'Descarregar'}
-                          </a>
-                        ) : (
-                          <span className="opacity-70">
-                            PDF • {language === 'es' ? 'Próximamente' : 'Proximament'}
-                          </span>
-                        )}
-                      </div>
-            </div>
-          ))}
+                <p style={{ fontSize: 'calc(var(--internal-body-text) * 0.85)' }} className="text-stone-500 mb-2 xl:mb-2 2xl:mb-3 font-serif italic">
+                  {article.author}
+                </p>
+                <div className="flex items-center gap-2 mt-4 xl:mt-4 2xl:mt-5 text-sm md:text-base xl:text-base 2xl:text-lg text-stone-500">
+                  {hasPdf && (
+                    <>
+                      <FileText size={16} />
+                      <span className="hover:underline">
+                        PDF • {language === 'es' ? 'Descargar' : 'Descarregar'}
+                      </span>
+                    </>
+                  )}
+                  {hasAdditionalInfo && !hasPdf && (
+                    <>
+                      <FileText size={16} />
+                      <span className="text-xs md:text-sm">
+                        {article.additionalInfo}
+                      </span>
+                    </>
+                  )}
+                </div>
+              </>
+            );
+            
+            return hasLink ? (
+              <a 
+                key={idx} 
+                href={article.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white p-6 xl:p-7 2xl:p-8 rounded-xl border border-stone-200 shadow-sm hover:shadow-md transition-all group cursor-pointer block"
+              >
+                <CardContent />
+              </a>
+            ) : hasPdf ? (
+              <a
+                key={idx}
+                href={article.file}
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white p-6 xl:p-7 2xl:p-8 rounded-xl border border-stone-200 shadow-sm hover:shadow-md transition-all group cursor-pointer block"
+              >
+                <CardContent />
+              </a>
+            ) : (
+              <div key={idx} className="bg-white p-6 xl:p-7 2xl:p-8 rounded-xl border border-stone-200 shadow-sm transition-all group">
+                <CardContent />
+              </div>
+            );
+          })}
         </div>
       </InternalPageLayout>
     );
