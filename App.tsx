@@ -362,7 +362,7 @@ const content = {
         { title: "Divídete y sufrirás", author: "Cristóbal Gutiérrez", tags: ["Fundamentos", "Revista Roure"], file: "/pdfs/DIVIDETE-Y-SUFIRAS.pdf" },
         { title: "Dues experiències de restauració", author: "Paco Robles", tags: ["Actividad", "Revista Roure"], file: "/pdfs/DUES-EXPERIENCIES-DE-RESTAURACIO.pdf" },
         { title: "El consumismo que enturbia el alma", author: "Cristóbal Gutiérrez", tags: ["Familia", "Revista Roure"], file: "/pdfs/EL-CONSUMISMO-QUE-ENTURBIA-EL-ALMA.pdf" },
-        { title: "El Roure Boletín 13", author: "Varios", tags: ["Boletín Roure"], file: "/pdfs/EL-ROURE-BOLETIN-13_MOVIL.pdf" },
+        { title: "El Roure Boletín 13", author: "Varios", tags: ["Boletín Roure"], file: "/pdfs/EL-ROURE-BOLETIN-13.pdf" },
         { title: "En busca de una feminidad y masculinidad naturales", author: "Begoña González", tags: ["Género", "Revista Roure"], file: "/pdfs/EN-BUSCA-DE-UNA-FEMINIDAD-Y-MASCULINIDAD-NATURALES.pdf" },
         { title: "¿Estamos o no haciendo matemáticas?", author: "Lara Jiménez", tags: ["Matemáticas", "Revista Roure"], file: "/pdfs/ESTAMOS-O-NO-HACIENDO-MATEMATICAS.pdf" },
         { title: "Hora de marcharme de El Roure", author: "Cristóbal Gutiérrez", tags: ["Sistémica", "Revista Roure"], file: "/pdfs/HORA-DE-MARCHARME-DE-EL-ROURE.pdf" },
@@ -657,7 +657,7 @@ const content = {
         { title: "Divídete y sufrirás", author: "Cristóbal Gutiérrez", tags: ["Fonaments", "Revista Roure"], file: "/pdfs/DIVIDETE-Y-SUFIRAS.pdf" },
         { title: "Dues experiències de restauració", author: "Paco Robles", tags: ["Activitat", "Revista Roure"], file: "/pdfs/DUES-EXPERIENCIES-DE-RESTAURACIO.pdf" },
         { title: "El consumismo que enturbia el alma", author: "Cristóbal Gutiérrez", tags: ["Família", "Revista Roure"], file: "/pdfs/EL-CONSUMISMO-QUE-ENTURBIA-EL-ALMA.pdf" },
-        { title: "El Roure Boletín 13", author: "Varios", tags: ["Butlletí Roure"], file: "/pdfs/EL-ROURE-BOLETIN-13_MOVIL.pdf" },
+        { title: "El Roure Boletín 13", author: "Varios", tags: ["Butlletí Roure"], file: "/pdfs/EL-ROURE-BOLETIN-13.pdf" },
         { title: "En busca de una feminidad y masculinidad naturales", author: "Begoña González", tags: ["Gènere", "Revista Roure"], file: "/pdfs/EN-BUSCA-DE-UNA-FEMINIDAD-Y-MASCULINIDAD-NATURALES.pdf" },
         { title: "¿Estamos o no haciendo matemáticas?", author: "Lara Jiménez", tags: ["Matemàtiques", "Revista Roure"], file: "/pdfs/ESTAMOS-O-NO-HACIENDO-MATEMATICAS.pdf" },
         { title: "Hora de marcharme de El Roure", author: "Cristóbal Gutiérrez", tags: ["Sistèmica", "Revista Roure"], file: "/pdfs/HORA-DE-MARCHARME-DE-EL-ROURE.pdf" },
@@ -924,8 +924,7 @@ const App: React.FC = () => {
                     >
                     <ul style={{ gap: 'var(--menu-spacing)' }} className="flex flex-col">
                         {menuItems.map((item) => {
-                        // Logic: Highlight if hovered OR (if not interacted yet AND key is historia)
-                        const isHighlighted = hoveredMenuKey === item.key || (!menuHasInteracted && hoveredMenuKey === null && item.key === 'historia');
+                        const isHighlighted = hoveredMenuKey === item.key;
                         
                         return (
                             <li key={item.key}>
