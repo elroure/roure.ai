@@ -5,7 +5,7 @@ import { ArrowUp, ChevronLeft, FileText, Play, Tag, Mic } from 'lucide-react';
 // --- Types & Content ---
 
 type Language = 'es' | 'ca';
-type View = 'home' | 'historia' | 'fundamentos' | 'escuela' | 'videos' | 'textos' | 'comunidad' | 'en_que_estamos';
+type View = 'home' | 'historia' | 'fundamentos' | 'formacion' | 'escuela' | 'videos' | 'textos' | 'comunidad' | 'en_que_estamos';
 type EscuelaSection = 'intro' | 'aprendizaje' | 'acompanamiento' | 'equipo' | 'familias' | 'etapas' | '3-6' | '6-12' | '12-16';
 
 // --- IMAGE CONFIGURATION ---
@@ -19,6 +19,7 @@ const IMAGES = {
   sections: {
     historia: "https://picsum.photos/seed/history/800/1000",
     fundamentos: "https://picsum.photos/seed/foundations/800/1000",
+    formacion: "https://picsum.photos/seed/formacion/800/1000",
   },
   historiaPhotos_es: [
     { src: '/images/1_el_viejo_roble.webp', caption: 'El viejo roble' },
@@ -77,6 +78,47 @@ const IMAGES = {
   ]
 };
 
+  // Fundamentos carousels (images already in public folder). Captions intentionally empty for now.
+  const fundamentosAutorr = [
+    { src: '/images/fundamentos/autorr 1.jpg', caption: '' },
+    { src: '/images/fundamentos/autorr 2.jpg', caption: '' },
+    { src: '/images/fundamentos/autorr 3.jpg', caption: '' },
+    { src: '/images/fundamentos/autorr 4.jpg', caption: '' },
+    { src: '/images/fundamentos/autorr 5.jpg', caption: '' },
+    { src: '/images/fundamentos/autorr 6.jpg', caption: '' },
+    { src: '/images/fundamentos/autorr 11.jpg', caption: '' },
+    { src: '/images/fundamentos/autorr 22.jpg', caption: '' },
+  ];
+
+  const fundamentosAcompa = [
+    { src: '/images/fundamentos/acompa 1.jpeg', caption: '' },
+    { src: '/images/fundamentos/acompa 2.jpg', caption: '' },
+    { src: '/images/fundamentos/acompa 3.jpg', caption: '' },
+    { src: '/images/fundamentos/acompa 4.jpg', caption: '' },
+    { src: '/images/fundamentos/acompa 5.jpg', caption: '' },
+    { src: '/images/fundamentos/acompa 6.JPG', caption: '' },
+    { src: '/images/fundamentos/acompa 7.jpg', caption: '' },
+    { src: '/images/fundamentos/acompa 8.jpeg', caption: '' },
+    { src: '/images/fundamentos/acompa 9.jpg', caption: '' },
+    { src: '/images/fundamentos/acompa 10.jpg', caption: '' },
+    { src: '/images/fundamentos/acompa 11.jpg', caption: '' },
+  ];
+
+  const fundamentosApren = [
+    { src: '/images/fundamentos/apren 1.jpg', caption: '' },
+    { src: '/images/fundamentos/apren 2.jpg', caption: '' },
+    { src: '/images/fundamentos/apren 3.jpg', caption: '' },
+    { src: '/images/fundamentos/apren 4.JPG', caption: '' },
+    { src: '/images/fundamentos/apren 5.jpg', caption: '' },
+    { src: '/images/fundamentos/apren 6.jpg', caption: '' },
+    { src: '/images/fundamentos/apren 7.jpg', caption: '' },
+    { src: '/images/fundamentos/apren 8.jpg', caption: '' },
+    { src: '/images/fundamentos/apren 9.jpg', caption: '' },
+    { src: '/images/fundamentos/apren 10.jpg', caption: '' },
+    { src: '/images/fundamentos/apren 11.jpg', caption: '' },
+    { src: '/images/fundamentos/apren 12.JPG', caption: '' },
+  ];
+
 interface PersonProfile {
   name: string;
   paragraphs: string[];
@@ -108,6 +150,7 @@ const content = {
     nav: {
       historia: 'Historia',
       fundamentos: 'Fundamentos',
+      formacion: 'Formación',
       escuela: 'Escuela',
       videos: 'Audiovisuales',
       textos: 'Artículos',
@@ -140,15 +183,7 @@ const content = {
         '12-16': 'De 12 a 16 años',
       },
       titles: {
-        intro: 'Introducción a nuestra escuela',
-        aprendizaje: 'Nuestra visión del aprendizaje',
-        acompanamiento: 'El arte de acompañar',
-        equipo: 'Nuestro equipo pedagógico',
-        familias: 'Las familias en el centro',
-        etapas: 'Los espacios y los ritmos',
-        '3-6': 'La etapa Infantil (3-6)',
-        '6-12': 'La etapa Primaria (6-12)',
-        '12-16': 'La etapa Secundaria (12-16)',
+        
       }
     },
     escuelaContent: {
@@ -277,6 +312,17 @@ const content = {
                 "Tenemos la capacidad de desarrollar lo que ya somos como potencial y de autorregular el intercambio con el entorno, es decir, de discernir el contenido, el momento y la medida de un determinado aprendizaje. Esta capacidad se manifiesta desde el nacimiento y de forma innata, como una gran curiosidad y ganas de aprender, que permite que los niños conquisten aprendizajes de gran complejidad de una manera autónoma. Es una cuestión de supervivencia, porque es la que surge del mismo hecho de crecer y de la necesidad de acoplamiento al entorno. Por eso es fundamental un ambiente rico y próximo, que cubra las necesidades de la criatura con posibilidades de vivencias diversas y rodeadas de un afecto incondicional.",
                 "Apoyamos las ganas de autonomía que se manifiestan desde las primeras edades y que consideramos la vía natural, valiosa y eficaz que tienen las niñas y los niños para desarrollar sus capacidades. Este hecho implica dejar un espacio para que las criaturas encuentren sus propias soluciones en las situaciones que se les presentan, ya sea un conflicto en las relaciones, una caída, una dificultad en la experimentación, etc. También implica reconocer el valor del fracaso o de la frustración.",
                 "En todo caso, nuestro papel como adultos no es el de evitar o solucionar problemas, sino el de acompañar las dificultades que puedan surgir porque las resuelvan con sus propios recursos; de este modo serán aprovechadas para avanzar. Nuestro papel no pasa por dar respuestas cerradas y directas a sus preguntas, sino por servir de eco y de interlocutores para que surja y se construya una respuesta propia."
+            ]
+        }
+    ],
+    formacionContent: [
+        {
+            title: "Formación y acompañamiento",
+            paragraphs: [
+                "A lo largo de estos años, desde El Roure hemos compartido nuestra experiencia y nuestra mirada sobre la educación y el crecimiento a través de diferentes espacios de formación.",
+                "Hemos ofrecido talleres, cursos y acompañamiento tanto para familias como para profesionales de la educación, compartiendo herramientas y reflexiones que puedan ayudar en el camino de acompañar a las criaturas desde el respeto a su naturaleza y ritmo.",
+                "Nuestros espacios de formación han abordado temas como la autorregulación, el acompañamiento respetuoso, los límites naturales, la gestión emocional, y la importancia del vínculo en los procesos de aprendizaje.",
+                "Creemos en la importancia de que los adultos que acompañan a las criaturas dispongan de espacios propios de reflexión, crecimiento personal y apoyo mutuo, para poder sostener con presencia y consciencia su función."
             ]
         }
     ],
@@ -411,6 +457,7 @@ const content = {
     nav: {
       historia: 'Història',
       fundamentos: 'Fonaments',
+      formacion: 'Formació',
       escuela: 'Escola',
       videos: 'Audiovisuals',
       textos: 'Artícles',
@@ -443,15 +490,7 @@ const content = {
         '12-16': 'De 12 a 16 anys',
       },
       titles: {
-        intro: 'Introducció a la nostra escola',
-        aprendizaje: 'La nostra visió de l\'aprenentatge',
-        acompanamiento: 'L\'art d\'acompanyar',
-        equipo: 'El nostre equip pedagògic',
-        familias: 'Les famílies al centre',
-        etapas: 'Els espais i els ritmes',
-        '3-6': 'L\'etapa Infantil (3-6)',
-        '6-12': 'L\'etapa Primària (6-12)',
-        '12-16': 'L\'etapa Secundària (12-16)',
+        
       }
     },
     escuelaContent: {
@@ -572,6 +611,17 @@ const content = {
                 "Tenim la capacitat de desenvolupar el que ja som com a potencial i d'autoregular l'intercanvi amb l'entorn, és a dir, de discernir el contingut, el moment i la mesura d'un determinat aprenentatge. Aquesta capacitat es manifesta des del naixement i de manera innata, com una gran curiositat i ganes d'aprendre, que permet que els nens conquistin aprenentatges de gran complexitat d'una manera autònoma. És una qüestió de supervivència, perquè és la que sorgeix del mateix fet de créixer i de la necessitat d'acoblament a l'entorn. Per això és fonamental un ambient ric i pròxim, que cobreixi les necessitats de la criatura amb possibilitats de vivències diverses i envoltades d'un afecte incondicional.",
                 "Donem suport a les ganes d'autonomia que es manifesten des de les primeres edats i que considerem la via natural, valuosa i eficaç que tenen les nenes i els nens per a desenvolupar les seves capacitats. Aquest fet implica deixar un espai perquè les criatures trobin les seves pròpies solucions en les situacions que se'ls presenten, ja sigui un conflicte en les relacions, una caiguda, una dificultat en l'experimentació, etc. També implica reconèixer el valor del fracàs o de la frustració.",
                 "En tot cas, el nostre paper com a adults no és el d'evitar o solucionar problemes, sinó el d'acompanyar les dificultats que puguin sorgir perquè les resolguin amb els seus propis recursos; d'aquesta manera seran aprofitades per a avançar. El nostre paper no passa per donar respostes tancades i directes a les seves preguntes, sinó per servir de ressò i d'interlocutors perquè sorgeixi i es construeixi una resposta pròpia."
+            ]
+        }
+    ],
+    formacionContent: [
+        {
+            title: "Formació i acompanyament",
+            paragraphs: [
+                "Al llarg d'aquests anys, des d'El Roure hem compartit la nostra experiència i la nostra mirada sobre l'educació i el creixement a través de diferents espais de formació.",
+                "Hem oferit tallers, cursos i acompanyament tant per a famílies com per a professionals de l'educació, compartint eines i reflexions que puguin ajudar en el camí d'acompanyar a les criatures des del respecte a la seva naturalesa i ritme.",
+                "Els nostres espais de formació han abordat temes com l'autoregulació, l'acompanyament respectuós, els límits naturals, la gestió emocional, i la importància del vincle en els processos d'aprenentatge.",
+                "Creiem en la importància que els adults que acompanyen a les criatures disposin d'espais propis de reflexió, creixement personal i suport mutu, per a poder sostenir amb presència i consciència la seva funció."
             ]
         }
     ],
@@ -707,7 +757,7 @@ const content = {
 // --- Components ---
 
 const App: React.FC = () => {
-  const ALLOWED_VIEWS: View[] = ['home','historia','fundamentos','escuela','videos','textos','comunidad','en_que_estamos'];
+  const ALLOWED_VIEWS: View[] = ['home','historia','fundamentos','formacion','escuela','videos','textos','comunidad','en_que_estamos'];
   const [currentView, setCurrentView] = useState<View>(() => {
     try {
       const h = window.location.hash.replace('#','');
@@ -722,7 +772,6 @@ const App: React.FC = () => {
   
   // State for Menu Interaction
   const [menuHasInteracted, setMenuHasInteracted] = useState(false);
-  const [hoveredMenuKey, setHoveredMenuKey] = useState<string | null>(null);
 
   const brandColor = "text-[#c1562e]";
   const hoverBrandColor = "hover:text-[#c1562e]";
@@ -764,6 +813,17 @@ const App: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Video ref for controlling playback speed
+  const bgVideoRef = React.useRef<HTMLVideoElement>(null);
+
+  // Set video playback rate to 1x when video is ready to play
+  const handleVideoLoaded = () => {
+    if (bgVideoRef.current) {
+      bgVideoRef.current.playbackRate = 1;
+      bgVideoRef.current.play().catch(err => console.log('Video autoplay failed:', err));
+    }
+  };
+
   // Common Logo for header - Clickable
   const LogoImg = ({ className }: { className?: string }) => (
     <button 
@@ -793,10 +853,10 @@ const App: React.FC = () => {
         </a>
 
         {/* Language Switcher */}
-        <div className={`flex items-center justify-between text-sm font-bold uppercase text-stone-400 font-serif ${compact ? 'mt-0' : 'mt-1'}`} style={{ width: '100%', maxWidth: '100%', letterSpacing: '0.4em' }}>
+        <div className={`flex items-center justify-between text-sm font-bold uppercase text-stone-400 font-serif ${compact ? 'mt-0' : 'mt-1'}`} style={{ width: '100%', maxWidth: '100%', letterSpacing: '0.4em', lineHeight: '1.8' }}>
           <button 
             onClick={() => setLanguage('es')}
-            className={`${language === 'es' ? 'text-stone-800 border-b-2 border-[#c1562e]' : 'text-stone-400 hover:text-stone-600'} transition-colors pb-0.5`}
+            className={`${language === 'es' ? 'text-stone-800 border-b-2 border-[#c1562e]' : 'text-stone-400 hover:text-stone-600'} transition-colors py-1`}
             style={{ marginRight: '-0.4em' }}
           >
             castellano
@@ -804,7 +864,7 @@ const App: React.FC = () => {
           <span className="text-stone-300">|</span>
           <button 
             onClick={() => setLanguage('ca')}
-            className={`${language === 'ca' ? 'text-stone-800 border-b-2 border-[#c1562e]' : 'text-stone-400 hover:text-stone-600'} transition-colors pb-0.5`}
+            className={`${language === 'ca' ? 'text-stone-800 border-b-2 border-[#c1562e]' : 'text-stone-400 hover:text-stone-600'} transition-colors py-1`}
             style={{ marginLeft: '-0.4em' }}
           >
             català
@@ -866,6 +926,7 @@ const App: React.FC = () => {
     const menuItems = [
         { key: 'historia', label: t.nav.historia },
         { key: 'fundamentos', label: t.nav.fundamentos },
+        { key: 'formacion', label: t.nav.formacion },
         { key: 'escuela', label: t.nav.escuela },
         { key: 'videos', label: t.nav.videos },
         { key: 'textos', label: t.nav.textos },
@@ -917,39 +978,46 @@ const App: React.FC = () => {
                 </div>
 
                 {/* Right: Menu */}
-                <div className="w-full md:w-1/3 order-3 px-4 md:px-0 text-center md:text-left flex flex-col items-center md:items-start pt-6 pb-8 md:pt-0 md:pb-0">
+                <div className="w-full md:w-1/3 order-3 px-4 md:px-0 flex justify-center md:justify-start pt-6 pb-8 md:pt-0 md:pb-0">
+                  <div className="flex flex-col items-start">
+                    {/* Menu Label - commented out, uncomment to show */}
+                    {/* <div className="flex items-center text-sm font-bold uppercase text-stone-400 font-serif mb-4" style={{ letterSpacing: '0.4em' }}>
+                      <span className={`${language === 'es' ? 'text-stone-800 border-b-2 border-[#c1562e]' : language === 'ca' ? 'text-stone-800 border-b-2 border-[#c1562e]' : 'text-stone-400'} transition-colors pb-0.5`}>
+                        {language === 'es' ? 'MENÚ' : 'MENÚ'}
+                      </span>
+                    </div> */}
                     <nav 
                         onMouseEnter={() => setMenuHasInteracted(true)}
-                        onMouseLeave={() => setHoveredMenuKey(null)}
                     >
                     <ul style={{ gap: 'var(--menu-spacing)' }} className="flex flex-col">
                         {menuItems.map((item) => {
-                        const isHighlighted = hoveredMenuKey === item.key;
-                        
                         return (
                             <li key={item.key}>
                             <button 
                                 onClick={() => handleNav(item.key as View)}
-                                onMouseEnter={() => setHoveredMenuKey(item.key)}
+                                className="font-serif font-medium flex items-center gap-2 relative group text-left text-stone-600 hover:text-[#c1562e] transition-all duration-300 ease-in-out hover:scale-105 text-xl md:text-base"
                                 style={{ fontSize: 'var(--menu-text-size)' }}
-                                className={`font-serif font-medium transition-colors duration-300 block relative group text-left
-                                ${isHighlighted ? 'text-[#c1562e]' : 'text-stone-600'}
-                                `}
                             >
+                                <img 
+                                  src="/images/menu_icon.png" 
+                                  alt="" 
+                                  className={`w-3 h-3 opacity-60 transition-transform duration-300 ease-in-out group-hover:rotate-90`} 
+                                />
                                 {item.label}
-                                <span className={`absolute left-0 -bottom-1 h-[1px] bg-[#c1562e] transition-all duration-300 ${isHighlighted ? 'w-full' : 'w-0'}`}></span>
+                                <span className={`absolute left-0 -bottom-1 h-[1px] bg-[#c1562e] transition-all duration-300 ease-in-out origin-left w-0 group-hover:w-full`}></span>
                             </button>
                             </li>
                         )
                         })}
                     </ul>
                     </nav>
+                  </div>
                 </div>
             </div>
         </div>
 
         {/* Footer inside Home for perfect spacing */}
-        <div className="mt-1 mb-2" style={{ transform: 'scale(0.75)', transformOrigin: 'center top' }}>
+        <div className="mt-1 md:-mt-4 mb-2 -mb-8" style={{ transform: 'scale(0.75)', transformOrigin: 'center top' }}>
           <Footer compact={false} />
         </div>
       </div>
@@ -959,7 +1027,7 @@ const App: React.FC = () => {
   const InternalPageLayout = ({ title, children }: { title: string, children?: React.ReactNode }) => (
     <div style={{ paddingLeft: 'var(--padding-x)', paddingRight: 'var(--padding-x)' }} className="w-full min-h-screen flex flex-col pt-32 xl:pt-36 2xl:pt-40 pb-20 xl:pb-24 2xl:pb-28 max-w-6xl xl:max-w-7xl 2xl:max-w-6xl mx-auto">
       {/* Sticky Header Area for Internal Pages */}
-      <div style={{ paddingLeft: 'var(--padding-x)', paddingRight: 'var(--padding-x)' }} className="fixed top-0 left-0 w-full bg-[#f7f5e6]/90 backdrop-blur-sm z-40 py-4 xl:py-5 2xl:py-6 border-b border-stone-200/50">
+      <div style={{ paddingLeft: 'var(--padding-x)', paddingRight: 'var(--padding-x)' }} className="fixed top-0 left-0 w-full bg-[#f7f5e6]/15 backdrop-blur-sm z-40 py-4 xl:py-5 2xl:py-6 border-b border-stone-200/50">
          <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-6xl mx-auto flex justify-between items-center">
             <button 
               onClick={() => navigateTo('home')}
@@ -991,7 +1059,34 @@ const App: React.FC = () => {
   // Image Carousel Component
   const ImageCarousel = ({ images, autoPlayInterval = 2000 }: { images: Array<{src: string, caption: string}>, autoPlayInterval?: number }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [isPlaying, setIsPlaying] = useState(true);
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
+    const carouselRef = useRef<HTMLDivElement>(null);
+
+    // Intersection Observer to detect visibility
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          setIsVisible(entry.isIntersecting);
+        },
+        { threshold: 0.1 }
+      );
+
+      if (carouselRef.current) {
+        observer.observe(carouselRef.current);
+      }
+
+      return () => {
+        if (carouselRef.current) {
+          observer.unobserve(carouselRef.current);
+        }
+      };
+    }, []);
+
+    // Start autoplay when visible, stop when not visible
+    useEffect(() => {
+      setIsPlaying(isVisible);
+    }, [isVisible]);
 
     useEffect(() => {
       if (!isPlaying) return;
@@ -1003,18 +1098,18 @@ const App: React.FC = () => {
 
     const goToPrevious = () => {
       setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
-      // Don't resume playing when using arrows
+      setIsPlaying(false);
     };
 
     const goToNext = () => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
-      // Don't resume playing when using arrows
+      setIsPlaying(false);
     };
 
     const currentImage = images[currentIndex];
 
     return (
-      <div className="relative bg-stone-200 rounded-lg overflow-hidden shadow-lg group aspect-[4/3]">
+      <div ref={carouselRef} className="relative overflow-hidden group aspect-[4/3] rounded-lg" style={{ margin: 0, padding: 0, display: 'block', backgroundColor: '#f7f5e6' }}>
         <img 
           key={currentIndex}
           src={currentImage.src} 
@@ -1070,27 +1165,30 @@ const App: React.FC = () => {
     // Select the correct photo array based on language
     const historiaPhotos = language === 'es' ? IMAGES.historiaPhotos_es : IMAGES.historiaPhotos_ca;
     
-    // Split the 17 images into two carousels: 9 + 8
-    const carousel1Images = historiaPhotos.slice(0, 9);
-    const carousel2Images = historiaPhotos.slice(9, 17);
+    // Split the 17 images into 4 carousels: 5+4+4+4
+    const carousel1Images = historiaPhotos.slice(0, 5);
+    const carousel2Images = historiaPhotos.slice(5, 9);
+    const carousel3Images = historiaPhotos.slice(9, 13);
+    const carousel4Images = historiaPhotos.slice(13, 17);
 
-    // Split paragraphs into thirds for mobile
+    // Split paragraphs into 4 sections for carousel intercalation
     const allParagraphs = contentData[0]?.paragraphs || [];
-    const thirdSize = Math.ceil(allParagraphs.length / 3);
-    const firstThird = allParagraphs.slice(0, thirdSize);
-    const secondThird = allParagraphs.slice(thirdSize, thirdSize * 2);
-    const thirdThird = allParagraphs.slice(thirdSize * 2);
+    const sectionSize = Math.ceil(allParagraphs.length / 4);
+    const section1 = allParagraphs.slice(0, sectionSize);
+    const section2 = allParagraphs.slice(sectionSize, sectionSize * 2);
+    const section3 = allParagraphs.slice(sectionSize * 2, sectionSize * 3);
+    const section4 = allParagraphs.slice(sectionSize * 3);
 
     // Collaborator logos organized by category
     const otrosLogos = [
       '/images/logos/otros_SerGi.png',
-      '/images/logos/otros_departament.jpg',
       '/images/logos/otros_economia_social.png',
+      '/images/logos/otros_escolescoop.jpg',
+      '/images/logos/otros_cooperativesdetreball.jpg',
     ];
 
     const educacionLogos = [
       '/images/logos/educacion_alaire.jpg',
-      '/images/logos/educacion_alavida.png',
       '/images/logos/educacion_caiev.png',
       '/images/logos/educacion_creixementribu.jpg',
       '/images/logos/educacion_hazizhazi.jpg',
@@ -1098,32 +1196,218 @@ const App: React.FC = () => {
       '/images/logos/educacion_semillavioleta.png',
       '/images/logos/educacion_submarilila.jpg',
       '/images/logos/educacion_xell.jpg',
-      '/images/logos/eucacion_congresindians.png',
+      '/images/logos/educacion_corriols.jpg',
+      '/images/logos/educacion_lesgarrofes.jpg',
+      '/images/logos/educacion_bizilore.jpg',
     ];
 
     const universidadLogos = [
-      '/images/logos/universidad_andalucia.jpg',
-      '/images/logos/universidad_baeza.svg',
+      '/images/logos/universidad_andalucia.svg',
       '/images/logos/universidad_reyjuancarlos.jpg',
-      '/images/logos/universitat_girona.png',
-      '/images/logos/universitat_manresa.png',
-      '/images/logos/universitat_ub.jpg',
-      '/images/logos/universitat_valencia.jpg',
+      '/images/logos/universidad_girona.png',
+      '/images/logos/universidad_manresa.png',
+      '/images/logos/universidad_ub.jpg',
+      '/images/logos/universidad_valencia.jpg',
     ];
 
     const revistaLogos = [
       '/images/logos/revista_elviure.jpg',
       '/images/logos/revista_integral2.jpg',
       '/images/logos/revista_cuadernosdepedagogia.jpg',
+      '/images/logos/revista_grao.png',
+      '/images/logos/revista_kikirikicooperacioneducativa.png',
     ];
 
     return (
       <InternalPageLayout title={title}>
-        <div style={{ gap: 'var(--gap-base)' }} className="flex flex-col md:flex-row items-start">
+        {/* Desktop and Mobile: Text with interleaved carousels in two columns */}
+        <div className="flex flex-col md:flex-row items-start gap-6 md:gap-0">
           
-          {/* Desktop: Single column text */}
+          {/* Desktop: Single column text with carousels on the side */}
           <div style={{ fontSize: 'var(--internal-body-text)' }} className="hidden md:block w-full md:w-1/2 font-serif leading-relaxed text-stone-700 space-y-8 xl:space-y-9 2xl:space-y-10">
-            {contentData.map((section, sIdx) => (
+            {/* Section 1 */}
+            <div className="space-y-4 xl:space-y-5 2xl:space-y-6">
+              {section1.map((p, pIdx) => (
+                <p key={pIdx} className={pIdx === 0 ? "font-bold" : ""}>
+                  {p}
+                </p>
+              ))}
+            </div>
+            
+            {/* Section 2 */}
+            <div className="space-y-4 xl:space-y-5 2xl:space-y-6">
+              {section2.map((p, pIdx) => (
+                <p key={pIdx}>
+                  {p}
+                </p>
+              ))}
+            </div>
+            
+            {/* Section 3 */}
+            <div className="space-y-4 xl:space-y-5 2xl:space-y-6">
+              {section3.map((p, pIdx) => (
+                <p key={pIdx}>
+                  {p}
+                </p>
+              ))}
+            </div>
+            
+            {/* Section 4 */}
+            <div className="space-y-4 xl:space-y-5 2xl:space-y-6">
+              {section4.map((p, pIdx) => (
+                <p key={pIdx}>
+                  {p}
+                </p>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile: Text with carousels intercalated evenly */}
+          <div style={{ fontSize: 'var(--internal-body-text)' }} className="block md:hidden w-full font-serif leading-relaxed text-stone-700">
+            {(() => {
+              // Extract the two special paragraphs
+              const coronavirusParagraph = allParagraphs.find(p => p.startsWith("Después del confinamiento por el coronavirus"));
+              const closureParagraph = allParagraphs.find(p => p.startsWith("A raíz de serias dificultades"));
+              
+              // Filter out the special paragraphs from the main flow
+              const regularParagraphs = allParagraphs.filter(p => 
+                !p.startsWith("Después del confinamiento por el coronavirus") && 
+                !p.startsWith("A raíz de serias dificultades")
+              );
+              
+              const carousels = [carousel1Images, carousel2Images, carousel3Images, carousel4Images];
+              const totalParagraphs = regularParagraphs.length;
+              
+              // Calculate positions for each carousel (distributed evenly)
+              const carouselPositions = [];
+              for (let i = 1; i <= 4; i++) {
+                carouselPositions.push(Math.floor((totalParagraphs * i) / 4));
+              }
+              
+              return (
+                <>
+                  {regularParagraphs.map((p, pIdx) => {
+                    return (
+                      <React.Fragment key={pIdx}>
+                        <p className={pIdx === 0 ? "font-bold mb-4" : "mb-4"}>
+                          {p}
+                        </p>
+                        {carouselPositions.map((pos, cIdx) => {
+                          if (pos === pIdx + 1) {
+                            return (
+                              <div key={`carousel-${cIdx}`} className="w-full mb-8">
+                                <ImageCarousel images={carousels[cIdx]} autoPlayInterval={3000} />
+                              </div>
+                            );
+                          }
+                          return null;
+                        })}
+                      </React.Fragment>
+                    );
+                  })}
+                  
+                  {/* Show the two special paragraphs at the end */}
+                  <p className="mb-4">
+                    {coronavirusParagraph}
+                  </p>
+                  
+                  <p className="mb-4">
+                    {closureParagraph}
+                  </p>
+                </>
+              );
+            })()}
+          </div>
+
+          {/* Desktop: Right column with 4 carousels distributed vertically */}
+          <div className="w-full md:w-1/2 hidden md:flex md:flex-col" style={{ margin: 0, padding: 0, gap: 0, lineHeight: 0 }}>
+             <div style={{ width: 'var(--main-image-size)', height: 'calc(var(--main-image-size) * 0.75)', display: 'block', margin: '0 auto', padding: 0, lineHeight: 0 }}>
+               <ImageCarousel images={carousel1Images} autoPlayInterval={3000} />
+             </div>
+             <div style={{ width: 'var(--main-image-size)', height: 'calc(var(--main-image-size) * 0.75)', display: 'block', margin: '0 auto', padding: 0, lineHeight: 0, marginTop: '25rem' }}>
+               <ImageCarousel images={carousel2Images} autoPlayInterval={3000} />
+             </div>
+             <div style={{ width: 'var(--main-image-size)', height: 'calc(var(--main-image-size) * 0.75)', display: 'block', margin: '0 auto', padding: 0, lineHeight: 0, marginTop: '25rem' }}>
+               <ImageCarousel images={carousel3Images} autoPlayInterval={3000} />
+             </div>
+             <div style={{ width: 'var(--main-image-size)', height: 'calc(var(--main-image-size) * 0.75)', display: 'block', margin: '0 auto', padding: 0, lineHeight: 0, marginTop: '25rem' }}>
+               <ImageCarousel images={carousel4Images} autoPlayInterval={3000} />
+             </div>
+          </div>
+        </div>
+      </InternalPageLayout>
+    );
+  };
+
+  const FundamentosView = () => {
+    const sections = t.fundamentosContent || [];
+    const fundamentosCarousels = [fundamentosAutorr, fundamentosAcompa, fundamentosApren];
+
+    return (
+      <InternalPageLayout title={t.nav.fundamentos}>
+        <div className="flex flex-col gap-12 xl:gap-14 2xl:gap-16">
+          {sections.map((section, idx) => (
+            <div key={idx} className="flex flex-col lg:flex-row gap-8 xl:gap-10 2xl:gap-12 items-start">
+              <div style={{ fontSize: 'var(--internal-body-text)' }} className="flex-1 font-serif leading-relaxed text-stone-700 space-y-4 xl:space-y-5 2xl:space-y-6">
+                {section.title && (
+                  <h3 className="text-2xl xl:text-2xl 2xl:text-3xl font-bold text-stone-800 mb-2 xl:mb-2 2xl:mb-3 text-[#c1562e]">
+                    {section.title}
+                  </h3>
+                )}
+                {section.paragraphs.map((p, pIdx) => (
+                  <p key={pIdx} className={pIdx === 0 ? 'font-bold' : ''}>
+                    {p}
+                  </p>
+                ))}
+              </div>
+
+              <div className="w-full lg:w-[min(34rem,90vw)]">
+                <ImageCarousel images={fundamentosCarousels[idx] || []} autoPlayInterval={3000} />
+              </div>
+            </div>
+          ))}
+        </div>
+      </InternalPageLayout>
+    );
+  };
+
+  const FormacionView = () => {
+    // Collaborator logos organized by category
+    const otrosLogos = [
+      '/images/logos/otros_SerGi.png',
+      '/images/logos/otros_economia_social.png',
+      '/images/logos/otros_escolescoop.jpg',
+      '/images/logos/otros_cooperativesdetreball.jpg',
+    ];
+
+    const educacionLogos = [
+      '/images/logos/educacion_alaire.jpg',
+      '/images/logos/educacion_caiev.png',
+      '/images/logos/educacion_creixementribu.jpg',
+      '/images/logos/educacion_hazizhazi.jpg',
+      '/images/logos/educacion_jacintverdaguer.png',
+      '/images/logos/educacion_semillavioleta.png',
+      '/images/logos/educacion_submarilila.jpg',
+      '/images/logos/educacion_xell.jpg',
+      '/images/logos/educacion_corriols.jpg',
+      '/images/logos/educacion_lesgarrofes.jpg',
+      '/images/logos/educacion_bizilore.jpg',
+    ];
+
+    const universidadLogos = [
+      '/images/logos/universidad_andalucia.svg',
+      '/images/logos/universidad_reyjuancarlos.jpg',
+      '/images/logos/universidad_girona.png',
+      '/images/logos/universidad_manresa.png',
+      '/images/logos/universidad_ub.jpg',
+      '/images/logos/universidad_valencia.jpg',
+    ];
+
+    return (
+      <InternalPageLayout title={t.nav.formacion}>
+        <div style={{ gap: 'var(--gap-base)' }} className="flex flex-col md:flex-row items-start">
+          <div style={{ fontSize: 'var(--internal-body-text)' }} className="w-full md:w-1/2 font-serif leading-relaxed text-stone-700 space-y-8 xl:space-y-9 2xl:space-y-10">
+            {t.formacionContent.map((section, sIdx) => (
                 <div key={sIdx} className="space-y-4 xl:space-y-5 2xl:space-y-6">
                     {section.title && (
                         <h3 className="text-2xl xl:text-2xl 2xl:text-3xl font-bold text-stone-800 mb-2 xl:mb-2 2xl:mb-3 text-[#c1562e]">{section.title}</h3>
@@ -1136,179 +1420,59 @@ const App: React.FC = () => {
                 </div>
             ))}
           </div>
-
-          {/* Mobile: Text with carousels intercalated */}
-          <div style={{ fontSize: 'var(--internal-body-text)' }} className="block md:hidden w-full font-serif leading-relaxed text-stone-700">
-            {/* First third */}
-            <div className="space-y-4 mb-8">
-              {firstThird.map((p, pIdx) => (
-                <p key={pIdx} className={pIdx === 0 ? "font-bold" : ""}>
-                  {p}
-                </p>
-              ))}
-            </div>
-
-            {/* First Carousel */}
-            <div className="w-full mb-8">
-              <ImageCarousel images={carousel1Images} autoPlayInterval={3000} />
-            </div>
-
-            {/* Second third */}
-            <div className="space-y-4 mb-8">
-              {secondThird.map((p, pIdx) => (
-                <p key={pIdx}>
-                  {p}
-                </p>
-              ))}
-            </div>
-
-            {/* Second Carousel */}
-            <div className="w-full mb-8">
-              <ImageCarousel images={carousel2Images} autoPlayInterval={3000} />
-            </div>
-
-            {/* Third third */}
-            <div className="space-y-4">
-              {thirdThird.map((p, pIdx) => (
-                <p key={pIdx}>
-                  {p}
-                </p>
-              ))}
-            </div>
-          </div>
-
-          {/* Desktop: Right column with carousels and logos */}
-          <div className="w-full md:w-1/2 flex flex-col">
-             {/* First Carousel */}
-             <div style={{ width: 'var(--main-image-size)', height: 'calc(var(--main-image-size) * 1.33)' }} className="hidden md:block mx-auto flex-shrink-0 md:sticky md:top-32 xl:top-36 2xl:top-40">
-               <ImageCarousel images={carousel1Images} autoPlayInterval={3000} />
-             </div>
-             {/* Second Carousel - positioned much lower */}
-             <div style={{ width: 'var(--main-image-size)', height: 'calc(var(--main-image-size) * 1.33)' }} className="hidden md:block mx-auto flex-shrink-0 mt-8 md:mt-[120px] xl:mt-[140px] 2xl:mt-[160px]">
-               <ImageCarousel images={carousel2Images} autoPlayInterval={3000} />
-             </div>
-
-             {/* Collaborators logos section - Desktop */}
-             <div style={{ width: 'var(--main-image-size)' }} className="hidden md:block mt-6 xl:mt-8 2xl:mt-10 mx-auto">
-               <h3 className="text-xl xl:text-xl 2xl:text-2xl font-bold text-stone-800 mb-6 xl:mb-7 2xl:mb-8 text-[#c1562e] font-serif text-center">
-                 {language === 'es' ? 'Hemos colaborado con:' : 'Hem col·laborat amb:'}
-               </h3>
-               
-               {/* Other entities - First */}
-               <div className="mb-6">
-                 <h4 className="text-sm font-serif text-stone-600 mb-3 text-center">
-                   {language === 'es' ? 'Otras entidades' : 'Altres entitats'}
-                 </h4>
-                 <div className="grid grid-cols-3 gap-3">
-                   {otrosLogos.map((logo, i) => (
-                     <div key={`otros-${i}`} className="aspect-square bg-white rounded-lg flex items-center justify-center border border-stone-200 p-2">
-                       <img src={logo} alt="Logo" className="w-full h-full object-contain" />
-                     </div>
-                   ))}
-                 </div>
-               </div>
-
-               {/* Education - Second */}
-               <div className="mb-6">
-                 <h4 className="text-sm font-serif text-stone-600 mb-3 text-center">
-                   {language === 'es' ? 'Educación' : 'Educació'}
-                 </h4>
-                 <div className="grid grid-cols-3 gap-3">
-                   {educacionLogos.map((logo, i) => (
-                     <div key={`educacion-${i}`} className="aspect-square bg-white rounded-lg flex items-center justify-center border border-stone-200 p-2">
-                       <img src={logo} alt="Logo" className="w-full h-full object-contain" />
-                     </div>
-                   ))}
-                 </div>
-               </div>
-
-               {/* Universities - Third */}
-               <div className="mb-6">
-                 <h4 className="text-sm font-serif text-stone-600 mb-3 text-center">
-                   {language === 'es' ? 'Universidades' : 'Universitats'}
-                 </h4>
-                 <div className="grid grid-cols-3 gap-3">
-                   {universidadLogos.map((logo, i) => (
-                     <div key={`universidad-${i}`} className="aspect-square bg-white rounded-lg flex items-center justify-center border border-stone-200 p-2">
-                       <img src={logo} alt="Logo" className="w-full h-full object-contain" />
-                     </div>
-                   ))}
-                 </div>
-               </div>
-
-               {/* Magazines - Fourth */}
-               <div className="mb-6">
-                 <h4 className="text-sm font-serif text-stone-600 mb-3 text-center">
-                   {language === 'es' ? 'Revistas' : 'Revistes'}
-                 </h4>
-                 <div className="grid grid-cols-3 gap-3">
-                   {revistaLogos.map((logo, i) => (
-                     <div key={`revista-${i}`} className="aspect-square bg-white rounded-lg flex items-center justify-center border border-stone-200 p-2">
-                       <img src={logo} alt="Logo" className="w-full h-full object-contain" />
-                     </div>
-                   ))}
-                 </div>
-               </div>
+          <div className="w-full md:w-1/2">
+             <div style={{ width: 'var(--main-image-size)', height: 'calc(var(--main-image-size) * 1.25)' }} className="bg-stone-200 rounded-lg overflow-hidden shadow-lg sticky top-32 xl:top-36 2xl:top-40 mx-auto">
+               <img 
+                 src={IMAGES.sections.formacion} 
+                 alt={t.nav.formacion} 
+                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
+               />
              </div>
           </div>
         </div>
 
-        {/* Collaborators logos section - Mobile (after text) */}
-        <div className="block md:hidden mt-16">
-          <h3 className="text-xl font-bold text-stone-800 mb-6 text-[#c1562e] font-serif text-center">
+        {/* Collaborators logos section - Desktop and Mobile (full width below text) */}
+        <div className="mt-16">
+          <h3 className="text-xl xl:text-xl 2xl:text-2xl font-bold text-stone-800 mb-6 xl:mb-7 2xl:mb-8 text-[#c1562e] font-serif text-center">
             {language === 'es' ? 'Hemos colaborado con:' : 'Hem col·laborat amb:'}
           </h3>
           
-          {/* Other entities - First */}
-          <div className="mb-6">
-            <h4 className="text-sm font-serif text-stone-600 mb-3 text-center">
-              {language === 'es' ? 'Otras entidades' : 'Altres entitats'}
-            </h4>
-            <div className="grid grid-cols-3 gap-3">
-              {otrosLogos.map((logo, i) => (
-                <div key={`otros-m-${i}`} className="aspect-square bg-white rounded-lg flex items-center justify-center border border-stone-200 p-2">
-                  <img src={logo} alt="Logo" className="w-full h-full object-contain" />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Education - Second */}
+          {/* Education - First */}
           <div className="mb-6">
             <h4 className="text-sm font-serif text-stone-600 mb-3 text-center">
               {language === 'es' ? 'Educación' : 'Educació'}
             </h4>
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-3 gap-3 md:flex md:flex-wrap md:justify-center md:gap-3">
               {educacionLogos.map((logo, i) => (
-                <div key={`educacion-m-${i}`} className="aspect-square bg-white rounded-lg flex items-center justify-center border border-stone-200 p-2">
+                <div key={`educacion-${i}`} className="aspect-square bg-white rounded-lg flex items-center justify-center border border-stone-200 p-2 md:w-[calc((100%-6*0.75rem)/7)]">
                   <img src={logo} alt="Logo" className="w-full h-full object-contain" />
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Universities - Third */}
+          {/* Universities - Second */}
           <div className="mb-6">
             <h4 className="text-sm font-serif text-stone-600 mb-3 text-center">
               {language === 'es' ? 'Universidades' : 'Universitats'}
             </h4>
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-3 gap-3 md:flex md:flex-wrap md:justify-center md:gap-3">
               {universidadLogos.map((logo, i) => (
-                <div key={`universidad-m-${i}`} className="aspect-square bg-white rounded-lg flex items-center justify-center border border-stone-200 p-2">
+                <div key={`universidad-${i}`} className="aspect-square bg-white rounded-lg flex items-center justify-center border border-stone-200 p-2 md:w-[calc((100%-6*0.75rem)/7)]">
                   <img src={logo} alt="Logo" className="w-full h-full object-contain" />
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Magazines - Fourth */}
+          {/* Other entities - Third */}
           <div className="mb-6">
             <h4 className="text-sm font-serif text-stone-600 mb-3 text-center">
-              {language === 'es' ? 'Revistas' : 'Revistes'}
+              {language === 'es' ? 'Otras entidades' : 'Altres entitats'}
             </h4>
-            <div className="grid grid-cols-3 gap-3">
-              {revistaLogos.map((logo, i) => (
-                <div key={`revista-m-${i}`} className="aspect-square bg-white rounded-lg flex items-center justify-center border border-stone-200 p-2">
+            <div className="grid grid-cols-3 gap-3 md:flex md:flex-wrap md:justify-center md:gap-3">
+              {otrosLogos.map((logo, i) => (
+                <div key={`otros-${i}`} className="aspect-square bg-white rounded-lg flex items-center justify-center border border-stone-200 p-2 md:w-[calc((100%-6*0.75rem)/7)]">
                   <img src={logo} alt="Logo" className="w-full h-full object-contain" />
                 </div>
               ))}
@@ -1407,6 +1571,60 @@ const App: React.FC = () => {
     );
   };
 
+  const VideoFrame: React.FC<{ video: VideoItem }> = React.memo(({ video }) => {
+    if (video.type === 'vimeo' && video.embedId) {
+      return (
+        <iframe 
+          src={`https://player.vimeo.com/video/${video.embedId}?title=0&byline=0&portrait=0`} 
+          className="w-full h-full z-20" 
+          frameBorder="0" 
+          allow="autoplay; fullscreen; picture-in-picture" 
+          allowFullScreen
+          loading="eager"
+          title={video.title}
+        ></iframe>
+      );
+    }
+
+    if (video.type === 'youtube' && video.embedId) {
+      return (
+        <iframe
+            src={`https://www.youtube.com/embed/${video.embedId}`}
+            className="w-full h-full z-20"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            loading="eager"
+            title={video.title}
+        ></iframe>
+      );
+    }
+
+    if (video.type === 'spotify' && video.embedId) {
+      return (
+        <iframe 
+            style={{borderRadius: '12px'}} 
+            src={`https://open.spotify.com/embed/episode/${video.embedId}?utm_source=generator&theme=0`} 
+            width="100%" 
+            height="100%" 
+            frameBorder="0" 
+            allowFullScreen 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="eager"
+            className="z-20 p-2 bg-black/10"
+            title={video.title}
+        ></iframe>
+      );
+    }
+
+    return (
+      <>
+        <div className="absolute inset-0 opacity-60 bg-cover bg-center" style={{ backgroundImage: `url(${IMAGES.videoPlaceholder})` }}></div>
+        <Play className="text-white w-16 h-16 relative z-10 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all" fill="currentColor" />
+      </>
+    );
+  }, (prevProps, nextProps) => prevProps.video.embedId === nextProps.video.embedId);
+
   const VideosView = () => {
     // Fallback to empty array if undefined to prevent crashes
     const videos: VideoItem[] = t.videosList || [];
@@ -1414,46 +1632,10 @@ const App: React.FC = () => {
     return (
       <InternalPageLayout title={t.nav.videos}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 xl:gap-14 2xl:gap-16">
-          {videos.map((video, i) => (
-            <div key={i} className="flex flex-col gap-3 xl:gap-3 2xl:gap-4 group cursor-pointer" onClick={() => { if(video.link && video.link !== '#' && !video.embedId) window.open(video.link, '_blank') }}>
+                {videos.map((video, i) => (
+            <div key={video.embedId || video.link || i} className="flex flex-col gap-3 xl:gap-3 2xl:gap-4 group cursor-pointer" onClick={() => { if(video.link && video.link !== '#' && !video.embedId) window.open(video.link, '_blank') }}>
               <div className="aspect-video bg-black rounded-lg overflow-hidden relative flex items-center justify-center shadow-lg">
-                {video.type === 'vimeo' && video.embedId ? (
-                    <iframe 
-                      src={`https://player.vimeo.com/video/${video.embedId}?title=0&byline=0&portrait=0`} 
-                      className="w-full h-full z-20" 
-                      frameBorder="0" 
-                      allow="autoplay; fullscreen; picture-in-picture" 
-                      allowFullScreen
-                      title={video.title}
-                    ></iframe>
-                ) : video.type === 'youtube' && video.embedId ? (
-                    <iframe
-                        src={`https://www.youtube.com/embed/${video.embedId}`}
-                        className="w-full h-full z-20"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        title={video.title}
-                    ></iframe>
-                ) : video.type === 'spotify' && video.embedId ? (
-                    <iframe 
-                        style={{borderRadius: '12px'}} 
-                        src={`https://open.spotify.com/embed/episode/${video.embedId}?utm_source=generator&theme=0`} 
-                        width="100%" 
-                        height="100%" 
-                        frameBorder="0" 
-                        allowFullScreen 
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                        loading="lazy"
-                        className="z-20 p-2 bg-black/10"
-                        title={video.title}
-                    ></iframe>
-                ) : (
-                    <>
-                      <div className="absolute inset-0 opacity-60 bg-cover bg-center" style={{ backgroundImage: `url(${IMAGES.videoPlaceholder})` }}></div>
-                      <Play className="text-white w-16 h-16 relative z-10 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all" fill="currentColor" />
-                    </>
-                )}
+                <VideoFrame video={video} />
               </div>
               <div>
                 <h3 style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif font-bold text-stone-800 mt-2 xl:mt-2 2xl:mt-3 group-hover:text-[#c1562e] transition-colors">{video.title}</h3>
@@ -1466,13 +1648,15 @@ const App: React.FC = () => {
     );
   };
 
+  // State for TextosView filtering - moved outside to persist across renders
+  const [activeTopic, setActiveTopic] = useState<string | null>(null);
+
   const TextosView = () => {
     // All articles data structure
     const allArticles: Article[] = t.articles;
 
     // Get all unique tags from all articles
     const topics = Array.from(new Set(allArticles.flatMap(a => a.tags)));
-    const [activeTopic, setActiveTopic] = useState<string | null>(null);
 
     // Filter articles that contain the active topic in their tags
     const filteredArticles = activeTopic 
@@ -1581,6 +1765,29 @@ const App: React.FC = () => {
             );
           })}
         </div>
+
+        {/* Magazines logos section */}
+        <div className="mt-16">
+          <h3 className="text-xl xl:text-xl 2xl:text-2xl font-bold text-stone-800 mb-6 xl:mb-7 2xl:mb-8 text-[#c1562e] font-serif text-center">
+            {language === 'es' ? 'Hemos publicado en:' : 'Hem publicat a:'}
+          </h3>
+          
+          <div className="mb-6">
+            <div className="grid grid-cols-3 gap-3 md:flex md:flex-wrap md:justify-center md:gap-3">
+              {[
+                '/images/logos/revista_elviure.jpg',
+                '/images/logos/revista_integral2.jpg',
+                '/images/logos/revista_cuadernosdepedagogia.jpg',
+                '/images/logos/revista_grao.png',
+                '/images/logos/revista_kikirikicooperacioneducativa.png',
+              ].map((logo, i) => (
+                <div key={`revista-${i}`} className="aspect-square bg-white rounded-lg flex items-center justify-center border border-stone-200 p-2 md:w-[calc((100%-6*0.75rem)/7)]">
+                  <img src={logo} alt="Logo" className="w-full h-full object-contain" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </InternalPageLayout>
     );
   };
@@ -1603,7 +1810,7 @@ const App: React.FC = () => {
                     </div>
                     
                     <div className="w-full md:w-2/3">
-                        <h3 style={{ fontSize: 'var(--menu-text-size)' }} className="font-serif font-bold text-stone-800 mb-6 xl:mb-8 2xl:mb-10 border-l-4 xl:border-l-6 2xl:border-l-8 border-[#c1562e] pl-4 xl:pl-6 2xl:pl-8">
+                        <h3 style={{ fontSize: 'var(--menu-text-size)' }} className="font-serif font-bold text-stone-800 mb-6 xl:mb-8 2xl:mb-10 border-l-4 xl:border-l-6 2xl:border-l-8 border-[#c1562e] pl-4 xl:pl-6 2xl:pl-8 text-center md:text-left md:border-l-4">
                             {person.name}
                         </h3>
                         <div style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif text-stone-700 leading-relaxed space-y-4 xl:space-y-6 2xl:space-y-8">
@@ -1703,12 +1910,32 @@ const App: React.FC = () => {
   // --- Main Render ---
 
   return (
-    <div className="min-h-screen w-full text-stone-800 font-sans overflow-x-hidden selection:bg-[#c1562e] selection:text-white">
+    <div className="min-h-screen w-full text-stone-800 font-sans overflow-x-hidden selection:bg-[#c1562e] selection:text-white relative">
+      
+      {/* Video Background Layer */}
+      <video
+        ref={bgVideoRef}
+        autoPlay
+        loop
+        muted
+        playsInline
+        webkit-playsinline="true"
+        preload="auto"
+        onCanPlay={handleVideoLoaded}
+        className="fixed top-0 left-0 w-full h-full object-cover pointer-events-none z-0"
+        style={{ opacity: 0.2 }}
+      >
+        <source src="/images/bgvideo.mp4" type="video/mp4" />
+      </video>
+
+      {/* Content wrapper with relative positioning to appear above video */}
+      <div className="relative z-10">
       
       {/* Render View Based on State */}
       {currentView === 'home' && <HomeView />}
       {currentView === 'historia' && <HistoriaView title={t.nav.historia} contentData={t.historiaContent} />}
-      {currentView === 'fundamentos' && <StructuredTextView title={t.nav.fundamentos} contentData={t.fundamentosContent} imageSrc={IMAGES.sections.fundamentos} />}
+      {currentView === 'fundamentos' && <FundamentosView />}
+      {currentView === 'formacion' && <FormacionView />}
       {currentView === 'escuela' && <EscuelaView />}
       {currentView === 'videos' && <VideosView />}
       {currentView === 'textos' && <TextosView />}
@@ -1729,6 +1956,7 @@ const App: React.FC = () => {
         </button>
       )}
 
+      </div>
     </div>
   );
 };
