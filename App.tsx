@@ -816,11 +816,25 @@ const App: React.FC = () => {
   // Video ref for controlling playback speed
   const bgVideoRef = React.useRef<HTMLVideoElement>(null);
 
-  // Set video playback rate to 1x when video is ready to play
+  // Aggressive video autoplay handler
   const handleVideoLoaded = () => {
     if (bgVideoRef.current) {
       bgVideoRef.current.playbackRate = 1;
-      bgVideoRef.current.play().catch(err => console.log('Video autoplay failed:', err));
+      bgVideoRef.current.play().catch(err => {
+        console.log('Initial autoplay failed:', err);
+        // Fallback: Try to play on any user interaction
+        const playOnInteraction = () => {
+          if (bgVideoRef.current) {
+            bgVideoRef.current.play().catch(e => console.log('Play on interaction failed:', e));
+            document.removeEventListener('click', playOnInteraction);
+            document.removeEventListener('touchstart', playOnInteraction);
+            document.removeEventListener('scroll', playOnInteraction);
+          }
+        };
+        document.addEventListener('click', playOnInteraction, { once: true });
+        document.addEventListener('touchstart', playOnInteraction, { once: true });
+        document.addEventListener('scroll', playOnInteraction, { once: true });
+      });
     }
   };
 
@@ -1919,11 +1933,14 @@ const App: React.FC = () => {
         loop
         muted
         playsInline
-        webkit-playsinline="true"
+        disablePictureInPicture
+        disableRemotePlayback
         preload="auto"
+        onLoadedData={handleVideoLoaded}
         onCanPlay={handleVideoLoaded}
         className="fixed top-0 left-0 w-full h-full object-cover pointer-events-none z-0"
         style={{ opacity: 0.2 }}
+        {...{ 'webkit-playsinline': 'true' } as any}
       >
         <source src="/images/bgvideo.mp4" type="video/mp4" />
       </video>
