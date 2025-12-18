@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "npx firebase-tools deploy --only hosting --project elroureorg"
+    "deploy": "npx firebase-tools deploy --only hosting --project elroureorg",
+    "lhci": "lhci autorun"
   },
   "dependencies": {
     "@google/genai": "^1.30.0",
@@ -16,6 +17,7 @@
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
+    "@lhci/cli": "^0.15.1",
     "@tailwindcss/postcss": "^4.1.18",
     "@types/node": "^22.14.0",
     "@vitejs/plugin-react": "^5.0.0",

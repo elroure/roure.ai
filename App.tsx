@@ -24,15 +24,15 @@ const IMAGES = {
   historiaPhotos_es: [
     { src: '/images/1_el_viejo_roble.webp', caption: 'El viejo roble' },
     { src: '/images/2_begona_cristobal.webp', caption: 'Begoña y Cristóbal' },
-    { src: '/images/2.2_subiendo_viga.webp', caption: 'Subiendo una viga' },
-    { src: '/images/2.3_pintando.webp', caption: 'Pintando' },
-    { src: '/images/2.4_los_4_descansando.webp', caption: 'Fundadores, familiar y voluntariado, descansando' },
+    { src: '/images/2_2_subiendo_viga.webp', caption: 'Subiendo una viga' },
+    { src: '/images/2_3_pintando.webp', caption: 'Pintando' },
+    { src: '/images/2_4_los_4_descansando.webp', caption: 'Fundadores, familiar y voluntariado, descansando' },
     { src: '/images/3_escuela_el_roure.webp', caption: 'Escuela El Roure, edificio Cirerers (3-6 años)' },
     { src: '/images/4_maquina_del_tiempo.webp', caption: 'Máquina del tiempo' },
     { src: '/images/5_familias_el_roure.webp', caption: 'Familias El Roure' },
-    { src: '/images/5.2_hormigon.webp', caption: 'Hormigoneando' },
-    { src: '/images/5.3_ninos_estanteria.webp', caption: 'Transportando material al nuevo edificio' },
-    { src: '/images/5.4_ordenando_nueva_sala.webp', caption: 'Ordenando en la nueva sala' },
+    { src: '/images/5_2_hormigon.webp', caption: 'Hormigoneando' },
+    { src: '/images/5_3_ninos_estanteria.webp', caption: 'Transportando material al nuevo edificio' },
+    { src: '/images/5_4_ordenando_nueva_sala.webp', caption: 'Ordenando en la nueva sala' },
     { src: '/images/6_inauguracion_edificio_ginesta.webp', caption: 'Inauguración edificio Ginesta (6-12 años)' },
     { src: '/images/7_inauguracion_edificio_ginesta_2.webp', caption: 'Inauguración edificio Ginesta 2' },
     { src: '/images/8_paso_de_manos.webp', caption: 'Paso de manos' },
@@ -43,15 +43,15 @@ const IMAGES = {
   historiaPhotos_ca: [
     { src: '/images/1_el_viejo_roble.webp', caption: 'El vell roure' },
     { src: '/images/2_begona_cristobal.webp', caption: 'Begoña i Cristóbal' },
-    { src: '/images/2.2_subiendo_viga.webp', caption: 'Pujant una biga' },
-    { src: '/images/2.3_pintando.webp', caption: 'Pintant' },
-    { src: '/images/2.4_los_4_descansando.webp', caption: 'Fundadors, familiar i voluntariat, descansant' },
+    { src: '/images/2_2_subiendo_viga.webp', caption: 'Pujant una biga' },
+    { src: '/images/2_3_pintando.webp', caption: 'Pintant' },
+    { src: '/images/2_4_los_4_descansando.webp', caption: 'Fundadors, familiar i voluntariat, descansant' },
     { src: '/images/3_escuela_el_roure.webp', caption: 'Escola El Roure, edifici Cirerers (3-6 anys)' },
     { src: '/images/4_maquina_del_tiempo.webp', caption: 'Màquina del temps' },
     { src: '/images/5_familias_el_roure.webp', caption: 'Famílies El Roure' },
-    { src: '/images/5.2_hormigon.webp', caption: 'Formigonant' },
-    { src: '/images/5.3_ninos_estanteria.webp', caption: 'Transportant material al nou edifici' },
-    { src: '/images/5.4_ordenando_nueva_sala.webp', caption: 'Ordenant a la nova sala' },
+    { src: '/images/5_2_hormigon.webp', caption: 'Formigonant' },
+    { src: '/images/5_3_ninos_estanteria.webp', caption: 'Transportant material al nou edifici' },
+    { src: '/images/5_4_ordenando_nueva_sala.webp', caption: 'Ordenant a la nova sala' },
     { src: '/images/6_inauguracion_edificio_ginesta.webp', caption: 'Inauguració edifici Ginesta (6-12 anys)' },
     { src: '/images/7_inauguracion_edificio_ginesta_2.webp', caption: 'Inauguració edifici Ginesta 2' },
     { src: '/images/8_paso_de_manos.webp', caption: 'Pas de mans' },
@@ -80,43 +80,43 @@ const IMAGES = {
 
   // Fundamentos carousels (images already in public folder). Captions intentionally empty for now.
   const fundamentosAutorr = [
-    { src: '/images/fundamentos/autorr 1.jpg', caption: '' },
-    { src: '/images/fundamentos/autorr 2.jpg', caption: '' },
-    { src: '/images/fundamentos/autorr 3.jpg', caption: '' },
-    { src: '/images/fundamentos/autorr 4.jpg', caption: '' },
-    { src: '/images/fundamentos/autorr 5.jpg', caption: '' },
-    { src: '/images/fundamentos/autorr 6.jpg', caption: '' },
-    { src: '/images/fundamentos/autorr 11.jpg', caption: '' },
-    { src: '/images/fundamentos/autorr 22.jpg', caption: '' },
+    { src: '/images/fundamentos/autorr_1.jpg', caption: '' },
+    { src: '/images/fundamentos/autorr_2.jpg', caption: '' },
+    { src: '/images/fundamentos/autorr_3.jpg', caption: '' },
+    { src: '/images/fundamentos/autorr_4.jpg', caption: '' },
+    { src: '/images/fundamentos/autorr_5.jpg', caption: '' },
+    { src: '/images/fundamentos/autorr_6.jpg', caption: '' },
+    { src: '/images/fundamentos/autorr_11.jpg', caption: '' },
+    { src: '/images/fundamentos/autorr_22.jpg', caption: '' },
   ];
 
   const fundamentosAcompa = [
-    { src: '/images/fundamentos/acompa 1.jpeg', caption: '' },
-    { src: '/images/fundamentos/acompa 2.jpg', caption: '' },
-    { src: '/images/fundamentos/acompa 3.jpg', caption: '' },
-    { src: '/images/fundamentos/acompa 4.jpg', caption: '' },
-    { src: '/images/fundamentos/acompa 5.jpg', caption: '' },
-    { src: '/images/fundamentos/acompa 6.JPG', caption: '' },
-    { src: '/images/fundamentos/acompa 7.jpg', caption: '' },
-    { src: '/images/fundamentos/acompa 8.jpeg', caption: '' },
-    { src: '/images/fundamentos/acompa 9.jpg', caption: '' },
-    { src: '/images/fundamentos/acompa 10.jpg', caption: '' },
-    { src: '/images/fundamentos/acompa 11.jpg', caption: '' },
+    { src: '/images/fundamentos/acompa_1.jpeg', caption: '' },
+    { src: '/images/fundamentos/acompa_2.jpg', caption: '' },
+    { src: '/images/fundamentos/acompa_3.jpg', caption: '' },
+    { src: '/images/fundamentos/acompa_4.jpg', caption: '' },
+    { src: '/images/fundamentos/acompa_5.jpg', caption: '' },
+    { src: '/images/fundamentos/acompa_6.jpg', caption: '' },
+    { src: '/images/fundamentos/acompa_7.jpg', caption: '' },
+    { src: '/images/fundamentos/acompa_8.jpeg', caption: '' },
+    { src: '/images/fundamentos/acompa_9.jpg', caption: '' },
+    { src: '/images/fundamentos/acompa_10.jpg', caption: '' },
+    { src: '/images/fundamentos/acompa_11.jpg', caption: '' },
   ];
 
   const fundamentosApren = [
-    { src: '/images/fundamentos/apren 1.jpg', caption: '' },
-    { src: '/images/fundamentos/apren 2.jpg', caption: '' },
-    { src: '/images/fundamentos/apren 3.jpg', caption: '' },
-    { src: '/images/fundamentos/apren 4.JPG', caption: '' },
-    { src: '/images/fundamentos/apren 5.jpg', caption: '' },
-    { src: '/images/fundamentos/apren 6.jpg', caption: '' },
-    { src: '/images/fundamentos/apren 7.jpg', caption: '' },
-    { src: '/images/fundamentos/apren 8.jpg', caption: '' },
-    { src: '/images/fundamentos/apren 9.jpg', caption: '' },
-    { src: '/images/fundamentos/apren 10.jpg', caption: '' },
-    { src: '/images/fundamentos/apren 11.jpg', caption: '' },
-    { src: '/images/fundamentos/apren 12.JPG', caption: '' },
+    { src: '/images/fundamentos/apren_1.jpg', caption: '' },
+    { src: '/images/fundamentos/apren_2.jpg', caption: '' },
+    { src: '/images/fundamentos/apren_3.jpg', caption: '' },
+    { src: '/images/fundamentos/apren_4.jpg', caption: '' },
+    { src: '/images/fundamentos/apren_5.jpg', caption: '' },
+    { src: '/images/fundamentos/apren_6.jpg', caption: '' },
+    { src: '/images/fundamentos/apren_7.jpg', caption: '' },
+    { src: '/images/fundamentos/apren_8.jpg', caption: '' },
+    { src: '/images/fundamentos/apren_9.jpg', caption: '' },
+    { src: '/images/fundamentos/apren_10.jpg', caption: '' },
+    { src: '/images/fundamentos/apren_11.jpg', caption: '' },
+    { src: '/images/fundamentos/apren_12.jpg', caption: '' },
   ];
 
 interface PersonProfile {
@@ -266,15 +266,27 @@ const content = {
                 "La llamamos escuela viva El Roure. Sus raíces son la experiencia de crianza, el Seitai y la Sistémica y algunas inspiraciones de pedagogías innovadoras del s. XX (Montessori, Freinet, Neill, Malaguzzi, etc.). La línea pedagógica se fue concretando y desarrollando a través de la práctica cotidiana con los niños y niñas, con las madres y padres, en la relación de equipo. A partir de muchas preguntas, la observación y la reflexión, algunos criterios se fueron clarificando y confirmando. El proceso de descubrimiento y aprendizaje ha seguido hasta el final.",
                 "El apoyo, la confianza y la implicación de las primeras familias y miembros del equipo fueron decisivos. La semilla de El Roure encontró las condiciones más favorables para germinar y crecer. Una persona cercana hizo de mecenas ofreciéndose a comprar la preciosa finca que elegimos para ubicar el proyecto. Empezamos con 6 criaturas que venían desde Barcelona y se quedaban a dormir en la masía tres días a la semana. Poco a poco el grupo fue creciendo y las familias participantes realizaron todo un cambio de vida trasladándose a la zona. Estas primeras familias se entregaron en cuerpo y alma a la reforma de las edificaciones e implicaron a familiares y amigos.",
                 "Fue una época de trabajo exhausto, tanto en la reforma y adecuación del espacio y en la preparación de materiales educativos como en la reflexión y evolución de la metodología, la organización y la explicación de la línea educativa que estábamos creando.",
-                "Como todo comienzo, se vivió en un ambiente de ilusión y de implicación muy intenso entre el equipo, familias, amigos y profesionales que colaboraban de forma desinteresada. Compartimos sudor entre cemento, escombros y pintura, horas de cocina, tertulias pedagógicas en sobremesas de grupo, sueños, incertidumbres y mucha confianza. Fueron tiempos de carencias económicas y dificultades constantes, en las que no existían las vacaciones…y nos empujaba una fuerza inmensa.",
+                "Como todo comienzo, se vivió en un ambiente de ilusión y de implicación muy intenso entre el equipo, familias, amigos y profesionales que colaboraban de forma desinteresada. Compartimos sudor entre cemento, escombros y pintura, horas de cocina, tertulias pedagógicas en sobremesas de grupo, sueños, incertidumbres y mucha confianza. Fueron tiempos de carencias económicas y dificultades constantes, en las que no existían las vacaciones…y nos empujaba una fuerza inmensa."
+            ]
+        },
+        {
+            paragraphs: [
                 "Desde el 2001 al 2009 realizamos la gestión de la escuela a través de la asociación AFER (Asociación de Familias para una Educación Responsable), creada con las primeras familias de La Casita en 1996. En el 2009 pasamos de asociación a cooperativa de trabajo sin ánimo de lucro: Experiència educativa El Roure SCCL., que ha gestionado el proyecto hasta el 2025, año en el que se cierra. Como cooperativa hemos pertenecido a la Federació de Cooperatives de Treball de Catalunya y a EscolesCoop (Federació de Cooperatives d'Ensenyament de Catalunya).",
                 "Tuvimos la fortuna de que, desde el primer momento, el Ayuntamiento de Mediona nos dió la bienvenida y se mostró colaborador. Se ha mantenido una muy buena relación con los dos alcaldes y equipos que han gobernado el municipio durante estos 24 años.",
                 "La etapa de Infantil fue autorizada por la Generalitat como \"esplai\" (centro de ocio) de funcionamiento diario.",
-                "La autorización de la etapa de Primaria fue mucho más complicada. La normativa de espacios educativos de la Generalitat, está pensada para grandes escuelas y para la separación en aulas de los grupos-clase (según el curso que corresponde a cada edad). Nos requerían seis aulas de primaria, además de espacios comunes diversos. La normativa también requería un titulado en magisterio por grupo-clase (que por la dimensión de la escuela era en nuestro caso de entre 3 y 7 criaturas de la misma edad), además de las especialidades necesarias.",
+                "La autorización de la etapa de Primaria fue mucho más complicada. La normativa de espacios educativos de la Generalitat, está pensada para grandes escuelas y para la separación en aulas de los grupos-clase (según el curso que corresponde a cada edad). Nos requerían seis aulas de primaria, además de espacios comunes diversos. La normativa también requería un titulado en magisterio por grupo-clase (que por la dimensión de la escuela era en nuestro caso de entre 3 y 7 criaturas de la misma edad), además de las especialidades necesarias."
+            ]
+        },
+        {
+            paragraphs: [
                 "En nuestro caso, los grupos estaban definidos por la etapa evolutiva (3-6, 7-11 y 12-16 años), priorizando la riqueza de la convivencia de esta pluralidad de edades. Los espacios estaban preparados según las actividades y materiales que acogían y los niños, niñas y adolescentes se movían libremente por los espacios.",
                 "En 2017, tras un enorme esfuerzo económico y organizativo por parte de toda la comunidad (que incluyó un micromecenazgo impulsado por las familias), se pudo potabilizar el agua del pozo que suministraba la finca y reformar los edificios de forma que se cumpliera la normativa. Así conseguimos la autorización como escuela de primaria por parte del Departament d'Educació de la Generalitat de Catalunya.",
                 "La etapa de Secundaria, nació en el curso 2014/15, a petición de un grupo de familias de la escuela que querían continuar más allá de los 12 años. Esta etapa no pudo ser autorizada por las condiciones que la Generalitat requería a nivel de espacios y titulaciones del profesorado. Ante la imposibilidad de autorizar la etapa de Secundaria y las dificultades generadas por la normativa especial en las escuelas a raíz del Covid-19, decidimos cerrar el grupo de adolescentes.",
-                "La escuela creció hasta llegar a acoger a 90 niñas, niños y adolescentes. Siempre tuvimos vocación de escuela pequeña, lo que nos permitía hacer el trabajo con la profundidad que pretendíamos. Esa dimensión se convirtió en el límite máximo que queríamos asumir.",
+                "La escuela creció hasta llegar a acoger a 90 niñas, niños y adolescentes. Siempre tuvimos vocación de escuela pequeña, lo que nos permitía hacer el trabajo con la profundidad que pretendíamos. Esa dimensión se convirtió en el límite máximo que queríamos asumir."
+            ]
+        },
+        {
+            paragraphs: [
                 "Desde el 2001 fuimos participando en algunos eventos educativos, presentando la experiencia de La Casita y el incipiente proyecto de El Roure. Gradualmente ampliamos nuestra presencia en el panorama educativo, compartiendo con más frecuencia nuestra experiencia a través de charlas, artículos en publicaciones educativas, colaboraciones en formaciones, y además, a partir del 2009, comenzamos a ofrecer nuestras propias formaciones y acompañamientos a familias y profesionales.",
                 "Después del confinamiento por el coronavirus del 2020, la escuela fue decreciendo. El mundo era otro al de los inicios; las familias tendían más a la escolarización pública gratuita y cercana a su vivienda, algunas escuelas públicas habían ido paulatinamente abriéndose hacia la creación de ambientes con materiales manipulativos, la llamada \"libre circulación\", la integración de la pedagogía sistémica y un cuidado mayor del aspecto emocional.",
                 "A raíz de serias dificultades en la finca, la disminución del número de familias y la falta de relevo en la coordinación de la escuela, decidimos el cierre definitivo."
@@ -391,11 +403,18 @@ const content = {
         type: "spotify"
       },
       {
-        title: "(clicar en más información para ver) Conversación del proyecto Ametxe con Begoña González. JolasBIDE 2024.",
+        title: "(clicar en más información, o \"Learn More\", para ver) Conversación del proyecto Ametxe con Begoña González. JolasBIDE 2024.",
         description: "\"Entrevista a Begoña González, fundadora de la escuela viva El Roure de Cataluña, en su visita a Euskadi para el curso que se desarrolla entre las escuelas de Landabaso en Zalla (Bizkaia) y Bizilore en Azpeitia (Gipuzkoa). Entrevista realizada en el proyecto Ametxe, una comunidad generada en una vivienda cooperativa en cesión de uso en ámbito rural en Gordexola, Bizkaia. JolasBIDE 2024.\"",
         link: "https://vimeo.com/1046320608",
         embedId: "1046320608",
         type: "vimeo"
+      },
+      {
+        title: "Somos Naturaleza - El Roure",
+        description: "Un video realizado para promocionar la antigua formación Savia, que recoge la esencia de El Roure y su mirada sobre la educación, el acompañamiento y la crianza.",
+        link: "https://www.youtube.com/watch?v=f5bQT8VZTpA",
+        embedId: "f5bQT8VZTpA",
+        type: "youtube"
       }
     ] as VideoItem[],
     articles: [
@@ -566,14 +585,26 @@ const content = {
                 "L'escola El Roure va néixer en 2001 en una finca rústica del municipi de Mediona (Barcelona). La van fundar Begoña González i Cristóbal Gutiérrez, com un pas més en l'evolució de l'experiència en La Caseta (2 a 6 anys), que van crear en 1996, a Barcelona.",
                 "La vam anomenar escola viva El Roure. Les seves arrels són l'experiència de criança, el Seitai i la Sistèmica i algunes inspiracions de pedagogies innovadores del s. XX (Montessori, Freinet, Neill, Malaguzzi, etc.). La línia pedagògica es va anar concretant i desenvolupant a través de la pràctica quotidiana amb els nens i nenes, amb les mares i pares, en la relació d'equip. A partir de moltes preguntes, l'observació i la reflexió, alguns criteris es van anar aclarint i confirmant. El procés de descobriment i aprenentatge ha seguit fins al final. El suport, la confiança i la implicació de les primeres famílies i membres de l'equip van ser decisius. La llavor del Roure va trobar les condicions més favorables per a germinar i créixer. Una persona pròxima va fer de mecenes oferint-se a comprar la preciosa finca que triem per a situar el projecte. Comencem amb 6 criatures que venien des de Barcelona i es quedaven a dormir en la masia tres dies a la setmana. A poc a poc el grup va anar creixent i les famílies participants van realitzar tot un canvi de vida traslladant-se a la zona. Aquestes primeres famílies es van lliurar en cos i ànima a la reforma de les edificacions i van implicar familiars i amics.",
                 "Va ser una època de treball exhaust, tant en la reforma i adequació de l'espai i en la preparació de materials educatius com en la reflexió i evolució de la metodologia, l'organització i l'explicació de la línia educativa que estàvem creant.",
-                "Com tot començament, es va viure en un ambient d'il·lusió i d'implicació molt intens entre l'equip, famílies, amics i professionals que col·laboraven de manera desinteressada. Compartim suor entre ciment, enderrocs i pintura, hores de cuina, tertúlies pedagògiques en sobretaules de grup, somnis, incerteses i molta confiança. Van ser temps de mancances econòmiques i dificultats constants, en les quals no existien les vacances… I ens empenyia una força immensa.",
+                "Com tot començament, es va viure en un ambient d'il·lusió i d'implicació molt intens entre l'equip, famílies, amics i professionals que col·laboraven de manera desinteressada. Compartim suor entre ciment, enderrocs i pintura, hores de cuina, tertúlies pedagògiques en sobretaules de grup, somnis, incerteses i molta confiança. Van ser temps de mancances econòmiques i dificultats constants, en les quals no existien les vacances… I ens empenyia una força immensa."
+            ]
+        },
+        {
+            paragraphs: [
                 "Des del 2001 al 2009 gestionem l'escola a través de l'associació AFER (Associació de Famílies per a una Educació Responsable), creada amb les primeres famílies de La Caseta en 1996. En el 2009 passem d'associació a cooperativa de treball sense ànim de lucre: Experiència educativa El Roure SCCL., que ha gestionat el projecte fins al 2025, any en què es tanca. Com a cooperativa hem pertangut a la Federació de Cooperatives de Treball de Catalunya i a EscolesCoop (Federació de Cooperatives d'Ensenyament de Catalunya).",
                 "Vam tenir la fortuna que, des del primer moment, l'Ajuntament de Mediona ens va donar la benvinguda i es va mostrar col·laborador. S'ha mantingut una molt bona relació amb els dos alcaldes i equips que han governat el municipi durant aquests 24 anys.",
                 "L'etapa d'Infantil va ser autoritzada per la Generalitat com \"esplai\" (centre d'oci) de funcionament diari.",
-                "L'autorització de l'etapa de Primària va ser molt més complicada. La normativa d'espais educatius de la Generalitat, està pensada per a grans escoles i per a la separació en aules dels grups-classe (segons el curs que correspon a cada edat). Ens requerien sis aules de primària, a més d'espais comuns diversos. La normativa també requeria un titulat en magisteri per grup-classe (que per la dimensió de l'escola era en el nostre cas d'entre 3 i 7 criatures de la mateixa edat), a més de les especialitats necessàries.",
+                "L'autorització de l'etapa de Primària va ser molt més complicada. La normativa d'espais educatius de la Generalitat, està pensada per a grans escoles i per a la separació en aules dels grups-classe (segons el curs que correspon a cada edat). Ens requerien sis aules de primària, a més d'espais comuns diversos. La normativa també requeria un titulat en magisteri per grup-classe (que per la dimensió de l'escola era en el nostre cas d'entre 3 i 7 criatures de la mateixa edat), a més de les especialitats necessàries."
+            ]
+        },
+        {
+            paragraphs: [
                 "En el nostre cas, els grups estaven definits per l'etapa evolutiva (3-6, 7-11 i 12-16 anys), prioritzant la riquesa de la convivència d'aquesta pluralitat d'edats. Els espais estaven preparats segons les activitats i materials que acollien i els nens, nenes i adolescents es movien lliurement pels espais. En 2017, després d'un enorme esforç econòmic i organitzatiu per part de tota la comunitat (que va incloure un micromecenatge impulsat per les famílies), es va poder potabilitzar l'aigua del pou que subministrava la finca i reformar els edificis de manera que es complís la normativa. Així aconseguim l'autorització com a escola de primària per part del Departament d'Educació de la Generalitat de Catalunya.",
                 "L'etapa de Secundària, va néixer en el curs 2014/15, a petició d'un grup de famílies de l'escola que volien continuar més enllà dels 12 anys. Aquesta etapa no va poder ser autoritzada per les condicions que la Generalitat requeria pel que fa a espais i titulacions del professorat. Davant la impossibilitat d'autoritzar l'etapa de Secundària i les dificultats generades per la normativa especial a les escoles arran del COVID-19, decidim tancar el grup d'adolescents.",
-                "L'escola va créixer fins a arribar a acollir a 90 nenes, nens i adolescents. Sempre vam tenir vocació d'escola petita, la qual cosa ens permetia fer el treball amb la profunditat que preteníem. Aquesta dimensió es va convertir en el límit màxim que volíem assumir.",
+                "L'escola va créixer fins a arribar a acollir a 90 nenes, nens i adolescents. Sempre vam tenir vocació d'escola petita, la qual cosa ens permetia fer el treball amb la profunditat que preteníem. Aquesta dimensió es va convertir en el límit màxim que volíem assumir."
+            ]
+        },
+        {
+            paragraphs: [
                 "Des del 2001 vam anar participant en alguns esdeveniments educatius, presentant l'experiència de La Caseta i l'incipient projecte del Roure. Gradualment, ampliem la nostra presència en el panorama educatiu, compartint amb més freqüència la nostra experiència a través de xerrades, articles en publicacions educatives, col·laboracions en formacions, i a més, a partir del 2009, comencem a oferir les nostres pròpies formacions i acompanyaments a famílies i professionals.",
                 "Després del confinament pel coronavirus del 2020, l'escola va anar decreixent. El món era un altre al dels inicis; les famílies tendien més a l'escolarització pública gratuïta i pròxima al seu habitatge, algunes escoles públiques havien anat gradualment obrint-se cap a la creació d'ambients amb materials manipulatius, l'anomenada \"lliure circulació\", la integració de la pedagogia sistèmica i una cura major de l'aspecte emocional.",
                 "Arran de serioses dificultats en la finca, la disminució del nombre de famílies i la falta de relleu en la coordinació de l'escola, decidim el tancament definitiu."
@@ -813,31 +844,6 @@ const App: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Video ref for controlling playback speed
-  const bgVideoRef = React.useRef<HTMLVideoElement>(null);
-
-  // Aggressive video autoplay handler
-  const handleVideoLoaded = () => {
-    if (bgVideoRef.current) {
-      bgVideoRef.current.playbackRate = 1;
-      bgVideoRef.current.play().catch(err => {
-        console.log('Initial autoplay failed:', err);
-        // Fallback: Try to play on any user interaction
-        const playOnInteraction = () => {
-          if (bgVideoRef.current) {
-            bgVideoRef.current.play().catch(e => console.log('Play on interaction failed:', e));
-            document.removeEventListener('click', playOnInteraction);
-            document.removeEventListener('touchstart', playOnInteraction);
-            document.removeEventListener('scroll', playOnInteraction);
-          }
-        };
-        document.addEventListener('click', playOnInteraction, { once: true });
-        document.addEventListener('touchstart', playOnInteraction, { once: true });
-        document.addEventListener('scroll', playOnInteraction, { once: true });
-      });
-    }
-  };
-
   // Common Logo for header - Clickable
   const LogoImg = ({ className }: { className?: string }) => (
     <button 
@@ -845,7 +851,7 @@ const App: React.FC = () => {
         className={`block hover:opacity-80 transition-opacity focus:outline-none ${className}`}
         aria-label="Go to Home"
     >
-        <img 
+        <SafeImage 
         src={language === 'ca' ? IMAGES.logo_ca : IMAGES.logo} 
         alt="Roure Logo" 
         className="w-full h-auto object-contain" 
@@ -853,42 +859,64 @@ const App: React.FC = () => {
     </button>
   );
 
+  // Safe image with fallback (transparent pixel) to avoid broken icons
+  const SafeImage: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = ({ src, alt, ...rest }) => {
+    const [imgSrc, setImgSrc] = useState<string | undefined>(src as string | undefined);
+    // 1x1 transparent GIF
+    const fallback = 'data:image/gif;base64,R0lGODlhAQABAAAAACw=';
+    return (
+      <img
+        src={imgSrc}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+        onError={() => {
+          if (imgSrc !== fallback) {
+            console.warn('Image failed to load:', src);
+            setImgSrc(fallback);
+          }
+        }}
+        {...rest}
+      />
+    );
+  };
+
   // Footer Component
   const Footer = ({ compact = false }: { compact?: boolean }) => (
-    <div className={`w-full flex justify-center ${compact ? 'pb-6 pt-2' : 'pb-8 pt-12'}`}>
-      <div className="flex flex-col items-center">
+    <div className={`w-full flex justify-center ${compact ? 'pb-4 pt-2' : 'pb-6 pt-8 md:pb-6 md:pt-4'}`}>
+      <div className="flex flex-col items-center gap-1 md:gap-2">
         
         {/* Email */}
         <a 
           href="mailto:experienciaroure@proton.me" 
-          className={`font-serif ${compact ? 'text-base' : 'text-lg'} text-stone-600 ${hoverBrandColor} transition-colors block text-center mb-2`}
+          className={`font-serif ${compact ? 'text-sm' : 'text-base md:text-sm'} text-stone-600 ${hoverBrandColor} transition-colors block text-center`}
         >
           experienciaroure@proton.me
         </a>
 
         {/* Language Switcher */}
-        <div className={`flex items-center justify-between text-sm font-bold uppercase text-stone-400 font-serif ${compact ? 'mt-0' : 'mt-1'}`} style={{ width: '100%', maxWidth: '100%', letterSpacing: '0.4em', lineHeight: '1.8' }}>
+        <div className={`flex items-center justify-between text-xs md:text-xs font-bold uppercase text-stone-400 font-serif`} style={{ letterSpacing: '0.3em', lineHeight: '1.4' }}>
           <button 
             onClick={() => setLanguage('es')}
-            className={`${language === 'es' ? 'text-stone-800 border-b-2 border-[#c1562e]' : 'text-stone-400 hover:text-stone-600'} transition-colors py-1`}
-            style={{ marginRight: '-0.4em' }}
+            className={`${language === 'es' ? 'text-stone-800 border-b-2 border-[#c1562e]' : 'text-stone-400 hover:text-stone-600'} transition-colors py-0.5`}
+            style={{ marginRight: '-0.3em' }}
           >
             castellano
           </button>
-          <span className="text-stone-300">|</span>
+          <span className="text-stone-300 px-1.5">|</span>
           <button 
             onClick={() => setLanguage('ca')}
-            className={`${language === 'ca' ? 'text-stone-800 border-b-2 border-[#c1562e]' : 'text-stone-400 hover:text-stone-600'} transition-colors py-1`}
-            style={{ marginLeft: '-0.4em' }}
+            className={`${language === 'ca' ? 'text-stone-800 border-b-2 border-[#c1562e]' : 'text-stone-400 hover:text-stone-600'} transition-colors py-0.5`}
+            style={{ marginLeft: '-0.3em' }}
           >
             català
           </button>
         </div>
 
         {/* Credits */}
-        <div className={`flex items-center justify-between ${compact ? 'text-base' : 'text-lg'} text-stone-400 mt-2 font-serif`} style={{ width: '100%', maxWidth: '100%' }}>
+        <div className={`flex items-center justify-between ${compact ? 'text-xs' : 'text-sm md:text-xs'} text-stone-400 font-serif gap-2`}>
           <span>{t.home.footer}</span>
-          <a href="https://rcrear.com" className={`hover:text-stone-600 transition-colors font-semibold`}>rcrear.com</a>
+          <a href="https://rcrear.com" className={`hover:text-stone-600 transition-colors`}>rcrear.com</a>
         </div>
       </div>
     </div>
@@ -949,10 +977,10 @@ const App: React.FC = () => {
       ];
 
     return (
-      // Changed h-screen to min-h-screen and overflow-hidden only on md+ to allow scrolling on mobile
-      <div className="w-full min-h-screen md:h-screen flex flex-col relative overflow-x-hidden md:overflow-hidden">
+      // Always use min-h-screen, allow scroll on any screen size if content overflows
+      <div className="w-full min-h-screen flex flex-col relative overflow-x-hidden">
         {/* Logo Header Area - Centered at top */}
-        <div style={{ paddingTop: 'var(--padding-top)', paddingLeft: 'var(--padding-x)', paddingRight: 'var(--padding-x)' }} className="w-full flex flex-col justify-center items-center z-20 -translate-x-2">
+        <div style={{ paddingTop: 'var(--padding-top)', paddingLeft: 'var(--padding-x)', paddingRight: 'var(--padding-x)' }} className="w-full flex flex-col justify-center items-center z-20 -translate-x-2 flex-shrink-0">
              <div className="relative flex flex-col items-center justify-center">
                 <div style={{ width: 'var(--logo-width)' }} className="shrink-0 relative flex items-center justify-center">
                   <LogoImg />
@@ -965,7 +993,7 @@ const App: React.FC = () => {
         </div>
 
         {/* Main Content - Flex Centered */}
-        <div style={{ paddingLeft: 'var(--padding-x)', paddingRight: 'var(--padding-x)', paddingTop: 'var(--padding-y)', paddingBottom: 'var(--padding-y)' }} className="flex-1 flex items-center justify-center w-full">
+        <div style={{ paddingLeft: 'var(--padding-x)', paddingRight: 'var(--padding-x)', paddingTop: 'var(--padding-y)', paddingBottom: 'var(--padding-y)' }} className="flex-1 flex items-center justify-center w-full min-h-0">
             <div style={{ gap: 'var(--gap-base)' }} className="flex flex-col md:flex-row items-center justify-between w-full">
             
                 {/* Left: Text */}
@@ -983,16 +1011,16 @@ const App: React.FC = () => {
                 {/* Center: Image */}
                 <div className="order-1 md:order-2 shrink-0 relative z-10">
                     <div style={{ width: 'var(--main-image-size)', height: 'var(--main-image-size)' }} className="rounded-3xl overflow-hidden relative group">
-                    <img 
-                        src={IMAGES.homeMain} 
-                        alt="Escuela Roure" 
-                        className="w-full h-full object-contain transition-all duration-1000"
+                    <SafeImage 
+                      src={IMAGES.homeMain} 
+                      alt="Escuela Roure" 
+                      className="w-full h-full object-contain transition-all duration-1000"
                     />
                     </div>
                 </div>
 
                 {/* Right: Menu */}
-                <div className="w-full md:w-1/3 order-3 px-4 md:px-0 flex justify-center md:justify-start pt-6 pb-8 md:pt-0 md:pb-0">
+                <div className="w-full md:w-1/3 order-3 px-4 md:px-0 flex justify-center md:justify-start mt-8 md:mt-0 pt-6 pb-8 md:pt-0 md:pb-0 flex-shrink-0">
                   <div className="flex flex-col items-start">
                     {/* Menu Label - commented out, uncomment to show */}
                     {/* <div className="flex items-center text-sm font-bold uppercase text-stone-400 font-serif mb-4" style={{ letterSpacing: '0.4em' }}>
@@ -1008,11 +1036,10 @@ const App: React.FC = () => {
                         return (
                             <li key={item.key}>
                             <button 
-                                onClick={() => handleNav(item.key as View)}
-                                className="font-serif font-medium flex items-center gap-2 relative group text-left text-stone-600 hover:text-[#c1562e] transition-all duration-300 ease-in-out hover:scale-105 text-xl md:text-base"
-                                style={{ fontSize: 'var(--menu-text-size)' }}
+                              onClick={() => handleNav(item.key as View)}
+                              className="font-serif font-medium flex items-center gap-2 relative group text-left text-stone-600 hover:text-[#c1562e] transition-all duration-300 ease-in-out hover:scale-105 text-2xl md:text-base"
                             >
-                                <img 
+                                <SafeImage 
                                   src="/images/menu_icon.png" 
                                   alt="" 
                                   className={`w-3 h-3 opacity-60 transition-transform duration-300 ease-in-out group-hover:rotate-90`} 
@@ -1030,8 +1057,8 @@ const App: React.FC = () => {
             </div>
         </div>
 
-        {/* Footer inside Home for perfect spacing */}
-        <div className="mt-1 md:-mt-4 mb-2 -mb-8" style={{ transform: 'scale(0.75)', transformOrigin: 'center top' }}>
+        {/* Footer inside Home - always visible at bottom */}
+        <div className="mt-2 md:mt-1 flex-shrink-0">
           <Footer compact={false} />
         </div>
       </div>
@@ -1041,7 +1068,7 @@ const App: React.FC = () => {
   const InternalPageLayout = ({ title, children }: { title: string, children?: React.ReactNode }) => (
     <div style={{ paddingLeft: 'var(--padding-x)', paddingRight: 'var(--padding-x)' }} className="w-full min-h-screen flex flex-col pt-32 xl:pt-36 2xl:pt-40 pb-20 xl:pb-24 2xl:pb-28 max-w-6xl xl:max-w-7xl 2xl:max-w-6xl mx-auto">
       {/* Sticky Header Area for Internal Pages */}
-      <div style={{ paddingLeft: 'var(--padding-x)', paddingRight: 'var(--padding-x)' }} className="fixed top-0 left-0 w-full bg-[#f7f5e6]/15 backdrop-blur-sm z-40 py-4 xl:py-5 2xl:py-6 border-b border-stone-200/50">
+      <div style={{ paddingLeft: 'var(--padding-x)', paddingRight: 'var(--padding-x)' }} className="fixed top-0 left-0 w-full bg-[#f7f5e6]/95 z-40 py-4 xl:py-5 2xl:py-6 border-b border-stone-200/50">
          <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-6xl mx-auto flex justify-between items-center">
             <button 
               onClick={() => navigateTo('home')}
@@ -1071,11 +1098,21 @@ const App: React.FC = () => {
   );
 
   // Image Carousel Component
-  const ImageCarousel = ({ images, autoPlayInterval = 2000 }: { images: Array<{src: string, caption: string}>, autoPlayInterval?: number }) => {
+  const ImageCarousel = ({ images, autoPlayInterval = 2000, aspectClass = "aspect-[4/3]" }: { images: Array<{src: string, caption: string}>, autoPlayInterval?: number, aspectClass?: string }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
+    const [nextImageLoaded, setNextImageLoaded] = useState(true);
+    const [isTransitioning, setIsTransitioning] = useState(false);
     const carouselRef = useRef<HTMLDivElement>(null);
+    const nextImageRef = useRef<HTMLImageElement>(null);
+
+    // Safety check for empty images array
+    if (!images || images.length === 0) {
+      return <div className={`${aspectClass} bg-stone-200 rounded-lg flex items-center justify-center`}>
+        <p className="text-stone-500">No images available</p>
+      </div>;
+    }
 
     // Intersection Observer to detect visibility
     useEffect(() => {
@@ -1102,33 +1139,80 @@ const App: React.FC = () => {
       setIsPlaying(isVisible);
     }, [isVisible]);
 
+    // Preload next image continuously
     useEffect(() => {
-      if (!isPlaying) return;
+      setNextImageLoaded(false);
+      const nextIdx = (currentIndex + 1) % images.length;
+      const img = new Image();
+      img.onload = () => setNextImageLoaded(true);
+      img.onerror = () => setNextImageLoaded(true);
+      img.src = images[nextIdx].src;
+    }, [currentIndex, images]);
+
+    // Autoplay only when next image is ready
+    useEffect(() => {
+      if (!isPlaying || !nextImageLoaded) return;
       const interval = setInterval(() => {
-        setCurrentIndex((prev) => (prev + 1) % images.length);
+        setIsTransitioning(true);
+        setTimeout(() => {
+          setCurrentIndex((prev) => (prev + 1) % images.length);
+          setIsTransitioning(false);
+        }, 500);
       }, autoPlayInterval);
       return () => clearInterval(interval);
-    }, [isPlaying, images.length, autoPlayInterval]);
+    }, [isPlaying, nextImageLoaded, images.length, autoPlayInterval]);
 
     const goToPrevious = () => {
-      setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
       setIsPlaying(false);
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+        setIsTransitioning(false);
+      }, 500);
     };
 
     const goToNext = () => {
-      setCurrentIndex((prev) => (prev + 1) % images.length);
       setIsPlaying(false);
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % images.length);
+        setIsTransitioning(false);
+      }, 500);
     };
 
     const currentImage = images[currentIndex];
+    const nextImage = images[(currentIndex + 1) % images.length];
 
     return (
-      <div ref={carouselRef} className="relative overflow-hidden group aspect-[4/3] rounded-lg" style={{ margin: 0, padding: 0, display: 'block', backgroundColor: '#f7f5e6' }}>
+      <div ref={carouselRef} className={`relative overflow-hidden group ${aspectClass} rounded-lg bg-[#f7f5e6]`} style={{ margin: 0, padding: 0, display: 'block' }}>
+        {/* Current image layer */}
+        <div className="absolute inset-0 transition-opacity duration-500" style={{ opacity: isTransitioning ? 0 : 1 }}>
+          <SafeImage 
+            key={`current-${currentIndex}`}
+            src={currentImage.src} 
+            alt={currentImage.caption} 
+            className="w-full h-full object-contain"
+          />
+        </div>
+        
+        {/* Next image layer (for crossfade) */}
+        <div className="absolute inset-0 transition-opacity duration-500" style={{ opacity: isTransitioning ? 1 : 0, pointerEvents: 'none' }}>
+          <SafeImage 
+            key={`next-${(currentIndex + 1) % images.length}`}
+            src={nextImage.src} 
+            alt={nextImage.caption} 
+            className="w-full h-full object-contain"
+          />
+        </div>
+        
+        {/* Preload next image invisibly */}
         <img 
-          key={currentIndex}
-          src={currentImage.src} 
-          alt={currentImage.caption} 
-          className="w-full h-full object-contain"
+          ref={nextImageRef}
+          src={nextImage.src}
+          alt=""
+          style={{ position: 'absolute', opacity: 0, pointerEvents: 'none', width: '1px', height: '1px' }}
+          onLoad={() => setNextImageLoaded(true)}
+          onError={() => setNextImageLoaded(true)}
         />
         
         {/* Navigation Arrows */}
@@ -1167,9 +1251,41 @@ const App: React.FC = () => {
         <div className="absolute bottom-2 left-2 bg-stone-800/50 text-white text-xs px-2 py-1 rounded z-10">
           {currentIndex + 1} / {images.length}
         </div>
-          <p key={currentIndex} className="text-white text-sm font-serif italic text-center drop-shadow-lg">
+          <p className="text-white text-sm font-serif italic text-center drop-shadow-lg">
             {currentImage.caption}
           </p>
+        </div>
+      </div>
+    );
+  };
+
+  // Text Carousel Component (for testimonials)
+  const TextCarousel = ({ items, autoPlayInterval = 4000 }: { items: Array<{ text: string; author?: string }>, autoPlayInterval?: number }) => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [isPlaying, setIsPlaying] = useState(true);
+
+    useEffect(() => {
+      if (!isPlaying || items.length <= 1) return;
+      const id = setInterval(() => setCurrentIndex((i) => (i + 1) % items.length), autoPlayInterval);
+      return () => clearInterval(id);
+    }, [isPlaying, items.length, autoPlayInterval]);
+
+    const goPrev = () => { setIsPlaying(false); setCurrentIndex((i) => (i - 1 + items.length) % items.length); };
+    const goNext = () => { setIsPlaying(false); setCurrentIndex((i) => (i + 1) % items.length); };
+
+    const it = items[currentIndex];
+    return (
+      <div className="relative bg-white rounded-xl border border-stone-200 p-6 xl:p-7 2xl:p-8 shadow-sm">
+        <div className="font-serif text-stone-700 leading-relaxed italic whitespace-pre-line pr-12 pl-12 md:pr-16 md:pl-16">{it.text}</div>
+        {it.author && <div className="mt-3 text-right font-serif font-semibold text-stone-800 pr-12 md:pr-16">{it.author}</div>}
+        <button onClick={goPrev} className="absolute left-3 top-1/2 -translate-y-1/2 bg-stone-800/50 hover:bg-stone-800/80 text-white p-1.5 rounded-full">
+          <ChevronLeft size={16} />
+        </button>
+        <button onClick={goNext} className="absolute right-3 top-1/2 -translate-y-1/2 bg-stone-800/50 hover:bg-stone-800/80 text-white p-1.5 rounded-full">
+          <ChevronLeft size={16} className="rotate-180" />
+        </button>
+        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 text-xs text-stone-500 font-serif">
+          {currentIndex + 1} / {items.length}
         </div>
       </div>
     );
@@ -1185,169 +1301,31 @@ const App: React.FC = () => {
     const carousel3Images = historiaPhotos.slice(9, 13);
     const carousel4Images = historiaPhotos.slice(13, 17);
 
-    // Split paragraphs into 4 sections for carousel intercalation
-    const allParagraphs = contentData[0]?.paragraphs || [];
-    const sectionSize = Math.ceil(allParagraphs.length / 4);
-    const section1 = allParagraphs.slice(0, sectionSize);
-    const section2 = allParagraphs.slice(sectionSize, sectionSize * 2);
-    const section3 = allParagraphs.slice(sectionSize * 2, sectionSize * 3);
-    const section4 = allParagraphs.slice(sectionSize * 3);
-
-    // Collaborator logos organized by category
-    const otrosLogos = [
-      '/images/logos/otros_SerGi.png',
-      '/images/logos/otros_economia_social.png',
-      '/images/logos/otros_escolescoop.jpg',
-      '/images/logos/otros_cooperativesdetreball.jpg',
-    ];
-
-    const educacionLogos = [
-      '/images/logos/educacion_alaire.jpg',
-      '/images/logos/educacion_caiev.png',
-      '/images/logos/educacion_creixementribu.jpg',
-      '/images/logos/educacion_hazizhazi.jpg',
-      '/images/logos/educacion_jacintverdaguer.png',
-      '/images/logos/educacion_semillavioleta.png',
-      '/images/logos/educacion_submarilila.jpg',
-      '/images/logos/educacion_xell.jpg',
-      '/images/logos/educacion_corriols.jpg',
-      '/images/logos/educacion_lesgarrofes.jpg',
-      '/images/logos/educacion_bizilore.jpg',
-    ];
-
-    const universidadLogos = [
-      '/images/logos/universidad_andalucia.svg',
-      '/images/logos/universidad_reyjuancarlos.jpg',
-      '/images/logos/universidad_girona.png',
-      '/images/logos/universidad_manresa.png',
-      '/images/logos/universidad_ub.jpg',
-      '/images/logos/universidad_valencia.jpg',
-    ];
-
-    const revistaLogos = [
-      '/images/logos/revista_elviure.jpg',
-      '/images/logos/revista_integral2.jpg',
-      '/images/logos/revista_cuadernosdepedagogia.jpg',
-      '/images/logos/revista_grao.png',
-      '/images/logos/revista_kikirikicooperacioneducativa.png',
-    ];
+    const sections = contentData || [];
+    const allCarousels = [carousel1Images, carousel2Images, carousel3Images, carousel4Images];
 
     return (
       <InternalPageLayout title={title}>
-        {/* Desktop and Mobile: Text with interleaved carousels in two columns */}
-        <div className="flex flex-col md:flex-row items-start gap-6 md:gap-0">
-          
-          {/* Desktop: Single column text with carousels on the side */}
-          <div style={{ fontSize: 'var(--internal-body-text)' }} className="hidden md:block w-full md:w-1/2 font-serif leading-relaxed text-stone-700 space-y-8 xl:space-y-9 2xl:space-y-10">
-            {/* Section 1 */}
-            <div className="space-y-4 xl:space-y-5 2xl:space-y-6">
-              {section1.map((p, pIdx) => (
-                <p key={pIdx} className={pIdx === 0 ? "font-bold" : ""}>
-                  {p}
-                </p>
-              ))}
-            </div>
-            
-            {/* Section 2 */}
-            <div className="space-y-4 xl:space-y-5 2xl:space-y-6">
-              {section2.map((p, pIdx) => (
-                <p key={pIdx}>
-                  {p}
-                </p>
-              ))}
-            </div>
-            
-            {/* Section 3 */}
-            <div className="space-y-4 xl:space-y-5 2xl:space-y-6">
-              {section3.map((p, pIdx) => (
-                <p key={pIdx}>
-                  {p}
-                </p>
-              ))}
-            </div>
-            
-            {/* Section 4 */}
-            <div className="space-y-4 xl:space-y-5 2xl:space-y-6">
-              {section4.map((p, pIdx) => (
-                <p key={pIdx}>
-                  {p}
-                </p>
-              ))}
-            </div>
-          </div>
-
-          {/* Mobile: Text with carousels intercalated evenly */}
-          <div style={{ fontSize: 'var(--internal-body-text)' }} className="block md:hidden w-full font-serif leading-relaxed text-stone-700">
-            {(() => {
-              // Extract the two special paragraphs
-              const coronavirusParagraph = allParagraphs.find(p => p.startsWith("Después del confinamiento por el coronavirus"));
-              const closureParagraph = allParagraphs.find(p => p.startsWith("A raíz de serias dificultades"));
-              
-              // Filter out the special paragraphs from the main flow
-              const regularParagraphs = allParagraphs.filter(p => 
-                !p.startsWith("Después del confinamiento por el coronavirus") && 
-                !p.startsWith("A raíz de serias dificultades")
-              );
-              
-              const carousels = [carousel1Images, carousel2Images, carousel3Images, carousel4Images];
-              const totalParagraphs = regularParagraphs.length;
-              
-              // Calculate positions for each carousel (distributed evenly)
-              const carouselPositions = [];
-              for (let i = 1; i <= 4; i++) {
-                carouselPositions.push(Math.floor((totalParagraphs * i) / 4));
-              }
-              
-              return (
-                <>
-                  {regularParagraphs.map((p, pIdx) => {
-                    return (
-                      <React.Fragment key={pIdx}>
-                        <p className={pIdx === 0 ? "font-bold mb-4" : "mb-4"}>
-                          {p}
-                        </p>
-                        {carouselPositions.map((pos, cIdx) => {
-                          if (pos === pIdx + 1) {
-                            return (
-                              <div key={`carousel-${cIdx}`} className="w-full mb-8">
-                                <ImageCarousel images={carousels[cIdx]} autoPlayInterval={3000} />
-                              </div>
-                            );
-                          }
-                          return null;
-                        })}
-                      </React.Fragment>
-                    );
-                  })}
-                  
-                  {/* Show the two special paragraphs at the end */}
-                  <p className="mb-4">
-                    {coronavirusParagraph}
+        <div className="flex flex-col gap-12 xl:gap-14 2xl:gap-16">
+          {sections.map((section, sectionIdx) => (
+            <div key={sectionIdx} className="flex flex-col lg:flex-row gap-8 xl:gap-10 2xl:gap-12 items-start">
+              {/* Paragraphs */}
+              <div style={{ fontSize: 'var(--internal-body-text)' }} className="flex-1 font-serif leading-relaxed text-stone-700 space-y-4 xl:space-y-5 2xl:space-y-6">
+                {section.paragraphs.map((p, pIdx) => (
+                  <p key={pIdx} className={pIdx === 0 ? "font-bold" : ""}>
+                    {p}
                   </p>
-                  
-                  <p className="mb-4">
-                    {closureParagraph}
-                  </p>
-                </>
-              );
-            })()}
-          </div>
-
-          {/* Desktop: Right column with 4 carousels distributed vertically */}
-          <div className="w-full md:w-1/2 hidden md:flex md:flex-col" style={{ margin: 0, padding: 0, gap: 0, lineHeight: 0 }}>
-             <div style={{ width: 'var(--main-image-size)', height: 'calc(var(--main-image-size) * 0.75)', display: 'block', margin: '0 auto', padding: 0, lineHeight: 0 }}>
-               <ImageCarousel images={carousel1Images} autoPlayInterval={3000} />
-             </div>
-             <div style={{ width: 'var(--main-image-size)', height: 'calc(var(--main-image-size) * 0.75)', display: 'block', margin: '0 auto', padding: 0, lineHeight: 0, marginTop: '25rem' }}>
-               <ImageCarousel images={carousel2Images} autoPlayInterval={3000} />
-             </div>
-             <div style={{ width: 'var(--main-image-size)', height: 'calc(var(--main-image-size) * 0.75)', display: 'block', margin: '0 auto', padding: 0, lineHeight: 0, marginTop: '25rem' }}>
-               <ImageCarousel images={carousel3Images} autoPlayInterval={3000} />
-             </div>
-             <div style={{ width: 'var(--main-image-size)', height: 'calc(var(--main-image-size) * 0.75)', display: 'block', margin: '0 auto', padding: 0, lineHeight: 0, marginTop: '25rem' }}>
-               <ImageCarousel images={carousel4Images} autoPlayInterval={3000} />
-             </div>
-          </div>
+                ))}
+              </div>
+              
+              {/* Carousel alongside if available */}
+              {sectionIdx < allCarousels.length && (
+                <div className="w-full lg:w-[min(34rem,90vw)]">
+                  <ImageCarousel images={allCarousels[sectionIdx]} autoPlayInterval={3000} />
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </InternalPageLayout>
     );
@@ -1355,6 +1333,7 @@ const App: React.FC = () => {
 
   const FundamentosView = () => {
     const sections = t.fundamentosContent || [];
+    // Match carousels to sections: autorr (autorregulación), acompa (acompañamiento), apren (aprendizaje)
     const fundamentosCarousels = [fundamentosAutorr, fundamentosAcompa, fundamentosApren];
 
     return (
@@ -1375,9 +1354,12 @@ const App: React.FC = () => {
                 ))}
               </div>
 
-              <div className="w-full lg:w-[min(34rem,90vw)]">
-                <ImageCarousel images={fundamentosCarousels[idx] || []} autoPlayInterval={3000} />
-              </div>
+              {/* Carousel alongside */}
+              {fundamentosCarousels[idx] && (
+                <div className="w-full lg:w-[min(34rem,90vw)]">
+                  <ImageCarousel images={fundamentosCarousels[idx]} autoPlayInterval={3000} />
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -1386,6 +1368,86 @@ const App: React.FC = () => {
   };
 
   const FormacionView = () => {
+    // Formaciones carousel images
+    const formacionesPhotos = [
+      { src: '/images/formaciones/formaciones_01.webp', caption: '' },
+      { src: '/images/formaciones/formaciones_02.webp', caption: '' },
+      { src: '/images/formaciones/formaciones_03.webp', caption: '' },
+      { src: '/images/formaciones/formaciones_04.webp', caption: '' },
+      { src: '/images/formaciones/formaciones_05.webp', caption: '' },
+      { src: '/images/formaciones/formaciones_06.webp', caption: '' },
+      { src: '/images/formaciones/formaciones_07.webp', caption: '' },
+      { src: '/images/formaciones/formaciones_08.webp', caption: '' },
+      { src: '/images/formaciones/formaciones_09.webp', caption: '' },
+      { src: '/images/formaciones/formaciones_10.webp', caption: '' },
+      { src: '/images/formaciones/formaciones_11.webp', caption: '' },
+      { src: '/images/formaciones/formaciones_12.webp', caption: '' },
+      { src: '/images/formaciones/formaciones_13.webp', caption: '' },
+      { src: '/images/formaciones/formaciones_14.webp', caption: '' },
+      { src: '/images/formaciones/formaciones_15.webp', caption: '' },
+      { src: '/images/formaciones/formaciones_16.webp', caption: '' },
+      { src: '/images/formaciones/formaciones_17.webp', caption: '' },
+      { src: '/images/formaciones/formaciones_18.webp', caption: '' },
+      { src: '/images/formaciones/formaciones_19.webp', caption: '' },
+      { src: '/images/formaciones/formaciones_20.webp', caption: '' },
+      { src: '/images/formaciones/formaciones_21.webp', caption: '' },
+    ];
+
+    // Split into 3 carousels: 7+7+7
+    const fCarousel1 = formacionesPhotos.slice(0, 7);
+    const fCarousel2 = formacionesPhotos.slice(7, 14);
+    const fCarousel3 = formacionesPhotos.slice(14, 21);
+
+    // Asesoramientos: paragraphs (ES provided) and a 3-photo carousel (last 3)
+    const asesoramientosParagraphs: string[] = [
+      'El proyecto de la escuela siempre ha incluido el acompañamiento a las madres y padres. Además de esa experiencia, a partir del curso 2021-2022 empezamos a ofrecer asesoramientos a personas ajenas a la escuela: madres, padres, profesionales y proyectos educativos (que iniciaban su andadura o que, siendo consolidados, valoraban una mirada externa como la nuestra).',
+      'A familias',
+      'Es una forma de acompañamiento a madres y padres sobre cualquier aspecto del proceso familiar de crianza de vuestros hijos e hijas. Por un lado, miramos las soluciones que necesitas a las situaciones cotidianas actuales y, por otro lado, miramos el origen de estas señales que manifiestan que algo no va bien.',
+      'La realidad cotidiana de relación con el hijos e hijas nos puede generar dudas, preocupación, conflictos e interrogantes. Las dificultades se pueden manifestar en cualquier aspecto de la vida familiar: las relaciones entre hermanos/se, con la madre y el padre o con las amistades, el proceso de aprendizaje, la gestión emocional, los hábitos domésticos, la imagen de sí mismo, etc.',
+      'Para poder explorar una relación cuidadosa y sensible con los hijos e hijas, necesitamos observarlos y observarnos: los pensamientos y creencias, las emociones, las necesidades, y reflexionar desde la conexión con ellas y ellos. Se trata,en definitiva, de acceder a la sabiduría innata que tenemos como madres y padres.',
+      'Apoyábamos esa función de madres y padres en aspectos como, por ejemplo:',
+      '• La observación, seguimiento, reflexión e intervención sobre el proceso integral de maduración de cada criatura, la autoregulación, las tensiones, dificultades y bloqueos que se manifiestan en los aspectos físico, emocional e intelectual.',
+      '• La atención a las dinámicas de relación entre madres/paras e hijas/hijos, y entre todos los miembros de la familia, esenciales por el bienestar individual y familiar.',
+      '• Los procesos de aprendizaje: el acompañamiento de actividades a casa, la adecuación de espacios y materiales pedagógicos a casa, el acompañamiento en la propia organización y gestión del tiempo por parte de los niños/niñas y adolescentes, la propia responsabilidad y autonomía, etc.',
+      '• El acompañamiento en la etapa adolescente: entender las características de esta delicada etapa, como establecer la comunicación y relación con el/la adolescente, los grados de libertad y límites, la gestión del uso de las nuevas tecnologías y redes sociales, la gestión del dinero, la participación a las tareas de casa, la gestión de responsabilidades y compromisos, las formas de descarga de tensiones, etc.',
+      'A profesionales',
+      'En la práctica pedagógica de cualquier profesional hay que hacer frente a situaciones nuevas, a veces difíciles o conflictivas, tanto con una criatura determinada como con el grupo. A menudo las herramientas que tenemos no son suficientes y necesitamos ampliar nuestra mirada y desarrollar más nuestra percepción de las verdaderas necesidades de las criaturas, y el grupo, más allá de formas "correctas" de intervención.',
+      'También podemos revisar la metodología, las actividades, los espacios y materiales, el funcionamiento del equipo, la comunicación con madres y padres, etc. Acompañábamos a los profesionales, tanto individualmente como en colectivo, a partir de su realidad educativa y teniendo presentes sus necesidades.',
+      'Partíamos de sus interrogantes cotidianos y revisábamos con ellos y ellas los aspectos que pedían cambios en la práctica educativa a través de la observación y la reflexión. Quizás había que mirar las formas de acompañamiento y las intervenciones, la tensión excesiva que dificulta la autorregulación en las criaturas, la relación entre libertad y límites, la conciencia sistémica, la metodología y los formatos de actividad, el uso de espacios y de materiales, la gestión y la organización de equipos, las formaciones, la organización del equipo educativo, la comunicación entre equipo y familias, las herramientas de observación y registro del procesos de aprendizaje, etc.',
+      'El propósito era fortalecer el vínculo de seguridad y confianza con cada criatura que permite hacer un acompañamiento consciente y respetuoso.',
+      'A nuevos proyectos',
+      'Cada día son más las familias y profesionales que se plantean crear escuelas o espacios de educación viva para niñas, niños o adolescentes. A menudo tenemos claro lo que no queremos, pero no es tan fácil concretar lo que queremos.',
+      'Por otro lado, un espacio educativo implica atender aspectos diversos, como por ejemplo la gestión, la organización interna, la adecuación de espacios y materiales, la dinámica de actividades y la metodología, la observación y acompañamiento de procesos de aprendizaje, la comunicación interna y externa, la participación y apoyo a madres y padres en su función, la observación individual y colectiva de las criaturas y su registro, la relación con la administración educativa, etc.',
+      'Nos ofrecíamos a apoyar este proceso apasionante y creativo; sabíamos por experiencia que requiere mucha energía individual y colectiva, tiempo y sobre todo determinación en el propósito de materializar nuevas realidades para una educación cada vez más sintonizada con la vida.'
+    ];
+    const asesoraPhotos = [
+      { src: '/images/formaciones/asesoramientos_01.webp', caption: '' },
+      { src: '/images/formaciones/asesoramientos_02.webp', caption: '' },
+      { src: '/images/formaciones/asesoramientos_03.webp', caption: '' },
+    ];
+
+    const formacionesParagraphs: string[] = [
+      'Aunque desde el 2002 participamos en algunos eventos educativos, es a partir del 2008 cuando comenzamos verdaderamente la etapa de las formaciones. Por una parte hemos organizado una formación anual que llamamos Savia y talleres monográficos, y por otra parte hemos participado en formaciones organizadas por otras entidades educativas (proyectos de educación viva y activa, IES, Universidades, etc.). La formación Savia se ha desarrollado, de forma presencial, desde el curso 2008-2009 hasta el curso 2025-2026, dirigida a madres, padres, docentes, estudiantes o a toda persona interesada en la relación con niñas/os y adolescentes.',
+      'Por otra parte hemos ofrecido la posibilidad de hacer formaciones a medida, adaptando el formato, la duración y los contenidos a las necesidades de cada entidad, escuela, institución, proyecto educativo o grupo de familias y/o profesionales.',
+      'También hemos acogido en el espacio de la escuela talleres llevados por otros profesionales afines (destacan los talleres anuales de Rebeca y Mauricio Wild, de la escuela Pestalozzi de Ecuador).',
+      'Este aspecto del proyecto educativo lo hemos desarrollado Begoña González (del 2008 al 2025) y Paco Robles (del 2014 al 2021).',
+      'El propósito de todas nuestras formaciones ha sido invitar a ver nuevas perspectivas, comprensiones y soluciones a las dificultades y conflictos que surgen en el día a día en la relación con los niños, niñas y adolescentes, tanto seamos madres o padres como profesionales de la educación. El eje de la formación ha sido siempre el de los fundamentos y la experiencia de la escuela y la metodología una combinación de dinámicas vivenciales con la reflexión individual y grupal.',
+      'Esa realidad cotidiana con las criaturas nos genera interrogantes y nos invita a abrirnos a aquello que se da, tanto fuera como dentro nuestro; a veces nos surgen dudas, nos pueden desbordar situaciones, reproducimos reacciones que no queremos tener... acudir a fórmulas “correctas” según las ideas de una nueva pedagogía no parece la solución. A menudo las herramientas que tenemos no son suficientes y necesitamos revisar los patrones y formas de funcionamiento que no son coherentes con lo que verdaderamente queremos.',
+      'Necesitamos explorar y aprender a acompañar desde nuestro propio talento innato, de una forma más centrada, abierta y respetuosa.',
+      '¿Qué significa una educación conectada con la vida? ¿Cómo podemos percibir y acompañar lo que realmente necesitan las niñas, niños y adolescentes? ¿Cómo establecemos una comunicación respetuosa y auténtica entre adultos y criaturas? ¿Cómo ponemos límites naturales desde una sana autoridad? ¿Cómo apoyamos a los procesos de aprendizaje de manera respetuosa y eficaz?',
+      'Planteábamos observar y reflexionar en profundidad sobre los temas clave implicados en el desarrollo y maduración de las criaturas. También proponíamos revisar las creencias limitadoras y los patrones internos que nos desconectan de nuestra propia capacidad para percibir las verdaderas necesidades de las niñas, niños y adolescentes.'
+    ];
+    const testimonios: Array<{ text: string; author?: string }> = [
+      { text: 'Una experiencia donde he podido poner atención en cómo aprendemos, a través de la observación y reflexión pedagógica.\n\nUn espacio y tiempo acompañado para poder sintonizar con el diálogo interno en las relaciones. \n​\nUna propuesta en la que he podido abrir los sentidos a la comunicación humana para que el acompañamiento se dé desde la mirada consciente como adulta y el respeto de las necesidades y procesos de las criaturas, tanto en el acompañamiento individual como en el grupal.', author: 'Bibi' },
+      { text: 'Aquesta formació va suposar un punt d’inflexió vital en la meva trajectòria docent. Em va canviar la mirada cap a la infància i els seus processos d’aprenentatge, em va oferir un espai vivencial, de recerca i reflexió grupal que em va ajudar a replantejar la meva manera de cuidar i acompanyar de forma holística als nens i nenes. L’escola, els seus espais, envoltats de natura i aquesta formació, avui en dia encara són una inspiració i un dels pilars que sustenten la meva feina com a mestra.\n\n', author: 'Mercè' },
+      { text: 'Em va connectar amb parts meves que, tot i ser essencials, no miraba ni tenia presents. / \nEs mostrava amb claredat la meva essència i era precisament el que ocultava als demés i a mi mateix.', author: 'Marc' },
+      { text: 'Sentir cómo a través de la formación nacen y se nutren nuevas experiencias sobre cómo vivimos la educación. Ver, escuchar y experimentar desde una voz que para mí tiene luz y experiencia.', author: language === 'es' ? 'Anónimo' : 'Anònim' },
+      { text: 'Una formació que m’ha endinsat a conèixer-me i a connectar amb l’essència del projecte El Roure. Un aprofundiment en com acompanyar als infants i a les seves famílies, tot compartint en grup. La tornaria a fer 50 vegades perquè crec que s’apren molt i et fa replantejar-te moltes coses.', author: 'Sandra' },
+      { text: 'Una formació molt enriquidora que em va aportar molt com a persona, com a mare i mare que educa a casa i com a professional d’acompanyament a infants i famílies en el marc escolar.', author: 'Blanca' },
+      { text: 'En la formación de El Roure aprendí que de una misma actividad en grupo cada una tiene diferentes aprendizajes igual de importantes, valiosos y respetables, poniéndole dimensión al significado de diversidad.', author: 'Sergio' },
+      { text: 'Una manera conocerme a mí misma, a los demás y a lo que me rodea, más abierta, más paciente, más profunda y más respetuosa. Me llevo el conocimiento de que nada está escrito, que cada uno aprende con la su mirada y que la fuerza del grupo es necesaria. Este curso me ha ayudado a perder miedos ya romper barreras.El hecho de experimentar en grupo e individualmente cada uno de los apartados hace que no olvides la experiencia y quede grabada en tu interior.', author: 'Josep' },
+      { text: 'Para mí esta formación ha sido clave en el camino de autoconocimiento de mí misma como persona, como mujer y como madre. Valoro muy positivamente el hecho de experimentar lo que se habla en cada sesión y de abordarlo desde las diferentes dinámicas. También me resulta muy útil el material complementario que recibimos.', author: 'Oliver' }
+    ];
     // Collaborator logos organized by category
     const otrosLogos = [
       '/images/logos/otros_SerGi.png',
@@ -1418,30 +1480,75 @@ const App: React.FC = () => {
     ];
 
     return (
-      <InternalPageLayout title={t.nav.formacion}>
-        <div style={{ gap: 'var(--gap-base)' }} className="flex flex-col md:flex-row items-start">
-          <div style={{ fontSize: 'var(--internal-body-text)' }} className="w-full md:w-1/2 font-serif leading-relaxed text-stone-700 space-y-8 xl:space-y-9 2xl:space-y-10">
-            {t.formacionContent.map((section, sIdx) => (
-                <div key={sIdx} className="space-y-4 xl:space-y-5 2xl:space-y-6">
-                    {section.title && (
-                        <h3 className="text-2xl xl:text-2xl 2xl:text-3xl font-bold text-stone-800 mb-2 xl:mb-2 2xl:mb-3 text-[#c1562e]">{section.title}</h3>
-                    )}
-                    {section.paragraphs.map((p, pIdx) => (
-                        <p key={pIdx} className={pIdx === 0 ? "font-bold" : ""}>
-                            {p}
-                        </p>
-                    ))}
-                </div>
-            ))}
+      <InternalPageLayout title={language === 'es' ? 'Formaciones y asesoramientos' : 'Formacions i assessoraments'}>
+        {/* Formaciones Section - Two Column */}
+        <div className="mb-12 xl:mb-14 2xl:mb-16">
+          <h3 className="text-2xl xl:text-2xl 2xl:text-3xl font-bold text-stone-800 mb-4 xl:mb-5 2xl:mb-6 text-[#c1562e] font-serif">{language === 'es' ? 'Formaciones' : 'Formacions'}</h3>
+          
+          {/* First paragraph group with carousel 1 */}
+          <div className="flex flex-col lg:flex-row gap-8 xl:gap-10 2xl:gap-12 items-start mb-8">
+            <div style={{ fontSize: 'var(--internal-body-text)' }} className="flex-1 font-serif leading-relaxed text-stone-700 space-y-4 xl:space-y-5 2xl:space-y-6">
+              <p className="font-bold">{formacionesParagraphs[0]}</p>
+              <p>{formacionesParagraphs[1]}</p>
+            </div>
+            <div className="w-full lg:w-[min(34rem,90vw)]">
+              <ImageCarousel images={fCarousel1} autoPlayInterval={3000} />
+            </div>
           </div>
-          <div className="w-full md:w-1/2">
-             <div style={{ width: 'var(--main-image-size)', height: 'calc(var(--main-image-size) * 1.25)' }} className="bg-stone-200 rounded-lg overflow-hidden shadow-lg sticky top-32 xl:top-36 2xl:top-40 mx-auto">
-               <img 
-                 src={IMAGES.sections.formacion} 
-                 alt={t.nav.formacion} 
-                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
-               />
-             </div>
+
+          {/* Second paragraph group with carousel 2 */}
+          <div className="flex flex-col lg:flex-row gap-8 xl:gap-10 2xl:gap-12 items-start mb-8">
+            <div style={{ fontSize: 'var(--internal-body-text)' }} className="flex-1 font-serif leading-relaxed text-stone-700 space-y-4 xl:space-y-5 2xl:space-y-6">
+              <p>{formacionesParagraphs[2]}</p>
+              <p>{formacionesParagraphs[3]}</p>
+              <p>{formacionesParagraphs[4]}</p>
+              <p>{formacionesParagraphs[5]}</p>
+            </div>
+            <div className="w-full lg:w-[min(34rem,90vw)]">
+              <ImageCarousel images={fCarousel2} autoPlayInterval={3000} />
+            </div>
+          </div>
+
+          {/* Third paragraph group with carousel 3 */}
+          <div className="flex flex-col lg:flex-row gap-8 xl:gap-10 2xl:gap-12 items-start mb-8">
+            <div style={{ fontSize: 'var(--internal-body-text)' }} className="flex-1 font-serif leading-relaxed text-stone-700 space-y-4 xl:space-y-5 2xl:space-y-6">
+              <p>{formacionesParagraphs[6]}</p>
+              <p>{formacionesParagraphs[7]}</p>
+              <p>{formacionesParagraphs[8]}</p>
+            </div>
+            <div className="w-full lg:w-[min(34rem,90vw)]">
+              <ImageCarousel images={fCarousel3} autoPlayInterval={3000} />
+            </div>
+          </div>
+
+          {/* Formaciones video at the end */}
+          <div className="mt-8">
+            <div className="aspect-video bg-black rounded-lg overflow-hidden relative shadow-lg">
+              <VideoFrame video={{ title: 'Formaciones', description: '', embedId: 'GK4JmYqqk8Q', type: 'youtube' }} deferred={false} />
+            </div>
+          </div>
+        </div>
+
+        {/* Testimonials - moved before Asesoramientos */}
+        <div className="mt-16 xl:mt-20 2xl:mt-24 mb-16 xl:mb-20 2xl:mb-24">
+          <h4 className="text-xl xl:text-xl 2xl:text-2xl font-bold text-stone-800 mb-4 text-[#c1562e] font-serif">{language === 'es' ? 'Testimonios de formación' : 'Testimonis de formació'}</h4>
+          <TextCarousel items={testimonios} />
+        </div>
+
+        {/* Asesoramientos Section - with extra space above */}
+        <div className="mt-20 xl:mt-24 2xl:mt-28">
+          <h3 className="text-2xl xl:text-2xl 2xl:text-3xl font-bold text-stone-800 mb-4 xl:mb-5 2xl:mb-6 text-[#c1562e] font-serif">{language === 'es' ? 'Asesoramientos' : 'Assessoraments'}</h3>
+          <div style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif leading-relaxed text-stone-700 space-y-5 xl:space-y-6 2xl:space-y-7">
+            {asesoramientosParagraphs.map((p, idx) => (
+              <React.Fragment key={idx}>
+                <p className={p === 'A familias' || p === 'A profesionales' || p === 'A nuevos proyectos' ? 'font-bold text-stone-800' : ''}>{p}</p>
+                {idx === 1 && (
+                  <div className="my-6">
+                    <ImageCarousel images={asesoraPhotos} autoPlayInterval={3000} aspectClass="aspect-[5/3]" />
+                  </div>
+                )}
+              </React.Fragment>
+            ))}
           </div>
         </div>
 
@@ -1459,7 +1566,7 @@ const App: React.FC = () => {
             <div className="grid grid-cols-3 gap-3 md:flex md:flex-wrap md:justify-center md:gap-3">
               {educacionLogos.map((logo, i) => (
                 <div key={`educacion-${i}`} className="aspect-square bg-white rounded-lg flex items-center justify-center border border-stone-200 p-2 md:w-[calc((100%-6*0.75rem)/7)]">
-                  <img src={logo} alt="Logo" className="w-full h-full object-contain" />
+                  <SafeImage src={logo} alt="Logo" className="w-full h-full object-contain" />
                 </div>
               ))}
             </div>
@@ -1473,7 +1580,7 @@ const App: React.FC = () => {
             <div className="grid grid-cols-3 gap-3 md:flex md:flex-wrap md:justify-center md:gap-3">
               {universidadLogos.map((logo, i) => (
                 <div key={`universidad-${i}`} className="aspect-square bg-white rounded-lg flex items-center justify-center border border-stone-200 p-2 md:w-[calc((100%-6*0.75rem)/7)]">
-                  <img src={logo} alt="Logo" className="w-full h-full object-contain" />
+                  <SafeImage src={logo} alt="Logo" className="w-full h-full object-contain" />
                 </div>
               ))}
             </div>
@@ -1487,7 +1594,7 @@ const App: React.FC = () => {
             <div className="grid grid-cols-3 gap-3 md:flex md:flex-wrap md:justify-center md:gap-3">
               {otrosLogos.map((logo, i) => (
                 <div key={`otros-${i}`} className="aspect-square bg-white rounded-lg flex items-center justify-center border border-stone-200 p-2 md:w-[calc((100%-6*0.75rem)/7)]">
-                  <img src={logo} alt="Logo" className="w-full h-full object-contain" />
+                  <SafeImage src={logo} alt="Logo" className="w-full h-full object-contain" />
                 </div>
               ))}
             </div>
@@ -1516,7 +1623,7 @@ const App: React.FC = () => {
         </div>
         <div className="w-full md:w-1/2">
            <div style={{ width: 'var(--main-image-size)', height: 'calc(var(--main-image-size) * 1.25)' }} className="bg-stone-200 rounded-lg overflow-hidden shadow-lg sticky top-32 xl:top-36 2xl:top-40 mx-auto">
-             <img 
+             <SafeImage 
                src={imageSrc} 
                alt={title} 
                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
@@ -1565,13 +1672,6 @@ const App: React.FC = () => {
             <h2 style={{ fontSize: 'var(--menu-text-size)' }} className="font-serif mb-8 xl:mb-10 2xl:mb-12 text-stone-800">{t.escuela.titles[escuelaSection]}</h2>
             
             <div style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif leading-relaxed text-stone-700 space-y-6 xl:space-y-7 2xl:space-y-8 max-w-prose xl:max-w-full">
-               <img 
-                 src={IMAGES.escuela[escuelaSection]} 
-                 style={{ width: 'var(--main-image-size)', height: 'calc(var(--main-image-size) * 0.7)' }}
-                 className="object-cover rounded-lg mb-6 xl:mb-7 2xl:mb-8 shadow-md mx-auto"
-                 alt={t.escuela.menu[escuelaSection]} 
-               />
-               
                {/* Render Paragraphs with first one Bold */}
                {activeContent.map((text, idx) => (
                    <p key={idx} className={idx === 0 ? "font-bold" : ""}>
@@ -1585,8 +1685,56 @@ const App: React.FC = () => {
     );
   };
 
-  const VideoFrame: React.FC<{ video: VideoItem }> = React.memo(({ video }) => {
+  const getThumbnailUrl = (video: VideoItem): string => {
+    if (video.type === 'youtube' && video.embedId) {
+      return `https://img.youtube.com/vi/${video.embedId}/maxresdefault.jpg`;
+    }
     if (video.type === 'vimeo' && video.embedId) {
+      // Vimeo thumbnail: use thumbnail URL from CDN (more reliable format)
+      return `https://i.vimeocdn.com/video/${video.embedId}_1280.jpg`;
+    }
+    return IMAGES.videoPlaceholder;
+  };
+
+  // Fetch Vimeo thumbnail from API for better reliability
+  const useVimeoThumbnail = (videoId: string) => {
+    const [thumbnail, setThumbnail] = useState<string>('');
+    
+    useEffect(() => {
+      const fetchThumbnail = async () => {
+        try {
+          const response = await fetch(`https://vimeo.com/api/v2/video/${videoId}.json`);
+          const data = await response.json();
+          if (data[0]?.thumbnail_large) {
+            setThumbnail(data[0].thumbnail_large);
+          }
+        } catch (error) {
+          // Fallback to standard CDN URL
+          setThumbnail(`https://i.vimeocdn.com/video/${videoId}_1280.jpg`);
+        }
+      };
+      
+      if (videoId) {
+        fetchThumbnail();
+      }
+    }, [videoId]);
+    
+    return thumbnail;
+  };
+
+  const VideoFrame: React.FC<{ video: VideoItem, deferred?: boolean }> = ({ video, deferred = false }) => {
+    const vimeoThumbnail = useVimeoThumbnail(video.type === 'vimeo' ? video.embedId || '' : '');
+    
+    if (video.type === 'vimeo' && video.embedId) {
+      if (deferred) {
+        const thumbUrl = vimeoThumbnail || getThumbnailUrl(video);
+        return (
+          <>
+            <div className="absolute inset-0 opacity-60 bg-cover bg-center" style={{ backgroundImage: `url(${thumbUrl})` }}></div>
+            <Play className="text-white w-16 h-16 relative z-10 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all" fill="currentColor" />
+          </>
+        );
+      }
       return (
         <iframe 
           src={`https://player.vimeo.com/video/${video.embedId}?title=0&byline=0&portrait=0`} 
@@ -1594,13 +1742,21 @@ const App: React.FC = () => {
           frameBorder="0" 
           allow="autoplay; fullscreen; picture-in-picture" 
           allowFullScreen
-          loading="eager"
+          loading="lazy"
           title={video.title}
         ></iframe>
       );
     }
 
     if (video.type === 'youtube' && video.embedId) {
+      if (deferred) {
+        return (
+          <>
+            <div className="absolute inset-0 opacity-60 bg-cover bg-center" style={{ backgroundImage: `url(${getThumbnailUrl(video)})` }}></div>
+            <Play className="text-white w-16 h-16 relative z-10 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all" fill="currentColor" />
+          </>
+        );
+      }
       return (
         <iframe
             src={`https://www.youtube.com/embed/${video.embedId}`}
@@ -1608,13 +1764,23 @@ const App: React.FC = () => {
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-            loading="eager"
+            loading="lazy"
             title={video.title}
         ></iframe>
       );
     }
 
     if (video.type === 'spotify' && video.embedId) {
+      if (deferred) {
+        return (
+          <>
+            <div className="absolute inset-0 opacity-60 bg-cover bg-center bg-black flex items-center justify-center">
+              <Mic className="text-white w-16 h-16 opacity-60" />
+            </div>
+            <Play className="text-white w-16 h-16 relative z-10 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all" fill="currentColor" />
+          </>
+        );
+      }
       return (
         <iframe 
             style={{borderRadius: '12px'}} 
@@ -1637,26 +1803,36 @@ const App: React.FC = () => {
         <Play className="text-white w-16 h-16 relative z-10 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all" fill="currentColor" />
       </>
     );
-  }, (prevProps, nextProps) => prevProps.video.embedId === nextProps.video.embedId);
+  };
 
   const VideosView = () => {
     // Fallback to empty array if undefined to prevent crashes
     const videos: VideoItem[] = t.videosList || [];
+    const [loadedEmbeds, setLoadedEmbeds] = useState<Record<string, boolean>>({});
+    const markLoaded = (embedId?: string) => {
+      if (!embedId) return;
+      setLoadedEmbeds(prev => ({ ...prev, [embedId]: true }));
+    };
 
     return (
       <InternalPageLayout title={t.nav.videos}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 xl:gap-14 2xl:gap-16">
-                {videos.map((video, i) => (
-            <div key={video.embedId || video.link || i} className="flex flex-col gap-3 xl:gap-3 2xl:gap-4 group cursor-pointer" onClick={() => { if(video.link && video.link !== '#' && !video.embedId) window.open(video.link, '_blank') }}>
+                {videos.map((video, i) => {
+                  const isLoaded = !!(video.embedId && loadedEmbeds[video.embedId]);
+                  return (
+            <div key={video.embedId || video.link || i} className="flex flex-col gap-3 xl:gap-3 2xl:gap-4 group cursor-pointer" onClick={() => { 
+              if (video.embedId && !isLoaded) { markLoaded(video.embedId); }
+              else if(video.link && video.link !== '#' && !video.embedId) { window.open(video.link, '_blank'); }
+            }}>
               <div className="aspect-video bg-black rounded-lg overflow-hidden relative flex items-center justify-center shadow-lg">
-                <VideoFrame video={video} />
+                <VideoFrame video={video} deferred={!isLoaded} />
               </div>
               <div>
                 <h3 style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif font-bold text-stone-800 mt-2 xl:mt-2 2xl:mt-3 group-hover:text-[#c1562e] transition-colors">{video.title}</h3>
                 <p style={{ fontSize: 'calc(var(--internal-body-text) * 0.9)' }} className="font-serif text-stone-600 mt-1 xl:mt-1 2xl:mt-2 leading-relaxed">{video.description}</p>
               </div>
             </div>
-          ))}
+          )})}
         </div>
       </InternalPageLayout>
     );
@@ -1796,7 +1972,7 @@ const App: React.FC = () => {
                 '/images/logos/revista_kikirikicooperacioneducativa.png',
               ].map((logo, i) => (
                 <div key={`revista-${i}`} className="aspect-square bg-white rounded-lg flex items-center justify-center border border-stone-200 p-2 md:w-[calc((100%-6*0.75rem)/7)]">
-                  <img src={logo} alt="Logo" className="w-full h-full object-contain" />
+                  <SafeImage src={logo} alt="Logo" className="w-full h-full object-contain" />
                 </div>
               ))}
             </div>
@@ -1815,10 +1991,10 @@ const App: React.FC = () => {
                     <div className="w-full md:w-1/3 shrink-0 flex justify-center md:justify-start">
                         <div className="w-56 h-56 md:w-72 md:h-72 xl:w-80 xl:h-80 2xl:w-96 2xl:h-96 rounded-xl overflow-hidden shadow-lg relative group">
                              <div className="absolute inset-0 bg-[#c1562e]/10 mix-blend-overlay group-hover:opacity-0 transition-opacity"></div>
-                             <img 
-                                src={IMAGES.people[index] || IMAGES.homeMain} 
-                                alt={person.name} 
-                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                             <SafeImage 
+                              src={IMAGES.people[index] || IMAGES.homeMain} 
+                              alt={person.name} 
+                              className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                             />
                         </div>
                     </div>
@@ -1924,28 +2100,9 @@ const App: React.FC = () => {
   // --- Main Render ---
 
   return (
-    <div className="min-h-screen w-full text-stone-800 font-sans overflow-x-hidden selection:bg-[#c1562e] selection:text-white relative">
+    <div className="min-h-screen w-full text-stone-800 font-sans overflow-x-hidden selection:bg-[#c1562e] selection:text-white relative" style={{ backgroundColor: '#f7f5e6' }}>
       
-      {/* Video Background Layer */}
-      <video
-        ref={bgVideoRef}
-        autoPlay
-        loop
-        muted
-        playsInline
-        disablePictureInPicture
-        disableRemotePlayback
-        preload="auto"
-        onLoadedData={handleVideoLoaded}
-        onCanPlay={handleVideoLoaded}
-        className="fixed top-0 left-0 w-full h-full object-cover pointer-events-none z-0"
-        style={{ opacity: 0.2 }}
-        {...{ 'webkit-playsinline': 'true' } as any}
-      >
-        <source src="/images/bgvideo.mp4" type="video/mp4" />
-      </video>
-
-      {/* Content wrapper with relative positioning to appear above video */}
+      {/* Content wrapper */}
       <div className="relative z-10">
       
       {/* Render View Based on State */}

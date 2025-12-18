@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+
+# Chrome for Testing (Lighthouse CI)
+chrome/
+
+# Lighthouse CI reports
+.lighthouseci/
+
+# Firebase cache
+.firebase/
+
+# OS files
+.DS_Store
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# Environment variables
+.env
+.env.local
