@@ -27,7 +27,6 @@ const IMAGES = {
     { src: '/images/2_2_subiendo_viga.webp', caption: 'Subiendo una viga' },
     { src: '/images/2_3_pintando.webp', caption: 'Pintando' },
     { src: '/images/2_4_los_4_descansando.webp', caption: 'Fundadores, familiar y voluntariado, descansando' },
-    { src: '/images/3_escuela_el_roure.webp', caption: 'Escuela El Roure, edificio Cirerers (3-6 años)' },
     { src: '/images/4_maquina_del_tiempo.webp', caption: 'Máquina del tiempo' },
     { src: '/images/5_familias_el_roure.webp', caption: 'Familias El Roure' },
     { src: '/images/5_2_hormigon.webp', caption: 'Hormigoneando' },
@@ -37,7 +36,6 @@ const IMAGES = {
     { src: '/images/7_inauguracion_edificio_ginesta_2.webp', caption: 'Inauguración edificio Ginesta 2' },
     { src: '/images/8_paso_de_manos.webp', caption: 'Paso de manos' },
     { src: '/images/9_heura_adolescents_escola_el_roure.webp', caption: 'Edificio Heura, (12-16 años)' },
-    { src: '/images/10_reunion_escuela_el_roure.webp', caption: 'Reunión bajo el nuevo Roble' },
     { src: '/images/11_el_viejo_roble_talado.webp', caption: 'El Viejo Roble, talado' },
   ],
   historiaPhotos_ca: [
@@ -46,7 +44,6 @@ const IMAGES = {
     { src: '/images/2_2_subiendo_viga.webp', caption: 'Pujant una biga' },
     { src: '/images/2_3_pintando.webp', caption: 'Pintant' },
     { src: '/images/2_4_los_4_descansando.webp', caption: 'Fundadors, familiar i voluntariat, descansant' },
-    { src: '/images/3_escuela_el_roure.webp', caption: 'Escola El Roure, edifici Cirerers (3-6 anys)' },
     { src: '/images/4_maquina_del_tiempo.webp', caption: 'Màquina del temps' },
     { src: '/images/5_familias_el_roure.webp', caption: 'Famílies El Roure' },
     { src: '/images/5_2_hormigon.webp', caption: 'Formigonant' },
@@ -56,7 +53,6 @@ const IMAGES = {
     { src: '/images/7_inauguracion_edificio_ginesta_2.webp', caption: 'Inauguració edifici Ginesta 2' },
     { src: '/images/8_paso_de_manos.webp', caption: 'Pas de mans' },
     { src: '/images/9_heura_adolescents_escola_el_roure.webp', caption: 'Edifici Heura, (12-16 anys)' },
-    { src: '/images/10_reunion_escuela_el_roure.webp', caption: 'Reunió sota el nou Roure' },
     { src: '/images/11_el_viejo_roble_talado.webp', caption: 'El Vell Roure, tallat' },
   ],
   videoPlaceholder: "https://picsum.photos/seed/video/600/400",
@@ -831,14 +827,14 @@ const App: React.FC = () => {
   useEffect(() => {
     const onHash = () => {
       const h = window.location.hash.replace('#', '');
-      if (h && ALLOWED_VIEWS.includes(h as View)) {
+      if (h && ALLOWED_VIEWS.includes(h as View) && h !== currentView) {
         setCurrentView(h as View);
         window.scrollTo(0,0);
       }
     };
     window.addEventListener('hashchange', onHash);
     return () => window.removeEventListener('hashchange', onHash);
-  }, []);
+  }, [currentView]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -948,16 +944,15 @@ const App: React.FC = () => {
   const navigateTo = (view: View) => {
     if (!ALLOWED_VIEWS.includes(view)) return;
     if (view === currentView) return;
+    // immediate UI update
+    setCurrentView(view);
     // update hash (this also allows back/forward navigation)
     try {
       window.location.hash = view;
+      window.scrollTo(0,0);
     } catch (e) {
       // fallback
-      setCurrentView(view);
     }
-    // immediate UI update
-    setCurrentView(view);
-    window.scrollTo(0,0);
   };
 
   const handleNav = (view: View) => navigateTo(view);
@@ -1155,8 +1150,8 @@ const App: React.FC = () => {
       const interval = setInterval(() => {
         setIsTransitioning(true);
         setTimeout(() => {
-          setCurrentIndex((prev) => (prev + 1) % images.length);
           setIsTransitioning(false);
+          setCurrentIndex((prev) => (prev + 1) % images.length);
         }, 500);
       }, autoPlayInterval);
       return () => clearInterval(interval);
@@ -1166,8 +1161,8 @@ const App: React.FC = () => {
       setIsPlaying(false);
       setIsTransitioning(true);
       setTimeout(() => {
-        setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
         setIsTransitioning(false);
+        setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
       }, 500);
     };
 
@@ -1175,35 +1170,36 @@ const App: React.FC = () => {
       setIsPlaying(false);
       setIsTransitioning(true);
       setTimeout(() => {
-        setCurrentIndex((prev) => (prev + 1) % images.length);
         setIsTransitioning(false);
+        setCurrentIndex((prev) => (prev + 1) % images.length);
       }, 500);
     };
 
     const currentImage = images[currentIndex];
+    const prevImage = images[(currentIndex - 1 + images.length) % images.length];
     const nextImage = images[(currentIndex + 1) % images.length];
 
     return (
       <div ref={carouselRef} className={`relative overflow-hidden group ${aspectClass} rounded-lg bg-[#f7f5e6]`} style={{ margin: 0, padding: 0, display: 'block' }}>
-        {/* Current image layer */}
+        {/* Base layer - always shows current when not transitioning */}
         <div className="absolute inset-0 transition-opacity duration-500" style={{ opacity: isTransitioning ? 0 : 1 }}>
           <SafeImage 
-            key={`current-${currentIndex}`}
             src={currentImage.src} 
             alt={currentImage.caption} 
             className="w-full h-full object-contain"
           />
         </div>
         
-        {/* Next image layer (for crossfade) */}
-        <div className="absolute inset-0 transition-opacity duration-500" style={{ opacity: isTransitioning ? 1 : 0, pointerEvents: 'none' }}>
-          <SafeImage 
-            key={`next-${(currentIndex + 1) % images.length}`}
-            src={nextImage.src} 
-            alt={nextImage.caption} 
-            className="w-full h-full object-contain"
-          />
-        </div>
+        {/* Transition layer - only visible during transition, shows next image */}
+        {isTransitioning && (
+          <div className="absolute inset-0 transition-opacity duration-500" style={{ opacity: 1 }}>
+            <SafeImage 
+              src={nextImage.src} 
+              alt={nextImage.caption} 
+              className="w-full h-full object-contain"
+            />
+          </div>
+        )}
         
         {/* Preload next image invisibly */}
         <img 
@@ -1275,8 +1271,8 @@ const App: React.FC = () => {
 
     const it = items[currentIndex];
     return (
-      <div className="relative bg-white rounded-xl border border-stone-200 p-6 xl:p-7 2xl:p-8 shadow-sm">
-        <div className="font-serif text-stone-700 leading-relaxed italic whitespace-pre-line pr-12 pl-12 md:pr-16 md:pl-16">{it.text}</div>
+      <div className="relative bg-white rounded-xl border border-stone-200 p-6 xl:p-7 2xl:p-8 shadow-sm min-h-[280px] flex flex-col">
+        <div className="font-serif text-stone-700 leading-relaxed italic whitespace-pre-line pr-12 pl-12 md:pr-16 md:pl-16 flex-1">{it.text}</div>
         {it.author && <div className="mt-3 text-right font-serif font-semibold text-stone-800 pr-12 md:pr-16">{it.author}</div>}
         <button onClick={goPrev} className="absolute left-3 top-1/2 -translate-y-1/2 bg-stone-800/50 hover:bg-stone-800/80 text-white p-1.5 rounded-full">
           <ChevronLeft size={16} />
@@ -1340,26 +1336,28 @@ const App: React.FC = () => {
       <InternalPageLayout title={t.nav.fundamentos}>
         <div className="flex flex-col gap-12 xl:gap-14 2xl:gap-16">
           {sections.map((section, idx) => (
-            <div key={idx} className="flex flex-col lg:flex-row gap-8 xl:gap-10 2xl:gap-12 items-start">
-              <div style={{ fontSize: 'var(--internal-body-text)' }} className="flex-1 font-serif leading-relaxed text-stone-700 space-y-4 xl:space-y-5 2xl:space-y-6">
-                {section.title && (
-                  <h3 className="text-2xl xl:text-2xl 2xl:text-3xl font-bold text-stone-800 mb-2 xl:mb-2 2xl:mb-3 text-[#c1562e]">
-                    {section.title}
-                  </h3>
-                )}
-                {section.paragraphs.map((p, pIdx) => (
-                  <p key={pIdx} className={pIdx === 0 ? 'font-bold' : ''}>
-                    {p}
-                  </p>
-                ))}
-              </div>
-
-              {/* Carousel alongside */}
-              {fundamentosCarousels[idx] && (
-                <div className="w-full lg:w-[min(34rem,90vw)]">
-                  <ImageCarousel images={fundamentosCarousels[idx]} autoPlayInterval={3000} />
-                </div>
+            <div key={idx}>
+              {section.title && (
+                <h3 className="text-2xl xl:text-2xl 2xl:text-3xl font-bold text-stone-800 mb-4 xl:mb-5 2xl:mb-6 text-[#c1562e]">
+                  {section.title}
+                </h3>
               )}
+              <div className="flex flex-col lg:flex-row gap-8 xl:gap-10 2xl:gap-12 items-start">
+                <div style={{ fontSize: 'var(--internal-body-text)' }} className="flex-1 font-serif leading-relaxed text-stone-700 space-y-4 xl:space-y-5 2xl:space-y-6">
+                  {section.paragraphs.map((p, pIdx) => (
+                    <p key={pIdx} className={pIdx === 0 ? 'font-bold' : ''}>
+                      {p}
+                    </p>
+                  ))}
+                </div>
+
+                {/* Carousel alongside */}
+                {fundamentosCarousels[idx] && (
+                  <div className="w-full lg:w-[min(34rem,90vw)]">
+                    <ImageCarousel images={fundamentosCarousels[idx]} autoPlayInterval={3000} />
+                  </div>
+                )}
+              </div>
             </div>
           ))}
         </div>
@@ -1538,16 +1536,23 @@ const App: React.FC = () => {
         {/* Asesoramientos Section - with extra space above */}
         <div className="mt-20 xl:mt-24 2xl:mt-28">
           <h3 className="text-2xl xl:text-2xl 2xl:text-3xl font-bold text-stone-800 mb-4 xl:mb-5 2xl:mb-6 text-[#c1562e] font-serif">{language === 'es' ? 'Asesoramientos' : 'Assessoraments'}</h3>
-          <div style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif leading-relaxed text-stone-700 space-y-5 xl:space-y-6 2xl:space-y-7">
-            {asesoramientosParagraphs.map((p, idx) => (
-              <React.Fragment key={idx}>
-                <p className={p === 'A familias' || p === 'A profesionales' || p === 'A nuevos proyectos' ? 'font-bold text-stone-800' : ''}>{p}</p>
-                {idx === 1 && (
-                  <div className="my-6">
-                    <ImageCarousel images={asesoraPhotos} autoPlayInterval={3000} aspectClass="aspect-[5/3]" />
-                  </div>
-                )}
-              </React.Fragment>
+          
+          {/* First paragraph group with carousel */}
+          <div className="flex flex-col lg:flex-row gap-8 xl:gap-10 2xl:gap-12 items-start">
+            <div style={{ fontSize: 'var(--internal-body-text)' }} className="flex-1 font-serif leading-relaxed text-stone-700 space-y-4 xl:space-y-5 2xl:space-y-6">
+              {asesoramientosParagraphs.slice(0, 2).map((p, idx) => (
+                <p key={idx} className={p === 'A familias' || p === 'A profesionales' || p === 'A nuevos proyectos' ? 'font-bold text-stone-800' : ''}>{p}</p>
+              ))}
+            </div>
+            <div className="w-full lg:w-[min(34rem,90vw)]">
+              <ImageCarousel images={asesoraPhotos} autoPlayInterval={3000} aspectClass="aspect-[5/3]" />
+            </div>
+          </div>
+
+          {/* Rest of the paragraphs */}
+          <div style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif leading-relaxed text-stone-700 space-y-4 xl:space-y-5 2xl:space-y-6 mt-8">
+            {asesoramientosParagraphs.slice(2).map((p, idx) => (
+              <p key={idx} className={p === 'A familias' || p === 'A profesionales' || p === 'A nuevos proyectos' ? 'font-bold text-stone-800' : ''}>{p}</p>
             ))}
           </div>
         </div>
@@ -1668,7 +1673,7 @@ const App: React.FC = () => {
           </div>
 
           {/* Main Content Area */}
-          <div className="w-full md:w-3/4 min-h-[500px]">
+          <div className="w-full md:w-3/4 min-h-[500px] md:-mt-[0.75rem] xl:md:-mt-[0.75rem] 2xl:md:-mt-[1rem]">
             <h2 style={{ fontSize: 'var(--menu-text-size)' }} className="font-serif mb-8 xl:mb-10 2xl:mb-12 text-stone-800">{t.escuela.titles[escuelaSection]}</h2>
             
             <div style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif leading-relaxed text-stone-700 space-y-6 xl:space-y-7 2xl:space-y-8 max-w-prose xl:max-w-full">
@@ -2100,7 +2105,7 @@ const App: React.FC = () => {
   // --- Main Render ---
 
   return (
-    <div className="min-h-screen w-full text-stone-800 font-sans overflow-x-hidden selection:bg-[#c1562e] selection:text-white relative" style={{ backgroundColor: '#f7f5e6' }}>
+    <div className="min-h-screen w-full text-stone-800 font-sans overflow-x-hidden selection:bg-[#c1562e] selection:text-white relative" style={{ backgroundImage: 'url(/images/main_bg.webp)', backgroundAttachment: 'fixed', backgroundSize: 'cover', backgroundPosition: 'center' }}>
       
       {/* Content wrapper */}
       <div className="relative z-10">
