@@ -22,48 +22,48 @@ const IMAGES = {
     formacion: "https://picsum.photos/seed/formacion/800/1000",
   },
   historiaPhotos_es: [
-    { src: '/images/1_el_viejo_roble.webp', caption: 'El viejo roble' },
-    { src: '/images/1_2_las_cuadras_antes_de_reformar.webp', caption: 'Las cuadras antes de reformar' },
-    { src: '/images/1_3_obras_primer_edificio.webp', caption: 'Obras primer edificio' },
-    { src: '/images/2_begona_cristobal.webp', caption: 'Begoña y Cristóbal' },
-    { src: '/images/2_2_subiendo_viga.webp', caption: 'Subiendo una viga' },
-    { src: '/images/2_3_pintando.webp', caption: 'Pintando' },
-    { src: '/images/2_4_los_4_descansando.webp', caption: 'Fundadores, familiar y voluntariado, descansando' },
-    { src: '/images/3_escuela_el_roure.webp', caption: 'Escuela El Roure' },
-    { src: '/images/4_maquina_del_tiempo.webp', caption: 'Máquina del tiempo' },
-    { src: '/images/5_familias_el_roure.webp', caption: 'Familias El Roure' },
-    { src: '/images/5_obras.webp', caption: 'Obras' },
-    { src: '/images/5_2_hormigon.webp', caption: 'Hormigoneando' },
-    { src: '/images/5_3_ninos_estanteria.webp', caption: 'Transportando material al nuevo edificio' },
-    { src: '/images/5_4_ordenando_nueva_sala.webp', caption: 'Ordenando en la nueva sala' },
-    { src: '/images/6_inauguracion_edificio_ginesta.webp', caption: 'Inauguración edificio Ginesta (6-12 años)' },
-    { src: '/images/7_inauguracion_edificio_ginesta_2.webp', caption: 'Inauguración edificio Ginesta 2' },
-    { src: '/images/8_paso_de_manos.webp', caption: 'Paso de manos' },
-    { src: '/images/9_heura_adolescents_escola_el_roure.webp', caption: 'Edificio Heura, (12-16 años)' },
-    { src: '/images/10_reunion_escuela_el_roure.webp', caption: 'Reunión escuela El Roure' },
-    { src: '/images/11_el_viejo_roble_talado.webp', caption: 'El Viejo Roble, talado' },
+    { src: '/images/1_el_viejo_roble.webp', caption: '' },
+    { src: '/images/1_2_las_cuadras_antes_de_reformar.webp', caption: '' },
+    { src: '/images/1_3_obras_primer_edificio.webp', caption: '' },
+    { src: '/images/2_begona_cristobal.webp', caption: '' },
+    { src: '/images/2_2_subiendo_viga.webp', caption: '' },
+    { src: '/images/2_3_pintando.webp', caption: '' },
+    { src: '/images/2_4_los_4_descansando.webp', caption: '' },
+    { src: '/images/3_escuela_el_roure.webp', caption: '' },
+    { src: '/images/4_maquina_del_tiempo.webp', caption: '' },
+    { src: '/images/5_familias_el_roure.webp', caption: '' },
+    { src: '/images/5_obras.webp', caption: '' },
+    { src: '/images/5_2_hormigon.webp', caption: '' },
+    { src: '/images/5_3_ninos_estanteria.webp', caption: '' },
+    { src: '/images/5_4_ordenando_nueva_sala.webp', caption: '' },
+    { src: '/images/6_inauguracion_edificio_ginesta.webp', caption: '' },
+    { src: '/images/7_inauguracion_edificio_ginesta_2.webp', caption: '' },
+    { src: '/images/8_paso_de_manos.webp', caption: '' },
+    { src: '/images/9_heura_adolescents_escola_el_roure.webp', caption: '' },
+    { src: '/images/10_reunion_escuela_el_roure.webp', caption: '' },
+    { src: '/images/11_el_viejo_roble_talado.webp', caption: '' },
   ],
   historiaPhotos_ca: [
-    { src: '/images/1_el_viejo_roble.webp', caption: 'El vell roure' },
-    { src: '/images/1_2_las_cuadras_antes_de_reformar.webp', caption: 'Les quadres abans de reformar' },
-    { src: '/images/1_3_obras_primer_edificio.webp', caption: 'Obres primer edifici' },
-    { src: '/images/2_begona_cristobal.webp', caption: 'Begoña i Cristóbal' },
-    { src: '/images/2_2_subiendo_viga.webp', caption: 'Pujant una biga' },
-    { src: '/images/2_3_pintando.webp', caption: 'Pintant' },
-    { src: '/images/2_4_los_4_descansando.webp', caption: 'Fundadors, familiar i voluntariat, descansant' },
-    { src: '/images/3_escuela_el_roure.webp', caption: 'Escola El Roure' },
-    { src: '/images/4_maquina_del_tiempo.webp', caption: 'Màquina del temps' },
-    { src: '/images/5_familias_el_roure.webp', caption: 'Famílies El Roure' },
-    { src: '/images/5_obras.webp', caption: 'Obres' },
-    { src: '/images/5_2_hormigon.webp', caption: 'Formigonant' },
-    { src: '/images/5_3_ninos_estanteria.webp', caption: 'Transportant material al nou edifici' },
-    { src: '/images/5_4_ordenando_nueva_sala.webp', caption: 'Ordenant a la nova sala' },
-    { src: '/images/6_inauguracion_edificio_ginesta.webp', caption: 'Inauguració edifici Ginesta (6-12 anys)' },
-    { src: '/images/7_inauguracion_edificio_ginesta_2.webp', caption: 'Inauguració edifici Ginesta 2' },
-    { src: '/images/8_paso_de_manos.webp', caption: 'Pas de mans' },
-    { src: '/images/9_heura_adolescents_escola_el_roure.webp', caption: 'Edifici Heura, (12-16 anys)' },
-    { src: '/images/10_reunion_escuela_el_roure.webp', caption: 'Reunió escola El Roure' },
-    { src: '/images/11_el_viejo_roble_talado.webp', caption: 'El Vell Roure, tallat' },
+    { src: '/images/1_el_viejo_roble.webp', caption: '' },
+    { src: '/images/1_2_las_cuadras_antes_de_reformar.webp', caption: '' },
+    { src: '/images/1_3_obras_primer_edificio.webp', caption: '' },
+    { src: '/images/2_begona_cristobal.webp', caption: '' },
+    { src: '/images/2_2_subiendo_viga.webp', caption: '' },
+    { src: '/images/2_3_pintando.webp', caption: '' },
+    { src: '/images/2_4_los_4_descansando.webp', caption: '' },
+    { src: '/images/3_escuela_el_roure.webp', caption: '' },
+    { src: '/images/4_maquina_del_tiempo.webp', caption: '' },
+    { src: '/images/5_familias_el_roure.webp', caption: '' },
+    { src: '/images/5_obras.webp', caption: '' },
+    { src: '/images/5_2_hormigon.webp', caption: '' },
+    { src: '/images/5_3_ninos_estanteria.webp', caption: '' },
+    { src: '/images/5_4_ordenando_nueva_sala.webp', caption: '' },
+    { src: '/images/6_inauguracion_edificio_ginesta.webp', caption: '' },
+    { src: '/images/7_inauguracion_edificio_ginesta_2.webp', caption: '' },
+    { src: '/images/8_paso_de_manos.webp', caption: '' },
+    { src: '/images/9_heura_adolescents_escola_el_roure.webp', caption: '' },
+    { src: '/images/10_reunion_escuela_el_roure.webp', caption: '' },
+    { src: '/images/11_el_viejo_roble_talado.webp', caption: '' },
   ],
   videoPlaceholder: "https://picsum.photos/seed/video/600/400",
   escuela: {
@@ -388,6 +388,13 @@ const content = {
         type: "vimeo"
       },
       {
+        title: "Conversación de Antonio Laforgia con Begoña González",
+        description: "Una conversiación de Antonio Laforgia, creador del documental sobre el roure \"El Roure, una escuela viva\" con Begoña González, cofundadora de El Roure.",
+        link: "https://youtu.be/KjIFGiM6P7U",
+        embedId: "KjIFGiM6P7U",
+        type: "youtube"
+      },
+      {
         title: "Explorando la escuela El Roure, de Baobab.",
         description: "\"En nuestra visita a El Roure, en la provincia de Barcelona, Begoña nos regaló esta entrevista/conversación donde de manera clara y profunda nos compartió su visión sobre la educación y el enfoque de la escuela. Toda nuestra gratitud por acogernos y por la generosidad de compartir su experiencia y comprensión.\"",
         link: "https://www.youtube.com/watch?v=wnhU8cmO1i0",
@@ -704,6 +711,13 @@ const content = {
         link: "https://vimeo.com/115516270?fl=pl&fe=vl",
         embedId: "115516270",
         type: "vimeo"
+      },
+      {
+        title: "Conversa d'Antonio Laforgia amb Begoña González",
+        description: "Una conversa d'Antonio Laforgia, creador del documental sobre el roure \"El Roure, una escola viva\" amb Begoña González, cofundadora d'El Roure.",
+        link: "https://youtu.be/KjIFGiM6P7U",
+        embedId: "KjIFGiM6P7U",
+        type: "youtube"
       },
       {
         title: "Explorant l'escola El Roure, de Baobab.",
@@ -1108,7 +1122,6 @@ const App: React.FC = () => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
     const [nextImageLoaded, setNextImageLoaded] = useState(true);
-    const [isTransitioning, setIsTransitioning] = useState(false);
     const carouselRef = useRef<HTMLDivElement>(null);
     const nextImageRef = useRef<HTMLImageElement>(null);
 
@@ -1158,31 +1171,19 @@ const App: React.FC = () => {
     useEffect(() => {
       if (!isPlaying || !nextImageLoaded) return;
       const interval = setInterval(() => {
-        setIsTransitioning(true);
-        setTimeout(() => {
-          setIsTransitioning(false);
-          setCurrentIndex((prev) => (prev + 1) % images.length);
-        }, 500);
+        setCurrentIndex((prev) => (prev + 1) % images.length);
       }, autoPlayInterval);
       return () => clearInterval(interval);
     }, [isPlaying, nextImageLoaded, images.length, autoPlayInterval]);
 
     const goToPrevious = () => {
       setIsPlaying(false);
-      setIsTransitioning(true);
-      setTimeout(() => {
-        setIsTransitioning(false);
-        setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
-      }, 500);
+      setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
     };
 
     const goToNext = () => {
       setIsPlaying(false);
-      setIsTransitioning(true);
-      setTimeout(() => {
-        setIsTransitioning(false);
-        setCurrentIndex((prev) => (prev + 1) % images.length);
-      }, 500);
+      setCurrentIndex((prev) => (prev + 1) % images.length);
     };
 
     const currentImage = images[currentIndex];
@@ -1191,25 +1192,15 @@ const App: React.FC = () => {
 
     return (
       <div ref={carouselRef} className={`relative overflow-hidden group ${aspectClass} rounded-lg bg-[#f7f5e6]`} style={{ margin: 0, padding: 0, display: 'block' }}>
-        {/* Base layer - always shows current when not transitioning */}
-        <div className="absolute inset-0 transition-opacity duration-500" style={{ opacity: isTransitioning ? 0 : 1 }}>
+        {/* Main image display */}
+        <div className="absolute inset-0">
           <SafeImage 
+            key={currentIndex}
             src={currentImage.src} 
             alt={currentImage.caption} 
             className="w-full h-full object-contain"
           />
         </div>
-        
-        {/* Transition layer - only visible during transition, shows next image */}
-        {isTransitioning && (
-          <div className="absolute inset-0 transition-opacity duration-500" style={{ opacity: 1 }}>
-            <SafeImage 
-              src={nextImage.src} 
-              alt={nextImage.caption} 
-              className="w-full h-full object-contain"
-            />
-          </div>
-        )}
         
         {/* Preload next image invisibly */}
         <img 
