@@ -15,7 +15,7 @@ type EscuelaSection = 'intro' | 'aprendizaje' | 'acompanamiento' | 'equipo' | 'f
 const IMAGES = {
   logo: '/images/logo_roure.png', // Spanish/Castellano
   logo_ca: '/images/logo_roure_ca.png', // Catalan
-  homeMain: '/images/wood_sprout_oak2.png',
+  homeMain: '/images/wood_sprout_oak2.gif',
   sections: {
     historia: "https://picsum.photos/seed/history/800/1000",
     fundamentos: "https://picsum.photos/seed/foundations/800/1000",
@@ -1384,18 +1384,24 @@ const App: React.FC = () => {
       { src: '/images/formaciones/formaciones_13.webp', caption: '' },
       { src: '/images/formaciones/formaciones_14.webp', caption: '' },
       { src: '/images/formaciones/formaciones_15.webp', caption: '' },
-      { src: '/images/formaciones/formaciones_16.webp', caption: '' },
       { src: '/images/formaciones/formaciones_17.webp', caption: '' },
-      { src: '/images/formaciones/formaciones_18.webp', caption: '' },
       { src: '/images/formaciones/formaciones_19.webp', caption: '' },
       { src: '/images/formaciones/formaciones_20.webp', caption: '' },
       { src: '/images/formaciones/formaciones_21.webp', caption: '' },
+      { src: '/images/formaciones/formaciones_22.jpg', caption: '' },
+      { src: '/images/formaciones/formaciones_23.jpg', caption: '' },
+      { src: '/images/formaciones/formaciones_24.jpg', caption: '' },
+      { src: '/images/formaciones/formaciones_25.jpg', caption: '' },
+      { src: '/images/formaciones/formaciones_26.jpg', caption: '' },
+      { src: '/images/formaciones/formaciones_27.jpg', caption: '' },
+      { src: '/images/formaciones/formaciones_28.jpg', caption: '' },
+      { src: '/images/formaciones/formaciones_29.jpg', caption: '' },
     ];
 
-    // Split into 3 carousels: 7+7+7
-    const fCarousel1 = formacionesPhotos.slice(0, 7);
-    const fCarousel2 = formacionesPhotos.slice(7, 14);
-    const fCarousel3 = formacionesPhotos.slice(14, 21);
+    // Split into 3 carousels: 9+9+9
+    const fCarousel1 = formacionesPhotos.slice(0, 9);
+    const fCarousel2 = formacionesPhotos.slice(9, 18);
+    const fCarousel3 = formacionesPhotos.slice(18, 27);
 
     // Asesoramientos: paragraphs (ES provided) and a 3-photo carousel (last 3)
     const asesoramientosParagraphs: string[] = [
