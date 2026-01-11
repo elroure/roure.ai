@@ -15,7 +15,7 @@ type EscuelaSection = 'intro' | 'aprendizaje' | 'acompanamiento' | 'equipo' | 'f
 const IMAGES = {
   logo: '/images/logo_roure.png', // Spanish/Castellano
   logo_ca: '/images/logo_roure_ca.png', // Catalan
-  homeMain: '/images/wood_sprout_oak2.mp4',
+  homeMain: '/images/wood_sprout_oak2.png',
   sections: {
     historia: "https://picsum.photos/seed/history/800/1000",
     fundamentos: "https://picsum.photos/seed/foundations/800/1000",
@@ -1370,7 +1370,6 @@ const App: React.FC = () => {
     // Formaciones carousel images
     const formacionesPhotos = [
       { src: '/images/formaciones/formaciones_01.webp', caption: '' },
-      { src: '/images/formaciones/formaciones_02.webp', caption: '' },
       { src: '/images/formaciones/formaciones_03.webp', caption: '' },
       { src: '/images/formaciones/formaciones_04.webp', caption: '' },
       { src: '/images/formaciones/formaciones_05.webp', caption: '' },
@@ -1388,14 +1387,15 @@ const App: React.FC = () => {
       { src: '/images/formaciones/formaciones_19.webp', caption: '' },
       { src: '/images/formaciones/formaciones_20.webp', caption: '' },
       { src: '/images/formaciones/formaciones_21.webp', caption: '' },
-      { src: '/images/formaciones/formaciones_22.jpg', caption: '' },
-      { src: '/images/formaciones/formaciones_23.jpg', caption: '' },
-      { src: '/images/formaciones/formaciones_24.jpg', caption: '' },
-      { src: '/images/formaciones/formaciones_25.jpg', caption: '' },
-      { src: '/images/formaciones/formaciones_26.jpg', caption: '' },
-      { src: '/images/formaciones/formaciones_27.jpg', caption: '' },
-      { src: '/images/formaciones/formaciones_28.jpg', caption: '' },
-      { src: '/images/formaciones/formaciones_29.jpg', caption: '' },
+      { src: '/images/formaciones/formaciones_22.webp', caption: '' },
+      { src: '/images/formaciones/formaciones_23.webp', caption: '' },
+      { src: '/images/formaciones/formaciones_24.webp', caption: '' },
+      { src: '/images/formaciones/formaciones_25.webp', caption: '' },
+      { src: '/images/formaciones/formaciones_26.webp', caption: '' },
+      { src: '/images/formaciones/formaciones_27.webp', caption: '' },
+      { src: '/images/formaciones/formaciones_28.webp', caption: '' },
+      { src: '/images/formaciones/formaciones_29.webp', caption: '' },
+      { src: '/images/formaciones/formaciones_30.webp', caption: '' },
     ];
 
     // Split into 3 carousels: 9+9+9
