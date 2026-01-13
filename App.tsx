@@ -1398,10 +1398,10 @@ const App: React.FC = () => {
       { src: '/images/formaciones/formaciones_30.webp', caption: '' },
     ];
 
-    // Split into 3 carousels: 9+9+9
-    const fCarousel1 = formacionesPhotos.slice(0, 9);
-    const fCarousel2 = formacionesPhotos.slice(9, 18);
-    const fCarousel3 = formacionesPhotos.slice(18, 27);
+    // Split into 3 carousels: 10+10+10
+    const fCarousel1 = formacionesPhotos.slice(0, 10);
+    const fCarousel2 = formacionesPhotos.slice(10, 20);
+    const fCarousel3 = formacionesPhotos.slice(20, 30);
 
     // Asesoramientos: paragraphs (ES provided) and a 3-photo carousel (last 3)
     const asesoramientosParagraphs: string[] = [
