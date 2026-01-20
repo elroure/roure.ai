@@ -15,7 +15,7 @@ type EscuelaSection = 'intro' | 'aprendizaje' | 'acompanamiento' | 'equipo' | 'f
 const IMAGES = {
   logo: '/images/logo_roure.png', // Spanish/Castellano
   logo_ca: '/images/logo_roure_ca.png', // Catalan
-  homeMain: '/images/wood_sprout_oak2.mp4',
+  homeMain: '/images/wood_sprout_oak2.jpg',
   sections: {
     historia: "https://picsum.photos/seed/history/800/1000",
     fundamentos: "https://picsum.photos/seed/foundations/800/1000",
@@ -1030,12 +1030,9 @@ const App: React.FC = () => {
                 {/* Center: Video */}
                 <div className="order-1 md:order-2 shrink-0 relative z-10">
                     <div style={{ width: 'var(--main-image-size)', height: 'var(--main-image-size)' }} className="rounded-3xl overflow-hidden relative group">
-                    <video 
+                    <img 
                       src={IMAGES.homeMain} 
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
+                      alt="Home"
                       className="w-full h-full object-contain transition-all duration-1000"
                     />
                     </div>
