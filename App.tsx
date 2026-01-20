@@ -15,7 +15,7 @@ type EscuelaSection = 'intro' | 'aprendizaje' | 'acompanamiento' | 'equipo' | 'f
 const IMAGES = {
   logo: '/images/logo_roure.png', // Spanish/Castellano
   logo_ca: '/images/logo_roure_ca.png', // Catalan
-  homeMain: '/images/wood_sprout_oak2.jpg',
+  homeMain: '/images/wood_sprout_oak2.png',
   sections: {
     historia: "https://picsum.photos/seed/history/800/1000",
     fundamentos: "https://picsum.photos/seed/foundations/800/1000",
@@ -1103,7 +1103,7 @@ const App: React.FC = () => {
          </div>
       </div>
 
-      <h1 className="font-serif font-bold text-stone-800 mb-12 xl:mb-14 2xl:mb-16 mt-8 xl:mt-10 2xl:mt-12 border-b border-stone-300 pb-6 xl:pb-7 2xl:pb-8 text-2xl xl:text-2xl 2xl:text-3xl">
+      <h1 className="font-serif font-bold text-stone-800 mb-12 xl:mb-14 2xl:mb-16 mt-2 xl:mt-2 2xl:mt-3 border-b border-stone-300 pb-6 xl:pb-7 2xl:pb-8 text-2xl xl:text-2xl 2xl:text-3xl">
         {title}
       </h1>
       <div className="animate-fade-in flex-1">
