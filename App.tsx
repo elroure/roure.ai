@@ -884,9 +884,22 @@ const App: React.FC = () => {
     </button>
   );
 
+  const normalizeImageSrc = (rawSrc?: string) => {
+    if (!rawSrc) return rawSrc;
+    try {
+      return encodeURI(rawSrc.normalize('NFD'));
+    } catch {
+      return rawSrc;
+    }
+  };
+
   // Safe image with fallback (transparent pixel) to avoid broken icons
   const SafeImage: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = ({ src, alt, ...rest }) => {
-    const [imgSrc, setImgSrc] = useState<string | undefined>(src as string | undefined);
+    const normalizedSrc = typeof src === 'string' ? normalizeImageSrc(src) : (src as string | undefined);
+    const [imgSrc, setImgSrc] = useState<string | undefined>(normalizedSrc);
+    useEffect(() => {
+      setImgSrc(normalizedSrc);
+    }, [normalizedSrc]);
     // 1x1 transparent GIF
     const fallback = 'data:image/gif;base64,R0lGODlhAQABAAAAACw=';
     return (
@@ -1169,7 +1182,7 @@ const App: React.FC = () => {
       const img = new Image();
       img.onload = () => setNextImageLoaded(true);
       img.onerror = () => setNextImageLoaded(true);
-      img.src = images[nextIdx].src;
+      img.src = normalizeImageSrc(images[nextIdx].src) || images[nextIdx].src;
     }, [currentIndex, images]);
 
     // Autoplay only when next image is ready
@@ -1210,7 +1223,7 @@ const App: React.FC = () => {
         {/* Preload next image invisibly */}
         <img 
           ref={nextImageRef}
-          src={nextImage.src}
+          src={normalizeImageSrc(nextImage.src) || nextImage.src}
           alt=""
           style={{ position: 'absolute', opacity: 0, pointerEvents: 'none', width: '1px', height: '1px' }}
           onLoad={() => setNextImageLoaded(true)}
@@ -1653,169 +1666,24 @@ const App: React.FC = () => {
 
   const EscuelaView = () => {
     const sections: EscuelaSection[] = ['intro', 'aprendizaje', 'acompanamiento', 'equipo', 'familias', 'etapas', '3-6', '6-12', '12-16'];
-    
-    // Escuela section images
-    const escuelaImages = {
-      aprendizaje: [
-        { src: '/images/escuela/1 Aprender/1 lletres.jpg', caption: '' },
-        { src: '/images/escuela/1 Aprender/12-06 010.jpg', caption: '' },
-        { src: '/images/escuela/1 Aprender/13 mates.jpg', caption: '' },
-        { src: '/images/escuela/1 Aprender/13 taller instruments música.jpg', caption: '' },
-        { src: '/images/escuela/1 Aprender/16Roure 127.jpeg', caption: '' },
-        { src: '/images/escuela/1 Aprender/18 comidas.JPG', caption: '' },
-        { src: '/images/escuela/1 Aprender/20201201_112303.jpg', caption: '' },
-        { src: '/images/escuela/1 Aprender/20210428_111032.jpg', caption: '' },
-        { src: '/images/escuela/1 Aprender/21 música.jpg', caption: '' },
-        { src: '/images/escuela/1 Aprender/24.jpg', caption: '' },
-        { src: '/images/escuela/1 Aprender/26cbfe_12c031c523704977a64c328096817fe6.jpg.avif', caption: '' },
-        { src: '/images/escuela/1 Aprender/26cbfe_18908e5a2fe14a2aad6d3522ef727978.jpg.avif', caption: '' },
-        { src: '/images/escuela/1 Aprender/26cbfe_2c242b72c75f407691eeb57dbd182df3.jpg.avif', caption: '' },
-        { src: '/images/escuela/1 Aprender/26cbfe_38907a53e431415d9b85941aded8617a.jpg.avif', caption: '' },
-        { src: '/images/escuela/1 Aprender/26cbfe_40d7d640d68544c9955d56bdd368f7a9.jpg.avif', caption: '' },
-        { src: '/images/escuela/1 Aprender/26cbfe_540df2ab445747d6a98d5419b579ad4b.jpg.avif', caption: '' },
-        { src: '/images/escuela/1 Aprender/26cbfe_5959238ebd8e401fb6447a7cd9028193.jpg.avif', caption: '' },
-        { src: '/images/escuela/1 Aprender/26cbfe_7dec13bd52224f608f30649ce960427b.jpg.avif', caption: '' },
-        { src: '/images/escuela/1 Aprender/26cbfe_9d29591d794c415ebd3f3b7d6727b6c6.jpg.avif', caption: '' },
-        { src: '/images/escuela/1 Aprender/26cbfe_b823c701e6bb4e3599693b5509011e67.jpg.avif', caption: '' },
-        { src: '/images/escuela/1 Aprender/26cbfe_d4d7bff3b7c34ee299976f30990e083a.jpg.avif', caption: '' },
-        { src: '/images/escuela/1 Aprender/26cbfe_db147c515bca4a92a71a26a9f86e9e31.jpg.avif', caption: '' },
-        { src: '/images/escuela/1 Aprender/2db309db-d0cd-4e81-b875-fbc6e104d28b.jpg', caption: '' },
-        { src: '/images/escuela/1 Aprender/5 c pintura dedos.jpg', caption: '' },
-        { src: '/images/escuela/1 Aprender/7 recollir.jpg', caption: '' },
-        { src: '/images/escuela/1 Aprender/9 pilotes.jpg', caption: '' },
-        { src: '/images/escuela/1 Aprender/Copia de 100_8334.jpg', caption: '' },
-        { src: '/images/escuela/1 Aprender/DSCF1410.JPG', caption: '' },
-        { src: '/images/escuela/1 Aprender/Image-6.jpg', caption: '' },
-        { src: '/images/escuela/1 Aprender/artilugios Montse 004.jpg', caption: '' },
-        { src: '/images/escuela/1 Aprender/ciencias G 2.JPG', caption: '' },
-        { src: '/images/escuela/1 Aprender/mates G.jpg', caption: '' },
-        { src: '/images/escuela/1 Aprender/taller titelles.jpg', caption: '' },
-      ],
-      acompanamiento: [
-        { src: '/images/escuela/2 Acompañar/26.jpg', caption: '' },
-        { src: '/images/escuela/2 Acompañar/5.jpg', caption: '' },
-        { src: '/images/escuela/2 Acompañar/8 relacion equipo.jpg', caption: '' },
-        { src: '/images/escuela/2 Acompañar/Còpia de IMG_0558.JPG', caption: '' },
-        { src: '/images/escuela/2 Acompañar/El Roure (5).jpg', caption: '' },
-        { src: '/images/escuela/2 Acompañar/abril 08 024.jpg', caption: '' },
-        { src: '/images/escuela/2 Acompañar/acampada 016.jpg', caption: '' },
-        { src: '/images/escuela/2 Acompañar/acompa 4.jpg', caption: '' },
-        { src: '/images/escuela/2 Acompañar/acompa 5.jpg', caption: '' },
-        { src: '/images/escuela/2 Acompañar/acompa 8.jpeg', caption: '' },
-        { src: '/images/escuela/2 Acompañar/acompa 9.jpg', caption: '' },
-        { src: '/images/escuela/2 Acompañar/celebracio estacio .jpg', caption: '' },
-        { src: '/images/escuela/2 Acompañar/difuminar Anna, Marc.JPG', caption: '' },
-      ],
-      equipo: [
-        { src: '/images/escuela/3 Equipo/20210322_115624.jpg', caption: '' },
-        { src: '/images/escuela/3 Equipo/9.jpg', caption: '' },
-        { src: '/images/escuela/3 Equipo/FC353056-7759-4D86-908D-E6F9A63B084B.JPG', caption: '' },
-        { src: '/images/escuela/3 Equipo/IMG_0713.JPG', caption: '' },
-        { src: '/images/escuela/3 Equipo/IMG_8867.jpg', caption: '' },
-        { src: '/images/escuela/3 Equipo/no incluida 2.JPG', caption: '' },
-        { src: '/images/escuela/3 Equipo/no incluida 3.jpg', caption: '' },
-        { src: '/images/escuela/3 Equipo/no incluida 4.JPG', caption: '' },
-      ],
-      familias: [
-        { src: '/images/escuela/4 Familias/10b dic 07 038.jpg', caption: '' },
-        { src: '/images/escuela/4 Familias/20160618_145105.jpg', caption: '' },
-        { src: '/images/escuela/4 Familias/20_03_20105879Festa_primavera_Roure (18).jpg', caption: '' },
-        { src: '/images/escuela/4 Familias/23 fiesta familias.jpg', caption: '' },
-        { src: '/images/escuela/4 Familias/55 Pasta.tif', caption: '' },
-        { src: '/images/escuela/4 Familias/IMG_20210622_130444.jpg', caption: '' },
-        { src: '/images/escuela/4 Familias/aseso nous pro 1.JPG', caption: '' },
-        { src: '/images/escuela/4 Familias/no incluida 1.jpg', caption: '' },
-        { src: '/images/escuela/4 Familias/paracaigudes.JPG', caption: '' },
-      ],
-      etapas: [
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/26cbfe_2971d066451742e98ade044711d4c94b.jpg.avif', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/26cbfe_2b6eccf0a3c24d30872f99388d797c51.jpg.avif', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/26cbfe_781c367907aa43348a4454fb40c043d7.jpg.avif', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/26cbfe_7a49cd77e509428cbf156fb0edf7098d.jpg.avif', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/26cbfe_8b617d63270f4c49805541172df4c9f2.jpg.avif', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/26cbfe_9121bd264110487ea09348124b93f8bd.jpg.avif', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/26cbfe_9c7434ee1ddb4196bb926c5f68e5dfaf.jpg.avif', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/26cbfe_a158bfcc895443efb1dd367c2ace220b.jpg.avif', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/26cbfe_a538f97f24184978847198c877008a1d.jpg.avif', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/26cbfe_c21b1ba6963141fba02580e85b977e76.jpg.avif', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/26cbfe_f0a1f705ecbb47a59efe87d91304a8a1.jpg.avif', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/26cbfe_f57a22605b35433a85127bdc3fa193e3.jpg.avif', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/37b05b_1e066e215cfc4c5ab672724815626c08~mv2.jpg.avif', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/37b05b_1f173d2f9bb5495a8a0ab02b35126733~mv2.jpg.avif', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/37b05b_4b9a02237feb4db9ad87c301571bbfa5~mv2.jpg.avif', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/7 sortida.jpg', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/Còpia de IMG_0495.JPG', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/DSC00272.JPG', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/DSC00274.JPG', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/IMG_20241021_130119-EFFECTS.jpg', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/IMG_20250116_103535.jpg', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/el roure_entrada.JPG', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/espa.jpg', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/espacios 10.jpeg', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/espacios 11 .JPG', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/espacios 11.JPG', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/espacios 12.jpg', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/espacios 14 .jpg', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/espacios 15.JPG', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/espacios 16.jpg', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/espacios 4 .JPG', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/espacios 8.JPG', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/espacios 9.jpg', caption: '' },
-        { src: '/images/escuela/5 Etapas, tiempos, espacios/para texto despedida Clara.jpg', caption: '' },
-      ],
-      '3-6': [
-        { src: '/images/escuela/6.-3-6/10.jpg', caption: '' },
-        { src: '/images/escuela/6.-3-6/12 plastilina.jpg', caption: '' },
-        { src: '/images/escuela/6.-3-6/12IMG-3988.JPG', caption: '' },
-        { src: '/images/escuela/6.-3-6/15-5 066.jpg', caption: '' },
-        { src: '/images/escuela/6.-3-6/16 coixins.JPG', caption: '' },
-        { src: '/images/escuela/6.-3-6/17 todas las ropitas fuera.jpg', caption: '' },
-        { src: '/images/escuela/6.-3-6/18 comidas.JPG', caption: '' },
-        { src: '/images/escuela/6.-3-6/18a número tou.jpg', caption: '' },
-        { src: '/images/escuela/6.-3-6/2.jpg', caption: '' },
-        { src: '/images/escuela/6.-3-6/20160315_114239.jpg', caption: '' },
-        { src: '/images/escuela/6.-3-6/21a Vedaguer con LAra.jpg', caption: '' },
-        { src: '/images/escuela/6.-3-6/31 casa follet.jpg', caption: '' },
-        { src: '/images/escuela/6.-3-6/4.jpg', caption: '' },
-        { src: '/images/escuela/6.-3-6/6b amigos caseta.JPG', caption: '' },
-        { src: '/images/escuela/6.-3-6/9 cucafera.jpg', caption: '' },
-        { src: '/images/escuela/6.-3-6/IMG_7425.JPG', caption: '' },
-        { src: '/images/escuela/6.-3-6/_DSC0296.jpg', caption: '' },
-      ],
-      '6-12': [
-        { src: '/images/escuela/7.- 6-12/100_3409.jpg', caption: '' },
-        { src: '/images/escuela/7.- 6-12/100_9813.jpg', caption: '' },
-        { src: '/images/escuela/7.- 6-12/100_9819.JPG', caption: '' },
-        { src: '/images/escuela/7.- 6-12/13 Reunió.jpg', caption: '' },
-        { src: '/images/escuela/7.- 6-12/20201008_103612.jpg', caption: '' },
-        { src: '/images/escuela/7.- 6-12/20201125_101958.jpg', caption: '' },
-        { src: '/images/escuela/7.- 6-12/5-6-08 037.jpg', caption: '' },
-        { src: '/images/escuela/7.- 6-12/7.jpg', caption: '' },
-        { src: '/images/escuela/7.- 6-12/DSC08824.JPG', caption: '' },
-        { src: '/images/escuela/7.- 6-12/IMG_0884.jpg', caption: '' },
-        { src: '/images/escuela/7.- 6-12/Roure 117.jpeg', caption: '' },
-        { src: '/images/escuela/7.- 6-12/Roure 74.jpeg', caption: '' },
-        { src: '/images/escuela/7.- 6-12/cabanas3.jpg', caption: '' },
-        { src: '/images/escuela/7.- 6-12/enero-marzo 2010 111.jpg', caption: '' },
-        { src: '/images/escuela/7.- 6-12/no incluida.jpg', caption: '' },
-        { src: '/images/escuela/7.- 6-12/w.jpg', caption: '' },
-      ],
-      '12-16': [
-        { src: '/images/escuela/8.- 12-16/1.jpg', caption: '' },
-        { src: '/images/escuela/8.- 12-16/100_6701.jpg', caption: '' },
-        { src: '/images/escuela/8.- 12-16/100_8084.jpg', caption: '' },
-        { src: '/images/escuela/8.- 12-16/100_9842.JPG', caption: '' },
-        { src: '/images/escuela/8.- 12-16/11 Copia de 100_7694.jpg', caption: '' },
-        { src: '/images/escuela/8.- 12-16/15 Roure 40.jpeg', caption: '' },
-        { src: '/images/escuela/8.- 12-16/20210218_130726.jpg', caption: '' },
-        { src: '/images/escuela/8.- 12-16/Copia de DSCN1387.JPG', caption: '' },
-        { src: '/images/escuela/8.- 12-16/DSCN1603.JPG', caption: '' },
-        { src: '/images/escuela/8.- 12-16/Revista_Roure_2017_18 16.jpg', caption: '' },
-        { src: '/images/escuela/8.- 12-16/foto Heura adolescencia.jpg', caption: '' },
-        { src: '/images/escuela/8.- 12-16/pupurri 263.jpg', caption: '' },
-        { src: '/images/escuela/8.- 12-16/pupurri 315.jpg', caption: '' },
-      ],
-    };
+    const [escuelaImages, setEscuelaImages] = useState<Record<string, { src: string; caption: string }[]>>({});
+
+    useEffect(() => {
+      const loadImages = async () => {
+        try {
+          const response = await fetch('/images/escuela/escuela-manifest.json');
+          const data = await response.json();
+          const mapped: Record<string, { src: string; caption: string }[]> = {};
+          Object.entries(data || {}).forEach(([key, list]) => {
+            mapped[key] = (list as string[]).map((src) => ({ src, caption: '' }));
+          });
+          setEscuelaImages(mapped);
+        } catch {
+          setEscuelaImages({});
+        }
+      };
+      loadImages();
+    }, []);
     
     // Get content from state based on current section
     const activeContent = t.escuelaContent?.[escuelaSection] || ["Contenido no disponible."];
