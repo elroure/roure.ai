@@ -1297,14 +1297,15 @@ const App: React.FC = () => {
     // Select the correct photo array based on language
     const historiaPhotos = language === 'es' ? IMAGES.historiaPhotos_es : IMAGES.historiaPhotos_ca;
     
-    // Split the 17 images into 4 carousels: 5+4+4+4
+    // Split the 24 images into 5 carousels: 5+5+5+5+4
     const carousel1Images = historiaPhotos.slice(0, 5);
-    const carousel2Images = historiaPhotos.slice(5, 9);
-    const carousel3Images = historiaPhotos.slice(9, 13);
-    const carousel4Images = historiaPhotos.slice(13, 17);
+    const carousel2Images = historiaPhotos.slice(5, 10);
+    const carousel3Images = historiaPhotos.slice(10, 15);
+    const carousel4Images = historiaPhotos.slice(15, 20);
+    const carousel5Images = historiaPhotos.slice(20, 24);
 
     const sections = contentData || [];
-    const allCarousels = [carousel1Images, carousel2Images, carousel3Images, carousel4Images];
+    const allCarousels = [carousel1Images, carousel2Images, carousel3Images, carousel4Images, carousel5Images];
 
     return (
       <InternalPageLayout title={title}>
