@@ -1231,10 +1231,8 @@ const App: React.FC = () => {
           <ChevronLeft size={20} className="rotate-180" />
         </button>
 
-        {/* Image Counter */}
-        <div className="absolute bottom-2 left-2 bg-stone-800/50 text-white text-xs px-2 py-1 rounded z-10">
-          {currentIndex + 1} / {images.length}
-        </div>
+        {/* Caption */}
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-stone-900/80 via-stone-900/60 to-transparent pt-8 pb-3 px-4">
 
         {/* Play/Pause Button */}
         <button
@@ -1251,8 +1249,10 @@ const App: React.FC = () => {
           )}
         </button>
 
-        {/* Caption */}
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-stone-900/80 via-stone-900/60 to-transparent pt-8 pb-3 px-4">
+        {/* Image Counter */}
+        <div className="absolute bottom-2 left-2 bg-stone-800/50 text-white text-xs px-2 py-1 rounded z-10">
+          {currentIndex + 1} / {images.length}
+        </div>
           <p className="text-white text-sm font-serif italic text-center drop-shadow-lg">
             {currentImage.caption}
           </p>
