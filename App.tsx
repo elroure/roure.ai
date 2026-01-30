@@ -1667,19 +1667,31 @@ const App: React.FC = () => {
   const EscuelaView = () => {
     const sections: EscuelaSection[] = ['intro', 'aprendizaje', 'acompanamiento', 'equipo', 'familias', 'etapas', '3-6', '6-12', '12-16'];
     const [escuelaImages, setEscuelaImages] = useState<Record<string, { src: string; caption: string }[]>>({});
+    const [imagesLoaded, setImagesLoaded] = useState(false);
 
     useEffect(() => {
       const loadImages = async () => {
         try {
-          const response = await fetch('/images/escuela/escuela-manifest.json');
+          const response = await fetch('/images/Escuela/escuela-manifest.json');
+          if (!response.ok) {
+            setEscuelaImages({});
+            setImagesLoaded(true);
+            return;
+          }
           const data = await response.json();
           const mapped: Record<string, { src: string; caption: string }[]> = {};
           Object.entries(data || {}).forEach(([key, list]) => {
-            mapped[key] = (list as string[]).map((src) => ({ src, caption: '' }));
+            const images = (list as string[]).map((src) => {
+              const normalizedSrc = src.replace(/^\/images\/escuela\//i, '/images/Escuela/');
+              return { src: normalizedSrc, caption: '' };
+            });
+            mapped[key] = images;
           });
           setEscuelaImages(mapped);
+          setImagesLoaded(true);
         } catch {
           setEscuelaImages({});
+          setImagesLoaded(true);
         }
       };
       loadImages();
@@ -1730,7 +1742,7 @@ const App: React.FC = () => {
               </div>
               
               {/* Carousel for current section */}
-              {escuelaImages[escuelaSection] && escuelaImages[escuelaSection].length > 0 && (
+              {imagesLoaded && escuelaImages[escuelaSection] && escuelaImages[escuelaSection].length > 0 && (
                 <div className="w-full lg:w-2/3">
                   <ImageCarousel images={escuelaImages[escuelaSection]} autoPlayInterval={3000} />
                 </div>
