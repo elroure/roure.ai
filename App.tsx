@@ -88,44 +88,44 @@ const IMAGES = {
 
   // Fundamentos carousels (images already in public folder). Captions intentionally empty for now.
   const fundamentosAutorr = [
-    { src: '/images/fundamentos/autorr_1.webp', caption: '' },
-    { src: '/images/fundamentos/autorr_2.webp', caption: '' },
-    { src: '/images/fundamentos/autorr_3.webp', caption: '' },
-    { src: '/images/fundamentos/autorr_4.webp', caption: '' },
-    { src: '/images/fundamentos/autorr_5.webp', caption: '' },
-    { src: '/images/fundamentos/autorr_6.webp', caption: '' },
-    { src: '/images/fundamentos/autorr_11.webp', caption: '' },
-    { src: '/images/fundamentos/autorr_22.webp', caption: '' },
+    { src: '/images/fundamentos/autorr_1.jpg', caption: '' },
+    { src: '/images/fundamentos/autorr_2.jpg', caption: '' },
+    { src: '/images/fundamentos/autorr_3.jpg', caption: '' },
+    { src: '/images/fundamentos/autorr_4.jpg', caption: '' },
+    { src: '/images/fundamentos/autorr_5.jpg', caption: '' },
+    { src: '/images/fundamentos/autorr_6.jpg', caption: '' },
+    { src: '/images/fundamentos/autorr_11.jpg', caption: '' },
+    { src: '/images/fundamentos/autorr_22.jpg', caption: '' },
   ];
 
   const fundamentosAcompa = [
-    { src: '/images/fundamentos/acompa_1.webp', caption: '' },
-    { src: '/images/fundamentos/acompa_2.webp', caption: '' },
-    { src: '/images/fundamentos/acompa_3.webp', caption: '' },
-    { src: '/images/fundamentos/acompa_4.webp', caption: '' },
-    { src: '/images/fundamentos/acompa_5.webp', caption: '' },
-    { src: '/images/fundamentos/acompa_6.webp', caption: '' },
-    { src: '/images/fundamentos/acompa_7.webp', caption: '' },
-    { src: '/images/fundamentos/acompa_8.webp', caption: '' },
-    { src: '/images/fundamentos/acompa_9.webp', caption: '' },
-    { src: '/images/fundamentos/acompa_10.webp', caption: '' },
-    { src: '/images/fundamentos/acompa_11.webp', caption: '' },
+    { src: '/images/fundamentos/acompa_1.jpeg', caption: '' },
+    { src: '/images/fundamentos/acompa_2.jpg', caption: '' },
+    { src: '/images/fundamentos/acompa_3.jpg', caption: '' },
+    { src: '/images/fundamentos/acompa_4.jpg', caption: '' },
+    { src: '/images/fundamentos/acompa_5.jpg', caption: '' },
+    { src: '/images/fundamentos/acompa_6.jpg', caption: '' },
+    { src: '/images/fundamentos/acompa_7.jpg', caption: '' },
+    { src: '/images/fundamentos/acompa_8.jpeg', caption: '' },
+    { src: '/images/fundamentos/acompa_9.jpg', caption: '' },
+    { src: '/images/fundamentos/acompa_10.jpg', caption: '' },
+    { src: '/images/fundamentos/acompa_11.jpg', caption: '' },
     { src: '/images/fundamentos/acompa_12.webp', caption: '' },
   ];
 
   const fundamentosApren = [
-    { src: '/images/fundamentos/apren_1.webp', caption: '' },
-    { src: '/images/fundamentos/apren_2.webp', caption: '' },
-    { src: '/images/fundamentos/apren_3.webp', caption: '' },
-    { src: '/images/fundamentos/apren_4.webp', caption: '' },
-    { src: '/images/fundamentos/apren_5.webp', caption: '' },
-    { src: '/images/fundamentos/apren_6.webp', caption: '' },
-    { src: '/images/fundamentos/apren_7.webp', caption: '' },
-    { src: '/images/fundamentos/apren_8.webp', caption: '' },
-    { src: '/images/fundamentos/apren_9.webp', caption: '' },
-    { src: '/images/fundamentos/apren_10.webp', caption: '' },
-    { src: '/images/fundamentos/apren_11.webp', caption: '' },
-    { src: '/images/fundamentos/apren_12.webp', caption: '' },
+    { src: '/images/fundamentos/apren_1.jpg', caption: '' },
+    { src: '/images/fundamentos/apren_2.jpg', caption: '' },
+    { src: '/images/fundamentos/apren_3.jpg', caption: '' },
+    { src: '/images/fundamentos/apren_4.jpg', caption: '' },
+    { src: '/images/fundamentos/apren_5.jpg', caption: '' },
+    { src: '/images/fundamentos/apren_6.jpg', caption: '' },
+    { src: '/images/fundamentos/apren_7.jpg', caption: '' },
+    { src: '/images/fundamentos/apren_8.jpg', caption: '' },
+    { src: '/images/fundamentos/apren_9.jpg', caption: '' },
+    { src: '/images/fundamentos/apren_10.jpg', caption: '' },
+    { src: '/images/fundamentos/apren_11.jpg', caption: '' },
+    { src: '/images/fundamentos/apren_12.jpg', caption: '' },
   ];
 
 interface PersonProfile {
@@ -1297,15 +1297,14 @@ const App: React.FC = () => {
     // Select the correct photo array based on language
     const historiaPhotos = language === 'es' ? IMAGES.historiaPhotos_es : IMAGES.historiaPhotos_ca;
     
-    // Split the 24 images into 5 carousels: 5+5+5+5+4
+    // Split the 21 images into 4 carousels: 5+5+5+6
     const carousel1Images = historiaPhotos.slice(0, 5);
     const carousel2Images = historiaPhotos.slice(5, 10);
     const carousel3Images = historiaPhotos.slice(10, 15);
-    const carousel4Images = historiaPhotos.slice(15, 20);
-    const carousel5Images = historiaPhotos.slice(20, 24);
+    const carousel4Images = historiaPhotos.slice(15, 21);
 
     const sections = contentData || [];
-    const allCarousels = [carousel1Images, carousel2Images, carousel3Images, carousel4Images, carousel5Images];
+    const allCarousels = [carousel1Images, carousel2Images, carousel3Images, carousel4Images];
 
     return (
       <InternalPageLayout title={title}>
@@ -1655,6 +1654,169 @@ const App: React.FC = () => {
   const EscuelaView = () => {
     const sections: EscuelaSection[] = ['intro', 'aprendizaje', 'acompanamiento', 'equipo', 'familias', 'etapas', '3-6', '6-12', '12-16'];
     
+    // Escuela section images
+    const escuelaImages = {
+      aprendizaje: [
+        { src: '/images/escuela/1 Aprender/1 lletres.jpg', caption: '' },
+        { src: '/images/escuela/1 Aprender/12-06 010.jpg', caption: '' },
+        { src: '/images/escuela/1 Aprender/13 mates.jpg', caption: '' },
+        { src: '/images/escuela/1 Aprender/13 taller instruments música.jpg', caption: '' },
+        { src: '/images/escuela/1 Aprender/16Roure 127.jpeg', caption: '' },
+        { src: '/images/escuela/1 Aprender/18 comidas.JPG', caption: '' },
+        { src: '/images/escuela/1 Aprender/20201201_112303.jpg', caption: '' },
+        { src: '/images/escuela/1 Aprender/20210428_111032.jpg', caption: '' },
+        { src: '/images/escuela/1 Aprender/21 música.jpg', caption: '' },
+        { src: '/images/escuela/1 Aprender/24.jpg', caption: '' },
+        { src: '/images/escuela/1 Aprender/26cbfe_12c031c523704977a64c328096817fe6.jpg.avif', caption: '' },
+        { src: '/images/escuela/1 Aprender/26cbfe_18908e5a2fe14a2aad6d3522ef727978.jpg.avif', caption: '' },
+        { src: '/images/escuela/1 Aprender/26cbfe_2c242b72c75f407691eeb57dbd182df3.jpg.avif', caption: '' },
+        { src: '/images/escuela/1 Aprender/26cbfe_38907a53e431415d9b85941aded8617a.jpg.avif', caption: '' },
+        { src: '/images/escuela/1 Aprender/26cbfe_40d7d640d68544c9955d56bdd368f7a9.jpg.avif', caption: '' },
+        { src: '/images/escuela/1 Aprender/26cbfe_540df2ab445747d6a98d5419b579ad4b.jpg.avif', caption: '' },
+        { src: '/images/escuela/1 Aprender/26cbfe_5959238ebd8e401fb6447a7cd9028193.jpg.avif', caption: '' },
+        { src: '/images/escuela/1 Aprender/26cbfe_7dec13bd52224f608f30649ce960427b.jpg.avif', caption: '' },
+        { src: '/images/escuela/1 Aprender/26cbfe_9d29591d794c415ebd3f3b7d6727b6c6.jpg.avif', caption: '' },
+        { src: '/images/escuela/1 Aprender/26cbfe_b823c701e6bb4e3599693b5509011e67.jpg.avif', caption: '' },
+        { src: '/images/escuela/1 Aprender/26cbfe_d4d7bff3b7c34ee299976f30990e083a.jpg.avif', caption: '' },
+        { src: '/images/escuela/1 Aprender/26cbfe_db147c515bca4a92a71a26a9f86e9e31.jpg.avif', caption: '' },
+        { src: '/images/escuela/1 Aprender/2db309db-d0cd-4e81-b875-fbc6e104d28b.jpg', caption: '' },
+        { src: '/images/escuela/1 Aprender/5 c pintura dedos.jpg', caption: '' },
+        { src: '/images/escuela/1 Aprender/7 recollir.jpg', caption: '' },
+        { src: '/images/escuela/1 Aprender/9 pilotes.jpg', caption: '' },
+        { src: '/images/escuela/1 Aprender/Copia de 100_8334.jpg', caption: '' },
+        { src: '/images/escuela/1 Aprender/DSCF1410.JPG', caption: '' },
+        { src: '/images/escuela/1 Aprender/Image-6.jpg', caption: '' },
+        { src: '/images/escuela/1 Aprender/artilugios Montse 004.jpg', caption: '' },
+        { src: '/images/escuela/1 Aprender/ciencias G 2.JPG', caption: '' },
+        { src: '/images/escuela/1 Aprender/mates G.jpg', caption: '' },
+        { src: '/images/escuela/1 Aprender/taller titelles.jpg', caption: '' },
+      ],
+      acompanamiento: [
+        { src: '/images/escuela/2 Acompañar/26.jpg', caption: '' },
+        { src: '/images/escuela/2 Acompañar/5.jpg', caption: '' },
+        { src: '/images/escuela/2 Acompañar/8 relacion equipo.jpg', caption: '' },
+        { src: '/images/escuela/2 Acompañar/Còpia de IMG_0558.JPG', caption: '' },
+        { src: '/images/escuela/2 Acompañar/El Roure (5).jpg', caption: '' },
+        { src: '/images/escuela/2 Acompañar/abril 08 024.jpg', caption: '' },
+        { src: '/images/escuela/2 Acompañar/acampada 016.jpg', caption: '' },
+        { src: '/images/escuela/2 Acompañar/acompa 4.jpg', caption: '' },
+        { src: '/images/escuela/2 Acompañar/acompa 5.jpg', caption: '' },
+        { src: '/images/escuela/2 Acompañar/acompa 8.jpeg', caption: '' },
+        { src: '/images/escuela/2 Acompañar/acompa 9.jpg', caption: '' },
+        { src: '/images/escuela/2 Acompañar/celebracio estacio .jpg', caption: '' },
+        { src: '/images/escuela/2 Acompañar/difuminar Anna, Marc.JPG', caption: '' },
+      ],
+      equipo: [
+        { src: '/images/escuela/3 Equipo/20210322_115624.jpg', caption: '' },
+        { src: '/images/escuela/3 Equipo/9.jpg', caption: '' },
+        { src: '/images/escuela/3 Equipo/FC353056-7759-4D86-908D-E6F9A63B084B.JPG', caption: '' },
+        { src: '/images/escuela/3 Equipo/IMG_0713.JPG', caption: '' },
+        { src: '/images/escuela/3 Equipo/IMG_8867.jpg', caption: '' },
+        { src: '/images/escuela/3 Equipo/no incluida 2.JPG', caption: '' },
+        { src: '/images/escuela/3 Equipo/no incluida 3.jpg', caption: '' },
+        { src: '/images/escuela/3 Equipo/no incluida 4.JPG', caption: '' },
+      ],
+      familias: [
+        { src: '/images/escuela/4 Familias/10b dic 07 038.jpg', caption: '' },
+        { src: '/images/escuela/4 Familias/20160618_145105.jpg', caption: '' },
+        { src: '/images/escuela/4 Familias/20_03_20105879Festa_primavera_Roure (18).jpg', caption: '' },
+        { src: '/images/escuela/4 Familias/23 fiesta familias.jpg', caption: '' },
+        { src: '/images/escuela/4 Familias/55 Pasta.tif', caption: '' },
+        { src: '/images/escuela/4 Familias/IMG_20210622_130444.jpg', caption: '' },
+        { src: '/images/escuela/4 Familias/aseso nous pro 1.JPG', caption: '' },
+        { src: '/images/escuela/4 Familias/no incluida 1.jpg', caption: '' },
+        { src: '/images/escuela/4 Familias/paracaigudes.JPG', caption: '' },
+      ],
+      etapas: [
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/26cbfe_2971d066451742e98ade044711d4c94b.jpg.avif', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/26cbfe_2b6eccf0a3c24d30872f99388d797c51.jpg.avif', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/26cbfe_781c367907aa43348a4454fb40c043d7.jpg.avif', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/26cbfe_7a49cd77e509428cbf156fb0edf7098d.jpg.avif', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/26cbfe_8b617d63270f4c49805541172df4c9f2.jpg.avif', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/26cbfe_9121bd264110487ea09348124b93f8bd.jpg.avif', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/26cbfe_9c7434ee1ddb4196bb926c5f68e5dfaf.jpg.avif', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/26cbfe_a158bfcc895443efb1dd367c2ace220b.jpg.avif', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/26cbfe_a538f97f24184978847198c877008a1d.jpg.avif', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/26cbfe_c21b1ba6963141fba02580e85b977e76.jpg.avif', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/26cbfe_f0a1f705ecbb47a59efe87d91304a8a1.jpg.avif', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/26cbfe_f57a22605b35433a85127bdc3fa193e3.jpg.avif', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/37b05b_1e066e215cfc4c5ab672724815626c08~mv2.jpg.avif', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/37b05b_1f173d2f9bb5495a8a0ab02b35126733~mv2.jpg.avif', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/37b05b_4b9a02237feb4db9ad87c301571bbfa5~mv2.jpg.avif', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/7 sortida.jpg', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/Còpia de IMG_0495.JPG', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/DSC00272.JPG', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/DSC00274.JPG', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/IMG_20241021_130119-EFFECTS.jpg', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/IMG_20250116_103535.jpg', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/el roure_entrada.JPG', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/espa.jpg', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/espacios 10.jpeg', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/espacios 11 .JPG', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/espacios 11.JPG', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/espacios 12.jpg', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/espacios 14 .jpg', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/espacios 15.JPG', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/espacios 16.jpg', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/espacios 4 .JPG', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/espacios 8.JPG', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/espacios 9.jpg', caption: '' },
+        { src: '/images/escuela/5 Etapas, tiempos, espacios/para texto despedida Clara.jpg', caption: '' },
+      ],
+      '3-6': [
+        { src: '/images/escuela/6.-3-6/10.jpg', caption: '' },
+        { src: '/images/escuela/6.-3-6/12 plastilina.jpg', caption: '' },
+        { src: '/images/escuela/6.-3-6/12IMG-3988.JPG', caption: '' },
+        { src: '/images/escuela/6.-3-6/15-5 066.jpg', caption: '' },
+        { src: '/images/escuela/6.-3-6/16 coixins.JPG', caption: '' },
+        { src: '/images/escuela/6.-3-6/17 todas las ropitas fuera.jpg', caption: '' },
+        { src: '/images/escuela/6.-3-6/18 comidas.JPG', caption: '' },
+        { src: '/images/escuela/6.-3-6/18a número tou.jpg', caption: '' },
+        { src: '/images/escuela/6.-3-6/2.jpg', caption: '' },
+        { src: '/images/escuela/6.-3-6/20160315_114239.jpg', caption: '' },
+        { src: '/images/escuela/6.-3-6/21a Vedaguer con LAra.jpg', caption: '' },
+        { src: '/images/escuela/6.-3-6/31 casa follet.jpg', caption: '' },
+        { src: '/images/escuela/6.-3-6/4.jpg', caption: '' },
+        { src: '/images/escuela/6.-3-6/6b amigos caseta.JPG', caption: '' },
+        { src: '/images/escuela/6.-3-6/9 cucafera.jpg', caption: '' },
+        { src: '/images/escuela/6.-3-6/IMG_7425.JPG', caption: '' },
+        { src: '/images/escuela/6.-3-6/_DSC0296.jpg', caption: '' },
+      ],
+      '6-12': [
+        { src: '/images/escuela/7.- 6-12/100_3409.jpg', caption: '' },
+        { src: '/images/escuela/7.- 6-12/100_9813.jpg', caption: '' },
+        { src: '/images/escuela/7.- 6-12/100_9819.JPG', caption: '' },
+        { src: '/images/escuela/7.- 6-12/13 Reunió.jpg', caption: '' },
+        { src: '/images/escuela/7.- 6-12/20201008_103612.jpg', caption: '' },
+        { src: '/images/escuela/7.- 6-12/20201125_101958.jpg', caption: '' },
+        { src: '/images/escuela/7.- 6-12/5-6-08 037.jpg', caption: '' },
+        { src: '/images/escuela/7.- 6-12/7.jpg', caption: '' },
+        { src: '/images/escuela/7.- 6-12/DSC08824.JPG', caption: '' },
+        { src: '/images/escuela/7.- 6-12/IMG_0884.jpg', caption: '' },
+        { src: '/images/escuela/7.- 6-12/Roure 117.jpeg', caption: '' },
+        { src: '/images/escuela/7.- 6-12/Roure 74.jpeg', caption: '' },
+        { src: '/images/escuela/7.- 6-12/cabanas3.jpg', caption: '' },
+        { src: '/images/escuela/7.- 6-12/enero-marzo 2010 111.jpg', caption: '' },
+        { src: '/images/escuela/7.- 6-12/no incluida.jpg', caption: '' },
+        { src: '/images/escuela/7.- 6-12/w.jpg', caption: '' },
+      ],
+      '12-16': [
+        { src: '/images/escuela/8.- 12-16/1.jpg', caption: '' },
+        { src: '/images/escuela/8.- 12-16/100_6701.jpg', caption: '' },
+        { src: '/images/escuela/8.- 12-16/100_8084.jpg', caption: '' },
+        { src: '/images/escuela/8.- 12-16/100_9842.JPG', caption: '' },
+        { src: '/images/escuela/8.- 12-16/11 Copia de 100_7694.jpg', caption: '' },
+        { src: '/images/escuela/8.- 12-16/15 Roure 40.jpeg', caption: '' },
+        { src: '/images/escuela/8.- 12-16/20210218_130726.jpg', caption: '' },
+        { src: '/images/escuela/8.- 12-16/Copia de DSCN1387.JPG', caption: '' },
+        { src: '/images/escuela/8.- 12-16/DSCN1603.JPG', caption: '' },
+        { src: '/images/escuela/8.- 12-16/Revista_Roure_2017_18 16.jpg', caption: '' },
+        { src: '/images/escuela/8.- 12-16/foto Heura adolescencia.jpg', caption: '' },
+        { src: '/images/escuela/8.- 12-16/pupurri 263.jpg', caption: '' },
+        { src: '/images/escuela/8.- 12-16/pupurri 315.jpg', caption: '' },
+      ],
+    };
+    
     // Get content from state based on current section
     const activeContent = t.escuelaContent?.[escuelaSection] || ["Contenido no disponible."];
 
@@ -1689,13 +1851,22 @@ const App: React.FC = () => {
           <div className="w-full md:w-3/4 min-h-[500px] md:-mt-[0.75rem] xl:md:-mt-[0.75rem] 2xl:md:-mt-[1rem]">
             <h2 style={{ fontSize: 'var(--menu-text-size)' }} className="font-serif mb-8 xl:mb-10 2xl:mb-12 text-stone-800">{t.escuela.titles[escuelaSection]}</h2>
             
-            <div style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif leading-relaxed text-stone-700 space-y-6 xl:space-y-7 2xl:space-y-8 max-w-prose xl:max-w-full">
-               {/* Render Paragraphs with first one Bold */}
-               {activeContent.map((text, idx) => (
-                   <p key={idx} className={idx === 0 ? "font-bold" : ""}>
-                       {text}
-                   </p>
-               ))}
+            <div className="flex flex-col gap-8 xl:gap-10 2xl:gap-12">
+              <div style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif leading-relaxed text-stone-700 space-y-6 xl:space-y-7 2xl:space-y-8 max-w-prose xl:max-w-full">
+                 {/* Render Paragraphs with first one Bold */}
+                 {activeContent.map((text, idx) => (
+                     <p key={idx} className={idx === 0 ? "font-bold" : ""}>
+                         {text}
+                     </p>
+                 ))}
+              </div>
+              
+              {/* Carousel for current section */}
+              {escuelaImages[escuelaSection] && escuelaImages[escuelaSection].length > 0 && (
+                <div className="w-full lg:w-2/3">
+                  <ImageCarousel images={escuelaImages[escuelaSection]} autoPlayInterval={3000} />
+                </div>
+              )}
             </div>
           </div>
         </div>
