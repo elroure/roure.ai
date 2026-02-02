@@ -88,44 +88,44 @@ const IMAGES = {
 
   // Fundamentos carousels (images already in public folder). Captions intentionally empty for now.
   const fundamentosAutorr = [
-    { src: '/images/fundamentos/autorr_1.jpg', caption: '' },
-    { src: '/images/fundamentos/autorr_2.jpg', caption: '' },
-    { src: '/images/fundamentos/autorr_3.jpg', caption: '' },
-    { src: '/images/fundamentos/autorr_4.jpg', caption: '' },
-    { src: '/images/fundamentos/autorr_5.jpg', caption: '' },
-    { src: '/images/fundamentos/autorr_6.jpg', caption: '' },
-    { src: '/images/fundamentos/autorr_11.jpg', caption: '' },
-    { src: '/images/fundamentos/autorr_22.jpg', caption: '' },
+    { src: '/images/fundamentos/webp_autorr_1.webp', caption: '' },
+    { src: '/images/fundamentos/webp_autorr_2.webp', caption: '' },
+    { src: '/images/fundamentos/webp_autorr_3.webp', caption: '' },
+    { src: '/images/fundamentos/webp_autorr_4.webp', caption: '' },
+    { src: '/images/fundamentos/webp_autorr_5.webp', caption: '' },
+    { src: '/images/fundamentos/webp_autorr_6.webp', caption: '' },
+    { src: '/images/fundamentos/webp_autorr_11.webp', caption: '' },
+    { src: '/images/fundamentos/webp_autorr_22.webp', caption: '' },
   ];
 
   const fundamentosAcompa = [
-    { src: '/images/fundamentos/acompa_1.jpeg', caption: '' },
-    { src: '/images/fundamentos/acompa_2.jpg', caption: '' },
-    { src: '/images/fundamentos/acompa_3.jpg', caption: '' },
-    { src: '/images/fundamentos/acompa_4.jpg', caption: '' },
-    { src: '/images/fundamentos/acompa_5.jpg', caption: '' },
-    { src: '/images/fundamentos/acompa_6.jpg', caption: '' },
-    { src: '/images/fundamentos/acompa_7.jpg', caption: '' },
-    { src: '/images/fundamentos/acompa_8.jpeg', caption: '' },
-    { src: '/images/fundamentos/acompa_9.jpg', caption: '' },
-    { src: '/images/fundamentos/acompa_10.jpg', caption: '' },
-    { src: '/images/fundamentos/acompa_11.jpg', caption: '' },
-    { src: '/images/fundamentos/acompa_12.webp', caption: '' },
+    { src: '/images/fundamentos/webp_acompa_1.webp', caption: '' },
+    { src: '/images/fundamentos/webp_acompa_2.webp', caption: '' },
+    { src: '/images/fundamentos/webp_acompa_3.webp', caption: '' },
+    { src: '/images/fundamentos/webp_acompa_4.webp', caption: '' },
+    { src: '/images/fundamentos/webp_acompa_5.webp', caption: '' },
+    { src: '/images/fundamentos/webp_acompa_6.webp', caption: '' },
+    { src: '/images/fundamentos/webp_acompa_7.webp', caption: '' },
+    { src: '/images/fundamentos/webp_acompa_8.webp', caption: '' },
+    { src: '/images/fundamentos/webp_acompa_9.webp', caption: '' },
+    { src: '/images/fundamentos/webp_acompa_10.webp', caption: '' },
+    { src: '/images/fundamentos/webp_acompa_11.webp', caption: '' },
+    { src: '/images/fundamentos/webp_acompa_12.webp', caption: '' },
   ];
 
   const fundamentosApren = [
-    { src: '/images/fundamentos/apren_1.jpg', caption: '' },
-    { src: '/images/fundamentos/apren_2.jpg', caption: '' },
-    { src: '/images/fundamentos/apren_3.jpg', caption: '' },
-    { src: '/images/fundamentos/apren_4.jpg', caption: '' },
-    { src: '/images/fundamentos/apren_5.jpg', caption: '' },
-    { src: '/images/fundamentos/apren_6.jpg', caption: '' },
-    { src: '/images/fundamentos/apren_7.jpg', caption: '' },
-    { src: '/images/fundamentos/apren_8.jpg', caption: '' },
-    { src: '/images/fundamentos/apren_9.jpg', caption: '' },
-    { src: '/images/fundamentos/apren_10.jpg', caption: '' },
-    { src: '/images/fundamentos/apren_11.jpg', caption: '' },
-    { src: '/images/fundamentos/apren_12.jpg', caption: '' },
+    { src: '/images/fundamentos/webp_apren_1.webp', caption: '' },
+    { src: '/images/fundamentos/webp_apren_2.webp', caption: '' },
+    { src: '/images/fundamentos/webp_apren_3.webp', caption: '' },
+    { src: '/images/fundamentos/webp_apren_4.webp', caption: '' },
+    { src: '/images/fundamentos/webp_apren_5.webp', caption: '' },
+    { src: '/images/fundamentos/webp_apren_6.webp', caption: '' },
+    { src: '/images/fundamentos/webp_apren_7.webp', caption: '' },
+    { src: '/images/fundamentos/webp_apren_8.webp', caption: '' },
+    { src: '/images/fundamentos/webp_apren_9.webp', caption: '' },
+    { src: '/images/fundamentos/webp_apren_10.webp', caption: '' },
+    { src: '/images/fundamentos/webp_apren_11.webp', caption: '' },
+    { src: '/images/fundamentos/webp_apren_12.webp', caption: '' },
   ];
 
 interface PersonProfile {
@@ -304,7 +304,7 @@ const content = {
     ],
     fundamentosContent: [
         {
-            title: "La autorregulación espontánea. El contacto con la naturaleza propia.",
+            title: "La autorregulación espontánea.\nEl contacto con la naturaleza propia.",
             paragraphs: [
                 "El organismo humano, como cualquier otro organismo vivo, dispone de una gran capacidad esencial para la vida: satisfacer sus necesidades fundamentales. La principal necesidad es desarrollar el propio potencial.",
                 "Existe un diálogo entre la necesidad propia y el entorno, de modo que sea posible optar por lo más adecuado para mantener la vitalidad y hacer crecer el potencial interno.",
@@ -316,7 +316,7 @@ const content = {
             ]
         },
         {
-            title: "El acompañamiento respetuoso; el marco necesario para el crecimiento.",
+            title: "El acompañamiento respetuoso;\nel marco necesario para el crecimiento.",
             paragraphs: [
                 "Los niños, niñas y adolescentes necesitan un marco de confianza, referencia y seguridad emocional de los adultos para poder ser felices y hacer crecer su potencial vital.",
                 "La relación entre los adultos y las niñas, niños o adolescentes, requiere presencia y disponibilidad. También un especial cuidado de la comunicación: saber escuchar y saber expresar nuestra sana autoridad como adultos.",
@@ -630,7 +630,7 @@ const content = {
     ],
     fundamentosContent: [
         {
-            title: "L'autoregulació espontània. El contacte amb la naturalesa pròpia.",
+            title: "L'autoregulació espontània.\nEl contacte amb la naturalesa pròpia.",
             paragraphs: [
                 "L'organisme humà, com qualsevol altre organisme viu, disposa d'una gran capacitat essencial per a la vida: satisfer les seves necessitats fonamentals. La principal necessitat és desenvolupar el propi potencial.",
                 "Existeix un diàleg entre la necessitat pròpia i l'entorn, de manera que sigui possible optar pel més adequat per a mantenir la vitalitat i fer créixer el potencial intern.",
@@ -642,7 +642,7 @@ const content = {
             ]
         },
         {
-            title: "L'acompanyament respectuós; el marc necessari per al creixement.",
+            title: "L'acompanyament respectuós;\nel marc necessari per al creixement.",
             paragraphs: [
                 "Els nens, nenes i adolescents necessiten un marc de confiança, referència i seguretat emocional dels adults per a poder ser feliços i fer créixer el seu potencial vital.",
                 "La relació entre els adults i les nenes, nens o adolescents, requereix presència i disponibilitat. També una especial cura de la comunicació: saber escoltar i saber expressar la nostra sana autoritat com a adults.",
@@ -1183,7 +1183,7 @@ const App: React.FC = () => {
       img.onload = () => setNextImageLoaded(true);
       img.onerror = () => setNextImageLoaded(true);
       img.src = normalizeImageSrc(images[nextIdx].src) || images[nextIdx].src;
-    }, [currentIndex, images]);
+    }, [currentIndex, images.length]);
 
     // Autoplay only when next image is ready
     useEffect(() => {
@@ -1387,33 +1387,33 @@ const App: React.FC = () => {
   const FormacionView = () => {
     // Formaciones carousel images
     const formacionesPhotos = [
-      { src: '/images/formaciones/formaciones_01.webp', caption: '' },
-      { src: '/images/formaciones/formaciones_03.webp', caption: '' },
-      { src: '/images/formaciones/formaciones_04.webp', caption: '' },
-      { src: '/images/formaciones/formaciones_05.webp', caption: '' },
-      { src: '/images/formaciones/formaciones_06.webp', caption: '' },
-      { src: '/images/formaciones/formaciones_07.webp', caption: '' },
-      { src: '/images/formaciones/formaciones_08.webp', caption: '' },
-      { src: '/images/formaciones/formaciones_09.webp', caption: '' },
-      { src: '/images/formaciones/formaciones_10.webp', caption: '' },
-      { src: '/images/formaciones/formaciones_11.webp', caption: '' },
-      { src: '/images/formaciones/formaciones_12.webp', caption: '' },
-      { src: '/images/formaciones/formaciones_13.webp', caption: '' },
-      { src: '/images/formaciones/formaciones_14.webp', caption: '' },
-      { src: '/images/formaciones/formaciones_15.webp', caption: '' },
-      { src: '/images/formaciones/formaciones_17.webp', caption: '' },
-      { src: '/images/formaciones/formaciones_19.webp', caption: '' },
-      { src: '/images/formaciones/formaciones_20.webp', caption: '' },
-      { src: '/images/formaciones/formaciones_21.webp', caption: '' },
-      { src: '/images/formaciones/formaciones_22.webp', caption: '' },
-      { src: '/images/formaciones/formaciones_23.webp', caption: '' },
-      { src: '/images/formaciones/formaciones_24.webp', caption: '' },
-      { src: '/images/formaciones/formaciones_25.webp', caption: '' },
-      { src: '/images/formaciones/formaciones_26.webp', caption: '' },
-      { src: '/images/formaciones/formaciones_27.webp', caption: '' },
-      { src: '/images/formaciones/formaciones_28.webp', caption: '' },
-      { src: '/images/formaciones/formaciones_29.webp', caption: '' },
-      { src: '/images/formaciones/formaciones_30.webp', caption: '' },
+      { src: '/images/formaciones/webp_formaciones_01.webp', caption: '' },
+      { src: '/images/formaciones/webp_formaciones_03.webp', caption: '' },
+      { src: '/images/formaciones/webp_formaciones_04.webp', caption: '' },
+      { src: '/images/formaciones/webp_formaciones_05.webp', caption: '' },
+      { src: '/images/formaciones/webp_formaciones_06.webp', caption: '' },
+      { src: '/images/formaciones/webp_formaciones_07.webp', caption: '' },
+      { src: '/images/formaciones/webp_formaciones_08.webp', caption: '' },
+      { src: '/images/formaciones/webp_formaciones_09.webp', caption: '' },
+      { src: '/images/formaciones/webp_formaciones_10.webp', caption: '' },
+      { src: '/images/formaciones/webp_formaciones_11.webp', caption: '' },
+      { src: '/images/formaciones/webp_formaciones_12.webp', caption: '' },
+      { src: '/images/formaciones/webp_formaciones_13.webp', caption: '' },
+      { src: '/images/formaciones/webp_formaciones_14.webp', caption: '' },
+      { src: '/images/formaciones/webp_formaciones_15.webp', caption: '' },
+      { src: '/images/formaciones/webp_formaciones_17.webp', caption: '' },
+      { src: '/images/formaciones/webp_formaciones_19.webp', caption: '' },
+      { src: '/images/formaciones/webp_formaciones_20.webp', caption: '' },
+      { src: '/images/formaciones/webp_formaciones_21.webp', caption: '' },
+      { src: '/images/formaciones/webp_formaciones_22.webp', caption: '' },
+      { src: '/images/formaciones/webp_formaciones_23.webp', caption: '' },
+      { src: '/images/formaciones/webp_formaciones_24.webp', caption: '' },
+      { src: '/images/formaciones/webp_formaciones_25.webp', caption: '' },
+      { src: '/images/formaciones/webp_formaciones_26.webp', caption: '' },
+      { src: '/images/formaciones/webp_formaciones_27.webp', caption: '' },
+      { src: '/images/formaciones/webp_formaciones_28.webp', caption: '' },
+      { src: '/images/formaciones/webp_formaciones_29.webp', caption: '' },
+      { src: '/images/formaciones/webp_formaciones_30.webp', caption: '' },
     ];
 
     // Split into 3 carousels: 10+10+10
@@ -1444,9 +1444,9 @@ const App: React.FC = () => {
       'Nos ofrecíamos a apoyar este proceso apasionante y creativo; sabíamos por experiencia que requiere mucha energía individual y colectiva, tiempo y sobre todo determinación en el propósito de materializar nuevas realidades para una educación cada vez más sintonizada con la vida.'
     ];
     const asesoraPhotos = [
-      { src: '/images/formaciones/asesoramientos_01.webp', caption: '' },
-      { src: '/images/formaciones/asesoramientos_02.webp', caption: '' },
-      { src: '/images/formaciones/asesoramientos_03.webp', caption: '' },
+      { src: '/images/formaciones/webp_asesoramientos_01.webp', caption: '' },
+      { src: '/images/formaciones/webp_asesoramientos_02.webp', caption: '' },
+      { src: '/images/formaciones/webp_asesoramientos_03.webp', caption: '' },
     ];
 
     const formacionesParagraphs: string[] = [
@@ -1461,7 +1461,7 @@ const App: React.FC = () => {
       'Planteábamos observar y reflexionar en profundidad sobre los temas clave implicados en el desarrollo y maduración de las criaturas. También proponíamos revisar las creencias limitadoras y los patrones internos que nos desconectan de nuestra propia capacidad para percibir las verdaderas necesidades de las niñas, niños y adolescentes.'
     ];
     const testimonios: Array<{ text: string; author?: string }> = [
-      { text: 'Una experiencia donde he podido poner atención en cómo aprendemos, a través de la observación y reflexión pedagógica.\n\nUn espacio y tiempo acompañado para poder sintonizar con el diálogo interno en las relaciones. \n​\nUna propuesta en la que he podido abrir los sentidos a la comunicación humana para que el acompañamiento se dé desde la mirada consciente como adulta y el respeto de las necesidades y procesos de las criaturas, tanto en el acompañamiento individual como en el grupal.', author: 'Bibi' },
+      { text: 'Una experiencia donde he podido poner atención en cómo aprendemos, a través de la observación y reflexión pedagógica. / \nEUn espacio y tiempo acompañado para poder sintonizar con el diálogo interno en las relaciones. / \nEUna propuesta en la que he podido abrir los sentidos a la comunicación humana para que el acompañamiento se dé desde la mirada consciente como adulta y el respeto de las necesidades y procesos de las criaturas, tanto en el acompañamiento individual como en el grupal.', author: 'Bibi' },
       { text: 'Aquesta formació va suposar un punt d’inflexió vital en la meva trajectòria docent. Em va canviar la mirada cap a la infància i els seus processos d’aprenentatge, em va oferir un espai vivencial, de recerca i reflexió grupal que em va ajudar a replantejar la meva manera de cuidar i acompanyar de forma holística als nens i nenes. L’escola, els seus espais, envoltats de natura i aquesta formació, avui en dia encara són una inspiració i un dels pilars que sustenten la meva feina com a mestra.\n\n', author: 'Mercè' },
       { text: 'Em va connectar amb parts meves que, tot i ser essencials, no miraba ni tenia presents. / \nEs mostrava amb claredat la meva essència i era precisament el que ocultava als demés i a mi mateix.', author: 'Marc' },
       { text: 'Sentir cómo a través de la formación nacen y se nutren nuevas experiencias sobre cómo vivimos la educación. Ver, escuchar y experimentar desde una voz que para mí tiene luz y experiencia.', author: language === 'es' ? 'Anónimo' : 'Anònim' },
@@ -1545,9 +1545,11 @@ const App: React.FC = () => {
           </div>
 
           {/* Formaciones video at the end */}
-          <div className="mt-8">
-            <div className="aspect-video bg-black rounded-lg overflow-hidden relative shadow-lg">
-              <VideoFrame video={{ title: 'Formaciones', description: '', embedId: 'GK4JmYqqk8Q', type: 'youtube' }} deferred={false} />
+          <div className="mt-16 xl:mt-20 2xl:mt-24 flex justify-center">
+            <div className="w-full max-w-3xl">
+              <div className="aspect-video bg-black rounded-lg overflow-hidden relative shadow-lg">
+                <VideoFrame video={{ title: 'Formaciones', description: '', embedId: 'GK4JmYqqk8Q', type: 'youtube' }} deferred={false} />
+              </div>
             </div>
           </div>
         </div>
@@ -1699,6 +1701,56 @@ const App: React.FC = () => {
     
     // Get content from state based on current section
     const activeContent = t.escuelaContent?.[escuelaSection] || ["Contenido no disponible."];
+    
+    // Helper function to distribute images evenly throughout paragraphs
+    const distributeImages = (paragraphs: string[], images: { src: string; caption: string }[]) => {
+      if (!images || images.length === 0) {
+        return { sections: [{ paragraphs, images: [] }] };
+      }
+
+      const totalParagraphs = paragraphs.length;
+      const totalImages = images.length;
+      
+      // Calculate how many carousel sections we need
+      // We want to distribute images evenly, ensuring all images are included
+      const numCarousels = Math.min(totalImages, Math.ceil(totalParagraphs / 3));
+      
+      // Calculate images per carousel (distribute evenly)
+      const imagesPerCarousel: number[] = [];
+      let remainingImages = totalImages;
+      for (let i = 0; i < numCarousels; i++) {
+        const imgsInThisCarousel = Math.ceil(remainingImages / (numCarousels - i));
+        imagesPerCarousel.push(imgsInThisCarousel);
+        remainingImages -= imgsInThisCarousel;
+      }
+      
+      // Calculate paragraphs per section
+      const paragraphsPerSection: number[] = [];
+      let remainingParagraphs = totalParagraphs;
+      for (let i = 0; i < numCarousels; i++) {
+        const parasInThisSection = Math.ceil(remainingParagraphs / (numCarousels - i));
+        paragraphsPerSection.push(parasInThisSection);
+        remainingParagraphs -= parasInThisSection;
+      }
+      
+      // Build sections
+      const result: Array<{ paragraphs: string[]; images: { src: string; caption: string }[] }> = [];
+      let paraIndex = 0;
+      let imgIndex = 0;
+      
+      for (let i = 0; i < numCarousels; i++) {
+        const sectionParas = paragraphs.slice(paraIndex, paraIndex + paragraphsPerSection[i]);
+        const sectionImgs = images.slice(imgIndex, imgIndex + imagesPerCarousel[i]);
+        result.push({ paragraphs: sectionParas, images: sectionImgs });
+        paraIndex += paragraphsPerSection[i];
+        imgIndex += imagesPerCarousel[i];
+      }
+      
+      return { sections: result };
+    };
+    
+    const currentImages = escuelaImages[escuelaSection] || [];
+    const { sections: contentSections } = distributeImages(activeContent, currentImages);
 
     return (
       <InternalPageLayout title={t.nav.escuela}>
@@ -1732,21 +1784,28 @@ const App: React.FC = () => {
             <h2 style={{ fontSize: 'var(--menu-text-size)' }} className="font-serif mb-8 xl:mb-10 2xl:mb-12 text-stone-800">{t.escuela.titles[escuelaSection]}</h2>
             
             <div className="flex flex-col gap-8 xl:gap-10 2xl:gap-12">
-              <div style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif leading-relaxed text-stone-700 space-y-6 xl:space-y-7 2xl:space-y-8 max-w-prose xl:max-w-full">
-                 {/* Render Paragraphs with first one Bold */}
-                 {activeContent.map((text, idx) => (
-                     <p key={idx} className={idx === 0 ? "font-bold" : ""}>
-                         {text}
-                     </p>
-                 ))}
-              </div>
-              
-              {/* Carousel for current section */}
-              {imagesLoaded && escuelaImages[escuelaSection] && escuelaImages[escuelaSection].length > 0 && (
-                <div className="w-full lg:w-2/3">
-                  <ImageCarousel images={escuelaImages[escuelaSection]} autoPlayInterval={3000} />
-                </div>
-              )}
+              {imagesLoaded && contentSections.map((section, sectionIdx) => (
+                <React.Fragment key={sectionIdx}>
+                  {/* Paragraphs */}
+                  <div style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif leading-relaxed text-stone-700 space-y-6 xl:space-y-7 2xl:space-y-8 max-w-prose xl:max-w-full">
+                    {section.paragraphs.map((text, idx) => {
+                      const globalIdx = contentSections.slice(0, sectionIdx).reduce((acc, s) => acc + s.paragraphs.length, 0) + idx;
+                      return (
+                        <p key={idx} className={globalIdx === 0 ? "font-bold" : ""}>
+                          {text}
+                        </p>
+                      );
+                    })}
+                  </div>
+                  
+                  {/* Carousel for this section */}
+                  {section.images.length > 0 && (
+                    <div className="w-full lg:w-2/3">
+                      <ImageCarousel images={section.images} autoPlayInterval={3000} />
+                    </div>
+                  )}
+                </React.Fragment>
+              ))}
             </div>
           </div>
         </div>
