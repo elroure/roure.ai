@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowUp, ChevronLeft, FileText, Play, Tag, Mic } from 'lucide-react';
+import { ArrowUp, ChevronLeft, FileText, Play, Tag, Mic, Search } from 'lucide-react';
 
 // --- Types & Content ---
 
@@ -440,19 +440,19 @@ const content = {
         { title: "Celebrando el milagro de la vida", author: "Mercè de la Cruz", tags: ["Aprendizaje"], file: "/pdfs/CELEBRANDO-EL-MILAGRO-DE-LA-VIDA.pdf" },
         { title: "Cris se va (2007)", author: "Begoña González", tags: ["Sistémica", "Revista Roure"], file: "/pdfs/CRIS-SE-VA-2007.pdf" },
         { title: "Cristóbal trajo el Seitai a El Roure", author: "Begoña González", tags: ["Fundamentos", "Revista Roure"], file: "/pdfs/CRISTOBAL-TRAJO-EL-SEITAI-A-EL-ROURE.pdf" },
-        { title: "Divídete y sufrirás", author: "Cristóbal Gutiérrez", tags: ["Fundamentos", "Revista Roure"], file: "/pdfs/DIVIDETE-Y-SUFIRAS.pdf" },
+        { title: "Divídete y sufrirás", author: "Cristóbal Gutiérrez", tags: ["Cristóbal Gutiérrez", "Fundamentos", "Revista Roure"], file: "/pdfs/DIVIDETE-Y-SUFIRAS.pdf" },
         { title: "Dues experiències de restauració", author: "Paco Robles", tags: ["Actividad", "Revista Roure"], file: "/pdfs/DUES-EXPERIENCIES-DE-RESTAURACIO.pdf" },
-        { title: "El consumismo que enturbia el alma", author: "Cristóbal Gutiérrez", tags: ["Familia", "Revista Roure"], file: "/pdfs/EL-CONSUMISMO-QUE-ENTURBIA-EL-ALMA.pdf" },
+        { title: "El consumismo que enturbia el alma", author: "Cristóbal Gutiérrez", tags: ["Cristóbal Gutiérrez", "Familia", "Revista Roure"], file: "/pdfs/EL-CONSUMISMO-QUE-ENTURBIA-EL-ALMA.pdf" },
         { title: "El Roure Boletín 13", author: "Varios", tags: ["Boletín Roure"], file: "/pdfs/EL-ROURE-BOLETIN-13.pdf" },
         { title: "Intros Boletín El Roure", author: "Varios", tags: ["Boletín Roure"], file: "/pdfs/Intros Boletín El Roure.pdf" },
         { title: "En busca de una feminidad y masculinidad naturales", author: "Begoña González", tags: ["Género", "Revista Roure"], file: "/pdfs/EN-BUSCA-DE-UNA-FEMINIDAD-Y-MASCULINIDAD-NATURALES.pdf" },
         { title: "¿Estamos o no haciendo matemáticas?", author: "Lara Jiménez", tags: ["Matemáticas", "Revista Roure"], file: "/pdfs/ESTAMOS-O-NO-HACIENDO-MATEMATICAS.pdf" },
-        { title: "Hora de marcharme de El Roure", author: "Cristóbal Gutiérrez", tags: ["Sistémica", "Revista Roure"], file: "/pdfs/HORA-DE-MARCHARME-DE-EL-ROURE.pdf" },
-        { title: "In Memoriam", author: "Cristóbal Gutiérrez", tags: ["Sistémica", "Revista Roure"], file: "/pdfs/IN-MEMORIAM.pdf" },
-        { title: "La mirada amorosa", author: "Cristóbal Gutiérrez", tags: ["Familia", "Revista Roure"], file: "/pdfs/LA-MIRADA-AMOROSA.pdf" },
+        { title: "Hora de marcharme de El Roure", author: "Cristóbal Gutiérrez", tags: ["Cristóbal Gutiérrez", "Sistémica", "Revista Roure"], file: "/pdfs/HORA-DE-MARCHARME-DE-EL-ROURE.pdf" },
+        { title: "In Memoriam", author: "Cristóbal Gutiérrez", tags: ["Cristóbal Gutiérrez", "Sistémica", "Revista Roure"], file: "/pdfs/IN-MEMORIAM.pdf" },
+        { title: "La mirada amorosa", author: "Cristóbal Gutiérrez", tags: ["Cristóbal Gutiérrez", "Familia", "Revista Roure"], file: "/pdfs/LA-MIRADA-AMOROSA.pdf" },
         { title: "Límites y limitaciones", author: "Begoña González", tags: ["Límites", "Revista Roure"], file: "/pdfs/LIMITES-Y-LIMITACIONES.pdf" },
         { title: "Que la vida sea el eje de la educación", author: "Ulrike Kaesse y Begoña González", tags: ["Fundamentos", "Revista Roure"], file: "/pdfs/QUE-LA-VIDA-SEA-EL-EJE-DE-LA-EDUCACION.pdf" },
-        { title: "Que ser valiente no salga tan caro", author: "Cristóbal Gutiérrez", tags: ["Fundamentos", "Revista Roure"], file: "/pdfs/QUE-SER-VALIENTE-NO-SALGA-TAN-CARO.pdf" },
+        { title: "Que ser valiente no salga tan caro", author: "Cristóbal Gutiérrez", tags: ["Cristóbal Gutiérrez", "Fundamentos", "Revista Roure"], file: "/pdfs/QUE-SER-VALIENTE-NO-SALGA-TAN-CARO.pdf" },
         { title: "Taller d'Andromines", author: "Montse Bertran", tags: ["Actividad", "Revista Roure"], file: "/pdfs/TALLER-D-ANDROMINES.pdf" },
         
         // Revistas con enlace
@@ -481,11 +481,11 @@ const content = {
         // Revista La Casita (con PDF)
         { title: "Cosas que pasan", author: "Begoña González", tags: ["Actividad", "Revista La Casita"], file: "/pdfs/COSAS-QUE-PASAN.pdf" },
         { title: "Despedida", author: "Begoña González y Cristóbal Gutiérrez", tags: ["Sistémica", "Revista La Casita"], file: "/pdfs/DESPEDIDA.pdf" },
-        { title: "Despiértate papá y mamá", author: "Cristóbal Gutiérrez", tags: ["Familia", "Revista La Casita"], file: "/pdfs/DESPIERTATE-PAPA-Y-MAMA.pdf" },
-        { title: "La muerte de cada día", author: "Cristóbal Gutiérrez", tags: ["Duelo", "Fundamentos", "Revista La Casita"], file: "/pdfs/LA-MUERTE-DE-CADA-DIA.pdf" },
+        { title: "Despiértate papá y mamá", author: "Cristóbal Gutiérrez", tags: ["Cristóbal Gutiérrez", "Familia", "Revista La Casita"], file: "/pdfs/DESPIERTATE-PAPA-Y-MAMA.pdf" },
+        { title: "La muerte de cada día", author: "Cristóbal Gutiérrez", tags: ["Cristóbal Gutiérrez", "Duelo", "Fundamentos", "Revista La Casita"], file: "/pdfs/LA-MUERTE-DE-CADA-DIA.pdf" },
         
         // Otros con PDF
-        { title: "Cines, bebés y sensibilidad", author: "Cristóbal Gutiérrez", tags: ["Familia"], file: "/pdfs/CINES-BEBES-Y-SENSIBILIDAD.pdf" },
+        { title: "Cines, bebés y sensibilidad", author: "Cristóbal Gutiérrez", tags: ["Cristóbal Gutiérrez", "Familia"], file: "/pdfs/CINES-BEBES-Y-SENSIBILIDAD.pdf" },
         { title: "Habitar el espacio y el tiempo en la escuela alternativa", author: "José Contreras Domingo y Begoña González", tags: ["Aprendizaje"], file: "/pdfs/Habitar-el-espacio-y-el-tiempo-en-la-escuela-alternativa.pdf" },
     ]
   },
@@ -759,19 +759,19 @@ const content = {
         { title: "Celebrando el milagro de la vida", author: "Mercè de la Cruz", tags: ["Aprenentatge"], file: "/pdfs/CELEBRANDO-EL-MILAGRO-DE-LA-VIDA.pdf" },
         { title: "Cris se va (2007)", author: "Begoña González", tags: ["Sistèmica", "Revista Roure"], file: "/pdfs/CRIS-SE-VA-2007.pdf" },
         { title: "Cristóbal trajo el Seitai a El Roure", author: "Begoña González", tags: ["Fonaments", "Revista Roure"], file: "/pdfs/CRISTOBAL-TRAJO-EL-SEITAI-A-EL-ROURE.pdf" },
-        { title: "Divídete y sufrirás", author: "Cristóbal Gutiérrez", tags: ["Fonaments", "Revista Roure"], file: "/pdfs/DIVIDETE-Y-SUFIRAS.pdf" },
+        { title: "Divídete y sufrirás", author: "Cristóbal Gutiérrez", tags: ["Cristóbal Gutiérrez", "Fonaments", "Revista Roure"], file: "/pdfs/DIVIDETE-Y-SUFIRAS.pdf" },
         { title: "Dues experiències de restauració", author: "Paco Robles", tags: ["Activitat", "Revista Roure"], file: "/pdfs/DUES-EXPERIENCIES-DE-RESTAURACIO.pdf" },
-        { title: "El consumismo que enturbia el alma", author: "Cristóbal Gutiérrez", tags: ["Família", "Revista Roure"], file: "/pdfs/EL-CONSUMISMO-QUE-ENTURBIA-EL-ALMA.pdf" },
+        { title: "El consumismo que enturbia el alma", author: "Cristóbal Gutiérrez", tags: ["Cristóbal Gutiérrez", "Família", "Revista Roure"], file: "/pdfs/EL-CONSUMISMO-QUE-ENTURBIA-EL-ALMA.pdf" },
         { title: "El Roure Boletín 13", author: "Varios", tags: ["Butlletí Roure"], file: "/pdfs/EL-ROURE-BOLETIN-13.pdf" },
           { title: "Intros Boletín El Roure", author: "Varios", tags: ["Butlletí Roure"], file: "/pdfs/Intros Boletín El Roure.pdf" },
         { title: "En busca de una feminidad y masculinidad naturales", author: "Begoña González", tags: ["Gènere", "Revista Roure"], file: "/pdfs/EN-BUSCA-DE-UNA-FEMINIDAD-Y-MASCULINIDAD-NATURALES.pdf" },
         { title: "¿Estamos o no haciendo matemáticas?", author: "Lara Jiménez", tags: ["Matemàtiques", "Revista Roure"], file: "/pdfs/ESTAMOS-O-NO-HACIENDO-MATEMATICAS.pdf" },
-        { title: "Hora de marcharme de El Roure", author: "Cristóbal Gutiérrez", tags: ["Sistèmica", "Revista Roure"], file: "/pdfs/HORA-DE-MARCHARME-DE-EL-ROURE.pdf" },
-        { title: "In Memoriam", author: "Cristóbal Gutiérrez", tags: ["Sistèmica", "Revista Roure"], file: "/pdfs/IN-MEMORIAM.pdf" },
-        { title: "La mirada amorosa", author: "Cristóbal Gutiérrez", tags: ["Família", "Revista Roure"], file: "/pdfs/LA-MIRADA-AMOROSA.pdf" },
+        { title: "Hora de marcharme de El Roure", author: "Cristóbal Gutiérrez", tags: ["Cristóbal Gutiérrez", "Sistèmica", "Revista Roure"], file: "/pdfs/HORA-DE-MARCHARME-DE-EL-ROURE.pdf" },
+        { title: "In Memoriam", author: "Cristóbal Gutiérrez", tags: ["Cristóbal Gutiérrez", "Sistèmica", "Revista Roure"], file: "/pdfs/IN-MEMORIAM.pdf" },
+        { title: "La mirada amorosa", author: "Cristóbal Gutiérrez", tags: ["Cristóbal Gutiérrez", "Família", "Revista Roure"], file: "/pdfs/LA-MIRADA-AMOROSA.pdf" },
         { title: "Límites y limitaciones", author: "Begoña González", tags: ["Límits", "Revista Roure"], file: "/pdfs/LIMITES-Y-LIMITACIONES.pdf" },
         { title: "Que la vida sea el eje de la educación", author: "Ulrike Kaesse y Begoña González", tags: ["Fonaments", "Revista Roure"], file: "/pdfs/QUE-LA-VIDA-SEA-EL-EJE-DE-LA-EDUCACION.pdf" },
-        { title: "Que ser valiente no salga tan caro", author: "Cristóbal Gutiérrez", tags: ["Fonaments", "Revista Roure"], file: "/pdfs/QUE-SER-VALIENTE-NO-SALGA-TAN-CARO.pdf" },
+        { title: "Que ser valiente no salga tan caro", author: "Cristóbal Gutiérrez", tags: ["Cristóbal Gutiérrez", "Fonaments", "Revista Roure"], file: "/pdfs/QUE-SER-VALIENTE-NO-SALGA-TAN-CARO.pdf" },
         { title: "Taller d'Andromines", author: "Montse Bertran", tags: ["Activitat", "Revista Roure"], file: "/pdfs/TALLER-D-ANDROMINES.pdf" },
         
         // Revistes amb enllaç
@@ -800,11 +800,11 @@ const content = {
         // Revista La Casita (amb PDF)
         { title: "Cosas que pasan", author: "Begoña González", tags: ["Activitat", "Revista La Casita"], file: "/pdfs/COSAS-QUE-PASAN.pdf" },
         { title: "Despedida", author: "Begoña González y Cristóbal Gutiérrez", tags: ["Sistèmica", "Revista La Casita"], file: "/pdfs/DESPEDIDA.pdf" },
-        { title: "Despiértate papá y mamá", author: "Cristóbal Gutiérrez", tags: ["Família", "Revista La Casita"], file: "/pdfs/DESPIERTATE-PAPA-Y-MAMA.pdf" },
-        { title: "La muerte de cada día", author: "Cristóbal Gutiérrez", tags: ["Dol", "Fonaments", "Revista La Casita"], file: "/pdfs/LA-MUERTE-DE-CADA-DIA.pdf" },
+        { title: "Despiértate papá y mamá", author: "Cristóbal Gutiérrez", tags: ["Cristóbal Gutiérrez", "Família", "Revista La Casita"], file: "/pdfs/DESPIERTATE-PAPA-Y-MAMA.pdf" },
+        { title: "La muerte de cada día", author: "Cristóbal Gutiérrez", tags: ["Cristóbal Gutiérrez", "Dol", "Fonaments", "Revista La Casita"], file: "/pdfs/LA-MUERTE-DE-CADA-DIA.pdf" },
         
         // Altres amb PDF
-        { title: "Cines, bebés y sensibilidad", author: "Cristóbal Gutiérrez", tags: ["Família"], file: "/pdfs/CINES-BEBES-Y-SENSIBILIDAD.pdf" },
+        { title: "Cines, bebés y sensibilidad", author: "Cristóbal Gutiérrez", tags: ["Cristóbal Gutiérrez", "Família"], file: "/pdfs/CINES-BEBES-Y-SENSIBILIDAD.pdf" },
         { title: "Habitar el espacio y el tiempo en la escuela alternativa", author: "José Contreras Domingo y Begoña González", tags: ["Aprenentatge"], file: "/pdfs/Habitar-el-espacio-y-el-tiempo-en-la-escuela-alternativa.pdf" },
     ]
   }
@@ -1968,6 +1968,7 @@ const App: React.FC = () => {
 
   // State for TextosView filtering - moved outside to persist across renders
   const [activeTopic, setActiveTopic] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState<string>('');
 
   const TextosView = () => {
     // All articles data structure
@@ -1976,15 +1977,40 @@ const App: React.FC = () => {
     // Get all unique tags from all articles
     const topics = Array.from(new Set(allArticles.flatMap(a => a.tags)));
 
-    // Filter articles that contain the active topic in their tags
-    const filteredArticles = activeTopic 
-        ? allArticles.filter(a => a.tags.includes(activeTopic))
-        : allArticles;
+    // Filter articles by both topic and search query
+    const filteredArticles = allArticles.filter(article => {
+      const matchesTopic = activeTopic ? article.tags.includes(activeTopic) : true;
+      const matchesSearch = searchQuery.trim() === '' || 
+        article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        article.author.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        article.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
+      return matchesTopic && matchesSearch;
+    });
 
     return (
       <InternalPageLayout title={t.nav.textos}>
-        {/* Filter Tags */}
+        {/* Search Bar and Filter Tags */}
         <div className="flex flex-wrap gap-3 xl:gap-3 2xl:gap-4 mb-10 xl:mb-12 2xl:mb-14">
+            {/* Search Bar */}
+            <div className="relative" style={{ fontSize: 'var(--internal-body-text)' }}>
+              <input 
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder={language === 'es' ? 'Buscar...' : 'Cercar...'}
+                style={{ 
+                  fontSize: 'var(--internal-body-text)', 
+                  padding: 'calc(var(--internal-body-text) * 0.5) calc(var(--internal-body-text) * 1.2) calc(var(--internal-body-text) * 0.5) calc(var(--internal-body-text) * 2.5)'
+                }}
+                className="rounded-full font-serif font-medium border border-stone-300 bg-white text-stone-600 hover:border-[#c1562e] focus:border-[#c1562e] focus:outline-none transition-all"
+              />
+              <Search 
+                size={16} 
+                className="absolute left-3 top-1/2 transform -translate-y-1/2 text-stone-400"
+                style={{ width: 'calc(var(--internal-body-text) * 0.9)', height: 'calc(var(--internal-body-text) * 0.9)' }}
+              />
+            </div>
+            
             <button 
                 onClick={() => setActiveTopic(null)}
                 style={{ fontSize: 'var(--internal-body-text)', padding: 'calc(var(--internal-body-text) * 0.5) calc(var(--internal-body-text) * 1.2)' }}
