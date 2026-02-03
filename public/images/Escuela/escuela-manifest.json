@@ -1,5 +1,7 @@
 {
-  "intro": [],
+  "intro": [
+    "/images/Escuela/escuela-roure-edificio.webp"
+  ],
   "aprendizaje": [
     "/images/escuela/1-aprender/webp__11-lletres.webp",
     "/images/escuela/1-aprender/webp__112-06-010.webp",
@@ -21,8 +23,7 @@
     "/images/escuela/1-aprender/webp__1dscf1410.webp",
     "/images/escuela/1-aprender/webp__1image-6.webp",
     "/images/escuela/1-aprender/webp__1mates-g.webp",
-    "/images/escuela/1-aprender/webp__1taller-titelles.webp",
-    "/images/Escuela/1-aprender/escuela-roure-edificio.webp"
+    "/images/escuela/1-aprender/webp__1taller-titelles.webp"
   ],
   "acompanamiento": [
     "/images/escuela/2-acompanar/webp__226.webp",

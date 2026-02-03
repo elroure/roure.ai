@@ -438,8 +438,8 @@ const content = {
         { title: "ESCRIPTORROURES", author: "Paco Robles", tags: ["Escritura", "Revista Roure"], file: "/pdfs/ESCRITORROURES.pdf" },
         { title: "Amigos y amigas por carta", author: "Mercè de la Cruz", tags: ["Escritura", "Revista Roure"], file: "/pdfs/AMIGOS-Y-AMIGAS-POR-CARTA.pdf" },
         { title: "Celebrando el milagro de la vida", author: "Mercè de la Cruz", tags: ["Aprendizaje"], file: "/pdfs/CELEBRANDO-EL-MILAGRO-DE-LA-VIDA.pdf" },
-        { title: "Cris se va (2007)", author: "Begoña González", tags: ["Sistémica", "Revista Roure"], file: "/pdfs/CRIS-SE-VA-2007.pdf" },
-        { title: "Cristóbal trajo el Seitai a El Roure", author: "Begoña González", tags: ["Fundamentos", "Revista Roure"], file: "/pdfs/CRISTOBAL-TRAJO-EL-SEITAI-A-EL-ROURE.pdf" },
+        { title: "Cris se va (2007)", author: "Begoña González", tags: ["Sistémica", "Revista Roure", "Cristóbal Gutiérrez"], file: "/pdfs/CRIS-SE-VA-2007.pdf" },
+        { title: "Cristóbal trajo el Seitai a El Roure", author: "Begoña González", tags: ["Fundamentos", "Revista Roure", "Cristóbal Gutiérrez"], file: "/pdfs/CRISTOBAL-TRAJO-EL-SEITAI-A-EL-ROURE.pdf" },
         { title: "Divídete y sufrirás", author: "Cristóbal Gutiérrez", tags: ["Cristóbal Gutiérrez", "Fundamentos", "Revista Roure"], file: "/pdfs/DIVIDETE-Y-SUFIRAS.pdf" },
         { title: "Dues experiències de restauració", author: "Paco Robles", tags: ["Actividad", "Revista Roure"], file: "/pdfs/DUES-EXPERIENCIES-DE-RESTAURACIO.pdf" },
         { title: "El consumismo que enturbia el alma", author: "Cristóbal Gutiérrez", tags: ["Cristóbal Gutiérrez", "Familia", "Revista Roure"], file: "/pdfs/EL-CONSUMISMO-QUE-ENTURBIA-EL-ALMA.pdf" },
@@ -480,12 +480,13 @@ const content = {
         
         // Revista La Casita (con PDF)
         { title: "Cosas que pasan", author: "Begoña González", tags: ["Actividad", "Revista La Casita"], file: "/pdfs/COSAS-QUE-PASAN.pdf" },
-        { title: "Despedida", author: "Begoña González y Cristóbal Gutiérrez", tags: ["Sistémica", "Revista La Casita"], file: "/pdfs/DESPEDIDA.pdf" },
+        { title: "Despedida", author: "Begoña González y Cristóbal Gutiérrez", tags: ["Sistémica", "Revista La Casita", "Cristóbal Gutiérrez", "Duelo"], file: "/pdfs/DESPEDIDA.pdf" },
         { title: "Despiértate papá y mamá", author: "Cristóbal Gutiérrez", tags: ["Cristóbal Gutiérrez", "Familia", "Revista La Casita"], file: "/pdfs/DESPIERTATE-PAPA-Y-MAMA.pdf" },
         { title: "La muerte de cada día", author: "Cristóbal Gutiérrez", tags: ["Cristóbal Gutiérrez", "Duelo", "Fundamentos", "Revista La Casita"], file: "/pdfs/LA-MUERTE-DE-CADA-DIA.pdf" },
         
         // Otros con PDF
         { title: "Cines, bebés y sensibilidad", author: "Cristóbal Gutiérrez", tags: ["Cristóbal Gutiérrez", "Familia"], file: "/pdfs/CINES-BEBES-Y-SENSIBILIDAD.pdf" },
+        { title: "Boletin Roure - Especial Cristobal", author: "Varios", tags: ["Cristóbal Gutiérrez", "Duelo"], file: "/pdfs/Boletin Roure - Especial Cristobal.pdf" },
         { title: "Habitar el espacio y el tiempo en la escuela alternativa", author: "José Contreras Domingo y Begoña González", tags: ["Aprendizaje"], file: "/pdfs/Habitar-el-espacio-y-el-tiempo-en-la-escuela-alternativa.pdf" },
     ]
   },
@@ -757,8 +758,8 @@ const content = {
         { title: "ESCRIPTORROURES", author: "Paco Robles", tags: ["Escriptura", "Revista Roure"], file: "/pdfs/ESCRITORROURES.pdf" },
         { title: "Amigos y amigas por carta", author: "Mercè de la Cruz", tags: ["Escriptura", "Revista Roure"], file: "/pdfs/AMIGOS-Y-AMIGAS-POR-CARTA.pdf" },
         { title: "Celebrando el milagro de la vida", author: "Mercè de la Cruz", tags: ["Aprenentatge"], file: "/pdfs/CELEBRANDO-EL-MILAGRO-DE-LA-VIDA.pdf" },
-        { title: "Cris se va (2007)", author: "Begoña González", tags: ["Sistèmica", "Revista Roure"], file: "/pdfs/CRIS-SE-VA-2007.pdf" },
-        { title: "Cristóbal trajo el Seitai a El Roure", author: "Begoña González", tags: ["Fonaments", "Revista Roure"], file: "/pdfs/CRISTOBAL-TRAJO-EL-SEITAI-A-EL-ROURE.pdf" },
+        { title: "Cris se va (2007)", author: "Begoña González", tags: ["Sistèmica", "Revista Roure", "Cristóbal Gutiérrez"], file: "/pdfs/CRIS-SE-VA-2007.pdf" },
+        { title: "Cristóbal trajo el Seitai a El Roure", author: "Begoña González", tags: ["Fonaments", "Revista Roure", "Cristóbal Gutiérrez"], file: "/pdfs/CRISTOBAL-TRAJO-EL-SEITAI-A-EL-ROURE.pdf" },
         { title: "Divídete y sufrirás", author: "Cristóbal Gutiérrez", tags: ["Cristóbal Gutiérrez", "Fonaments", "Revista Roure"], file: "/pdfs/DIVIDETE-Y-SUFIRAS.pdf" },
         { title: "Dues experiències de restauració", author: "Paco Robles", tags: ["Activitat", "Revista Roure"], file: "/pdfs/DUES-EXPERIENCIES-DE-RESTAURACIO.pdf" },
         { title: "El consumismo que enturbia el alma", author: "Cristóbal Gutiérrez", tags: ["Cristóbal Gutiérrez", "Família", "Revista Roure"], file: "/pdfs/EL-CONSUMISMO-QUE-ENTURBIA-EL-ALMA.pdf" },
@@ -799,12 +800,13 @@ const content = {
         
         // Revista La Casita (amb PDF)
         { title: "Cosas que pasan", author: "Begoña González", tags: ["Activitat", "Revista La Casita"], file: "/pdfs/COSAS-QUE-PASAN.pdf" },
-        { title: "Despedida", author: "Begoña González y Cristóbal Gutiérrez", tags: ["Sistèmica", "Revista La Casita"], file: "/pdfs/DESPEDIDA.pdf" },
+        { title: "Despedida", author: "Begoña González y Cristóbal Gutiérrez", tags: ["Sistèmica", "Revista La Casita", "Cristóbal Gutiérrez", "Dol"], file: "/pdfs/DESPEDIDA.pdf" },
         { title: "Despiértate papá y mamá", author: "Cristóbal Gutiérrez", tags: ["Cristóbal Gutiérrez", "Família", "Revista La Casita"], file: "/pdfs/DESPIERTATE-PAPA-Y-MAMA.pdf" },
         { title: "La muerte de cada día", author: "Cristóbal Gutiérrez", tags: ["Cristóbal Gutiérrez", "Dol", "Fonaments", "Revista La Casita"], file: "/pdfs/LA-MUERTE-DE-CADA-DIA.pdf" },
         
         // Altres amb PDF
         { title: "Cines, bebés y sensibilidad", author: "Cristóbal Gutiérrez", tags: ["Cristóbal Gutiérrez", "Família"], file: "/pdfs/CINES-BEBES-Y-SENSIBILIDAD.pdf" },
+        { title: "Boletin Roure - Especial Cristobal", author: "Varios", tags: ["Cristóbal Gutiérrez", "Dol"], file: "/pdfs/Boletin Roure - Especial Cristobal.pdf" },
         { title: "Habitar el espacio y el tiempo en la escuela alternativa", author: "José Contreras Domingo y Begoña González", tags: ["Aprenentatge"], file: "/pdfs/Habitar-el-espacio-y-el-tiempo-en-la-escuela-alternativa.pdf" },
     ]
   }
@@ -1798,8 +1800,16 @@ const App: React.FC = () => {
                     })}
                   </div>
                   
-                  {/* Carousel for this section */}
-                  {section.images.length > 0 && (
+                  {/* Image display - carousel for multiple images, simple image for single */}
+                  {section.images.length === 1 ? (
+                    <div className="w-full lg:w-3/4 mt-4">
+                      <SafeImage 
+                        src={section.images[0].src}
+                        alt={section.images[0].caption || "Image"}
+                        className="w-full h-auto object-contain rounded-lg shadow-md"
+                      />
+                    </div>
+                  ) : section.images.length > 1 && (
                     <div className="w-full lg:w-2/3">
                       <ImageCarousel images={section.images} autoPlayInterval={3000} />
                     </div>
@@ -1974,18 +1984,22 @@ const App: React.FC = () => {
     // All articles data structure
     const allArticles: Article[] = t.articles;
 
-    // Get all unique tags from all articles
-    const topics = Array.from(new Set(allArticles.flatMap(a => a.tags)));
+    // Get all unique tags from all articles - memoize to prevent re-renders
+    const topics = React.useMemo(() => {
+      return Array.from(new Set(allArticles.flatMap(a => a.tags)));
+    }, [allArticles]);
 
     // Filter articles by both topic and search query
-    const filteredArticles = allArticles.filter(article => {
-      const matchesTopic = activeTopic ? article.tags.includes(activeTopic) : true;
-      const matchesSearch = searchQuery.trim() === '' || 
-        article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        article.author.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        article.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
-      return matchesTopic && matchesSearch;
-    });
+    const filteredArticles = React.useMemo(() => {
+      return allArticles.filter(article => {
+        const matchesTopic = activeTopic ? article.tags.includes(activeTopic) : true;
+        const matchesSearch = searchQuery.trim() === '' || 
+          article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          article.author.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          article.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
+        return matchesTopic && matchesSearch;
+      });
+    }, [allArticles, activeTopic, searchQuery]);
 
     return (
       <InternalPageLayout title={t.nav.textos}>
