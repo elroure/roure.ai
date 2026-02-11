@@ -840,8 +840,31 @@ const App: React.FC = () => {
     document.body.style.backgroundImage = "url('/images/main_bg.webp')";
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundPosition = "center";
-    document.body.style.backgroundAttachment = "fixed";
+    // Some Safari builds have issues with `background-attachment: fixed` causing
+    // strange repaint/scroll behaviour. Use `scroll` for Safari and `fixed`
+    // elsewhere.
+    const ua = typeof navigator !== 'undefined' ? navigator.userAgent : '';
+    const isSafari = /^((?!chrome|android).)*safari/i.test(ua);
+    document.body.style.backgroundAttachment = isSafari ? 'scroll' : 'fixed';
     document.body.style.backgroundRepeat = "no-repeat";
+    // Try to reduce pull-to-refresh / overscroll navigation on Safari
+    try {
+      if (isSafari) {
+        document.documentElement.style.overscrollBehavior = 'none';
+        document.body.style.overscrollBehavior = 'none';
+      }
+    } catch (e) {}
+    return () => {
+      document.body.style.backgroundImage = '';
+      document.body.style.backgroundSize = '';
+      document.body.style.backgroundPosition = '';
+      document.body.style.backgroundAttachment = '';
+      document.body.style.backgroundRepeat = '';
+      try {
+        document.documentElement.style.overscrollBehavior = '';
+        document.body.style.overscrollBehavior = '';
+      } catch (e) {}
+    };
   }, []);
 
   // Scroll detection
