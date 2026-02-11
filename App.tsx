@@ -1676,7 +1676,8 @@ const App: React.FC = () => {
     useEffect(() => {
       const loadImages = async () => {
         try {
-          const response = await fetch('/images/Escuela/escuela-manifest.json');
+          const manifestUrl = '/images/Escuela/escuela-manifest.json?v=20260203';
+          const response = await fetch(manifestUrl, { cache: 'no-store' });
           if (!response.ok) {
             setEscuelaImages({});
             setImagesLoaded(true);
