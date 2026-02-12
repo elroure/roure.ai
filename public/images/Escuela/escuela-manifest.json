@@ -23,7 +23,9 @@
     "/images/escuela/1-aprender/webp__1dscf1410.webp",
     "/images/escuela/1-aprender/webp__1image-6.webp",
     "/images/escuela/1-aprender/webp__1mates-g.webp",
-    "/images/escuela/1-aprender/webp__1taller-titelles.webp"
+    "/images/escuela/1-aprender/webp__1taller-titelles.webp",
+    "/images/escuela/1-aprender/aprender-piano.webp",
+    "/images/escuela/1-aprender/aprender-escribir.jpg"
   ],
   "acompanamiento": [
     "/images/escuela/2-acompanar/webp__226.webp",
@@ -49,6 +51,7 @@
     "/images/escuela/3-equipo/webp__3no-incluida-2.webp",
     "/images/escuela/3-equipo/webp__3no-incluida-3.webp",
     "/images/escuela/3-equipo/webp__3no-incluida-4.webp"
+    ,"/images/escuela/3-equipo/equipo-.webp"
   ],
   "familias": [
     "/images/escuela/4-familias/webp__410b-dic-07-038.webp",
@@ -60,21 +63,21 @@
     "/images/escuela/4-familias/webp__4img-20210622-130444.webp",
     "/images/escuela/4-familias/webp__4no-incluida-1.webp",
     "/images/escuela/4-familias/webp__4paracaigudes.webp"
+    ,"/images/escuela/4-familias/familias-.webp",
+    "/images/escuela/4-familias/familias2-1.webp"
   ],
   "etapas": [
     "/images/Escuela/5-etapas-tiempos-espacios/26cbfe_2b6eccf0a3c24d30872f99388d797c51.webp",
     "/images/Escuela/5-etapas-tiempos-espacios/26cbfe_781c367907aa43348a4454fb40c043d7.webp",
-    "/images/Escuela/5-etapas-tiempos-espacios/26cbfe_8b617d63270f4c49805541172df4c9f2.webp",
     "/images/Escuela/5-etapas-tiempos-espacios/26cbfe_9121bd264110487ea09348124b93f8bd.webp",
     "/images/Escuela/5-etapas-tiempos-espacios/26cbfe_a538f97f24184978847198c877008a1d.webp",
-    "/images/Escuela/5-etapas-tiempos-espacios/26cbfe_f0a1f705ecbb47a59efe87d91304a8a1.webp",
     "/images/Escuela/5-etapas-tiempos-espacios/26cbfe_f57a22605b35433a85127bdc3fa193e3.webp",
-    "/images/Escuela/5-etapas-tiempos-espacios/37b05b_1e066e215cfc4c5ab672724815626c08~mv2.webp",
-    "/images/Escuela/5-etapas-tiempos-espacios/etapas 1.webp",
-    "/images/Escuela/5-etapas-tiempos-espacios/etapas 2.webp",
-    "/images/Escuela/5-etapas-tiempos-espacios/etapas 3.webp",
-    "/images/Escuela/5-etapas-tiempos-espacios/etapas 4.webp",
-    "/images/Escuela/5-etapas-tiempos-espacios/etapas 5.webp",
+    "/images/Escuela/5-etapas-tiempos-espacios/etapas-1.webp",
+    "/images/Escuela/5-etapas-tiempos-espacios/etapas-2.webp",
+    "/images/Escuela/5-etapas-tiempos-espacios/etapas-3.webp",
+    "/images/Escuela/5-etapas-tiempos-espacios/etapas-4.webp",
+    "/images/Escuela/5-etapas-tiempos-espacios/etapas-5.webp",
+    "/images/Escuela/5-etapas-tiempos-espacios/etapas_arte_ceramica.webp",
     "/images/Escuela/5-etapas-tiempos-espacios/webp_26cbfe-7a49cd77e509428cbf156fb0edf7098d.webp",
     "/images/Escuela/5-etapas-tiempos-espacios/webp_26cbfe-9c7434ee1ddb4196bb926c5f68e5dfaf.webp",
     "/images/Escuela/5-etapas-tiempos-espacios/webp_26cbfe-c21b1ba6963141fba02580e85b977e76.webp",
@@ -100,8 +103,9 @@
     "/images/Escuela/5-etapas-tiempos-espacios/webp__5para-texto-despedida-clara.webp"
   ],
   "3-6": [
-    "/images/Escuela/6-3-6/3-6 foto 1.jpg",
-    "/images/Escuela/6-3-6/3-6 foto 2.jpg",
+    "/images/Escuela/6-3-6/3-6-foto-1.jpg",
+    "/images/Escuela/6-3-6/3-6-foto-2.jpg",
+    "/images/Escuela/6-3-6/3-6_criatura_fusteria.webp",
     "/images/Escuela/6-3-6/webp__610.webp",
     "/images/Escuela/6-3-6/webp__612-plastilina.webp",
     "/images/Escuela/6-3-6/webp__612img-3988.webp",
@@ -121,8 +125,8 @@
     "/images/Escuela/6-3-6/webp__6img-7425.webp"
   ],
   "6-12": [
-    "/images/Escuela/7-6-12/6-12 foto 1.jpg",
-    "/images/Escuela/7-6-12/6-12 foto 2.jpg",
+    "/images/Escuela/7-6-12/6-12-foto-1.jpg",
+    "/images/Escuela/7-6-12/6-12-foto-2.jpg",
     "/images/Escuela/7-6-12/webp__7100-3409.webp",
     "/images/Escuela/7-6-12/webp__7100-9813.webp",
     "/images/Escuela/7-6-12/webp__7100-9819.webp",
@@ -139,6 +143,7 @@
     "/images/Escuela/7-6-12/webp__7roure-117.webp",
     "/images/Escuela/7-6-12/webp__7roure-74.webp",
     "/images/Escuela/7-6-12/webp__7w.webp"
+    ,"/images/Escuela/7-6-12/6-12-3-nenes.webp"
   ],
   "12-16": [
     "/images/escuela/8-12-16/webp__81.webp",

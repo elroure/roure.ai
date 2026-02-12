@@ -110,11 +110,9 @@ const IMAGES = {
     { src: '/images/fundamentos/webp_acompa_9.webp', caption: '' },
     { src: '/images/fundamentos/webp_acompa_10.webp', caption: '' },
     { src: '/images/fundamentos/webp_acompa_11.webp', caption: '' },
-    { src: '/images/fundamentos/webp_acompa_12.webp', caption: '' },
   ];
 
   const fundamentosApren = [
-    { src: '/images/fundamentos/webp_apren_1.webp', caption: '' },
     { src: '/images/fundamentos/webp_apren_2.webp', caption: '' },
     { src: '/images/fundamentos/webp_apren_3.webp', caption: '' },
     { src: '/images/fundamentos/webp_apren_4.webp', caption: '' },
@@ -124,7 +122,6 @@ const IMAGES = {
     { src: '/images/fundamentos/webp_apren_8.webp', caption: '' },
     { src: '/images/fundamentos/webp_apren_9.webp', caption: '' },
     { src: '/images/fundamentos/webp_apren_10.webp', caption: '' },
-    { src: '/images/fundamentos/webp_apren_11.webp', caption: '' },
     { src: '/images/fundamentos/webp_apren_12.webp', caption: '' },
   ];
 
@@ -377,7 +374,10 @@ const content = {
     comunidadText: [
         "Hemos creado este espacio para las personas que habéis formado parte de la Comunidad de la escuela.",
         "SUBTITLE:Fotos y Contactos",
-        "Aquí podréis encontrar una selección de fotos que hemos hecho de los 24 años de escuela (en las que aparecen personas que lo han autorizado).",
+        "Querida comunidad,",
+        "Después de mucho trabajo, hemos conseguido hacer una selección de fotos desde el 2001 al 2025, para que podáis descargar las que queráis y tener un recuerdo de vuestro paso por El Roure. No ha sido fácil; partíamos de un archivo de 21.700 fotos, que durante estos años, y a pesar de algunos intentos generosos, no tuvimos ocasión de ordenar. En esta selección ha sido necesario poner únicamente  fotos de las personas que habéis enviado vuestra autorización de imagen. En ella están las fotos que se pueden ver en esta web memoria que de lo que fue nuestro proyecto y otras más.",
+        "En el caso de que alguna persona tenga inconveniente en salir en alguna de las fotos de los apartados del menú de la web, nos lo podéis comunicar y la retiraremos. Igualmente, si habéis enviado la autorización de imagen y no encontráis en la selección ninguna foto de vuestra familia, os podéis poner en contacto con nosotros y trataremos de buscar alguna en el archivo.",
+        "Esperemos que las disfrutéis. Un gran abrazo,",
         "Además, miembros de la comunidad han creado un documento donde las personas que queráis manteneros en contacto o bien organizar algún encuentro, podéis dejar vuestro datos y acceder a los de los demás.",
         "Para acceder os facilitaremos una contraseña que podéis pedir en el correo:",
         "experienciaroure@proton.me"
@@ -1165,8 +1165,10 @@ const App: React.FC = () => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
     const [nextImageLoaded, setNextImageLoaded] = useState(true);
+    const [opacity, setOpacity] = useState(1);
     const carouselRef = useRef<HTMLDivElement>(null);
     const nextImageRef = useRef<HTMLImageElement>(null);
+    const prevIndexRef = useRef(0);
 
     // Safety check for empty images array
     if (!images || images.length === 0) {
@@ -1181,7 +1183,7 @@ const App: React.FC = () => {
         ([entry]) => {
           setIsVisible(entry.isIntersecting);
         },
-        { threshold: 0.1 }
+        { threshold: 0.25 }
       );
 
       if (carouselRef.current) {
@@ -1193,7 +1195,7 @@ const App: React.FC = () => {
           observer.unobserve(carouselRef.current);
         }
       };
-    }, []);
+    }, [carouselRef]);
 
     // Start autoplay when visible, stop when not visible
     useEffect(() => {
@@ -1219,6 +1221,22 @@ const App: React.FC = () => {
       return () => clearInterval(interval);
     }, [isPlaying, nextImageLoaded, images.length, autoPlayInterval]);
 
+    // Fade transition effect when image changes
+    useEffect(() => {
+      if (prevIndexRef.current !== currentIndex) {
+        // Image changed, fade out
+        setOpacity(0);
+        prevIndexRef.current = currentIndex;
+        
+        // Fade back in after brief delay
+        const timer = setTimeout(() => {
+          setOpacity(1);
+        }, 50);
+        
+        return () => clearTimeout(timer);
+      }
+    }, [currentIndex]);
+
     const goToPrevious = () => {
       setIsPlaying(false);
       setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
@@ -1236,12 +1254,12 @@ const App: React.FC = () => {
     return (
       <div ref={carouselRef} className={`relative overflow-hidden group ${aspectClass} rounded-lg bg-[#f7f5e6]`} style={{ margin: 0, padding: 0, display: 'block' }}>
         {/* Main image display */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0" style={{ transition: 'opacity 0.4s ease-in-out', opacity: opacity }}>
           <SafeImage 
-            key={currentIndex}
             src={currentImage.src} 
             alt={currentImage.caption} 
             className="w-full h-full object-contain"
+            style={{ objectPosition: 'center top' }}
           />
         </div>
         
@@ -1437,7 +1455,6 @@ const App: React.FC = () => {
       { src: '/images/formaciones/webp_formaciones_26.webp', caption: '' },
       { src: '/images/formaciones/webp_formaciones_27.webp', caption: '' },
       { src: '/images/formaciones/webp_formaciones_28.webp', caption: '' },
-      { src: '/images/formaciones/webp_formaciones_29.webp', caption: '' },
       { src: '/images/formaciones/webp_formaciones_30.webp', caption: '' },
     ];
 
@@ -1498,7 +1515,7 @@ const App: React.FC = () => {
     ];
     // Collaborator logos organized by category
     const otrosLogos = [
-      '/images/logos/otros_SerGi.png',
+      '/images/logos/otros_sergi-1.png',
       '/images/logos/otros_economia_social.png',
       '/images/logos/otros_escolescoop.jpg',
       '/images/logos/otros_cooperativesdetreball.jpg',
