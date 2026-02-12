@@ -1259,7 +1259,7 @@ const App: React.FC = () => {
             src={currentImage.src} 
             alt={currentImage.caption} 
             className="w-full h-full object-contain"
-            style={{ objectPosition: 'center top' }}
+            style={{ objectPosition: 'center bottom' }}
           />
         </div>
         
@@ -1598,7 +1598,7 @@ const App: React.FC = () => {
 
         {/* Testimonials - moved before Asesoramientos */}
         <div className="mt-16 xl:mt-20 2xl:mt-24 mb-16 xl:mb-20 2xl:mb-24">
-          <h4 className="text-xl xl:text-xl 2xl:text-2xl font-bold text-stone-800 mb-4 text-[#c1562e] font-serif">{language === 'es' ? 'Testimonios de formación' : 'Testimonis de formació'}</h4>
+          <h4 className="text-xl xl:text-xl 2xl:text-2xl font-bold text-stone-800 mb-12 xl:mb-14 2xl:mb-16 text-[#c1562e] font-serif">{language === 'es' ? 'Testimonios de formación' : 'Testimonis de formació'}</h4>
           <TextCarousel items={testimonios} />
         </div>
 
@@ -1606,21 +1606,33 @@ const App: React.FC = () => {
         <div className="mt-20 xl:mt-24 2xl:mt-28">
           <h3 className="text-2xl xl:text-2xl 2xl:text-3xl font-bold text-stone-800 mb-4 xl:mb-5 2xl:mb-6 text-[#c1562e] font-serif">{language === 'es' ? 'Asesoramientos' : 'Assessoraments'}</h3>
           
-          {/* First paragraph group with carousel */}
-          <div className="flex flex-col lg:flex-row gap-8 xl:gap-10 2xl:gap-12 items-start">
+          {/* First paragraph (intro) with carousel */}
+          <div className="flex flex-col lg:flex-row gap-8 xl:gap-10 2xl:gap-12 items-start mb-8">
             <div style={{ fontSize: 'var(--internal-body-text)' }} className="flex-1 font-serif leading-relaxed text-stone-700 space-y-4 xl:space-y-5 2xl:space-y-6">
-              {asesoramientosParagraphs.slice(0, 2).map((p, idx) => (
-                <p key={idx} className={p === 'A familias' || p === 'A profesionales' || p === 'A nuevos proyectos' ? 'font-bold text-stone-800' : ''}>{p}</p>
-              ))}
+              <p>{asesoramientosParagraphs[0]}</p>
             </div>
             <div className="w-full lg:w-[min(34rem,90vw)]">
               <ImageCarousel images={asesoraPhotos} autoPlayInterval={3000} aspectClass="aspect-[5/3]" />
             </div>
           </div>
 
-          {/* Rest of the paragraphs */}
-          <div style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif leading-relaxed text-stone-700 space-y-4 xl:space-y-5 2xl:space-y-6 mt-8">
-            {asesoramientosParagraphs.slice(2).map((p, idx) => (
+          {/* A familias section */}
+          <div style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif leading-relaxed text-stone-700 space-y-4 xl:space-y-5 2xl:space-y-6 mb-8">
+            {asesoramientosParagraphs.slice(1, 10).map((p, idx) => (
+              <p key={idx} className={p === 'A familias' || p === 'A profesionales' || p === 'A nuevos proyectos' ? 'font-bold text-stone-800' : ''}>{p}</p>
+            ))}
+          </div>
+
+          {/* A profesionales section */}
+          <div style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif leading-relaxed text-stone-700 space-y-4 xl:space-y-5 2xl:space-y-6 mb-8">
+            {asesoramientosParagraphs.slice(10, 15).map((p, idx) => (
+              <p key={idx} className={p === 'A familias' || p === 'A profesionales' || p === 'A nuevos proyectos' ? 'font-bold text-stone-800' : ''}>{p}</p>
+            ))}
+          </div>
+
+          {/* A nuevos proyectos section */}
+          <div style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif leading-relaxed text-stone-700 space-y-4 xl:space-y-5 2xl:space-y-6">
+            {asesoramientosParagraphs.slice(15).map((p, idx) => (
               <p key={idx} className={p === 'A familias' || p === 'A profesionales' || p === 'A nuevos proyectos' ? 'font-bold text-stone-800' : ''}>{p}</p>
             ))}
           </div>

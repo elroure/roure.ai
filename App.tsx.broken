@@ -304,7 +304,7 @@ const content = {
     ],
     fundamentosContent: [
         {
-            title: "La autorregulación espontánea. El contacto con la naturaleza propia.",
+            title: "La autorregulación espontánea.\nEl contacto con la naturaleza propia.",
             paragraphs: [
                 "El organismo humano, como cualquier otro organismo vivo, dispone de una gran capacidad esencial para la vida: satisfacer sus necesidades fundamentales. La principal necesidad es desarrollar el propio potencial.",
                 "Existe un diálogo entre la necesidad propia y el entorno, de modo que sea posible optar por lo más adecuado para mantener la vitalidad y hacer crecer el potencial interno.",
@@ -316,7 +316,7 @@ const content = {
             ]
         },
         {
-            title: "El acompañamiento respetuoso; el marco necesario para el crecimiento.",
+            title: "El acompañamiento respetuoso;\nel marco necesario para el crecimiento.",
             paragraphs: [
                 "Los niños, niñas y adolescentes necesitan un marco de confianza, referencia y seguridad emocional de los adultos para poder ser felices y hacer crecer su potencial vital.",
                 "La relación entre los adultos y las niñas, niños o adolescentes, requiere presencia y disponibilidad. También un especial cuidado de la comunicación: saber escuchar y saber expresar nuestra sana autoridad como adultos.",
