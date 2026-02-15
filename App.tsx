@@ -704,9 +704,12 @@ const content = {
     comunidadText: [
         "Hem creat aquest espai per a les persones que heu format part de la Comunitat de l'escola.",
         "SUBTITLE:Fotos i Contactes",
-        "Aquí podreu trobar una selecció de fotos que hem fet dels 24 anys d'escola (en les quals apareixen persones que ho han autoritzat).",
-        "A més, membres de la comunitat han creat un document on les persones que vulgueu mantenir-vos en contacte o bé organitzar alguna trobada, podeu deixar les vostres dades i accedir a les dels altres.",
-        "Per accedir us facilitarem una contrasenya que podeu demanar al correu:",
+        "Benvolguda comunitat,",
+        "Després de molta feina, hem aconseguit fer una selecció de fotos des del 2001 al 2025, perquè pugueu descarregar les que vulgueu i tenir un record del vostre pas pel Roure. No ha estat fàcil; partíem d'un arxiu de 21.700 fotos, que durant aquests anys, i malgrat alguns intents generosos, no vam tenir ocasió d'ordenar. En aquesta selecció ha estat necessari posar únicament fotos de les persones que heu enviat la vostra autorització d'imatge. En ella estan les fotos que es poden veure en aquesta web memòria que del que va ser el nostre projecte i altres més.",
+        "En el cas que alguna persona tingui inconvenient a sortir en alguna de les fotos dels apartats del menú de la web, ens el podeu comunicar i la retirarem. Igualment, si heu enviat l'autorització d'imatge i no trobeu en la selecció cap foto de la vostra família, us podeu posar en contacte amb nosaltres i tractarem de buscar alguna en l'arxiu.",
+        "Esperem que les gaudiu. Una gran abraçada,",
+        "A més, membres de la comunitat han creat un document on les persones que vulgueu mantenir-vos en contacte o bé organitzar alguna trobada, podeu deixar el vostre dades i accedir als dels altres.",
+        "Per a accedir us facilitarem una contrasenya que podeu demanar en el correu:",
         "experienciaroure@proton.me"
     ],
     videosList: [
@@ -825,8 +828,8 @@ const App: React.FC = () => {
     }
   });
   const [language, setLanguage] = useState<Language>('es');
-  const [escuelaSection, setEscuelaSection] = useState<EscuelaSection>('intro');
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const showScrollTopRef = useRef(false);
   
   // State for Menu Interaction
   const [menuHasInteracted, setMenuHasInteracted] = useState(false);
@@ -867,13 +870,20 @@ const App: React.FC = () => {
     };
   }, []);
 
-  // Scroll detection
+  // Scroll detection - simple and efficient
   useEffect(() => {
     const handleScroll = () => {
       const scrollPercentage = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-      setShowScrollTop(scrollPercentage > 0.2);
+      const shouldShow = scrollPercentage > 0.2;
+      
+      // Only update state if visibility actually changed
+      if (shouldShow !== showScrollTopRef.current) {
+        showScrollTopRef.current = shouldShow;
+        setShowScrollTop(shouldShow);
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -1400,9 +1410,11 @@ const App: React.FC = () => {
           {sections.map((section, idx) => (
             <div key={idx}>
               {section.title && (
-                <h3 className="text-2xl xl:text-2xl 2xl:text-3xl font-bold text-stone-800 mb-4 xl:mb-5 2xl:mb-6 text-[#c1562e]">
-                  {section.title}
-                </h3>
+                <div className="space-y-4 xl:space-y-5 2xl:space-y-6 mb-4 xl:mb-5 2xl:mb-6">
+                  {section.title.split('\n').map((line, lineIdx) => (
+                    <h3 key={lineIdx} className="text-2xl xl:text-2xl 2xl:text-3xl font-bold text-stone-800 mb-0 text-[#c1562e] font-serif">{line}</h3>
+                  ))}
+                </div>
               )}
               <div className="flex flex-col lg:flex-row gap-8 xl:gap-10 2xl:gap-12 items-start">
                 <div style={{ fontSize: 'var(--internal-body-text)' }} className="flex-1 font-serif leading-relaxed text-stone-700 space-y-4 xl:space-y-5 2xl:space-y-6">
@@ -1458,13 +1470,12 @@ const App: React.FC = () => {
       { src: '/images/formaciones/webp_formaciones_30.webp', caption: '' },
     ];
 
-    // Split into 3 carousels: 10+10+10
-    const fCarousel1 = formacionesPhotos.slice(0, 10);
-    const fCarousel2 = formacionesPhotos.slice(10, 20);
-    const fCarousel3 = formacionesPhotos.slice(20, 30);
+    // Split into 2 carousels: 13+13
+    const fCarousel1 = formacionesPhotos.slice(0, 13);
+    const fCarousel2 = formacionesPhotos.slice(13, 26);
 
     // Asesoramientos: paragraphs (ES provided) and a 3-photo carousel (last 3)
-    const asesoramientosParagraphs: string[] = [
+    const asesoramientosParagraphs: string[] = language === 'es' ? [
       'El proyecto de la escuela siempre ha incluido el acompañamiento a las madres y padres. Además de esa experiencia, a partir del curso 2021-2022 empezamos a ofrecer asesoramientos a personas ajenas a la escuela: madres, padres, profesionales y proyectos educativos (que iniciaban su andadura o que, siendo consolidados, valoraban una mirada externa como la nuestra).',
       'A familias',
       'Es una forma de acompañamiento a madres y padres sobre cualquier aspecto del proceso familiar de crianza de vuestros hijos e hijas. Por un lado, miramos las soluciones que necesitas a las situaciones cotidianas actuales y, por otro lado, miramos el origen de estas señales que manifiestan que algo no va bien.',
@@ -1484,6 +1495,26 @@ const App: React.FC = () => {
       'Cada día son más las familias y profesionales que se plantean crear escuelas o espacios de educación viva para niñas, niños o adolescentes. A menudo tenemos claro lo que no queremos, pero no es tan fácil concretar lo que queremos.',
       'Por otro lado, un espacio educativo implica atender aspectos diversos, como por ejemplo la gestión, la organización interna, la adecuación de espacios y materiales, la dinámica de actividades y la metodología, la observación y acompañamiento de procesos de aprendizaje, la comunicación interna y externa, la participación y apoyo a madres y padres en su función, la observación individual y colectiva de las criaturas y su registro, la relación con la administración educativa, etc.',
       'Nos ofrecíamos a apoyar este proceso apasionante y creativo; sabíamos por experiencia que requiere mucha energía individual y colectiva, tiempo y sobre todo determinación en el propósito de materializar nuevas realidades para una educación cada vez más sintonizada con la vida.'
+    ] : [
+      'El projecte de l\'escola sempre ha inclòs l\'acompanyament a les mares i pares. A més d\'aquesta experiència, a partir del curs 2021-2022 comencem a oferir assessoraments a persones alienes a l\'escola: mares, pares, professionals i projectes educatius (que iniciaven la seva marxa o que, sent consolidats, valoraven una mirada externa com la nostra).',
+      'A famílies',
+      'És una forma d\'acompanyament a mares i pares sobre qualsevol aspecte del procés familiar de criança dels vostres fills i filles. D\'una banda, mirem les solucions que necessites a les situacions quotidianes actuals i, d\'altra banda, mirem l\'origen d\'aquests senyals que manifesten que alguna cosa no va bé.',
+      'La realitat quotidiana de relació amb el fills i filles ens pot generar dubtes, preocupació, conflictes i interrogants. Les dificultats es poden manifestar en qualsevol aspecte de la vida familiar: les relacions entre germans/es, amb la mare i el pare o amb les amistats, el procés d\'aprenentatge, la gestió emocional, els hàbits domèstics, la imatge de si mateix, etc.',
+      'Per a poder explorar una relació acurada i sensible amb els fills i filles, necessitem observar-los i observar-nos: els pensaments i creences, les emocions, les necessitats, i reflexionar des de la connexió amb elles i ells. Es tracta, en definitiva, d\'accedir a la saviesa innata que tenim com a mares i pares.',
+      'Donàvem suport a aquesta funció de mares i pares en aspectes com, per exemple:',
+      '• L\'observació, seguiment, reflexió i intervenció sobre el procés integral de maduració de cada criatura, l\'autoregulació, les tensions, dificultats i bloquejos que es manifesten en els aspectes físic, emocional i intel·lectual.',
+      '• L\'atenció a les dinàmiques de relació entre mares/pareixis i filles/fills, i entre tots els membres de la família, essencials pel benestar individual i familiar.',
+      '• Els processos d\'aprenentatge: l\'acompanyament d\'activitats a casa, l\'adequació d\'espais i materials pedagògics a casa, l\'acompanyament en la pròpia organització i gestió del temps per part dels nens/nenes i adolescents, la pròpia responsabilitat i autonomia, etc.',
+      '• L\'acompanyament en l\'etapa adolescent: entendre les característiques d\'aquesta delicada etapa, com establir la comunicació i relació amb l\'adolescent, els graus de llibertat i límits, la gestió de l\'ús de les noves tecnologies i xarxes socials, la gestió dels diners, la participació a les tasques de casa, la gestió de responsabilitats i compromisos, les formes de descàrrega de tensions, etc.',
+      'A professionals',
+      'En la pràctica pedagògica de qualsevol professional cal fer front a situacions noves, a vegades difícils o conflictives, tant amb una criatura determinada com amb el grup. Sovint les eines que tenim no són suficients i necessitem ampliar la nostra mirada i desenvolupar més la nostra percepció de les veritables necessitats de les criatures, i el grup, més enllà de formes "correctes" d\'intervenció.',
+      'També podem revisar la metodologia, les activitats, els espais i materials, el funcionament de l\'equip, la comunicació amb mares i pares, etc. Acompanyàvem als professionals, tant individualment com en col·lectiu, a partir de la seva realitat educativa i tenint presents les seves necessitats.',
+      'Partíem dels seus interrogants quotidians i revisàvem amb ells i elles els aspectes que demanaven canvis en la pràctica educativa a través de l\'observació i la reflexió. Potser calia mirar les formes d\'acompanyament i les intervencions, la tensió excessiva que dificulta l\'autoregulació en les criatures, la relació entre llibertat i límits, la consciència sistèmica, la metodologia i els formats d\'activitat, l\'ús d\'espais i de materials, la gestió i l\'organització d\'equips, les formacions, l\'organització de l\'equip educatiu, la comunicació entre equip i famílies, les eines d\'observació i registre del processos d\'aprenentatge, etc.',
+      'El propòsit era enfortir el vincle de seguretat i confiança amb cada criatura que permet fer un acompanyament conscient i respectuós.',
+      'A nous projectes',
+      'Cada dia són més les famílies i professionals que es plantegen crear escoles o espais d\'educació viva per a nenes, nens o adolescents. Sovint tenim clar el que no volem, però no és tan fàcil concretar el que volem.',
+      'D\'altra banda, un espai educatiu implica atendre aspectes diversos, com per exemple la gestió, l\'organització interna, l\'adequació d\'espais i materials, la dinàmica d\'activitats i la metodologia, l\'observació i acompanyament de processos d\'aprenentatge, la comunicació interna i externa, la participació i suport a mares i pares en la seva funció, l\'observació individual i col·lectiva de les criatures i el seu registre, la relació amb l\'administració educativa, etc.',
+      'Ens oferíem a donar suport a aquest procés apassionant i creatiu; sabíem per experiència que requereix molta energia individual i col·lectiva, temps i sobretot determinació en el propòsit de materialitzar noves realitats per a una educació cada vegada més sintonitzada amb la vida.'
     ];
     const asesoraPhotos = [
       { src: '/images/formaciones/webp_asesoramientos_01.webp', caption: '' },
@@ -1491,7 +1522,7 @@ const App: React.FC = () => {
       { src: '/images/formaciones/webp_asesoramientos_03.webp', caption: '' },
     ];
 
-    const formacionesParagraphs: string[] = [
+    const formacionesParagraphs: string[] = language === 'es' ? [
       'Aunque desde el 2002 participamos en algunos eventos educativos, es a partir del 2008 cuando comenzamos verdaderamente la etapa de las formaciones. Por una parte hemos organizado una formación anual que llamamos Savia y talleres monográficos, y por otra parte hemos participado en formaciones organizadas por otras entidades educativas (proyectos de educación viva y activa, IES, Universidades, etc.). La formación Savia se ha desarrollado, de forma presencial, desde el curso 2008-2009 hasta el curso 2025-2026, dirigida a madres, padres, docentes, estudiantes o a toda persona interesada en la relación con niñas/os y adolescentes.',
       'Por otra parte hemos ofrecido la posibilidad de hacer formaciones a medida, adaptando el formato, la duración y los contenidos a las necesidades de cada entidad, escuela, institución, proyecto educativo o grupo de familias y/o profesionales.',
       'También hemos acogido en el espacio de la escuela talleres llevados por otros profesionales afines (destacan los talleres anuales de Rebeca y Mauricio Wild, de la escuela Pestalozzi de Ecuador).',
@@ -1501,8 +1532,18 @@ const App: React.FC = () => {
       'Necesitamos explorar y aprender a acompañar desde nuestro propio talento innato, de una forma más centrada, abierta y respetuosa.',
       '¿Qué significa una educación conectada con la vida? ¿Cómo podemos percibir y acompañar lo que realmente necesitan las niñas, niños y adolescentes? ¿Cómo establecemos una comunicación respetuosa y auténtica entre adultos y criaturas? ¿Cómo ponemos límites naturales desde una sana autoridad? ¿Cómo apoyamos a los procesos de aprendizaje de manera respetuosa y eficaz?',
       'Planteábamos observar y reflexionar en profundidad sobre los temas clave implicados en el desarrollo y maduración de las criaturas. También proponíamos revisar las creencias limitadoras y los patrones internos que nos desconectan de nuestra propia capacidad para percibir las verdaderas necesidades de las niñas, niños y adolescentes.'
+    ] : [
+      'Encara que des del 2002 participem en alguns esdeveniments educatius, és a partir del 2008 quan comencem veritablement l\'etapa de les formacions. D\'una banda hem organitzat una formació anual que anomenem Saba i tallers monogràfics, i d\'altra banda hem participat en formacions organitzades per altres entitats educatives (projectes d\'educació viva i activa, IES, Universitats, etc.). La formació Saba s\'ha desenvolupat, de manera presencial, des del curs 2008-2009 fins al curs 2025-2026, dirigida a mares, pares, docents, estudiants o a tota persona interessada en la relació amb nenes/us i adolescents.',
+      'D\'altra banda hem ofert la possibilitat de fer formacions a mesura, adaptant el format, la durada i els continguts a les necessitats de cada entitat, escola, institució, projecte educatiu o grup de famílies i/o professionals.',
+      'També hem acollit en l\'espai de l\'escola tallers portats per altres professionals afins (destaquen els tallers anuals de Rebeca i Maurici Wild, de l\'escola Pestalozzi de l\'Equador).',
+      'Aquest aspecte del projecte educatiu l\'hem desenvolupat Begoña González (del 2008 al 2025) i Paco Robles (del 2014 al 2021).',
+      'El propòsit de totes les nostres formacions ha estat convidar a veure noves perspectives, comprensions i solucions a les dificultats i conflictes que sorgeixen en el dia a dia en la relació amb els nens, nenes i adolescents, tant siguem mares o pares com a professionals de l\'educació. L\'eix de la formació ha estat sempre el dels fonaments i l\'experiència de l\'escola i la metodologia una combinació de dinàmiques vivencials amb la reflexió individual i grupal.',
+      'Aquesta realitat quotidiana amb les criatures ens genera interrogants i ens convida a obrir-nos a allò que es dona, tant fos com dins nostre; a vegades ens sorgeixen dubtes, ens poden desbordar situacions, reproduïm reaccions que no volem tenir... acudir a fórmules "correctes" segons les idees d\'una nova pedagogia no sembla la solució. Sovint les eines que tenim no són suficients i necessitem revisar els patrons i formes de funcionament que no són coherents amb el que veritablement volem.',
+      'Necessitem explorar i aprendre a acompanyar des del nostre propi talent innat, d\'una forma més centrada, oberta i respectuosa.',
+      'Què significa una educació connectada amb la vida? Com podem percebre i acompanyar el que realment necessiten les nenes, nens i adolescents? Com establim una comunicació respectuosa i autèntica entre adults i criatures? Com posem límits naturals des d\'una sana autoritat? Com fem costat als processos d\'aprenentatge de manera respectuosa i eficaç?',
+      'Plantejàvem observar i reflexionar en profunditat sobre els temes clau implicats en el desenvolupament i maduració de les criatures. També proposàvem revisar les creences limitadores i els patrons interns que ens desconnecten de la nostra pròpia capacitat per a percebre les veritables necessitats de les nenes, nens i adolescents.'
     ];
-    const testimonios: Array<{ text: string; author?: string }> = [
+    const testimonios: Array<{ text: string; author?: string }> = language === 'es' ? [
       { text: 'Una experiencia donde he podido poner atención en cómo aprendemos, a través de la observación y reflexión pedagógica. / \nEUn espacio y tiempo acompañado para poder sintonizar con el diálogo interno en las relaciones. / \nEUna propuesta en la que he podido abrir los sentidos a la comunicación humana para que el acompañamiento se dé desde la mirada consciente como adulta y el respeto de las necesidades y procesos de las criaturas, tanto en el acompañamiento individual como en el grupal.', author: 'Bibi' },
       { text: 'Aquesta formació va suposar un punt d’inflexió vital en la meva trajectòria docent. Em va canviar la mirada cap a la infància i els seus processos d’aprenentatge, em va oferir un espai vivencial, de recerca i reflexió grupal que em va ajudar a replantejar la meva manera de cuidar i acompanyar de forma holística als nens i nenes. L’escola, els seus espais, envoltats de natura i aquesta formació, avui en dia encara són una inspiració i un dels pilars que sustenten la meva feina com a mestra.\n\n', author: 'Mercè' },
       { text: 'Em va connectar amb parts meves que, tot i ser essencials, no miraba ni tenia presents. / \nEs mostrava amb claredat la meva essència i era precisament el que ocultava als demés i a mi mateix.', author: 'Marc' },
@@ -1512,6 +1553,16 @@ const App: React.FC = () => {
       { text: 'En la formación de El Roure aprendí que de una misma actividad en grupo cada una tiene diferentes aprendizajes igual de importantes, valiosos y respetables, poniéndole dimensión al significado de diversidad.', author: 'Sergio' },
       { text: 'Una manera conocerme a mí misma, a los demás y a lo que me rodea, más abierta, más paciente, más profunda y más respetuosa. Me llevo el conocimiento de que nada está escrito, que cada uno aprende con la su mirada y que la fuerza del grupo es necesaria. Este curso me ha ayudado a perder miedos ya romper barreras.El hecho de experimentar en grupo e individualmente cada uno de los apartados hace que no olvides la experiencia y quede grabada en tu interior.', author: 'Josep' },
       { text: 'Para mí esta formación ha sido clave en el camino de autoconocimiento de mí misma como persona, como mujer y como madre. Valoro muy positivamente el hecho de experimentar lo que se habla en cada sesión y de abordarlo desde las diferentes dinámicas. También me resulta muy útil el material complementario que recibimos.', author: 'Oliver' }
+    ] : [
+      { text: 'Una experiència on he pogut posar atenció en com aprenem, a través de l\'observació i reflexió pedagògica. / \nUn espai i temps acompanyat per poder sintonitzar amb el diàleg intern en les relacions. / \nUna proposta en la qual he pogut obrir els sentits a la comunicació humana perquè l\'acompanyament es doni des de la mirada conscient com a adulta i el respecte de les necessitats i processos de les criatures, tant en l\'acompanyament individual com en el grupal.', author: 'Bibi' },
+      { text: 'Aquesta formació va suposar un punt d\'inflexió vital en la meva trajectòria docent. Em va canviar la mirada cap a la infància i els seus processos d\'aprenentatge, em va oferir un espai vivencial, de recerca i reflexió grupal que em va ajudar a replantejar la meva manera de cuidar i acompanyar de forma holística als nens i nenes. L\'escola, els seus espais, envoltats de natura i aquesta formació, avui en dia encara són una inspiració i un dels pilars que sustenten la meva feina com a mestra.\\n\\n', author: 'Mercè' },
+      { text: 'Em va connectar amb parts meves que, tot i ser essencials, no miraba ni tenia presents. / \\nEs mostrava amb claredat la meva essència i era precisament el que ocultava als demés i a mi mateix.', author: 'Marc' },
+      { text: 'Sentir com a través de la formació neixen i es nutren noves experiències sobre com vivim l\'educació. Veure, escoltar i experimentar des d\'una veu que per a mi té llum i experiència.', author: 'Anònim' },
+      { text: 'Una formació que m\'ha endinsat a conèixer-me i a connectar amb l\'essència del projecte El Roure. Un aprofundiment en com acompanyar als infants i a les seves famílies, tot compartint en grup. La tornaria a fer 50 vegades perquè crec que s\'apren molt i et fa replantejar-te moltes coses.', author: 'Sandra' },
+      { text: 'Una formació molt enriquidora que em va aportar molt com a persona, com a mare i mare que educa a casa i com a professional d\'acompanyament a infants i famílies en el marc escolar.', author: 'Blanca' },
+      { text: 'En la formació de El Roure vaig aprendre que d\'una mateixa activitat en grup cadascú té aprenentatges diferents igual d\'importants, valuosos i respectables, donant dimensió al significat de la diversitat.', author: 'Sergio' },
+      { text: 'Una manera de conèixer-me a mi mateixa, als altres i a allò que m\'envolta, més oberta, més pacient, més profunda i més respectuosa. Em porto el coneixement que res està escrit, que cadascú aprèn amb la seva mirada i que la força del grup és necessària. Aquest curs m\'ha ajudat a perdre miedos i trencar barreres. El fet d\'experimentar en grup i individualment cada un dels apartats fa que no oblidis l\'experiència i quedi gravada en el teu interior.', author: 'Josep' },
+      { text: 'Per a mi aquesta formació ha estat clau en el camí de l\'autoconeixement de mi mateixa com a persona, com a dona i com a mare. Valoro molt positivament el fet d\'experimentar el que es parla en cada sessió i d\'abordarlo des de les diferents dinàmiques. També em resulta molt útil el material complementari que rebem.', author: 'Oliver' }
     ];
     // Collaborator logos organized by category
     const otrosLogos = [
@@ -1550,39 +1601,34 @@ const App: React.FC = () => {
         <div className="mb-12 xl:mb-14 2xl:mb-16">
           <h3 className="text-2xl xl:text-2xl 2xl:text-3xl font-bold text-stone-800 mb-4 xl:mb-5 2xl:mb-6 text-[#c1562e] font-serif">{language === 'es' ? 'Formaciones' : 'Formacions'}</h3>
           
-          {/* First paragraph group with carousel 1 */}
+          {/* First paragraph (intro) without carousel */}
+          <div style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif leading-relaxed text-stone-700 space-y-4 xl:space-y-5 2xl:space-y-6 mb-8">
+            <p className="font-bold">{formacionesParagraphs[0]}</p>
+          </div>
+
+          {/* First carousel group with paragraphs 1-4 */}
           <div className="flex flex-col lg:flex-row gap-8 xl:gap-10 2xl:gap-12 items-start mb-8">
             <div style={{ fontSize: 'var(--internal-body-text)' }} className="flex-1 font-serif leading-relaxed text-stone-700 space-y-4 xl:space-y-5 2xl:space-y-6">
-              <p className="font-bold">{formacionesParagraphs[0]}</p>
               <p>{formacionesParagraphs[1]}</p>
+              <p>{formacionesParagraphs[2]}</p>
+              <p>{formacionesParagraphs[3]}</p>
+              <p>{formacionesParagraphs[4]}</p>
             </div>
             <div className="w-full lg:w-[min(34rem,90vw)]">
               <ImageCarousel images={fCarousel1} autoPlayInterval={3000} />
             </div>
           </div>
 
-          {/* Second paragraph group with carousel 2 */}
+          {/* Second carousel group with paragraphs 5-8 */}
           <div className="flex flex-col lg:flex-row gap-8 xl:gap-10 2xl:gap-12 items-start mb-8">
             <div style={{ fontSize: 'var(--internal-body-text)' }} className="flex-1 font-serif leading-relaxed text-stone-700 space-y-4 xl:space-y-5 2xl:space-y-6">
-              <p>{formacionesParagraphs[2]}</p>
-              <p>{formacionesParagraphs[3]}</p>
-              <p>{formacionesParagraphs[4]}</p>
               <p>{formacionesParagraphs[5]}</p>
-            </div>
-            <div className="w-full lg:w-[min(34rem,90vw)]">
-              <ImageCarousel images={fCarousel2} autoPlayInterval={3000} />
-            </div>
-          </div>
-
-          {/* Third paragraph group with carousel 3 */}
-          <div className="flex flex-col lg:flex-row gap-8 xl:gap-10 2xl:gap-12 items-start mb-8">
-            <div style={{ fontSize: 'var(--internal-body-text)' }} className="flex-1 font-serif leading-relaxed text-stone-700 space-y-4 xl:space-y-5 2xl:space-y-6">
               <p>{formacionesParagraphs[6]}</p>
               <p>{formacionesParagraphs[7]}</p>
               <p>{formacionesParagraphs[8]}</p>
             </div>
             <div className="w-full lg:w-[min(34rem,90vw)]">
-              <ImageCarousel images={fCarousel3} autoPlayInterval={3000} />
+              <ImageCarousel images={fCarousel2} autoPlayInterval={3000} />
             </div>
           </div>
 
@@ -1609,7 +1655,7 @@ const App: React.FC = () => {
           {/* First paragraph (intro) with carousel */}
           <div className="flex flex-col lg:flex-row gap-8 xl:gap-10 2xl:gap-12 items-start mb-8">
             <div style={{ fontSize: 'var(--internal-body-text)' }} className="flex-1 font-serif leading-relaxed text-stone-700 space-y-4 xl:space-y-5 2xl:space-y-6">
-              <p>{asesoramientosParagraphs[0]}</p>
+              <p className="font-bold text-stone-800">{asesoramientosParagraphs[0]}</p>
             </div>
             <div className="w-full lg:w-[min(34rem,90vw)]">
               <ImageCarousel images={asesoraPhotos} autoPlayInterval={3000} aspectClass="aspect-[5/3]" />
@@ -1619,21 +1665,21 @@ const App: React.FC = () => {
           {/* A familias section */}
           <div style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif leading-relaxed text-stone-700 space-y-4 xl:space-y-5 2xl:space-y-6 mb-8">
             {asesoramientosParagraphs.slice(1, 10).map((p, idx) => (
-              <p key={idx} className={p === 'A familias' || p === 'A profesionales' || p === 'A nuevos proyectos' ? 'font-bold text-stone-800' : ''}>{p}</p>
+              <p key={idx} className={p === 'A familias' || p === 'A profesionales' || p === 'A nuevos proyectos' || p === 'A famílies' || p === 'A professionals' || p === 'A nous projectes' ? 'font-bold text-stone-800' : ''}>{p}</p>
             ))}
           </div>
 
           {/* A profesionales section */}
           <div style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif leading-relaxed text-stone-700 space-y-4 xl:space-y-5 2xl:space-y-6 mb-8">
             {asesoramientosParagraphs.slice(10, 15).map((p, idx) => (
-              <p key={idx} className={p === 'A familias' || p === 'A profesionales' || p === 'A nuevos proyectos' ? 'font-bold text-stone-800' : ''}>{p}</p>
+              <p key={idx} className={p === 'A familias' || p === 'A profesionales' || p === 'A nuevos proyectos' || p === 'A famílies' || p === 'A professionals' || p === 'A nous projectes' ? 'font-bold text-stone-800' : ''}>{p}</p>
             ))}
           </div>
 
           {/* A nuevos proyectos section */}
           <div style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif leading-relaxed text-stone-700 space-y-4 xl:space-y-5 2xl:space-y-6">
             {asesoramientosParagraphs.slice(15).map((p, idx) => (
-              <p key={idx} className={p === 'A familias' || p === 'A profesionales' || p === 'A nuevos proyectos' ? 'font-bold text-stone-800' : ''}>{p}</p>
+              <p key={idx} className={p === 'A familias' || p === 'A profesionales' || p === 'A nuevos proyectos' || p === 'A famílies' || p === 'A professionals' || p === 'A nous projectes' ? 'font-bold text-stone-800' : ''}>{p}</p>
             ))}
           </div>
         </div>
@@ -1646,7 +1692,7 @@ const App: React.FC = () => {
           
           {/* Education - First */}
           <div className="mb-6">
-            <h4 className="text-sm font-serif text-stone-600 mb-3 text-center">
+            <h4 className="text-sm font-serif font-bold text-stone-600 mb-3 text-center">
               {language === 'es' ? 'Educación' : 'Educació'}
             </h4>
             <div className="grid grid-cols-3 gap-3 md:flex md:flex-wrap md:justify-center md:gap-3">
@@ -1660,7 +1706,7 @@ const App: React.FC = () => {
 
           {/* Universities - Second */}
           <div className="mb-6">
-            <h4 className="text-sm font-serif text-stone-600 mb-3 text-center">
+            <h4 className="text-sm font-serif font-bold text-stone-600 mb-3 text-center">
               {language === 'es' ? 'Universidades' : 'Universitats'}
             </h4>
             <div className="grid grid-cols-3 gap-3 md:flex md:flex-wrap md:justify-center md:gap-3">
@@ -1674,7 +1720,7 @@ const App: React.FC = () => {
 
           {/* Other entities - Third */}
           <div className="mb-6">
-            <h4 className="text-sm font-serif text-stone-600 mb-3 text-center">
+            <h4 className="text-sm font-serif font-bold text-stone-600 mb-3 text-center">
               {language === 'es' ? 'Otras entidades' : 'Altres entitats'}
             </h4>
             <div className="grid grid-cols-3 gap-3 md:flex md:flex-wrap md:justify-center md:gap-3">
@@ -1697,7 +1743,11 @@ const App: React.FC = () => {
           {contentData.map((section, sIdx) => (
               <div key={sIdx} className="space-y-4 xl:space-y-5 2xl:space-y-6">
                   {section.title && (
-                      <h3 className="text-2xl xl:text-2xl 2xl:text-3xl font-bold text-stone-800 mb-2 xl:mb-2 2xl:mb-3 text-[#c1562e]">{section.title}</h3>
+              <div className="space-y-4 xl:space-y-5 2xl:space-y-6 mb-4 xl:mb-5 2xl:mb-6">
+                        {section.title.split('\n').map((line, lineIdx) => (
+                          <h3 key={lineIdx} className="text-2xl xl:text-2xl 2xl:text-3xl font-bold text-stone-800 text-[#c1562e] font-serif mb-0">{line}</h3>
+                        ))}
+                      </div>
                   )}
                   {section.paragraphs.map((p, pIdx) => (
                       <p key={pIdx} className={pIdx === 0 ? "font-bold" : ""}>
@@ -1722,14 +1772,41 @@ const App: React.FC = () => {
 
   const EscuelaView = () => {
     const sections: EscuelaSection[] = ['intro', 'aprendizaje', 'acompanamiento', 'equipo', 'familias', 'etapas', '3-6', '6-12', '12-16'];
+    
+    // Initialize state from sessionStorage to preserve across scroll/navigation
+    const [escuelaSection, setEscuelaSection] = useState<EscuelaSection>(() => {
+      try {
+        const saved = sessionStorage.getItem('escuelaSection');
+        return (saved as EscuelaSection) || 'intro';
+      } catch {
+        return 'intro';
+      }
+    });
+    
     const [escuelaImages, setEscuelaImages] = useState<Record<string, { src: string; caption: string }[]>>({});
     const [imagesLoaded, setImagesLoaded] = useState(false);
+    const lastSectionRef = useRef<EscuelaSection>('intro');
+
+    // Persist section state to sessionStorage when it changes
+    useEffect(() => {
+      try {
+        sessionStorage.setItem('escuelaSection', escuelaSection);
+      } catch {
+        // Silently ignore if sessionStorage is unavailable
+      }
+      lastSectionRef.current = escuelaSection;
+    }, [escuelaSection]);
+
+    // Handler that prevents state reset on scroll
+    const handleSectionChange = (newSection: EscuelaSection) => {
+      setEscuelaSection(newSection);
+    };
 
     useEffect(() => {
       const loadImages = async () => {
         try {
           const manifestUrl = '/images/Escuela/escuela-manifest.json?v=20260203';
-          const response = await fetch(manifestUrl, { cache: 'no-store' });
+          const response = await fetch(manifestUrl, { cache: 'force-cache' });
           if (!response.ok) {
             setEscuelaImages({});
             setImagesLoaded(true);
@@ -1805,7 +1882,10 @@ const App: React.FC = () => {
     };
     
     const currentImages = escuelaImages[escuelaSection] || [];
-    const { sections: contentSections } = distributeImages(activeContent, currentImages);
+    const { sections: contentSections } = React.useMemo(
+      () => distributeImages(activeContent, currentImages),
+      [escuelaSection, escuelaImages, activeContent]
+    );
 
     return (
       <InternalPageLayout title={t.nav.escuela}>
@@ -1819,14 +1899,14 @@ const App: React.FC = () => {
                   return (
                   <li key={s}>
                     <button 
-                      onClick={() => setEscuelaSection(s)}
+                      onClick={() => handleSectionChange(s)}
                       style={{ fontSize: 'var(--internal-body-text)' }}
-                      className={`font-serif font-medium transition-colors duration-300 block relative group text-left
+                      className={`font-serif font-bold transition-colors duration-300 block relative group text-left whitespace-nowrap
                         ${isActive ? 'text-[#c1562e]' : 'text-stone-600 hover:text-[#c1562e]'}
                       `}
                     >
                       {t.escuela.menu[s]}
-                      <span className={`absolute left-0 -bottom-1 h-[1px] bg-[#c1562e] transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+                      <span className={`absolute left-0 -bottom-1 h-[1px] bg-[#c1562e] transition-[width] duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
                     </button>
                   </li>
                 )})}
@@ -2056,6 +2136,20 @@ const App: React.FC = () => {
 
     return (
       <InternalPageLayout title={t.nav.textos}>
+        {/* Introductory text */}
+        <div style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif leading-relaxed text-stone-700 space-y-4 xl:space-y-5 2xl:space-y-6 mb-10 xl:mb-12 2xl:mb-14">
+          <p>
+            {language === 'es' 
+              ? 'En esta sección podéis leer diferentes textos internos y publicados que tuvieron una relación estrecha con El Roure, y tratan temas relevantes relacionados con la experiencia.'
+              : 'En aquesta secció podeu llegir diferents textos interns i publicats que van tenir una relació estreta amb El Roure, i tracten temes rellevants relacionats amb l\'experiència.'}
+          </p>
+          <p>
+            {language === 'es' 
+              ? 'Podéis usar la barra de búsqueda y las etiquetas para filtrar por temas.'
+              : 'Podeu usar la barra de cerca i les etiquetes per filtrar per temes.'}
+          </p>
+        </div>
+        
         {/* Search Bar and Filter Tags */}
         <div className="flex flex-wrap gap-3 xl:gap-3 2xl:gap-4 mb-10 xl:mb-12 2xl:mb-14">
             {/* Search Bar */}
@@ -2121,7 +2215,7 @@ const App: React.FC = () => {
                     ))}
                   </div>
                 </div>
-                <h3 style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif font-bold text-stone-800 mb-2 xl:mb-2 2xl:mb-3 group-hover:text-[#c1562e] transition-colors leading-tight">
+                <h3 style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif font-bold text-stone-800 mb-4 xl:mb-4 2xl:mb-6 group-hover:text-[#c1562e] transition-colors leading-tight">
                   {article.title}
                 </h3>
                 <p style={{ fontSize: 'calc(var(--internal-body-text) * 0.85)' }} className="text-stone-500 mb-2 xl:mb-2 2xl:mb-3 font-serif italic">
@@ -2261,7 +2355,7 @@ const App: React.FC = () => {
                     if (p.startsWith('SUBTITLE:')) {
                         const subtitle = p.replace('SUBTITLE:', '');
                         return (
-                            <h3 key={idx} className="text-2xl xl:text-2xl 2xl:text-3xl font-bold text-stone-800 mb-2 xl:mb-2 2xl:mb-3 text-[#c1562e]">
+                            <h3 key={idx} className="text-2xl xl:text-2xl 2xl:text-3xl font-bold text-stone-800 mb-4 xl:mb-4 2xl:mb-6 text-[#c1562e]">
                                 {subtitle}
                             </h3>
                         );
