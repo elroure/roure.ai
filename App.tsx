@@ -870,8 +870,11 @@ const App: React.FC = () => {
     };
   }, []);
 
-  // Scroll detection - simple and efficient
+  // Scroll detection - efficient throttling with RAF, only updates state when value changes
   useEffect(() => {
+    let rafId: number;
+    let isThrottled = false;
+    
     const handleScroll = () => {
       const scrollPercentage = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
       const shouldShow = scrollPercentage > 0.2;
@@ -883,8 +886,21 @@ const App: React.FC = () => {
       }
     };
     
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    const throttledScroll = () => {
+      if (!isThrottled) {
+        isThrottled = true;
+        rafId = requestAnimationFrame(() => {
+          handleScroll();
+          isThrottled = false;
+        });
+      }
+    };
+    
+    window.addEventListener('scroll', throttledScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', throttledScroll);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
   }, []);
 
   // Hash-based navigation: update state when the hash changes
