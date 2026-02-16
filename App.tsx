@@ -1,11 +1,11 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowUp, ChevronLeft, FileText, Play, Tag, Mic, Search } from 'lucide-react';
+import { ArrowUp, ChevronLeft, FileText, Play, Tag, Mic, Search, Download } from 'lucide-react';
 
 // --- Types & Content ---
 
 type Language = 'es' | 'ca';
-type View = 'home' | 'historia' | 'fundamentos' | 'formacion' | 'escuela' | 'videos' | 'textos' | 'comunidad' | 'en_que_estamos';
+type View = 'home' | 'historia' | 'fundamentos' | 'formacion' | 'escuela' | 'videos' | 'textos' | 'comunidad' | 'en_que_estamos' | 'privacy';
 type EscuelaSection = 'intro' | 'aprendizaje' | 'acompanamiento' | 'equipo' | 'familias' | 'etapas' | '3-6' | '6-12' | '12-16';
 
 // --- IMAGE CONFIGURATION ---
@@ -818,7 +818,7 @@ const content = {
 // --- Components ---
 
 const App: React.FC = () => {
-  const ALLOWED_VIEWS: View[] = ['home','historia','fundamentos','formacion','escuela','videos','textos','comunidad','en_que_estamos'];
+  const ALLOWED_VIEWS: View[] = ['home','historia','fundamentos','formacion','escuela','videos','textos','comunidad','en_que_estamos','privacy'];
   const [currentView, setCurrentView] = useState<View>(() => {
     try {
       const h = window.location.hash.replace('#','');
@@ -833,6 +833,24 @@ const App: React.FC = () => {
   
   // State for Menu Interaction
   const [menuHasInteracted, setMenuHasInteracted] = useState(false);
+  
+  // Cookie Banner State
+  const [showCookieBanner, setShowCookieBanner] = useState(() => {
+    try {
+      return localStorage.getItem('cookieConsent') === null;
+    } catch (e) {
+      return true;
+    }
+  });
+  
+  const handleCookieConsent = (accepted: boolean) => {
+    try {
+      localStorage.setItem('cookieConsent', JSON.stringify(accepted));
+      setShowCookieBanner(false);
+    } catch (e) {
+      console.error('Failed to set cookie consent:', e);
+    }
+  };
 
   const brandColor = "text-[#c1562e]";
   const hoverBrandColor = "hover:text-[#c1562e]";
@@ -1007,6 +1025,14 @@ const App: React.FC = () => {
           <span>{t.home.footer}</span>
           <a href="https://rcrear.com" className={`hover:text-stone-600 transition-colors`}>rcrear.com</a>
         </div>
+        
+        {/* Privacy Policy Link */}
+        <button
+          onClick={() => navigateTo('privacy')}
+          className="text-xs text-stone-400 hover:text-stone-600 transition-colors font-serif mt-2"
+        >
+          {language === 'es' ? 'Política de privacidad' : 'Política de privacitat'}
+        </button>
       </div>
     </div>
   );
@@ -2227,7 +2253,7 @@ const App: React.FC = () => {
                 <div className="flex items-start justify-between mb-4 xl:mb-4 2xl:mb-5">
                   <div className="flex flex-wrap gap-1.5 justify-start w-full">
                     {article.tags.map((tag, i) => (
-                      <span key={i} className="text-xs md:text-sm xl:text-sm 2xl:text-base font-bold text-[#c1562e] bg-[#c1562e]/10 px-2 xl:px-2.5 2xl:px-3 py-1 xl:py-1 2xl:py-1.5 rounded whitespace-nowrap">{tag}</span>
+                      <span key={i} className="text-xs md:text-sm xl:text-sm 2xl:text-base font-serif font-medium text-[#c1562e] bg-[#c1562e]/10 px-2 xl:px-2.5 2xl:px-3 py-1 xl:py-1 2xl:py-1.5 rounded whitespace-nowrap">{tag}</span>
                     ))}
                   </div>
                 </div>
@@ -2241,8 +2267,8 @@ const App: React.FC = () => {
                   {hasPdf && (
                     <>
                       <FileText size={16} />
-                      <span className="hover:underline">
-                        PDF • {language === 'es' ? 'Descargar' : 'Descarregar'}
+                      <span className="text-stone-500">
+                        PDF
                       </span>
                     </>
                   )}
@@ -2269,16 +2295,37 @@ const App: React.FC = () => {
                 <CardContent />
               </a>
             ) : hasPdf ? (
-              <a
-                key={idx}
-                href={article.file}
-                download
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white p-6 xl:p-7 2xl:p-8 rounded-xl border border-stone-200 shadow-sm hover:shadow-md transition-all group cursor-pointer block"
-              >
-                <CardContent />
-              </a>
+              <div key={idx} className="bg-white p-6 xl:p-7 2xl:p-8 rounded-xl border border-stone-200 shadow-sm hover:shadow-md transition-all group cursor-pointer block flex flex-col">
+                <a
+                  href={article.file}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1"
+                >
+                  <CardContent />
+                </a>
+                <div className="mt-4 flex gap-2">
+                  <a
+                    href={article.file}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 bg-[#c1562e]/10 hover:bg-[#c1562e] text-[#c1562e] hover:text-white transition-all rounded px-3 py-2 text-xs md:text-sm font-serif font-medium text-center flex items-center justify-center gap-1"
+                  >
+                    <FileText size={14} />
+                    {language === 'es' ? 'Ver' : 'Veure'}
+                  </a>
+                  <a
+                    href={article.file}
+                    download
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 bg-[#c1562e] text-white hover:bg-[#a0441e] transition-all rounded px-3 py-2 text-xs md:text-sm font-serif font-medium text-center flex items-center justify-center gap-1"
+                  >
+                    <Download size={14} />
+                    {language === 'es' ? 'Descargar' : 'Descarregar'}
+                  </a>
+                </div>
+              </div>
             ) : (
               <div key={idx} className="bg-white p-6 xl:p-7 2xl:p-8 rounded-xl border border-stone-200 shadow-sm transition-all group">
                 <CardContent />
@@ -2307,6 +2354,93 @@ const App: React.FC = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </InternalPageLayout>
+    );
+  };
+
+  const PrivacyPolicyView = () => {
+    const privacyContent = {
+      es: {
+        title: 'Política de Privacidad',
+        p1: 'En El Roure nos comprometemos a proteger su privacidad. Esta página explica cómo manejamos los datos en nuestro sitio web.',
+        h2_1: 'Datos que recopilamos',
+        p2: 'Este sitio web utiliza recursos externos, incluyendo:',
+        ul1: [
+          'Google Fonts: para cargar las tipografías del sitio',
+          'Google Drive: para algunos enlaces de contenido externo'
+        ],
+        h2_2: 'Información de contacto',
+        p3: 'Cuando se comunica con nosotros por correo electrónico (experienciaroure@proton.me), se procesa su dirección de correo y cualquier información que incluya en su mensaje para responder a su solicitud.',
+        h2_3: 'Cookies',
+        p4: 'Este sitio web utiliza cookies simples para:',
+        ul2: ['Recordar su preferencia de idioma', 'Recordar si ha aceptado nuestra política de cookies'],
+        h2_4: 'Enlaces externos',
+        p5: 'Este sitio contiene enlaces a sitios externos. No somos responsables de las prácticas de privacidad de terceros.',
+        h2_5: 'Sus derechos',
+        p6: 'Tiene derecho a acceder, corregir o solicitar la eliminación de sus datos personales. Para ello, contacte con nosotros en experienciaroure@proton.me.',
+        h2_6: 'Cambios en esta política',
+        p7: 'Podemos actualizar esta política de privacidad ocasionalmente. Se le notificará de cambios significativos.',
+        footer_text: 'Última actualización: febrero de 2026'
+      },
+      ca: {
+        title: 'Política de Privacitat',
+        p1: 'A El Roure ens comprometem a protegir la vostra privacitat. Aquesta pàgina explica com tractem les dades al nostre lloc web.',
+        h2_1: 'Dades que recopilem',
+        p2: 'Aquest lloc web utilitza recursos externs, inclosos:',
+        ul1: [
+          'Google Fonts: per carregar les tipografies del lloc',
+          'Google Drive: per a alguns enllaços de contingut extern'
+        ],
+        h2_2: 'Informació de contacte',
+        p3: 'Quan es comunica amb nosaltres per correu electrònic (experienciaroure@proton.me), processem la vostra adreça de correu i qualsevol informació que inclogueu al vostre missatge per respondre a la vostra sol·licitud.',
+        h2_3: 'Cookies',
+        p4: 'Aquest lloc web utilitza cookies simples per a:',
+        ul2: ['Recordar la vostra preferència d\'idioma', 'Recordar si ha acceptat la nostra política de cookies'],
+        h2_4: 'Enllaços externs',
+        p5: 'Aquest lloc conté enllaços a llocs externs. No som responsables de les pràctiques de privacitat de tercers.',
+        h2_5: 'Els vostres drets',
+        p6: 'Teniu dret a accedir, corregir o sol·licitar l\'eliminació de les vostres dades personals. Per a això, poseu-vos en contacte amb nosaltres a experienciaroure@proton.me.',
+        h2_6: 'Canvis en aquesta política',
+        p7: 'Podem actualitzar aquesta política de privacitat ocasionalment. Se us notificarà de canvis significatius.',
+        footer_text: 'Última actualització: febrer de 2026'
+      }
+    };
+    
+    const content = privacyContent[language];
+    
+    return (
+      <InternalPageLayout title={content.title}>
+        <div style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif leading-relaxed text-stone-700 space-y-4 xl:space-y-5 2xl:space-y-6 max-w-3xl">
+          <p>{content.p1}</p>
+          
+          <h2 className="text-xl xl:text-2xl 2xl:text-2xl font-bold text-stone-800 mt-6 mb-3 font-serif">{content.h2_1}</h2>
+          <p>{content.p2}</p>
+          <ul className="list-disc list-inside space-y-2 ml-2">
+            {content.ul1.map((item, i) => (<li key={i}>{item}</li>))}
+          </ul>
+          
+          <h2 className="text-xl xl:text-2xl 2xl:text-2xl font-bold text-stone-800 mt-6 mb-3 font-serif">{content.h2_2}</h2>
+          <p>{content.p3}</p>
+          
+          <h2 className="text-xl xl:text-2xl 2xl:text-2xl font-bold text-stone-800 mt-6 mb-3 font-serif">{content.h2_3}</h2>
+          <p>{content.p4}</p>
+          <ul className="list-disc list-inside space-y-2 ml-2">
+            {content.ul2.map((item, i) => (<li key={i}>{item}</li>))}
+          </ul>
+          
+          <h2 className="text-xl xl:text-2xl 2xl:text-2xl font-bold text-stone-800 mt-6 mb-3 font-serif">{content.h2_4}</h2>
+          <p>{content.p5}</p>
+          
+          <h2 className="text-xl xl:text-2xl 2xl:text-2xl font-bold text-stone-800 mt-6 mb-3 font-serif">{content.h2_5}</h2>
+          <p>{content.p6}</p>
+          
+          <h2 className="text-xl xl:text-2xl 2xl:text-2xl font-bold text-stone-800 mt-6 mb-3 font-serif">{content.h2_6}</h2>
+          <p>{content.p7}</p>
+          
+          <div className="text-sm text-stone-500 italic mt-8 pt-6 border-t border-stone-200">
+            {content.footer_text}
           </div>
         </div>
       </InternalPageLayout>
@@ -2430,8 +2564,42 @@ const App: React.FC = () => {
 
   // --- Main Render ---
 
+  // Cookie Banner Component
+  const CookieBanner = () => (
+    <div className="fixed bottom-0 left-0 right-0 bg-stone-900/95 backdrop-blur-sm text-white z-50 border-t border-stone-700 shadow-2xl animate-fade-in">
+      <div className="max-w-6xl mx-auto px-4 md:px-6 py-4 md:py-5">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div className="flex-1">
+            <p className="text-sm md:text-base font-serif leading-relaxed">
+              {language === 'es' 
+                ? 'Utilizamos cookies para mejorar su experiencia. Al continuar navegando, está aceptando nuestra política de cookies.' 
+                : 'Utilitzem cookies per millorar la vostra experiència. En continuar navegant, està acceptant la nostra política de cookies.'}
+            </p>
+          </div>
+          <div className="flex gap-3 shrink-0">
+            <button
+              onClick={() => handleCookieConsent(false)}
+              className="px-4 py-2 text-sm font-serif font-medium border border-stone-500 text-stone-300 hover:bg-stone-800 hover:text-white transition-all rounded"
+            >
+              {language === 'es' ? 'Rechazar' : 'Rebutjar'}
+            </button>
+            <button
+              onClick={() => handleCookieConsent(true)}
+              className="px-4 py-2 text-sm font-serif font-medium bg-[#c1562e] hover:bg-[#a0441e] text-white transition-all rounded"
+            >
+              {language === 'es' ? 'Aceptar' : 'Acceptar'}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <div className="min-h-screen w-full text-stone-800 font-sans overflow-x-hidden selection:bg-[#c1562e] selection:text-white relative" style={{ backgroundImage: 'url(/images/main_bg.webp)', backgroundAttachment: 'fixed', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      
+      {/* Cookie Banner */}
+      {showCookieBanner && <CookieBanner />}
       
       {/* Content wrapper */}
       <div className="relative z-10">
@@ -2446,6 +2614,7 @@ const App: React.FC = () => {
       {currentView === 'textos' && <TextosView />}
       {currentView === 'comunidad' && <ComunidadView />}
       {currentView === 'en_que_estamos' && <EnQueEstamosView />}
+      {currentView === 'privacy' && <PrivacyPolicyView />}
 
       {/* Scroll to Top Button (Only if NOT Home) */}
       {currentView !== 'home' && (
