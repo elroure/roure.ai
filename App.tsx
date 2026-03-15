@@ -1029,7 +1029,7 @@ const App: React.FC = () => {
           onClick={() => navigateTo('privacy')}
           className="text-xs text-stone-400 hover:text-stone-600 transition-colors font-serif mt-2"
         >
-          {language === 'es' ? 'Política de privacidad' : 'Política de privacitat'}
+          {language === 'es' ? 'aviso legal y política de privacidad' : 'avís legal i política de privacitat'}
         </button>
       </div>
     </div>
@@ -2361,48 +2361,218 @@ const App: React.FC = () => {
   const PrivacyPolicyView = () => {
     const privacyContent = {
       es: {
-        title: 'Política de Privacidad',
-        p1: 'En El Roure nos comprometemos a proteger su privacidad. Esta página explica cómo manejamos los datos en nuestro sitio web.',
-        h2_1: 'Datos que recopilamos',
-        p2: 'Este sitio web utiliza recursos externos, incluyendo:',
-        ul1: [
-          'Google Fonts: para cargar las tipografías del sitio',
-          'Google Drive: para algunos enlaces de contenido externo'
+        title: 'aviso legal y política de privacidad',
+        sections: [
+          {
+            heading: '1. Identificación del titular',
+            paragraphs: [
+              'En cumplimiento del deber de información, se hace constar que el presente sitio web, elroureorg.web.app, es titularidad de:'
+            ],
+            items: [
+              'Nombre y apellidos: Noel Cresencio Gonzalez',
+              'DNI/NIE: 47324890K',
+              'Domicilio: Doctor Santponç 90 2-1 08030 Barcelona',
+              'Correo electrónico de contacto: noelcresencio@gmail.com'
+            ],
+            closing: [
+              'La cooperativa Experiència Educativa El Roure SCCL quedó formalmente disuelta en 2025 y actualmente no desarrolla actividad alguna.',
+              'El titular del presente sitio web actúa a título personal y no en representación de la cooperativa extinguida. El sitio tiene carácter exclusivamente memorial y carece de finalidad comercial o ánimo de lucro.'
+            ]
+          },
+          {
+            heading: '2. Objeto',
+            paragraphs: [
+              'Este sitio web tiene como finalidad conservar y difundir la memoria histórica del trabajo realizado por la antigua cooperativa, incluyendo textos, imágenes y materiales documentales relacionados con su actividad.'
+            ]
+          },
+          {
+            heading: '3. Propiedad intelectual e industrial',
+            paragraphs: [
+              'Todos los contenidos del sitio web (textos, fotografías, documentos, diseños y demás materiales) son propiedad de sus respectivos autores o cuentan con la correspondiente autorización para su uso y difusión.',
+              'Queda prohibida la reproducción, distribución o modificación de los contenidos sin autorización expresa del titular o de los legítimos propietarios de los derechos.'
+            ]
+          },
+          {
+            heading: '4. Protección de datos personales',
+            paragraphs: [
+              'En este sitio web pueden aparecer imágenes, nombres u otros datos identificativos de personas vinculadas a las actividades desarrolladas por la antigua cooperativa.',
+              'El tratamiento de estos datos se realiza con la finalidad de conservar y difundir la memoria histórica de las actividades realizadas.',
+              'La base jurídica del tratamiento es el consentimiento de las personas interesadas o, en su caso, el interés legítimo en la conservación del archivo histórico, respetando siempre los derechos de las personas afectadas.',
+              'No se realizan tratamientos con fines comerciales.'
+            ]
+          },
+          {
+            heading: '5. Categorías de datos tratados',
+            paragraphs: [
+              'Los datos que pueden aparecer en este sitio incluyen:'
+            ],
+            items: [
+              'Nombre y apellidos',
+              'Imagen (fotografías o vídeos)',
+              'Información relacionada con la participación en actividades o proyectos'
+            ],
+            closing: [
+              'No se tratan categorías especiales de datos salvo que exista base legal suficiente.'
+            ]
+          },
+          {
+            heading: '6. Conservación de los datos',
+            paragraphs: [
+              'Los datos se conservarán mientras el sitio web permanezca activo como archivo memorial, salvo que la persona interesada solicite su supresión o exista obligación legal en contrario.'
+            ]
+          },
+          {
+            heading: '7. Derechos de las personas interesadas',
+            paragraphs: [
+              'Cualquier persona cuyos datos aparezcan en el sitio web puede ejercer los siguientes derechos:'
+            ],
+            items: [
+              'Acceso',
+              'Rectificación',
+              'Supresión',
+              'Limitación del tratamiento',
+              'Oposición',
+              'Retirada del consentimiento'
+            ],
+            closing: [
+              'Para ello puede enviar una solicitud al correo electrónico indicado anteriormente.',
+              'Si considera que sus derechos no han sido atendidos adecuadamente, puede presentar una reclamación ante la Agencia Española de Protección de Datos.'
+            ]
+          },
+          {
+            heading: '8. Destinatarios',
+            paragraphs: [
+              'No se ceden datos personales a terceros.',
+              'El sitio web puede estar alojado en los servidores de un proveedor de hosting que actúa como encargado del tratamiento conforme a la normativa vigente.'
+            ]
+          },
+          {
+            heading: '9. Cookies',
+            paragraphs: [
+              'Este sitio web no utiliza cookies de seguimiento ni herramientas de análisis.'
+            ]
+          },
+          {
+            heading: '10. Responsabilidad',
+            paragraphs: [
+              'El titular no se hace responsable del uso indebido que se realice de los contenidos del sitio web ni de los daños que pudieran derivarse del acceso o uso de la información publicada.'
+            ]
+          },
+          {
+            heading: '11. Modificaciones',
+            paragraphs: [
+              'El titular se reserva el derecho a modificar el presente documento para adaptarlo a cambios normativos o a la evolución del contenido del sitio web.'
+            ]
+          }
         ],
-        h2_2: 'Información de contacto',
-        p3: 'Cuando se comunica con nosotros por correo electrónico (experienciaroure@proton.me), se procesa su dirección de correo y cualquier información que incluya en su mensaje para responder a su solicitud.',
-        h2_3: 'Cookies',
-        p4: 'Este sitio web utiliza cookies simples para:',
-        ul2: ['Recordar su preferencia de idioma', 'Recordar si ha aceptado nuestra política de cookies'],
-        h2_4: 'Enlaces externos',
-        p5: 'Este sitio contiene enlaces a sitios externos. No somos responsables de las prácticas de privacidad de terceros.',
-        h2_5: 'Sus derechos',
-        p6: 'Tiene derecho a acceder, corregir o solicitar la eliminación de sus datos personales. Para ello, contacte con nosotros en experienciaroure@proton.me.',
-        h2_6: 'Cambios en esta política',
-        p7: 'Podemos actualizar esta política de privacidad ocasionalmente. Se le notificará de cambios significativos.',
-        footer_text: 'Última actualización: febrero de 2026'
+        footer_text: 'Última actualización: marzo de 2026'
       },
       ca: {
-        title: 'Política de Privacitat',
-        p1: 'A El Roure ens comprometem a protegir la vostra privacitat. Aquesta pàgina explica com tractem les dades al nostre lloc web.',
-        h2_1: 'Dades que recopilem',
-        p2: 'Aquest lloc web utilitza recursos externs, inclosos:',
-        ul1: [
-          'Google Fonts: per carregar les tipografies del lloc',
-          'Google Drive: per a alguns enllaços de contingut extern'
+        title: 'avís legal i política de privacitat',
+        sections: [
+          {
+            heading: '1. Identificació del titular',
+            paragraphs: [
+              'En compliment del deure d\'informació, es fa constar que aquest lloc web, elroureorg.web.app, és titularitat de:'
+            ],
+            items: [
+              'Nom i cognoms: Noel Cresencio Gonzalez',
+              'DNI/NIE: 47324890K',
+              'Domicili: Doctor Santponç 90 2-1 08030 Barcelona',
+              'Correu electrònic de contacte: noelcresencio@gmail.com'
+            ],
+            closing: [
+              'La cooperativa Experiència Educativa El Roure SCCL va quedar formalment dissolta l\'any 2025 i actualment no desenvolupa cap activitat.',
+              'El titular d\'aquest lloc web actua a títol personal i no en representació de la cooperativa extingida. El lloc té caràcter exclusivament memorial i no té finalitat comercial ni ànim de lucre.'
+            ]
+          },
+          {
+            heading: '2. Objecte',
+            paragraphs: [
+              'Aquest lloc web té com a finalitat conservar i difondre la memòria històrica de la feina realitzada per l\'antiga cooperativa, incloent-hi textos, imatges i materials documentals relacionats amb la seva activitat.'
+            ]
+          },
+          {
+            heading: '3. Propietat intel·lectual i industrial',
+            paragraphs: [
+              'Tots els continguts del lloc web (textos, fotografies, documents, dissenys i altres materials) són propietat dels seus respectius autors o compten amb l\'autorització corresponent per al seu ús i difusió.',
+              'Queda prohibida la reproducció, distribució o modificació dels continguts sense autorització expressa del titular o dels legítims propietaris dels drets.'
+            ]
+          },
+          {
+            heading: '4. Protecció de dades personals',
+            paragraphs: [
+              'En aquest lloc web hi poden aparèixer imatges, noms o altres dades identificatives de persones vinculades a les activitats desenvolupades per l\'antiga cooperativa.',
+              'El tractament d\'aquestes dades es realitza amb la finalitat de conservar i difondre la memòria històrica de les activitats realitzades.',
+              'La base jurídica del tractament és el consentiment de les persones interessades o, si escau, l\'interès legítim en la conservació de l\'arxiu històric, respectant sempre els drets de les persones afectades.',
+              'No es duen a terme tractaments amb finalitats comercials.'
+            ]
+          },
+          {
+            heading: '5. Categories de dades tractades',
+            paragraphs: [
+              'Les dades que poden aparèixer en aquest lloc inclouen:'
+            ],
+            items: [
+              'Nom i cognoms',
+              'Imatge (fotografies o vídeos)',
+              'Informació relacionada amb la participació en activitats o projectes'
+            ],
+            closing: [
+              'No es tracten categories especials de dades llevat que hi hagi base legal suficient.'
+            ]
+          },
+          {
+            heading: '6. Conservació de les dades',
+            paragraphs: [
+              'Les dades es conservaran mentre el lloc web romangui actiu com a arxiu memorial, llevat que la persona interessada en sol·liciti la supressió o existeixi una obligació legal en sentit contrari.'
+            ]
+          },
+          {
+            heading: '7. Drets de les persones interessades',
+            paragraphs: [
+              'Qualsevol persona les dades de la qual apareguin al lloc web pot exercir els drets següents:'
+            ],
+            items: [
+              'Accés',
+              'Rectificació',
+              'Supressió',
+              'Limitació del tractament',
+              'Oposició',
+              'Retirada del consentiment'
+            ],
+            closing: [
+              'Per fer-ho, podeu enviar una sol·licitud al correu electrònic indicat anteriorment.',
+              'Si considereu que els vostres drets no han estat atesos adequadament, podeu presentar una reclamació davant l\'Agència Espanyola de Protecció de Dades.'
+            ]
+          },
+          {
+            heading: '8. Destinataris',
+            paragraphs: [
+              'No se cedeixen dades personals a tercers.',
+              'El lloc web pot estar allotjat als servidors d\'un proveïdor de hosting que actua com a encarregat del tractament d\'acord amb la normativa vigent.'
+            ]
+          },
+          {
+            heading: '9. Cookies',
+            paragraphs: [
+              'Aquest lloc web no utilitza cookies de seguiment ni eines d\'anàlisi.'
+            ]
+          },
+          {
+            heading: '10. Responsabilitat',
+            paragraphs: [
+              'El titular no es fa responsable de l\'ús indegut que es faci dels continguts del lloc web ni dels danys que es puguin derivar de l\'accés o ús de la informació publicada.'
+            ]
+          },
+          {
+            heading: '11. Modificacions',
+            paragraphs: [
+              'El titular es reserva el dret de modificar aquest document per adaptar-lo a canvis normatius o a l\'evolució del contingut del lloc web.'
+            ]
+          }
         ],
-        h2_2: 'Informació de contacte',
-        p3: 'Quan es comunica amb nosaltres per correu electrònic (experienciaroure@proton.me), processem la vostra adreça de correu i qualsevol informació que inclogueu al vostre missatge per respondre a la vostra sol·licitud.',
-        h2_3: 'Cookies',
-        p4: 'Aquest lloc web utilitza cookies simples per a:',
-        ul2: ['Recordar la vostra preferència d\'idioma', 'Recordar si ha acceptat la nostra política de cookies'],
-        h2_4: 'Enllaços externs',
-        p5: 'Aquest lloc conté enllaços a llocs externs. No som responsables de les pràctiques de privacitat de tercers.',
-        h2_5: 'Els vostres drets',
-        p6: 'Teniu dret a accedir, corregir o sol·licitar l\'eliminació de les vostres dades personals. Per a això, poseu-vos en contacte amb nosaltres a experienciaroure@proton.me.',
-        h2_6: 'Canvis en aquesta política',
-        p7: 'Podem actualitzar aquesta política de privacitat ocasionalment. Se us notificarà de canvis significatius.',
-        footer_text: 'Última actualització: febrer de 2026'
+        footer_text: 'Última actualització: març de 2026'
       }
     };
     
@@ -2411,31 +2581,33 @@ const App: React.FC = () => {
     return (
       <InternalPageLayout title={content.title}>
         <div style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif leading-relaxed text-stone-700 space-y-4 xl:space-y-5 2xl:space-y-6 max-w-3xl">
-          <p>{content.p1}</p>
-          
-          <h2 className="text-xl xl:text-2xl 2xl:text-2xl font-bold text-stone-800 mt-6 mb-3 font-serif">{content.h2_1}</h2>
-          <p>{content.p2}</p>
-          <ul className="list-disc list-inside space-y-2 ml-2">
-            {content.ul1.map((item, i) => (<li key={i}>{item}</li>))}
-          </ul>
-          
-          <h2 className="text-xl xl:text-2xl 2xl:text-2xl font-bold text-stone-800 mt-6 mb-3 font-serif">{content.h2_2}</h2>
-          <p>{content.p3}</p>
-          
-          <h2 className="text-xl xl:text-2xl 2xl:text-2xl font-bold text-stone-800 mt-6 mb-3 font-serif">{content.h2_3}</h2>
-          <p>{content.p4}</p>
-          <ul className="list-disc list-inside space-y-2 ml-2">
-            {content.ul2.map((item, i) => (<li key={i}>{item}</li>))}
-          </ul>
-          
-          <h2 className="text-xl xl:text-2xl 2xl:text-2xl font-bold text-stone-800 mt-6 mb-3 font-serif">{content.h2_4}</h2>
-          <p>{content.p5}</p>
-          
-          <h2 className="text-xl xl:text-2xl 2xl:text-2xl font-bold text-stone-800 mt-6 mb-3 font-serif">{content.h2_5}</h2>
-          <p>{content.p6}</p>
-          
-          <h2 className="text-xl xl:text-2xl 2xl:text-2xl font-bold text-stone-800 mt-6 mb-3 font-serif">{content.h2_6}</h2>
-          <p>{content.p7}</p>
+          {content.sections.map((section) => (
+            <section key={section.heading} className="space-y-3 xl:space-y-4 2xl:space-y-5">
+              <h2 className="text-xl xl:text-2xl 2xl:text-2xl font-bold text-stone-800 mt-6 mb-3 font-serif">{section.heading}</h2>
+
+              {section.paragraphs.map((paragraph, index) => (
+                <p key={`${section.heading}-paragraph-${index}`}>
+                  <LinkifyText text={paragraph} />
+                </p>
+              ))}
+
+              {section.items && (
+                <ul className="list-disc list-inside space-y-2 ml-2">
+                  {section.items.map((item, index) => (
+                    <li key={`${section.heading}-item-${index}`}>
+                      <LinkifyText text={item} />
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              {section.closing && section.closing.map((paragraph, index) => (
+                <p key={`${section.heading}-closing-${index}`}>
+                  <LinkifyText text={paragraph} />
+                </p>
+              ))}
+            </section>
+          ))}
           
           <div className="text-sm text-stone-500 italic mt-8 pt-6 border-t border-stone-200">
             {content.footer_text}
