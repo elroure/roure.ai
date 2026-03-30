@@ -826,8 +826,8 @@ const App: React.FC = () => {
     }
   });
   const [language, setLanguage] = useState<Language>('es');
-  const [showScrollTop, setShowScrollTop] = useState(false);
   const showScrollTopRef = useRef(false);
+  const scrollTopButtonRef = useRef<HTMLButtonElement>(null);
   
   // State for Menu Interaction
   const [menuHasInteracted, setMenuHasInteracted] = useState(false);
@@ -895,10 +895,18 @@ const App: React.FC = () => {
       const scrollPercentage = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
       const shouldShow = scrollPercentage > 0.2;
       
-      // Only update state if visibility actually changed
+      // Only update DOM if visibility actually changed (avoids App re-render)
       if (shouldShow !== showScrollTopRef.current) {
         showScrollTopRef.current = shouldShow;
-        setShowScrollTop(shouldShow);
+        if (scrollTopButtonRef.current) {
+          if (shouldShow) {
+            scrollTopButtonRef.current.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+            scrollTopButtonRef.current.classList.add('opacity-100', 'translate-y-0');
+          } else {
+            scrollTopButtonRef.current.classList.remove('opacity-100', 'translate-y-0');
+            scrollTopButtonRef.current.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+          }
+        }
       }
     };
     
@@ -2366,16 +2374,16 @@ const App: React.FC = () => {
           {
             heading: '1. Identificación del titular',
             paragraphs: [
-              'En cumplimiento del deber de información, se hace constar que el presente sitio web, elroureorg.web.app, es titularidad de:'
+              'En cumplimiento del deber de información, se hace constar que el presente sitio web es titularidad de:'
             ],
             items: [
-              'Nombre y apellidos: Noel Cresencio Gonzalez',
-              'DNI/NIE: 47324890K',
-              'Domicilio: Doctor Santponç 90 2-1 08030 Barcelona',
-              'Correo electrónico de contacto: noelcresencio@gmail.com'
+              'Nombre y apellidos: Begoña González Minguillón',
+              'DNI/NIE: 05379700T',
+              'Domicilio: Cánoves',
+              'Correo electrónico de contacto: experienciaroure@proton.me'
             ],
             closing: [
-              'La cooperativa Experiència Educativa El Roure SCCL quedó formalmente disuelta en 2025 y actualmente no desarrolla actividad alguna.',
+              'La cooperativa Experiència educativa El Roure SCCL quedó formalmente disuelta en 2026 y actualmente no desarrolla actividad alguna.',
               'El titular del presente sitio web actúa a título personal y no en representación de la cooperativa extinguida. El sitio tiene carácter exclusivamente memorial y carece de finalidad comercial o ánimo de lucro.'
             ]
           },
@@ -2473,16 +2481,16 @@ const App: React.FC = () => {
           {
             heading: '1. Identificació del titular',
             paragraphs: [
-              'En compliment del deure d\'informació, es fa constar que aquest lloc web, elroureorg.web.app, és titularitat de:'
+              'En compliment del deure d\'informació, es fa constar que aquest lloc web és titularitat de:'
             ],
             items: [
-              'Nom i cognoms: Noel Cresencio Gonzalez',
-              'DNI/NIE: 47324890K',
-              'Domicili: Doctor Santponç 90 2-1 08030 Barcelona',
-              'Correu electrònic de contacte: noelcresencio@gmail.com'
+              'Nom i cognoms: Begoña González Minguillón',
+              'DNI/NIE: 05379700T',
+              'Domicili: Cánoves',
+              'Correu electrònic de contacte: experienciaroure@proton.me'
             ],
             closing: [
-              'La cooperativa Experiència Educativa El Roure SCCL va quedar formalment dissolta l\'any 2025 i actualment no desenvolupa cap activitat.',
+              'La cooperativa Experiència educativa El Roure SCCL va quedar formalment dissolta l\'any 2026 i actualment no desenvolupa cap activitat.',
               'El titular d\'aquest lloc web actua a títol personal i no en representació de la cooperativa extingida. El lloc té caràcter exclusivament memorial i no té finalitat comercial ni ànim de lucre.'
             ]
           },
@@ -2789,11 +2797,10 @@ const App: React.FC = () => {
       {/* Scroll to Top Button (Only if NOT Home) */}
       {currentView !== 'home' && (
         <button
+            ref={scrollTopButtonRef}
             onClick={scrollToTop}
             style={{ fontSize: 'calc(var(--footer-text-size) * 0.9)', padding: 'calc(var(--scroll-button-size) * 0.3) calc(var(--scroll-button-size) * 0.5)' }}
-            className={`fixed bottom-8 xl:bottom-12 2xl:bottom-16 right-8 xl:right-12 2xl:right-16 z-50 bg-[#c1562e] text-white rounded-full shadow-lg flex items-center gap-2 transition-all duration-500 ${
-            showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
-            }`}
+            className="fixed bottom-8 xl:bottom-12 2xl:bottom-16 right-8 xl:right-12 2xl:right-16 z-50 bg-[#c1562e] text-white rounded-full shadow-lg flex items-center gap-2 transition-all duration-500 opacity-0 translate-y-10 pointer-events-none"
         >
             <span className="font-serif font-medium uppercase tracking-wider">{t.nav.top}</span>
             <ArrowUp style={{ width: 'var(--scroll-button-size)', height: 'var(--scroll-button-size)' }} />
