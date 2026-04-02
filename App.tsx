@@ -2715,25 +2715,37 @@ const App: React.FC = () => {
             </div>
             
             <div className="w-full max-w-md xl:max-w-lg 2xl:max-w-xl">
-                <div className="flex flex-col gap-4 xl:gap-5 2xl:gap-6">
-                    <input 
-                        type="password" 
-                        style={{ fontSize: 'var(--internal-body-text)' }}
-                        className="w-full bg-transparent border-b-2 border-stone-800 focus:border-[#c1562e] outline-none transition-all py-2 text-center font-serif text-stone-800 placeholder:text-stone-400"
-                        placeholder={language === 'es' ? 'Escribe aquí' : 'Escriu aquí'}
-                        value={password}
-                        onChange={(e) => {
-                            setPassword(e.target.value);
-                            setError(false);
-                        }}
-                        onKeyDown={(e) => e.key === 'Enter' && handleLogin()}
-                    />
-                    {error && (
-                        <span style={{ fontSize: 'calc(var(--internal-body-text) * 0.9)' }} className="text-[#c1562e] font-serif text-center">
-                            {language === 'es' ? 'Contraseña incorrecta' : 'Contrasenya incorrecta'}
-                        </span>
-                    )}
-                </div>
+              <form
+                className="flex flex-col gap-4 xl:gap-5 2xl:gap-6"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  handleLogin();
+                }}
+              >
+                <input 
+                  type="password" 
+                  style={{ fontSize: 'var(--internal-body-text)' }}
+                  className="w-full bg-transparent border-b-2 border-stone-800 focus:border-[#c1562e] outline-none transition-all py-2 text-center font-serif text-stone-800 placeholder:text-stone-400"
+                  placeholder={language === 'es' ? 'Escribe aquí' : 'Escriu aquí'}
+                  value={password}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                    setError(false);
+                  }}
+                />
+                <button
+                  type="submit"
+                  style={{ fontSize: 'var(--internal-body-text)' }}
+                  className="mx-auto min-w-32 rounded-full border border-[#c1562e] px-6 py-2 font-serif text-[#c1562e] transition-colors hover:bg-[#c1562e] hover:text-white"
+                >
+                  {language === 'es' ? 'Entrar' : 'Accedir'}
+                </button>
+                {error && (
+                  <span style={{ fontSize: 'calc(var(--internal-body-text) * 0.9)' }} className="text-[#c1562e] font-serif text-center">
+                    {language === 'es' ? 'Contraseña incorrecta' : 'Contrasenya incorrecta'}
+                  </span>
+                )}
+              </form>
             </div>
          </div>
       </InternalPageLayout>
