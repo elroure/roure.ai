@@ -375,10 +375,12 @@ const content = {
         "Hemos creado este espacio para las personas que habéis formado parte de la Comunidad de la escuela.",
         "SUBTITLE:Fotos y Contactos",
         "Querida comunidad,",
-        "Después de mucho trabajo, hemos conseguido hacer una selección de fotos desde el 2001 al 2025, para que podáis descargar las que queráis y tener un recuerdo de vuestro paso por El Roure. No ha sido fácil; partíamos de un archivo de 21.700 fotos, que durante estos años, y a pesar de algunos intentos generosos, no tuvimos ocasión de ordenar. En esta selección ha sido necesario poner únicamente  fotos de las personas que habéis enviado vuestra autorización de imagen. En ella están las fotos que se pueden ver en esta web memoria que de lo que fue nuestro proyecto y otras más.",
-        "En el caso de que alguna persona tenga inconveniente en salir en alguna de las fotos de los apartados del menú de la web, nos lo podéis comunicar y la retiraremos. Igualmente, si habéis enviado la autorización de imagen y no encontráis en la selección ninguna foto de vuestra familia, os podéis poner en contacto con nosotros y trataremos de buscar alguna en el archivo.",
+        "Después de mucho trabajo, hemos conseguido hacer una selección de fotos desde el 2001 al 2025, para que podáis descargar las que queráis y tener un recuerdo de vuestro paso por El Roure. No ha sido fácil; partíamos de un archivo de 21.700 fotos, que durante estos años, y a pesar de algunos intentos generosos, no tuvimos ocasión de ordenar.",
+        "En esta selección, de unas 1.000 fotos, ha sido necesario poner únicamente fotos de las personas que habéis enviado vuestra autorización de imagen. Hemos dividido la selección en tres épocas: 2001-2008, 2009-2016 y 2017-2015.",
+        "Os pedimos que seáis muy respetuosos en el uso de las imágenes; son únicamente para el recuerdo de la comunidad Roure, no para su difusión en redes.",
+        "Es muy probable que haya algunos errores, como fotos repetidas o en las que aparezca alguna persona que no haya enviado la autorización. Nos disculpamos de antemano. En el caso de que alguna persona tenga inconveniente en salir en alguna de las fotos de los apartados del menú de la web, o de la selección para descargar, nos lo podéis comunicar y la retiraremos. Igualmente, si habéis enviado la autorización de imagen y no encontráis en la selección ninguna foto de vuestra familia, os podéis poner en contacto con nosotros y trataremos de buscar alguna en el archivo.",
         "Esperemos que las disfrutéis. Un gran abrazo,",
-        "Además, miembros de la comunidad han creado un documento donde las personas que queráis manteneros en contacto o bien organizar algún encuentro, podéis dejar vuestro datos y acceder a los de los demás.",
+        "Además, miembros de la comunidad han creado un documento donde las personas que queráis manteneros en contacto o bien organizar algún encuentro, podéis dejar vuestros datos y acceder a los de los demás.",
         "Para acceder os facilitaremos una contraseña que podéis pedir en el correo:",
         "experienciaroure@proton.me"
     ],
@@ -701,14 +703,16 @@ const content = {
         }
     ],
     comunidadText: [
-        "Hem creat aquest espai per a les persones que heu format part de la Comunitat de l'escola.",
-        "SUBTITLE:Fotos i Contactes",
-        "Benvolguda comunitat,",
-        "Després de molta feina, hem aconseguit fer una selecció de fotos des del 2001 al 2025, perquè pugueu descarregar les que vulgueu i tenir un record del vostre pas pel Roure. No ha estat fàcil; partíem d'un arxiu de 21.700 fotos, que durant aquests anys, i malgrat alguns intents generosos, no vam tenir ocasió d'ordenar. En aquesta selecció ha estat necessari posar únicament fotos de les persones que heu enviat la vostra autorització d'imatge. En ella estan les fotos que es poden veure en aquesta web memòria que del que va ser el nostre projecte i altres més.",
-        "En el cas que alguna persona tingui inconvenient a sortir en alguna de les fotos dels apartats del menú de la web, ens el podeu comunicar i la retirarem. Igualment, si heu enviat l'autorització d'imatge i no trobeu en la selecció cap foto de la vostra família, us podeu posar en contacte amb nosaltres i tractarem de buscar alguna en l'arxiu.",
-        "Esperem que les gaudiu. Una gran abraçada,",
-        "A més, membres de la comunitat han creat un document on les persones que vulgueu mantenir-vos en contacte o bé organitzar alguna trobada, podeu deixar el vostre dades i accedir als dels altres.",
-        "Per a accedir us facilitarem una contrasenya que podeu demanar en el correu:",
+        "Hemos creado este espacio para las personas que habéis formado parte de la Comunidad de la escuela.",
+        "SUBTITLE:Fotos y Contactos",
+        "Querida comunidad,",
+        "Después de mucho trabajo, hemos conseguido hacer una selección de fotos desde el 2001 al 2025, para que podáis descargar las que queráis y tener un recuerdo de vuestro paso por El Roure. No ha sido fácil; partíamos de un archivo de 21.700 fotos, que durante estos años, y a pesar de algunos intentos generosos, no tuvimos ocasión de ordenar.",
+        "En esta selección, de unas 1.000 fotos, ha sido necesario poner únicamente fotos de las personas que habéis enviado vuestra autorización de imagen. Hemos dividido la selección en tres épocas: 2001-2008, 2009-2016 y 2017-2015.",
+        "Os pedimos que seáis muy respetuosos en el uso de las imágenes; son únicamente para el recuerdo de la comunidad Roure, no para su difusión en redes.",
+        "Es muy probable que haya algunos errores, como fotos repetidas o en las que aparezca alguna persona que no haya enviado la autorización. Nos disculpamos de antemano. En el caso de que alguna persona tenga inconveniente en salir en alguna de las fotos de los apartados del menú de la web, o de la selección para descargar, nos lo podéis comunicar y la retiraremos. Igualmente, si habéis enviado la autorización de imagen y no encontráis en la selección ninguna foto de vuestra familia, os podéis poner en contacto con nosotros y trataremos de buscar alguna en el archivo.",
+        "Esperemos que las disfrutéis. Un gran abrazo,",
+        "Además, miembros de la comunidad han creado un documento donde las personas que queráis manteneros en contacto o bien organizar algún encuentro, podéis dejar vuestros datos y acceder a los de los demás.",
+        "Para acceder os facilitaremos una contraseña que podéis pedir en el correo:",
         "experienciaroure@proton.me"
     ],
     videosList: [
@@ -2678,40 +2682,48 @@ const App: React.FC = () => {
       <InternalPageLayout title={t.nav.comunidad}>
          <div className="flex flex-col items-center max-w-2xl xl:max-w-3xl 2xl:max-w-4xl mx-auto">
             <div style={{ fontSize: 'var(--internal-body-text)' }} className="text-center space-y-4 xl:space-y-6 2xl:space-y-8 font-serif leading-relaxed text-stone-700 mb-10 xl:mb-14 2xl:mb-20">
-                {t.comunidadText.map((p, idx) => {
-                    // Handle subtitle
-                    if (p.startsWith('SUBTITLE:')) {
-                        const subtitle = p.replace('SUBTITLE:', '');
-                        return (
-                            <h3 key={idx} className="text-2xl xl:text-2xl 2xl:text-3xl font-bold text-stone-800 mb-4 xl:mb-4 2xl:mb-6 text-[#c1562e]">
-                                {subtitle}
-                            </h3>
-                        );
-                    }
-                    // Handle inline link within text
-                    if (p.includes('LINK_ACCEDER') || p.includes('LINK_ACCEDIR')) {
-                        const parts = p.split(/LINK_ACCEDER|LINK_ACCEDIR/);
-                        return (
-                            <p key={idx}>
-                                {parts[0]}
-                                <a 
-                                    href="https://docs.google.com/spreadsheets/d/1rpDdtjJwXMMhVI3UcWvfjP5AHJEpSOAwU-LmI6xy3SI/edit?usp=sharing"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-[#c1562e] hover:underline font-medium"
-                                >
-                                    Clica aquí
-                                </a>
-                                {parts[1] || ''}
-                            </p>
-                        );
-                    }
-                    return (
-                        <p key={idx}>
-                            <LinkifyText text={p} />
-                        </p>
-                    );
-                })}
+              {t.comunidadText.map((p, idx, arr) => {
+                // Handle subtitle
+                if (p.startsWith('SUBTITLE:')) {
+                  const subtitle = p.replace('SUBTITLE:', '');
+                  return (
+                    <h3 key={idx} className="text-2xl xl:text-2xl 2xl:text-3xl font-bold text-stone-800 mb-4 xl:mb-4 2xl:mb-6 text-[#c1562e]">
+                      {subtitle}
+                    </h3>
+                  );
+                }
+                // Handle inline link within text
+                if (p.includes('LINK_ACCEDER') || p.includes('LINK_ACCEDIR')) {
+                  const parts = p.split(/LINK_ACCEDER|LINK_ACCEDIR/);
+                  return (
+                    <p key={idx}>
+                      {parts[0]}
+                      <a 
+                        href="https://docs.google.com/spreadsheets/d/1rpDdtjJwXMMhVI3UcWvfjP5AHJEpSOAwU-LmI6xy3SI/edit?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#c1562e] hover:underline font-medium"
+                      >
+                        Clica aquí
+                      </a>
+                      {parts[1] || ''}
+                    </p>
+                  );
+                }
+                // Insert <hr /> between the two specific paragraphs
+                if (
+                  p === "Esperemos que las disfrutéis. Un gran abrazo," &&
+                  arr[idx + 1] === "Además, miembros de la comunidad han creado un documento donde las personas que queráis manteneros en contacto o bien organizar algún encuentro, podéis dejar vuestros datos y acceder a los de los demás."
+                ) {
+                  return [
+                    <p key={idx}><LinkifyText text={p} /></p>,
+                    <hr key="hr-separador-comunidad" className="my-6 border-t-2 border-stone-300 w-1/2 mx-auto" />
+                  ];
+                }
+                return (
+                  <p key={idx}><LinkifyText text={p} /></p>
+                );
+              })}
             </div>
             
             <div className="w-full max-w-md xl:max-w-lg 2xl:max-w-xl">
