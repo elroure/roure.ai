@@ -356,18 +356,18 @@ const content = {
         {
             name: "Paco Robles",
             paragraphs: [
-                "Soy padre, educador, formador y asesor pedagógico. He estado vinculada profesionalmente a la Escuela Viva El Roure desde el 2009 hasta su cierre (2025), desarrollando múltiples roles como acompañante, coordinador de ciclo, formador y director.",
+                "Soy padre, educador, formador y asesor pedagógico. He estado vinculado profesionalmente a la Escuela Viva El Roure desde el 2009 hasta su cierre (2025), desarrollando múltiples roles como acompañante, coordinador de ciclo, formador y director.",
                 "Antes de El Roure, mi trayectoria se centró en la educación social y la educación en el tiempo libre.",
-                "Actualmente, colaboro con el Departament d'Educació de la Generalitat de Catalunya, con el rol de formador pedagógico para claustros y docentes de centros educativos, dentro de programas de innovación educativa. También asesoro a algunas familias en el acompañamiento de sus hijos e hijas, sobre todo durante la etapa adolescente.",
+                "Actualmente, me dedico a asesorar y formar a equipos educativos en diferentes ámbitos, pero especialmente en la prevención, detección y gestión de la violencia implementando el bienestar de la comunidad educativa; además, colaboro con el Departament d'Educació de la Generalitat de Catalunya, formando a equipos directivos, a claustros docentes y a docentes particulares de educación primaria y secundaria, dentro del programa #AQUIPROUBULLYING. También asesoro a algunas familias en el acompañamiento de sus hijos e hijas, sobre todo durante la etapa adolescente.",
                 "La manera más sencilla y directa de contactar conmigo es a través del correo electrónico: frobles5@xtec.cat"
             ]
         },
         {
             name: "Clara Jiménez Rodríguez",
             paragraphs: [
-                "He estado vinculada profesionalment a la Escuela Viva El Roure desde el 2011 hasta su cierre como acompañante, coordinadora y directora. Mi formación básica es Educación Social y mi formación complementaria es Intervenció Sistémica con infancia y familia, Pedagogía Sistémica y Posgrado en Práctica Psicomotriz Aucouturier, entre otras.",
-                "Actualmente, me dedico a acabar la formación de Terapia en Integración Psico-corporal. Al mismo tiempo, acompaño familias que tienen ganas de indagar y generar un crecimiento personal-familiar y/o encuentran dificultades en su dinámica relacional.",
-                "Me puedes contactar en: clarajiro@gmail.com o al 670 204 009"
+                "He estado vinculada profesionalmente a la Escuela Viva El Roure desde el 2011 hasta su cierre como acompañante, coordinadora y directora. Mi formación básica es Educación Social y mi formación complementaria es Intervención Sistémica con infancia y familia, Pedagogía Sistémica, Posgrado en Práctica Psicomotriz Aucouturier y Terapia en Integración Psicocorporal, entre otras.",
+                "Actualmente, me dedico a ofrecer terapia en Integración Psico-corporal para adultos en sesiones individuales, por un lado, y, por otro, acompaño familias que tienen ganas de indagar y generar un crecimiento personal-familiar y/o encuentran dificultades en su dinámica relacional. Al mismo tiempo, también realizo sesiones de psicomotricidad individual y acompañamiento familiar en el centro Acompanyament Familiar, en Barcelona.",
+                "Me puedes contactar en: clara.jiro+roure@proton.me o 670 20 40 09"
             ]
         }
     ],
@@ -689,16 +689,16 @@ const content = {
             paragraphs: [
                 "Sóc pare, educador, formador i assessor pedagògic. He estat vinculat professionalment a l'Escola Viva El Roure des del 2009 fins al seu tancament (2025), desenvolupant múltiples rols com a acompanyant, coordinador de cicle, formador y director. En l'àmbit de la gestió, he estat soci secretari de la cooperativa que sostenía l'escola des del 2011 fins al final.",
                 "Abans d'El Roure, la meva trajectòria es va centrar en l'educació social i l'educació en el lleure.",
-                "Actualment, col·laboro amb el Departament d'Educació de la Generalitat de Catalunya, amb el rol de formador pedagògic per a claustres i docents de centres educativos, dins de programes d'innovació educativa, especialment en la prevenció de l'assetjament escolar i en la transició cap a estructures, metodologies i pràctiques orientades al benestar de la comunitat educativa. També assessoro algunes famílies en l'acompanyament dels seus fills i filles, sobretot durant l'etapa adolescent.",
+                "Actualment, em dedico a assessorar i formar equips educatius en diferents àmbits, però especialment en la prevenció, detecció i gestió de la violència implementant el benestar de la comunitat educativa; a més, col·laboro amb el Departament d'Educació de la Generalitat de Catalunya, formant equips directius, claustres docents i docents particulars d'educació primària i secundària, dins del programa #AQUIPROUBULLYING. També assessoro algunes famílies en l'acompanyament dels seus fills i filles, sobretot durant l'etapa adolescent.",
                 "La manera més sencilla i directa de contactar amb mi és a través del correu electrònic: frobles5@xtec.cat"
             ]
         },
         {
             name: "Clara Jiménez Rodríguez",
             paragraphs: [
-                "He estat vinculada professionalment a l'Escola Viva El Roure des del 2011 fins al seu tancament com a acompanyant, coordinadora i directora. La meva formació bàsica és Educació Social i la meva formació complementària és Intervenció Sistèmica amb infància i família, Pedagogía Sistèmica i Postgrau en Pràctica Psicomotriu Aucouturier, entre d'altres de caire més relacionat amb el moviment lliure i la permacultura.",
-                "Actualment, em dedico a acabar la formació de Teràpia en Integració Psico-corporal. Al mateix temps, acompanyo famílies que tenen ganes d'indagar i generar un creixement personal-familiar i/o troben dificultats en la seva dinàmica relacional.",
-                "Em pots contactar a: clarajiro@gmail.com o al 670 204 009"
+                "He estat vinculada professionalment a l'Escola Viva El Roure des del 2011 fins al seu tancament com a acompanyant, coordinadora i directora. La meva formació bàsica és Educació Social i la meva formació complementària és Intervenció Sistèmica amb infància i família, Pedagogia Sistèmica, Postgrau en Pràctica Psicomotriu Aucouturier i Teràpia en Integració Psicocorporal, entre d'altres.",
+                "Actualment, em dedico a oferir teràpia en Integració Psico-corporal per a adults en sessions individuals, per un costat, i, per l'altre, acompanyo famílies que tenen ganes d'indagar i generar un creixement personal-familiar i/o troben dificultats en la seva dinàmica relacional. Al mateix temps, també realitzo sessions de psicomotricitat individual i acompanyament familiar al centre Acompanyament Familiar, a Barcelona.",
+                "Em pots contactar a: clara.jiro+roure@proton.me o 670 20 40 09"
             ]
         }
     ],
