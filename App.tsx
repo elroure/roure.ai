@@ -1049,7 +1049,7 @@ const App: React.FC = () => {
 
   // Utility to linkify emails and phones
   const LinkifyText = ({ text }: { text: string }) => {
-    const regex = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+|\b\d{3}[ -]?\d{3}[ -]?\d{3}\b)/g;
+    const regex = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+|\b\d{3}[ -]?\d{2}[ -]?\d{2}[ -]?\d{2}\b)/g;
     const parts = text.split(regex);
     
     return (
@@ -1058,7 +1058,7 @@ const App: React.FC = () => {
           if (part.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+$/)) {
             return <a key={i} href={`mailto:${part}`} className="text-[#c1562e] hover:underline font-medium">{part}</a>;
           }
-          if (part.match(/^\b\d{3}[ -]?\d{3}[ -]?\d{3}\b$/)) {
+          if (part.match(/^\b\d{3}[ -]?\d{2}[ -]?\d{2}[ -]?\d{2}\b$/)) {
             const cleanNum = part.replace(/\s/g, '').replace(/-/g, '');
             return <a key={i} href={`tel:${cleanNum}`} className="text-[#c1562e] hover:underline font-medium">{part}</a>;
           }
