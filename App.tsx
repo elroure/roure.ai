@@ -348,7 +348,7 @@ const content = {
         {
             name: "Begoña González",
             paragraphs: [
-                "He sido co-fundadora, coordinadora y acompañante del espacio educativo La Casita y de la escuela viva El Roure. Soy madre, maestra, formadora, orientadora y articulista, me he formado en diferentes disciplinas corporales, espirituales, artísticas, psicológicas y educativas, en Comunicación consciente (CNV) y en facilitación de grupos.",
+                "He sido co-fundadora, coordinadora y acompañante del espacio educativo La Casita (1996-2000) y de la escuela viva El Roure (2001-2025). Desde el 2008 me dedico también a la formación y el asesoramiento. Soy madre, maestra, formadora, orientadora y articulista, me he formado en diferentes disciplinas corporales, espirituales, artísticas, psicológicas y educativas, en Comunicación consciente (CNV) y en facilitación de grupos.",
                 "En este momento me dedico al acompañamiento a madres, padres y profesionales, a partir de las diferentes situaciones y dificultades cotidianas que comporta la relación con niñas, niños y adolescentes. Por otro lado, facilito formaciones adaptadas a las necesidades de colectivos educativos interesados en el enfoque de la educación viva y la comunicación consciente.",
                 "Puedes contactar conmigo al 645 611 824 o a begona.gomi@gmail.com"
             ]
@@ -679,7 +679,7 @@ const content = {
         {
             name: "Begoña González",
             paragraphs: [
-                "He estat co-fundadora, coordinadora i acompanyant de l'espai educatiu La Casita i de l'escola viva El Roure. Sóc mare, mestra, formadora, orientadora i articulista, m'he format en diferents disciplines corporals, espirituals, artístiques, psicològiques i educatives, en Comunicació conscient (CNV) i en facilitació de grups.",
+                "He estat co-fundadora, coordinadora i acompanyant de l'espai educatiu La Casita (1996-2000) i de l'escola viva El Roure (2001-2025). Des del 2008 em dedico també a la formació i l'assessorament. Sóc mare, mestra, formadora, orientadora i articulista, m'he format en diferents disciplines corporals, espirituals, artístiques, psicològiques i educatives, en Comunicació conscient (CNV) i en facilitació de grups.",
                 "En aquest moment em dedico a l'acompanyament a mares, pares i professionals, a partir de les diferents situacions i dificultats quotidianes que comporta la relació amb nenes, nens i adolescents. D'altra banda, facilito formacions adaptades a les necessitats de col·lectius educatius interessats en l'enfocament de l'educació viva i la comunicació conscient.",
                 "Pots contactar amb mi al 645 611 824 o a begona.gomi@gmail.com"
             ]
@@ -703,16 +703,16 @@ const content = {
         }
     ],
     comunidadText: [
-        "Hemos creado este espacio para las personas que habéis formado parte de la Comunidad de la escuela.",
-        "SUBTITLE:Fotos y Contactos",
-        "Querida comunidad,",
-        "Después de mucho trabajo, hemos conseguido hacer una selección de fotos desde el 2001 al 2025, para que podáis descargar las que queráis y tener un recuerdo de vuestro paso por El Roure. No ha sido fácil; partíamos de un archivo de 21.700 fotos, que durante estos años, y a pesar de algunos intentos generosos, no tuvimos ocasión de ordenar.",
-        "En esta selección, de unas 1.000 fotos, ha sido necesario poner únicamente fotos de las personas que habéis enviado vuestra autorización de imagen. Hemos dividido la selección en tres épocas: 2001-2008, 2009-2016 y 2017-2015.",
-        "Os pedimos que seáis muy respetuosos en el uso de las imágenes; son únicamente para el recuerdo de la comunidad Roure, no para su difusión en redes.",
-        "Es muy probable que haya algunos errores, como fotos repetidas o en las que aparezca alguna persona que no haya enviado la autorización. Nos disculpamos de antemano. En el caso de que alguna persona tenga inconveniente en salir en alguna de las fotos de los apartados del menú de la web, o de la selección para descargar, nos lo podéis comunicar y la retiraremos. Igualmente, si habéis enviado la autorización de imagen y no encontráis en la selección ninguna foto de vuestra familia, os podéis poner en contacto con nosotros y trataremos de buscar alguna en el archivo.",
-        "Esperemos que las disfrutéis. Un gran abrazo,",
-        "Además, miembros de la comunidad han creado un documento donde las personas que queráis manteneros en contacto o bien organizar algún encuentro, podéis dejar vuestros datos y acceder a los de los demás.",
-        "Para acceder os facilitaremos una contraseña que podéis pedir en el correo:",
+        "Hem creat aquest espai per a les persones que heu format part de la Comunitat de l'escola.",
+        "SUBTITLE:Fotos i Contactes",
+        "Benvolguda comunitat,",
+        "Després de molta feina, hem aconseguit fer una selecció de fotos des del 2001 al 2025, perquè pugueu descarregar les que vulgueu i tenir un record del vostre pas pel Roure. No ha estat fàcil; partíem d'un arxiu de 21.700 fotos, que durant aquests anys, i malgrat alguns intents generosos, no vam tenir ocasió d'ordenar.",
+        "En aquesta selecció, d'unes 1.000 fotos, ha estat necessari posar únicament fotos de les persones que heu enviat la vostra autorització d'imatge. Hem dividit la selecció en tres èpoques: 2001-2008, 2009-2016 i 2017-2015.",
+        "Us demanem que sigueu molt respectuosos en l'ús de les imatges; són únicament per al record de la comunitat Roure, no per a la seva difusió en xarxes.",
+        "És molt probable que hi hagi alguns errors, com a fotos repetides o en les quals aparegui alguna persona que no hagi enviat l'autorització. Ens disculpem per endavant. En el cas que alguna persona tingui inconvenient a sortir en alguna de les fotos dels apartats del menú de la web, o de la selecció per a descarregar, ens ho podeu comunicar i la retirarem. Igualment, si heu enviat l'autorització d'imatge i no trobeu en la selecció cap foto de la vostra família, us podeu posar en contacte amb nosaltres i tractarem de buscar alguna en l'arxiu.",
+        "Esperem que les gaudiu. Una gran abraçada,",
+        "A més, membres de la comunitat han creat un document on les persones que vulgueu mantenir-vos en contacte o bé organitzar alguna trobada, podeu deixar les vostres dades i accedir als dels altres.",
+        "Per accedir us facilitarem una contrasenya que podeu demanar al correu:",
         "experienciaroure@proton.me"
     ],
     videosList: [
@@ -1049,16 +1049,16 @@ const App: React.FC = () => {
 
   // Utility to linkify emails and phones
   const LinkifyText = ({ text }: { text: string }) => {
-    const regex = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+|\b\d{3}[ -]?\d{2}[ -]?\d{2}[ -]?\d{2}\b)/g;
+    const regex = /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}|\b\d{9}\b|\b\d{3}(?:[ -]?\d{3}){2}\b|\b\d{3}(?:[ -]?\d{2}){3}\b)/g;
     const parts = text.split(regex);
     
     return (
       <>
         {parts.map((part, i) => {
-          if (part.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+$/)) {
+          if (part.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)) {
             return <a key={i} href={`mailto:${part}`} className="text-[#c1562e] hover:underline font-medium">{part}</a>;
           }
-          if (part.match(/^\b\d{3}[ -]?\d{2}[ -]?\d{2}[ -]?\d{2}\b$/)) {
+          if (part.match(/^(?:\b\d{9}\b|\b\d{3}(?:[ -]?\d{3}){2}\b|\b\d{3}(?:[ -]?\d{2}){3}\b)$/)) {
             const cleanNum = part.replace(/\s/g, '').replace(/-/g, '');
             return <a key={i} href={`tel:${cleanNum}`} className="text-[#c1562e] hover:underline font-medium">{part}</a>;
           }
@@ -2192,8 +2192,8 @@ const App: React.FC = () => {
         <div style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif leading-relaxed text-stone-700 space-y-4 xl:space-y-5 2xl:space-y-6 mb-10 xl:mb-12 2xl:mb-14">
           <p>
             {language === 'es' 
-              ? 'En esta sección podéis leer diferentes textos internos y publicados que tuvieron una relación estrecha con El Roure, y tratan temas relevantes relacionados con la experiencia.'
-              : 'En aquesta secció podeu llegir diferents textos interns i publicats que van tenir una relació estreta amb El Roure, i tracten temes rellevants relacionats amb l\'experiència.'}
+              ? 'En esta sección podéis leer diferentes artículos publicados en las revistas anuales de La Casita y El Roure y también artículos publicados en revistas especializadas en educación y crianza. Tratan temas relevantes relacionados con nuestra experiencia.'
+              : 'En aquesta secció podeu llegir diferents articles publicats a les revistes anuals de La Casita i El Roure i també articles publicats en revistes especialitzades en educació i criança. Tracten temes rellevants relacionats amb la nostra experiència.'}
           </p>
           <p>
             {language === 'es' 
