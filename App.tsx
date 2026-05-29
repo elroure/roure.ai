@@ -5,7 +5,7 @@ import { ArrowUp, ChevronLeft, FileText, Play, Tag, Mic, Search, Download } from
 // --- Types & Content ---
 
 type Language = 'es' | 'ca';
-type View = 'home' | 'historia' | 'fundamentos' | 'formacion' | 'escuela' | 'videos' | 'textos' | 'comunidad' | 'en_que_estamos' | 'privacy';
+type View = 'home' | 'historia' | 'fundamentos' | 'formacion' | 'escuela' | 'videos' | 'textos' | 'contact' | 'en_que_estamos' | 'privacy';
 type EscuelaSection = 'intro' | 'aprendizaje' | 'acompanamiento' | 'equipo' | 'familias' | 'etapas' | '3-6' | '6-12' | '12-16';
 
 // --- IMAGE CONFIGURATION ---
@@ -160,7 +160,7 @@ const content = {
       escuela: 'Escuela',
       videos: 'Audiovisuales',
       textos: 'Artículos',
-      comunidad: 'Comunidad Roure',
+      contact: 'Contactar',
       en_que_estamos: '¿En qué estamos?',
       back: 'Volver',
       top: 'Subir'
@@ -262,7 +262,7 @@ const content = {
       fundamentos: 'Fundamentos Pedagógicos',
       videos: 'Audiovisuales',
       textos: 'Artículos Publicados',
-      comunidad: 'Comunidad Roure',
+      contact: 'Contactar',
       en_que_estamos: '¿En qué estamos?'
     },
     historiaContent: [
@@ -370,19 +370,6 @@ const content = {
                 "Me puedes contactar en: clara.jiro+roure@proton.me o 670 20 40 09"
             ]
         }
-    ],
-    comunidadText: [
-        "Hemos creado este espacio para las personas que habéis formado parte de la Comunidad de la escuela.",
-        "SUBTITLE:Fotos y Contactos",
-        "Querida comunidad,",
-        "Después de mucho trabajo, hemos conseguido hacer una selección de fotos desde el 2001 al 2025, para que podáis descargar las que queráis y tener un recuerdo de vuestro paso por El Roure. No ha sido fácil; partíamos de un archivo de 21.700 fotos, que durante estos años, y a pesar de algunos intentos generosos, no tuvimos ocasión de ordenar.",
-        "En esta selección, de unas 1.000 fotos, ha sido necesario poner únicamente fotos de las personas que habéis enviado vuestra autorización de imagen. Hemos dividido la selección en tres épocas: 2001-2008, 2009-2016 y 2017-2015.",
-        "Os pedimos que seáis muy respetuosos en el uso de las imágenes; son únicamente para el recuerdo de la comunidad Roure, no para su difusión en redes.",
-        "Es muy probable que haya algunos errores, como fotos repetidas o en las que aparezca alguna persona que no haya enviado la autorización. Nos disculpamos de antemano. En el caso de que alguna persona tenga inconveniente en salir en alguna de las fotos de los apartados del menú de la web, o de la selección para descargar, nos lo podéis comunicar y la retiraremos. Igualmente, si habéis enviado la autorización de imagen y no encontráis en la selección ninguna foto de vuestra familia, os podéis poner en contacto con nosotros y trataremos de buscar alguna en el archivo.",
-        "Esperemos que las disfrutéis. Un gran abrazo,",
-        "Además, miembros de la comunidad han creado un documento donde las personas que queráis manteneros en contacto o bien organizar algún encuentro, podéis dejar vuestros datos y acceder a los de los demás.",
-        "Para acceder os facilitaremos una contraseña que podéis pedir en el correo:",
-        "experienciaroure@proton.me"
     ],
     videosList: [
       {
@@ -499,7 +486,7 @@ const content = {
       escuela: 'Escola',
       videos: 'Audiovisuals',
       textos: 'Artícles',
-      comunidad: 'Comunitat Roure',
+      contact: 'Contactar',
       en_que_estamos: 'En què estem?',
       back: 'Tornar',
       top: 'Pujar'
@@ -595,7 +582,7 @@ const content = {
       fundamentos: 'Fonaments Pedagògics',
       videos: 'Audiovisuals',
       textos: 'Artícles Publicats',
-      comunidad: 'Comunitat Roure',
+      contact: 'Contactar',
       en_que_estamos: 'En què estem ara?'
     },
     historiaContent: [
@@ -702,19 +689,6 @@ const content = {
             ]
         }
     ],
-    comunidadText: [
-        "Hem creat aquest espai per a les persones que heu format part de la Comunitat de l'escola.",
-        "SUBTITLE:Fotos i Contactes",
-        "Benvolguda comunitat,",
-        "Després de molta feina, hem aconseguit fer una selecció de fotos des del 2001 al 2025, perquè pugueu descarregar les que vulgueu i tenir un record del vostre pas pel Roure. No ha estat fàcil; partíem d'un arxiu de 21.700 fotos, que durant aquests anys, i malgrat alguns intents generosos, no vam tenir ocasió d'ordenar.",
-        "En aquesta selecció, d'unes 1.000 fotos, ha estat necessari posar únicament fotos de les persones que heu enviat la vostra autorització d'imatge. Hem dividit la selecció en tres èpoques: 2001-2008, 2009-2016 i 2017-2015.",
-        "Us demanem que sigueu molt respectuosos en l'ús de les imatges; són únicament per al record de la comunitat Roure, no per a la seva difusió en xarxes.",
-        "És molt probable que hi hagi alguns errors, com a fotos repetides o en les quals aparegui alguna persona que no hagi enviat l'autorització. Ens disculpem per endavant. En el cas que alguna persona tingui inconvenient a sortir en alguna de les fotos dels apartats del menú de la web, o de la selecció per a descarregar, ens ho podeu comunicar i la retirarem. Igualment, si heu enviat l'autorització d'imatge i no trobeu en la selecció cap foto de la vostra família, us podeu posar en contacte amb nosaltres i tractarem de buscar alguna en l'arxiu.",
-        "Esperem que les gaudiu. Una gran abraçada,",
-        "A més, membres de la comunitat han creat un document on les persones que vulgueu mantenir-vos en contacte o bé organitzar alguna trobada, podeu deixar les vostres dades i accedir als dels altres.",
-        "Per accedir us facilitarem una contrasenya que podeu demanar al correu:",
-        "experienciaroure@proton.me"
-    ],
     videosList: [
       {
         title: "El Roure, una escola viva - Documental d'Antonio Laforgia",
@@ -820,7 +794,7 @@ const content = {
 // --- Components ---
 
 const App: React.FC = () => {
-  const ALLOWED_VIEWS: View[] = ['home','historia','fundamentos','formacion','escuela','videos','textos','comunidad','en_que_estamos','privacy'];
+  const ALLOWED_VIEWS: View[] = ['home','historia','fundamentos','formacion','escuela','videos','textos','contact','en_que_estamos','privacy'];
   const [currentView, setCurrentView] = useState<View>(() => {
     try {
       const h = window.location.hash.replace('#','');
@@ -1000,46 +974,44 @@ const App: React.FC = () => {
 
   // Footer Component
   const Footer = ({ compact = false }: { compact?: boolean }) => (
-    <div className={`w-full flex justify-center ${compact ? 'pb-4 pt-2' : 'pb-6 pt-8 md:pb-6 md:pt-4'}`}>
-      <div className="flex flex-col items-center gap-1 md:gap-2">
+    <div className={`w-full flex justify-center ${compact ? 'pb-4 pt-2' : 'pb-8 pt-12 md:pb-8 md:pt-10'}`}>
+      <div className="flex flex-col items-center gap-4 md:gap-5">
         
-        {/* Email */}
-        <a 
-          href="mailto:experienciaroure@proton.me" 
-          className={`font-serif ${compact ? 'text-sm' : 'text-base md:text-sm'} text-stone-600 ${hoverBrandColor} transition-colors block text-center`}
+        {/* Contact Link */}
+        <button 
+          onClick={() => navigateTo('contact')}
+          className={`font-serif ${compact ? 'text-sm' : 'text-base md:text-base'} text-stone-700 font-semibold ${hoverBrandColor} transition-colors block text-center hover:underline focus:outline-none`}
         >
-          experienciaroure@proton.me
-        </a>
+          {language === 'es' ? 'contactar' : 'contactar'}
+        </button>
 
-        {/* Language Switcher */}
-        <div className={`flex items-center justify-between text-xs md:text-xs font-bold uppercase text-stone-400 font-serif`} style={{ letterSpacing: '0.3em', lineHeight: '1.4' }}>
+        {/* Language Switcher - Centered */}
+        <div className={`flex items-center justify-center font-serif font-bold uppercase text-stone-400 text-xs`} style={{ letterSpacing: '0.15em' }}>
           <button 
             onClick={() => setLanguage('es')}
-            className={`${language === 'es' ? 'text-stone-800 border-b-2 border-[#c1562e]' : 'text-stone-400 hover:text-stone-600'} transition-colors py-0.5`}
-            style={{ marginRight: '-0.3em' }}
+            className={`${language === 'es' ? 'text-stone-800 border-b-2 border-[#c1562e]' : 'text-stone-400 hover:text-stone-600'} transition-colors py-1 px-2`}
           >
             castellano
           </button>
-          <span className="text-stone-300 px-1.5">|</span>
+          <span className="text-stone-300 px-3">|</span>
           <button 
             onClick={() => setLanguage('ca')}
-            className={`${language === 'ca' ? 'text-stone-800 border-b-2 border-[#c1562e]' : 'text-stone-400 hover:text-stone-600'} transition-colors py-0.5`}
-            style={{ marginLeft: '-0.3em' }}
+            className={`${language === 'ca' ? 'text-stone-800 border-b-2 border-[#c1562e]' : 'text-stone-400 hover:text-stone-600'} transition-colors py-1 px-2`}
           >
             català
           </button>
         </div>
 
         {/* Credits */}
-        <div className={`flex items-center justify-between ${compact ? 'text-xs' : 'text-sm md:text-xs'} text-stone-400 font-serif gap-2`}>
+        <div className={`flex items-center justify-center text-xs text-stone-400 font-serif gap-1.5`}>
           <span>{t.home.footer}</span>
-          <a href="https://rcrear.com" className={`hover:text-stone-600 transition-colors`}>rcrear.com</a>
+          <a href="https://rcrear.com" className={`hover:text-stone-600 transition-colors font-medium text-[#c1562e]`}>rcrear.com</a>
         </div>
         
         {/* Privacy Policy Link */}
         <button
           onClick={() => navigateTo('privacy')}
-          className="text-xs text-stone-400 hover:text-stone-600 transition-colors font-serif mt-2"
+          className="text-xs text-stone-400 hover:text-stone-600 transition-colors font-serif"
         >
           {language === 'es' ? 'aviso legal y política de privacidad' : 'avís legal i política de privacitat'}
         </button>
@@ -1096,7 +1068,6 @@ const App: React.FC = () => {
         { key: 'escuela', label: t.nav.escuela },
         { key: 'videos', label: t.nav.videos },
         { key: 'textos', label: t.nav.textos },
-        { key: 'comunidad', label: t.nav.comunidad },
         { key: 'en_que_estamos', label: t.nav.en_que_estamos },
       ];
 
@@ -2665,101 +2636,146 @@ const App: React.FC = () => {
       </InternalPageLayout>
   );
 
-  const ComunidadView = () => {
-    const [password, setPassword] = useState('');
-    const [error, setError] = useState(false);
+  const ContactView = () => {
+    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+    const [submitted, setSubmitted] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('');
 
-    const handleLogin = () => {
-      if (password === 'R196r3-') {
-        window.open('https://drive.google.com/drive/folders/1BfLzFsw4C6WDcIL9gOO-3TDDavWQpsv1?usp=share_link', '_blank'); 
-        setError(false);
-      } else {
-        setError(true);
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const { name, value } = e.target;
+      setFormData(prev => ({ ...prev, [name]: value }));
+      setError('');
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+      e.preventDefault();
+      setLoading(true);
+      setError('');
+      
+      try {
+        // Send email using FormSubmit.co service (no configuration needed)
+        const formDataObj = new FormData();
+        formDataObj.append('name', formData.name);
+        formDataObj.append('email', formData.email);
+        formDataObj.append('message', formData.message);
+        formDataObj.append('_captcha', 'false');
+        formDataObj.append('_next', window.location.href);
+
+        const response = await fetch('https://formsubmit.co/begona.gomi@gmail.com', {
+          method: 'POST',
+          body: formDataObj
+        });
+
+        if (response.ok) {
+          setSubmitted(true);
+          setFormData({ name: '', email: '', message: '' });
+          setTimeout(() => setSubmitted(false), 5000);
+        } else {
+          setError(language === 'es' ? 'Error al enviar el mensaje. Intenta nuevamente.' : 'Error al enviar el missatge. Intenta de nou.');
+        }
+      } catch (err) {
+        console.error('Error sending message:', err);
+        setError(language === 'es' ? 'Error de conexión. Intenta nuevamente.' : 'Error de connexió. Intenta de nou.');
+      } finally {
+        setLoading(false);
       }
     };
 
     return (
-      <InternalPageLayout title={t.nav.comunidad}>
-         <div className="flex flex-col items-center max-w-2xl xl:max-w-3xl 2xl:max-w-4xl mx-auto">
-            <div style={{ fontSize: 'var(--internal-body-text)' }} className="text-center space-y-4 xl:space-y-6 2xl:space-y-8 font-serif leading-relaxed text-stone-700 mb-10 xl:mb-14 2xl:mb-20">
-              {t.comunidadText.map((p, idx, arr) => {
-                // Handle subtitle
-                if (p.startsWith('SUBTITLE:')) {
-                  const subtitle = p.replace('SUBTITLE:', '');
-                  return (
-                    <h3 key={idx} className="text-2xl xl:text-2xl 2xl:text-3xl font-bold text-stone-800 mb-4 xl:mb-4 2xl:mb-6 text-[#c1562e]">
-                      {subtitle}
-                    </h3>
-                  );
-                }
-                // Handle inline link within text
-                if (p.includes('LINK_ACCEDER') || p.includes('LINK_ACCEDIR')) {
-                  const parts = p.split(/LINK_ACCEDER|LINK_ACCEDIR/);
-                  return (
-                    <p key={idx}>
-                      {parts[0]}
-                      <a 
-                        href="https://docs.google.com/spreadsheets/d/1rpDdtjJwXMMhVI3UcWvfjP5AHJEpSOAwU-LmI6xy3SI/edit?usp=sharing"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[#c1562e] hover:underline font-medium"
-                      >
-                        Clica aquí
-                      </a>
-                      {parts[1] || ''}
-                    </p>
-                  );
-                }
-                // Insert <hr /> between the two specific paragraphs
-                if (
-                  p === "Esperemos que las disfrutéis. Un gran abrazo," &&
-                  arr[idx + 1] === "Además, miembros de la comunidad han creado un documento donde las personas que queráis manteneros en contacto o bien organizar algún encuentro, podéis dejar vuestros datos y acceder a los de los demás."
-                ) {
-                  return [
-                    <p key={idx}><LinkifyText text={p} /></p>,
-                    <hr key="hr-separador-comunidad" className="my-6 border-t-2 border-stone-300 w-1/2 mx-auto" />
-                  ];
-                }
-                return (
-                  <p key={idx}><LinkifyText text={p} /></p>
-                );
-              })}
-            </div>
-            
-            <div className="w-full max-w-md xl:max-w-lg 2xl:max-w-xl">
-              <form
-                className="flex flex-col gap-4 xl:gap-5 2xl:gap-6"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  handleLogin();
-                }}
-              >
-                <input 
-                  type="password" 
+      <InternalPageLayout title={t.nav.contact}>
+        <div className="flex flex-col items-center max-w-2xl xl:max-w-3xl 2xl:max-w-4xl mx-auto">
+          <div style={{ fontSize: 'var(--internal-body-text)' }} className="text-center space-y-6 xl:space-y-8 2xl:space-y-10 font-serif leading-relaxed text-stone-700 mb-12 xl:mb-16 2xl:mb-20">
+            <p>{language === 'es' ? 'Ponte en contacto con nosotros completando el formulario a continuación.' : 'Poseu-vos en contacte amb nosaltres omplint el formulari a continuació.'}</p>
+          </div>
+
+          <div className="w-full max-w-md xl:max-w-lg 2xl:max-w-xl">
+            <form className="flex flex-col gap-6 xl:gap-7 2xl:gap-8" onSubmit={handleSubmit}>
+              <div>
+                <label className="block text-sm font-serif text-stone-700 mb-2">
+                  {language === 'es' ? 'Nombre' : 'Nom'}
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
                   style={{ fontSize: 'var(--internal-body-text)' }}
-                  className="w-full bg-transparent border-b-2 border-stone-800 focus:border-[#c1562e] outline-none transition-all py-2 text-center font-serif text-stone-800 placeholder:text-stone-400"
-                  placeholder={language === 'es' ? 'Escribe aquí' : 'Escriu aquí'}
-                  value={password}
-                  onChange={(e) => {
-                    setPassword(e.target.value);
-                    setError(false);
-                  }}
+                  className="w-full bg-transparent border-b-2 border-stone-800 focus:border-[#c1562e] outline-none transition-all py-2 font-serif text-stone-800 placeholder:text-stone-400"
+                  placeholder={language === 'es' ? 'Tu nombre' : 'El vostre nom'}
                 />
-                <button
-                  type="submit"
+              </div>
+
+              <div>
+                <label className="block text-sm font-serif text-stone-700 mb-2">
+                  {language === 'es' ? 'Correo electrónico' : 'Correu electrònic'}
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
                   style={{ fontSize: 'var(--internal-body-text)' }}
-                  className="mx-auto min-w-32 rounded-full border border-[#c1562e] px-6 py-2 font-serif text-[#c1562e] transition-colors hover:bg-[#c1562e] hover:text-white"
-                >
-                  {language === 'es' ? 'Entrar' : 'Accedir'}
-                </button>
-                {error && (
-                  <span style={{ fontSize: 'calc(var(--internal-body-text) * 0.9)' }} className="text-[#c1562e] font-serif text-center">
-                    {language === 'es' ? 'Contraseña incorrecta' : 'Contrasenya incorrecta'}
-                  </span>
-                )}
-              </form>
-            </div>
-         </div>
+                  className="w-full bg-transparent border-b-2 border-stone-800 focus:border-[#c1562e] outline-none transition-all py-2 font-serif text-stone-800 placeholder:text-stone-400"
+                  placeholder={language === 'es' ? 'tu@email.com' : 'tu@email.com'}
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-serif text-stone-700 mb-2">
+                  {language === 'es' ? 'Mensaje' : 'Missatge'}
+                </label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  required
+                  style={{ fontSize: 'var(--internal-body-text)' }}
+                  className="w-full bg-transparent border-b-2 border-stone-800 focus:border-[#c1562e] outline-none transition-all py-2 font-serif text-stone-800 placeholder:text-stone-400 resize-none"
+                  rows={5}
+                  placeholder={language === 'es' ? 'Escribe tu mensaje aquí...' : 'Escriu el vostre missatge aquí...'}
+                />
+              </div>
+
+              {error && (
+                <div className="text-center">
+                  <p className="text-red-600 font-serif text-sm">{error}</p>
+                </div>
+              )}
+
+              <button
+                type="submit"
+                disabled={loading}
+                style={{ fontSize: 'var(--internal-body-text)' }}
+                className="mx-auto min-w-40 rounded-full border border-[#c1562e] px-8 py-3 font-serif text-[#c1562e] transition-colors hover:bg-[#c1562e] hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {loading ? (language === 'es' ? 'Enviando...' : 'Enviant...') : (language === 'es' ? 'Enviar' : 'Enviar')}
+              </button>
+
+              {submitted && (
+                <div className="text-center">
+                  <p className="text-[#c1562e] font-serif font-medium">
+                    {language === 'es' ? '¡Mensaje enviado con éxito!' : '¡Missatge enviat amb èxit!'}
+                  </p>
+                </div>
+              )}
+            </form>
+          </div>
+
+          <div className="mt-12 xl:mt-16 2xl:mt-20 pt-8 border-t border-stone-200 text-center">
+            <p style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif text-stone-600">
+              {language === 'es' ? 'O envía un correo directamente a:' : 'O envia un correu directament a:'}
+            </p>
+            <a 
+              href="mailto:begona.gomi@gmail.com"
+              className="text-[#c1562e] hover:underline font-serif font-medium mt-2 inline-block"
+            >
+              begona.gomi@gmail.com
+            </a>
+          </div>
+        </div>
       </InternalPageLayout>
     );
   };
@@ -2814,7 +2830,7 @@ const App: React.FC = () => {
       {currentView === 'escuela' && <EscuelaView />}
       {currentView === 'videos' && <VideosView />}
       {currentView === 'textos' && <TextosView />}
-      {currentView === 'comunidad' && <ComunidadView />}
+      {currentView === 'contact' && <ContactView />}
       {currentView === 'en_que_estamos' && <EnQueEstamosView />}
       {currentView === 'privacy' && <PrivacyPolicyView />}
 
