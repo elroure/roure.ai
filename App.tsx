@@ -2654,17 +2654,19 @@ const App: React.FC = () => {
       setError('');
       
       try {
-        // Send email using FormSubmit.co service (no configuration needed)
-        const formDataObj = new FormData();
-        formDataObj.append('name', formData.name);
-        formDataObj.append('email', formData.email);
-        formDataObj.append('message', formData.message);
-        formDataObj.append('_captcha', 'false');
-        formDataObj.append('_next', window.location.href);
-
-        const response = await fetch('https://formsubmit.co/begona.gomi@gmail.com', {
+        // Send email using Formspree (free tier works without configuration)
+        const response = await fetch('https://formspree.io/f/mrbbaqvd', {
           method: 'POST',
-          body: formDataObj
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            _replyto: formData.email,
+          }),
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          }
         });
 
         if (response.ok) {
@@ -2762,18 +2764,6 @@ const App: React.FC = () => {
                 </div>
               )}
             </form>
-          </div>
-
-          <div className="mt-12 xl:mt-16 2xl:mt-20 pt-8 border-t border-stone-200 text-center">
-            <p style={{ fontSize: 'var(--internal-body-text)' }} className="font-serif text-stone-600">
-              {language === 'es' ? 'O envía un correo directamente a:' : 'O envia un correu directament a:'}
-            </p>
-            <a 
-              href="mailto:begona.gomi@gmail.com"
-              className="text-[#c1562e] hover:underline font-serif font-medium mt-2 inline-block"
-            >
-              begona.gomi@gmail.com
-            </a>
           </div>
         </div>
       </InternalPageLayout>
