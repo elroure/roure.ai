@@ -5,7 +5,7 @@ import { ArrowUp, ChevronLeft, FileText, Play, Tag, Mic, Search, Download } from
 // --- Types & Content ---
 
 type Language = 'es' | 'ca';
-type View = 'home' | 'historia' | 'fundamentos' | 'formacion' | 'escuela' | 'videos' | 'textos' | 'contact' | 'en_que_estamos' | 'privacy';
+type View = 'home' | 'historia' | 'fundamentos' | 'formacion' | 'escuela' | 'videos' | 'textos' | 'en_que_estamos' | 'privacy';
 type EscuelaSection = 'intro' | 'aprendizaje' | 'acompanamiento' | 'equipo' | 'familias' | 'etapas' | '3-6' | '6-12' | '12-16';
 
 // --- IMAGE CONFIGURATION ---
@@ -794,7 +794,7 @@ const content = {
 // --- Components ---
 
 const App: React.FC = () => {
-  const ALLOWED_VIEWS: View[] = ['home','historia','fundamentos','formacion','escuela','videos','textos','contact','en_que_estamos','privacy'];
+  const ALLOWED_VIEWS: View[] = ['home','historia','fundamentos','formacion','escuela','videos','textos','en_que_estamos','privacy'];
   const [currentView, setCurrentView] = useState<View>(() => {
     try {
       const h = window.location.hash.replace('#','');
@@ -977,13 +977,13 @@ const App: React.FC = () => {
     <div className={`w-full flex justify-center ${compact ? 'pb-4 pt-2' : 'pb-8 pt-12 md:pb-8 md:pt-10'}`}>
       <div className="flex flex-col items-center gap-4 md:gap-5">
         
-        {/* Contact Link */}
-        <button 
-          onClick={() => navigateTo('contact')}
+        {/* Contact Email Link */}
+        <a 
+          href="mailto:begona.gomi@gmail.com"
           className={`font-serif ${compact ? 'text-sm' : 'text-base md:text-base'} text-stone-700 font-semibold ${hoverBrandColor} transition-colors block text-center hover:underline focus:outline-none`}
         >
-          {language === 'es' ? 'contactar' : 'contactar'}
-        </button>
+          begona.gomi@gmail.com
+        </a>
 
         {/* Language Switcher - Centered */}
         <div className={`flex items-center justify-center font-serif font-bold uppercase text-stone-400 text-xs`} style={{ letterSpacing: '0.15em' }}>
@@ -2355,7 +2355,7 @@ const App: React.FC = () => {
               'Nombre y apellidos: Begoña González Minguillón',
               'DNI/NIE: 05379700T',
               'Domicilio: Cánoves',
-              'Correo electrónico de contacto: experienciaroure@proton.me'
+              'Correo electrónico de contacto: begona.gomi@gmail.com'
             ],
             closing: [
               'La cooperativa Experiència educativa El Roure SCCL quedó formalmente disuelta en 2026 y actualmente no desarrolla actividad alguna.',
@@ -2430,19 +2430,28 @@ const App: React.FC = () => {
             ]
           },
           {
-            heading: '9. Cookies',
+            heading: '9. Formulario de contacto',
+            paragraphs: [
+              'Si completa el formulario de contacto disponible en este web, sus datos (nombre, correo electrónico y mensaje) se guardarán con la finalidad de responder a su consulta.',
+              'El tratamiento se realiza en base a su consentimiento expreso al enviar el formulario.',
+              'Los datos se guardarán hasta que se resuelva su asunto o hasta que solicite su supresión.',
+              'Puede ejercer sus derechos en cualquier momento enviando un correo a la dirección de contacto indicada.'
+            ]
+          },
+          {
+            heading: '10. Cookies',
             paragraphs: [
               'Este sitio web no utiliza cookies de seguimiento ni herramientas de análisis.'
             ]
           },
           {
-            heading: '10. Responsabilidad',
+            heading: '11. Responsabilidad',
             paragraphs: [
               'El titular no se hace responsable del uso indebido que se realice de los contenidos del sitio web ni de los daños que pudieran derivarse del acceso o uso de la información publicada.'
             ]
           },
           {
-            heading: '11. Modificaciones',
+            heading: '12. Modificaciones',
             paragraphs: [
               'El titular se reserva el derecho a modificar el presente documento para adaptarlo a cambios normativos o a la evolución del contenido del sitio web.'
             ]
@@ -2462,7 +2471,7 @@ const App: React.FC = () => {
               'Nom i cognoms: Begoña González Minguillón',
               'DNI/NIE: 05379700T',
               'Domicili: Cánoves',
-              'Correu electrònic de contacte: experienciaroure@proton.me'
+              'Correu electrònic de contacte: begona.gomi@gmail.com'
             ],
             closing: [
               'La cooperativa Experiència educativa El Roure SCCL va quedar formalment dissolta l\'any 2026 i actualment no desenvolupa cap activitat.',
@@ -2537,13 +2546,22 @@ const App: React.FC = () => {
             ]
           },
           {
-            heading: '9. Cookies',
+            heading: '9. Formulari de contacte',
+            paragraphs: [
+              'Si ompliu el formulari de contacte disponible a aquest web, les vostres dades (nom, correu electrònic i missatge) es guardaran amb la finalitat de respondre a la vostra consulta.',
+              'El tractament es realitza en base al vostre consentiment exprés al enviar el formulari.',
+              'Les dades es guardaran fins que es resolgui el vostre assumpte o fins que sol·liciteu la seva supressió.',
+              'Podeu exercir els vostres drets en qualsevol moment enviant un correu a l\'adreça de contacte indicada.'
+            ]
+          },
+          {
+            heading: '10. Cookies',
             paragraphs: [
               'Aquest lloc web no utilitza cookies de seguiment ni eines d\'anàlisi.'
             ]
           },
           {
-            heading: '10. Responsabilitat',
+            heading: '11. Responsabilitat',
             paragraphs: [
               'El titular no es fa responsable de l\'ús indegut que es faci dels continguts del lloc web ni dels danys que es puguin derivar de l\'accés o ús de la informació publicada.'
             ]
@@ -2637,133 +2655,33 @@ const App: React.FC = () => {
   );
 
   const ContactView = () => {
-    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-    const [submitted, setSubmitted] = useState(false);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState('');
-
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      const { name, value } = e.target;
-      setFormData(prev => ({ ...prev, [name]: value }));
-      setError('');
-    };
-
-    const handleSubmit = async (e: React.FormEvent) => {
-      e.preventDefault();
-      setLoading(true);
-      setError('');
-      
-      try {
-        // Send email using Formspree (free tier works without configuration)
-        const response = await fetch('https://formspree.io/f/mrbbaqvd', {
-          method: 'POST',
-          body: JSON.stringify({
-            name: formData.name,
-            email: formData.email,
-            message: formData.message,
-            _replyto: formData.email,
-          }),
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          }
-        });
-
-        if (response.ok) {
-          setSubmitted(true);
-          setFormData({ name: '', email: '', message: '' });
-          setTimeout(() => setSubmitted(false), 5000);
-        } else {
-          setError(language === 'es' ? 'Error al enviar el mensaje. Intenta nuevamente.' : 'Error al enviar el missatge. Intenta de nou.');
-        }
-      } catch (err) {
-        console.error('Error sending message:', err);
-        setError(language === 'es' ? 'Error de conexión. Intenta nuevamente.' : 'Error de connexió. Intenta de nou.');
-      } finally {
-        setLoading(false);
-      }
-    };
-
     return (
       <InternalPageLayout title={t.nav.contact}>
         <div className="flex flex-col items-center max-w-2xl xl:max-w-3xl 2xl:max-w-4xl mx-auto">
-          <div style={{ fontSize: 'var(--internal-body-text)' }} className="text-center space-y-6 xl:space-y-8 2xl:space-y-10 font-serif leading-relaxed text-stone-700 mb-12 xl:mb-16 2xl:mb-20">
-            <p>{language === 'es' ? 'Ponte en contacto con nosotros completando el formulario a continuación.' : 'Poseu-vos en contacte amb nosaltres omplint el formulari a continuació.'}</p>
-          </div>
-
-          <div className="w-full max-w-md xl:max-w-lg 2xl:max-w-xl">
-            <form className="flex flex-col gap-6 xl:gap-7 2xl:gap-8" onSubmit={handleSubmit}>
-              <div>
-                <label className="block text-sm font-serif text-stone-700 mb-2">
-                  {language === 'es' ? 'Nombre' : 'Nom'}
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  required
-                  style={{ fontSize: 'var(--internal-body-text)' }}
-                  className="w-full bg-transparent border-b-2 border-stone-800 focus:border-[#c1562e] outline-none transition-all py-2 font-serif text-stone-800 placeholder:text-stone-400"
-                  placeholder={language === 'es' ? 'Tu nombre' : 'El vostre nom'}
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-serif text-stone-700 mb-2">
-                  {language === 'es' ? 'Correo electrónico' : 'Correu electrònic'}
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  required
-                  style={{ fontSize: 'var(--internal-body-text)' }}
-                  className="w-full bg-transparent border-b-2 border-stone-800 focus:border-[#c1562e] outline-none transition-all py-2 font-serif text-stone-800 placeholder:text-stone-400"
-                  placeholder={language === 'es' ? 'tu@email.com' : 'tu@email.com'}
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-serif text-stone-700 mb-2">
-                  {language === 'es' ? 'Mensaje' : 'Missatge'}
-                </label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  required
-                  style={{ fontSize: 'var(--internal-body-text)' }}
-                  className="w-full bg-transparent border-b-2 border-stone-800 focus:border-[#c1562e] outline-none transition-all py-2 font-serif text-stone-800 placeholder:text-stone-400 resize-none"
-                  rows={5}
-                  placeholder={language === 'es' ? 'Escribe tu mensaje aquí...' : 'Escriu el vostre missatge aquí...'}
-                />
-              </div>
-
-              {error && (
-                <div className="text-center">
-                  <p className="text-red-600 font-serif text-sm">{error}</p>
-                </div>
-              )}
-
-              <button
-                type="submit"
-                disabled={loading}
-                style={{ fontSize: 'var(--internal-body-text)' }}
-                className="mx-auto min-w-40 rounded-full border border-[#c1562e] px-8 py-3 font-serif text-[#c1562e] transition-colors hover:bg-[#c1562e] hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+          <div style={{ fontSize: 'var(--internal-body-text)' }} className="text-center space-y-8 xl:space-y-10 2xl:space-y-12 font-serif leading-relaxed text-stone-700">
+            <p>{language === 'es' ? 'Para ponerte en contacto con nosotros, envía un correo a:' : 'Per posar-te en contacte amb nosaltres, envia un correu a:'}</p>
+            
+            <div className="bg-stone-50 border-2 border-[#c1562e] rounded-lg p-8 xl:p-10 2xl:p-12">
+              <a 
+                href="mailto:begona.gomi@gmail.com" 
+                className="text-2xl xl:text-3xl 2xl:text-4xl font-bold text-[#c1562e] hover:underline break-all"
               >
-                {loading ? (language === 'es' ? 'Enviando...' : 'Enviant...') : (language === 'es' ? 'Enviar' : 'Enviar')}
-              </button>
+                begona.gomi@gmail.com
+              </a>
+            </div>
 
-              {submitted && (
-                <div className="text-center">
-                  <p className="text-[#c1562e] font-serif font-medium">
-                    {language === 'es' ? '¡Mensaje enviado con éxito!' : '¡Missatge enviat amb èxit!'}
-                  </p>
-                </div>
-              )}
-            </form>
+            <p className="text-sm xl:text-base 2xl:text-lg text-stone-600">
+              {language === 'es' 
+                ? 'Responderemos a tu mensaje lo antes posible. Tu privacidad es importante para nosotros.'
+                : 'Respondrem al vostre missatge tan aviat com sigui possible. La vostra privacitat és important per a nosaltres.'}
+            </p>
+
+            <button
+              onClick={() => navigateTo('privacy')}
+              className="text-sm xl:text-base 2xl:text-lg text-[#c1562e] hover:underline font-serif"
+            >
+              {language === 'es' ? '→ Ver política de privacidad' : '→ Veure política de privacitat'}
+            </button>
           </div>
         </div>
       </InternalPageLayout>
@@ -2820,7 +2738,6 @@ const App: React.FC = () => {
       {currentView === 'escuela' && <EscuelaView />}
       {currentView === 'videos' && <VideosView />}
       {currentView === 'textos' && <TextosView />}
-      {currentView === 'contact' && <ContactView />}
       {currentView === 'en_que_estamos' && <EnQueEstamosView />}
       {currentView === 'privacy' && <PrivacyPolicyView />}
 
