@@ -979,7 +979,7 @@ const App: React.FC = () => {
         
         {/* Contact Email Link */}
         <a 
-          href="mailto:begona.gomi@gmail.com"
+          href="mailto:begona.gomi@gmail.com?subject=Contacto%20El%20Roure&body=Hola%2C%20me%20gustaría%20ponerme%20en%20contacto%20contigo."
           className={`font-serif ${compact ? 'text-sm' : 'text-base md:text-base'} text-stone-700 font-semibold ${hoverBrandColor} transition-colors block text-center hover:underline focus:outline-none`}
         >
           begona.gomi@gmail.com
@@ -2663,7 +2663,7 @@ const App: React.FC = () => {
             
             <div className="bg-stone-50 border-2 border-[#c1562e] rounded-lg p-8 xl:p-10 2xl:p-12">
               <a 
-                href="mailto:begona.gomi@gmail.com" 
+                href="mailto:begona.gomi@gmail.com?subject=Contacto%20El%20Roure&body=Hola%2C%20me%20gustaría%20ponerme%20en%20contacto%20contigo." 
                 className="text-2xl xl:text-3xl 2xl:text-4xl font-bold text-[#c1562e] hover:underline break-all"
               >
                 begona.gomi@gmail.com
